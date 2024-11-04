@@ -1,0 +1,549 @@
+body
+  margin: 0
+  padding: 0
+  background: white
+
+.container
+  &
+    position: relative
+    max-width: 100%
+    // overflow-x: hidden
+  @media (min-width: theme('screens.sm'))
+    max-width: 100%
+  @media (min-width: theme('screens.md'))
+    max-width: 640px
+  @media (min-width: theme('screens.lg'))
+    max-width: 960px
+  @media (min-width: theme('screens.xl'))
+    max-width: 1160px
+  @media (min-width: theme('screens.1440px'))
+    max-width: 1300px
+  @media (min-width: theme('screens.1600px'))
+    max-width: 88.75rem
+
+.container--slim
+  &
+    --bs-gutter-x: 20px
+    position: relative
+    max-width: 100%
+    margin: 0 auto
+    padding-left: calc(var(--bs-gutter-x)* .5)
+    padding-right: calc(var(--bs-gutter-x)* .5)
+    // overflow-x: hidden
+  @media (min-width: theme('screens.sm'))
+    max-width: 100%
+  @media (min-width: theme('screens.md'))
+    max-width: 640px
+  @media (min-width: theme('screens.lg'))
+    max-width: 880px
+  @media (min-width: theme('screens.xl'))
+    max-width: 960px
+  @media (min-width: theme('screens.1440px'))
+    max-width: 1180px
+  @media (min-width: theme('screens.1600px'))
+    max-width: 1340px
+
+:root
+  &
+    --bs-gutter-x: 40px
+    --bs-gutter-y: 60px
+  @media (min-width: theme('screens.sm'))
+    --bs-gutter-x: 20px
+    --bs-gutter-y: 20px
+      
+section
+  &
+    margin: 0 auto
+    width: 100%
+
+
+.list--store
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  gap: 32px
+
+section
+  position: relative
+  z-index: 2
+  padding: 40px 0
+
+.section--cover
+  &
+    position: relative
+    overflow: hidden
+    padding-top: 20px
+    background: rgba(#b7b8b8, .1)
+    margin-bottom: 40px
+  @media (max-width: theme('breakpoints.md'))
+    &
+      padding-top: 61px
+      margin-bottom: 0
+      background: transparent
+    .swiper--banner
+      margin: 0 -20px
+    // .container
+    //   padding: 0
+      
+
+.bg--cover
+  &
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    overflow: hidden
+    z-index: 1
+  > img
+    position: absolute
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.section--list
+  &
+    background: white
+
+.section--cta
+  &
+    background: white
+
+.section--spacer
+  &
+    padding: 0
+
+.section--restaurant
+  &
+    background: #FFF4E3
+  + .section--spacer
+    background: #FFF4E3
+
+.section--store
+  &
+    background: white
+    padding-top: 40px
+  + .section--spacer
+    background: white
+  
+.list--podcast
+  &
+    display: flex
+    flex-direction: column
+    gap: 16px
+    justify-content: space-between
+  @media (max-width: theme('breakpoints.md'))
+    > *:nth-child(n+4)
+      display: none
+
+.grid--podcast
+  &
+    display: grid
+    grid-template-columns: 330px 1fr
+    gap: 60px
+    max-width: 1500px
+    margin: 0 auto 32px
+  .embed--podcast
+    background: #f8f8fa
+  @media (max-width: theme('breakpoints.lg'))
+    &
+      grid-template-columns: 1fr
+      gap: 32px
+    .embed--podcast
+      padding: 16px
+
+.section--video
+  @media (max-width: theme('breakpoints.md'))
+    .swiper--mobile
+      margin-bottom: 40px
+
+.grid--video
+  &
+    display: grid
+    grid-template-columns: 69.1% 1fr
+    grid-template-rows: repeat(2, 1fr)
+    row-gap: 24px
+    column-gap: 48px
+    max-width: 1500px
+    margin: 0 auto 32px
+  > *:nth-child(1)
+    grid-column: span 1
+    grid-row: span 2
+  @media (max-width: theme('breakpoints.md'))
+    &
+      grid-template-columns: repeat(1, 1fr)
+      gap: 16px
+    > *:nth-child(1)
+      grid-column: unset
+      grid-row: unset
+  @media (max-width: theme('breakpoints.lg'))
+    &
+      grid-template-columns: repeat(2, 1fr)
+      grid-template-rows: unset
+      gap: 24px
+    > *:nth-child(1)
+      grid-column: span 2
+  @media (max-width: theme('screens.xl'))
+    &
+      grid-template-columns: 68.8% 1fr
+  @media (min-width: theme('screens.1440px'))
+    &
+      grid-template-columns: 68.8% 1fr
+  @media (min-width: theme('screens.1600px'))
+    &
+      grid-template-columns: 69.1% 1fr
+  
+
+.grid--snippet
+  &
+    display: grid
+    grid-template-columns: 78.9% 1fr
+    grid-template-rows: repeat(5, 1fr)
+    gap: 16px
+    margin: 0 auto 32px
+  > *
+    position: relative
+  > *:nth-child(2)
+    &
+      grid-column: span 1
+      grid-row: span 5
+  > *:nth-child(1)
+    &
+      grid-column: span 1
+      grid-row: span 5
+    .caption
+      display: block
+    .pic
+      &
+        position: relative
+        width: 100%
+        height: 100%
+      img
+        position: absolute
+        width: 100%
+        height: 100%
+        object-fit: cover
+  @media (max-width: theme('breakpoints.lg'))
+    gap: 16px
+  @media (max-width: theme('breakpoints.md'))
+    &
+      grid-template-columns: repeat(1, 1fr)
+      grid-template-rows: unset
+    > *
+      display: none
+    > *:nth-child(1)
+      &
+        display: block
+        grid-column: unset
+        grid-row: unset
+    
+
+.grid--event 
+  &
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-template-rows: repeat(2, 1fr)
+    gap: 48px
+    max-width: 1500px
+    margin: 0 auto 32px
+  > *:nth-child(1)
+    grid-column: span 3
+    grid-row: span 2
+  > *:nth-child(3),
+  > *:nth-child(4)
+    &
+      position: relative
+    &::before
+      content: ""
+      display: block
+      width: 1px
+      height: 100%
+      background: #515050
+      position: absolute
+      top: 0
+      left: -24px
+  @media (max-width: theme('breakpoints.lg'))
+    &
+      grid-template-columns: repeat(3, 1fr)
+      grid-template-rows: unset
+      gap: 16px
+    > *:nth-child(1)
+      display: block
+      grid-column: span 3
+      grid-row: unset
+    > *:nth-child(3),
+    > *:nth-child(4)
+      &
+        position: unset
+      &::before
+        display: none
+  @media (max-width: theme('breakpoints.md'))
+    > *
+      display: none
+
+
+.row--article,
+.row--weekly,
+.row--course,
+.row--event
+  &
+    --bs-gutter-x: 40px
+    --bs-gutter-y: 60px
+    margin-bottom: var(--bs-gutter-y)
+  @media (max-width: theme('breakpoints.xl'))
+    &
+      --bs-gutter-x: 20px
+  @media (max-width: theme('breakpoints.md'))
+    &
+      --bs-gutter-x: 20px
+
+.row--article
+  @media (min-width: theme('screens.lg'))
+    &
+      > *:nth-child(n+4)
+        display: none
+
+.row--weekly
+  @media (max-width: theme('breakpoints.lg'))
+    > *:nth-child(n+3)
+      display: none
+
+.list--snippet--mobile 
+  &
+    display: flex
+    flex-wrap: nowrap
+    gap: 20px
+    width: 100%
+    overflow-x: auto
+    padding: 20px 0
+  &::-webkit-scrollbar
+    display: none
+  > .card--snippet
+    min-width: 150px
+
+.section--black
+  &
+    background: #000
+    padding-top: 32px
+    padding-bottom: 1px
+
+.section--breadcrumb
+  &
+    padding: 32px 0
+  &.is-sp
+    background: #eee9e4
+  > .container
+    display: flex
+    justify-content: space-between
+  > .container > .breadcrumb
+    margin-bottom: 0
+
+.section--breadcrumb + .section--article,
+.section--breadcrumb + .section--weekly
+  padding-top: 0
+
+.grid--cover
+  &
+    display: grid
+    grid-template-columns: 70.2% 1fr
+    grid-template-rows: repeat(2, 1fr)
+    column-gap: 40px
+    row-gap: 20px
+  > .swiper--banner
+    grid-column: span 1
+    grid-row: span 2
+  @media (min-width: theme('screens.lg'))
+    &
+      grid-template-columns: 74.2% 1fr
+      column-gap: 30px
+    > .card--cover:nth-child(4)
+      display: none
+  @media (min-width: theme('screens.xl'))
+    &
+      grid-template-columns: 72.3% 1fr
+  @media (min-width: theme('screens.1440px'))
+    &
+      grid-template-columns: 71.8% 1fr
+  @media (min-width: theme('screens.1600px'))
+    &
+      grid-template-columns: 71.9% 1fr
+  @media (max-width: theme('breakpoints.lg'))
+    &
+      display: flex
+      flex-direction: column
+
+
+.caption--confirm
+  padding-top: 40px
+  margin-bottom: 40px
+
+.article--slim
+  &
+    max-width: 800px
+    margin: 0 auto
+  h4
+    &
+      text-align: center
+    span
+      padding-bottom: 5px
+      background: linear-gradient(180deg, #FFFFFF 60%, #f5e500 60%)
+  p
+    font-family: 'Noto Sans TC', sans-serif
+    font-size: 21px
+    margin-bottom: 20px
+  .pic--wrapper
+    &
+      max-width: 620px
+      margin: 0 auto 32px
+    .pic
+      margin-bottom: 10px
+    .caption
+      font-size: 16px
+      font-family: 'Noto Sans TC', sans-serif
+
+  .youtube--wrapper
+    &
+      width: 100%
+    > iframe
+      aspect-ratio: 16/9
+      width: 100%
+
+.section--course,
+.section--campaign
+  &.is-achieved
+    background: #ebe6e1
+
+.section--course--cover
+  &
+    padding-top: 0
+    background: linear-gradient(180deg, #f5e500 0%, #FFFFFF 50%)
+  .swiper--banner
+    max-width: 800px
+    margin: 0 auto
+  @media (min-width: theme('breakpoints.1600px'))
+    .swiper--banner
+      max-width: 1060px
+
+.section--campaign--cover
+  &
+    padding-top: 0
+    background: #ede8e3
+  .swiper--banner
+    max-width: 800px
+    margin: 0 auto
+  @media (min-width: theme('breakpoints.1600px'))
+    .swiper--banner
+      max-width: 1060px
+
+.section--event--cover
+  &
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 0
+    aspect-ratio: 1280/720
+    min-height: 100vh
+  .bg
+    &
+      position: absolute
+      z-index: 1
+      width: 100%
+      height: 100%
+    > img
+      position: absolute
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+.section--event--detail 
+  &
+    padding: 40px 0
+
+.section--event--youtube
+  background: #515050
+
+.section--event--album
+  &
+    background: #000
+  @media (max-width: theme('breakpoints.md'))
+    .section__title
+      margin-bottom: 20px
+
+.section--banner
+  padding-top: 0
+
+.section--donate
+  .container--slim + .container--slim
+    margin-top: 40px
+
+.section--donate--banner
+  &
+    background: #eee9e4
+
+// .row > *
+//   margin-top: 0
+
+.row--selection
+  &
+    width: 840px
+    margin: 0 auto 40px
+    --bs-gutter-x: 40px
+    --bs-gutter-y: 40px
+
+.container > .content
+  max-width: 720px
+  margin: 0 auto
+
+.section--article--header
+  &
+    background: #eee9e4
+  .container
+    &
+      display: grid
+      grid-template-columns: repeat(2, auto)
+      grid-template-rows: repeat(3, auto)
+      gap: 20px
+    > .page--title
+      grid-column: span 2
+      grid-row: span 1
+
+.page--cover
+  .caption
+    position: absolute
+
+.page--caption
+  &
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    align-items: flex-end
+    gap: 20px
+  .buttons
+    margin-bottom: 0
+
+.section--review--header
+  &
+    position: relative
+    height: 400px
+    padding: 0
+  img
+    position: absolute
+    width: 100%
+    height: 100%
+    object-fit: cover
+  
+.section--article--steps
+  &
+    background: #f8e800
+
+.grid--steps
+  &
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-template-rows: repeat(4, auto)
+
+.grid--upload--preview
+  &
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    gap: 20px

@@ -1,0 +1,50 @@
+extends _layout.pug
+
+block vars
+  - $id = 'index'
+
+block main
+  section.section--breadcrumb
+    .container
+      .breadcrumb 
+        ul 
+          li
+            a(
+              href='/'
+            ) 首頁
+          li
+            a(
+              href="/"
+            ) 購物Q&A
+
+  section.section--rules 
+    .container
+      .section__title 
+        .title 購物Q&A
+      article.content
+        .list--faq 
+          .card--faq 
+            .question(
+              data-bs-toggle='collapse'
+              data-bs-target='#collapse--1'
+            )
+              .label 1. 有哪些贊助方式？
+              .icon 
+                i.bi.bi-caret-down-fill
+            .answer.collapse.collapsed.show(
+              id='collapse--1'
+            )
+              .wrapper
+                p 個人或企業皆歡迎透過網路直接贊助，主要提供兩種贊助方式：
+                ol 
+                  li 定期定額贊助：每月固定金額、固定日期於信用卡扣款。
+                  li 單筆贊助：贊助一次，僅會一次扣款。
+                    br
+                    | ＊企業特別贊助需求，請聯繫50+行銷部王經理。
+                    br
+                    | 信箱：vickywang@cwgv.com.tw
+                    br
+                    | 電話：（02）2517-3688#819
+        
+        
+      

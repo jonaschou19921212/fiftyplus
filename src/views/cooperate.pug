@@ -1,0 +1,62 @@
+extends _layout.pug
+
+block vars
+  - $id = 'index'
+
+block main
+  section.section--breadcrumb(
+    style="padding-bottom: 0"
+  )
+    .container
+      .breadcrumb 
+        ul 
+          li
+            a(
+              href='/'
+            ) 首頁
+          li
+            a(
+              href="/"
+            ) 合作洽談
+
+  section.section--rules 
+    .container
+      .section__title 
+        .title 合作洽談
+      article.content
+        p 請填寫以下表單，我們將盡快與您聯繫！
+          br
+          | 如有任何問題，請聯絡我們的客服專線：
+          a(
+            href='tel:0800-000-000'
+          ) 0800-000-000
+    
+    .container
+      form.form--cooperate
+        .row
+          .col-12.col-md-6
+            .form--input.is-required
+              label(for='name') 姓名
+              input#name.form--input(type='text')
+          .col-12.col-md-6
+          .col-12.col-md-6
+            .form--input.is-required
+              label(for='name') Email
+              input#name.form--input(type='text')
+          .col-12.col-md-6
+            .form--input.is-required
+              label(for='name') 手機
+              input#name.form--input(type='text')
+          .col-12
+            .form--input
+              label(for='name') 公司名稱
+              input#name.form--input(type='text')
+          .col-12
+            .form--textarea.is-required
+              label 留言
+              textarea.form--input(type='text', placeholder='欲合作事項及內容，請於此處說明，謝謝！')
+        
+      .buttons
+        .button--pill--xl
+          .label 送出表單
+      

@@ -1,0 +1,40 @@
+extends _layout.pug
+
+block vars
+  - $id = 'index'
+
+block main
+  section.section--article
+    .container
+      .caption--confirm 
+        article.article--slim
+          .subscription--title
+            .title 報名成功！
+          p 感謝您報名參加我們的課程！我們已成功收到您的報名信息。以下是一些重要信息供您參考：
+          dl 
+            dt 課程名稱：
+            dd [課程名稱]
+            dt 課程日期：
+            dd [課程日期]
+            dt 課程時間：
+            dd [課程時間]
+            dt 地點：
+            dd [課程地點]
+          h3 注意事項：
+          ul 
+            li 請於課程開始前 15 分鐘到達，方便我們進行簽到和安排。
+            li 請攜帶必要的學習材料和筆記用具。
+            li 如果您有任何特殊需求或問題，請隨時與我們聯繫。
+          p 我們期待與您在課程中見面，共同度過充實而有趣的學習時光。如有任何問題，請隨時聯繫我們的客服團隊：
+          p 
+            | 客服電話： 
+            span [客服電話]
+          p
+            | 電子郵件： 
+            span [客服電子郵件]
+          p 再次感謝您的支持，我們期待您的參與！
+          p 祝學習愉快！
+
+      .buttons
+        .button--more 
+          .label 回到課程頁

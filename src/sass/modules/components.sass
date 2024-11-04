@@ -1,0 +1,1242 @@
+
+form
+  &
+    display: grid
+    gap: 16px
+  select
+    width: 100%
+    padding: 8px
+    border: none
+    border: 1px solid rgba(0, 0, 0, 0.4)
+
+.form--buttons
+  &
+    display: flex
+    gap: 16px
+  @media (max-width: theme('breakpoints.sm'))
+    &.is-sp
+        flex-direction: column
+
+// .form--upload,
+// .form--preview
+//   &
+//     position: relative
+//     aspect-ratio: 16/9
+//     width: 100%
+//     border-radius: 8px
+//     background: rgba(#747675, .2)
+//     border: 2px solid rgba(#747675, .4)
+//     display: flex
+//     justify-content: center
+//     align-items: center
+//     overflow: hidden
+//   i
+//     font-size: 48px
+//     color: white
+//   label
+//     display: none
+//   input
+//     position: absolute
+//     width: 100%
+//     height: 100%
+//     opacity: 0
+//   .pic
+//     &
+//       position: relative
+//       width: 100%
+//       height: 100%
+//     img
+//       position: absolute
+//       width: 100%
+//       height: 100%
+//       object-fit: contain
+//   @media ( max-width: theme('breakpoints.md') )
+//     &
+//       aspect-ratio: 4/3
+    
+
+// .form--preview
+//   &
+//     aspect-ratio: unset
+//     border-radius: 
+//   .pic
+//     img
+//       position: relative
+
+.card
+  &
+    border-radius: 8px
+    border-top: 1px solid rgba(#343434, 0.2)
+    margin-bottom: 30px
+  .card__header
+    padding: 8px 16px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 16px
+    border-top: 1px solid rgba(#343434, 0.2)
+  .card__content 
+    padding: 8px 16px
+
+  
+blockqoute
+  padding: 20px
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  gap: 8px
+  border-radius: 16px
+  border: 1px solid rgba(0, 0, 0, 0.4)
+
+
+
+.text--link
+  &
+    text-decoration: underline
+    text-underline-offset: 4px
+
+
+.buttons
+  &
+    display: flex
+    justify-content: center
+    align-items: center
+  &.is-row
+    flex-direction: column
+    gap: 40px
+
+.button
+  &
+    cursor: pointer
+    display: flex
+    justify-content: space-between
+    align-items: center
+    border-radius: 30px
+    max-width: 400px
+    width: 100%
+    height: 60px
+    background: black
+    padding: 0 40px
+  .label
+    font-weight: 600
+    color: white
+  .icon
+    font-size: 24px
+    color: white
+  &.is-primary
+    max-width: 320px
+    background: #FFB904
+  
+
+
+
+.input--group
+  &
+    display: grid
+    grid-template-columns: 32px 40px 32px
+  > *
+    border: 1px solid rgba(52, 52, 52, 0.50)
+  > * + *
+    border-left: none
+  input
+    text-align: center
+    border-radius: 0
+    height: 32px
+    margin-bottom: 0
+    font-size: 16px
+    line-height: 1
+  .button--sm
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 32px
+    height: 32px
+
+
+.error--message,
+.check--message
+  &
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 8px
+    margin-bottom: 10px
+  .icon
+    &
+      display: inline-flex
+    i
+      font-size: 24px
+  .text
+    font-size: 20px
+    font-style: normal
+    font-weight: 600
+    line-height: 1.2
+
+.error--message
+  .icon
+    i
+      color: #EC2024
+  .text
+    color: #F00
+
+.check--message
+  .icon
+    i
+      color: #3AB54A
+  .text
+    color: #13670B
+
+
+// .button--pill--xxl
+//   &
+//     display: flex
+//     justify-content: center
+//     align-items: center
+//     width: 450px
+//     min-height: 100px
+//     border-radius: 50px
+//     background: var(--theme-color)
+//     cursor: pointer
+//   .label
+//     +fontSize(25px)
+//     font-family: 'Noto Sans TC', sans-serif
+//     display: flex
+//     justify-content: center
+//     align-items: center
+//     line-height: 1
+//     font-weight: 600
+//     transition: all .3s ease
+
+
+.button--pill--xl,
+.button--pill--lg
+  &
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 180px
+    min-height: 48px
+    border-radius: 38px
+    background: var(--theme-color)
+    cursor: pointer
+  .label
+    font-family: "Noto Serif TC", serif
+    +fontSize(16px)
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 174px
+    min-height: 44px
+    border-radius: 30px
+    border: 2px solid #fff
+    line-height: 1
+    font-weight: 600
+    transition: all .3s ease
+  &:hover
+    .label
+      background: white
+  &.is-invert
+    &
+      background: #ebe6e1
+      border: 1px solid #515050
+    .label
+      border: none
+
+.button--pill--xl
+  &
+    width: 240px
+    height: 60px
+  .label
+    width: 232px
+    height: 52px
+
+.button--pill--xs
+  &
+    cursor: pointer
+    display: flex
+    justify-content: center
+    align-items: center
+    width: unset
+    min-height: 30px
+    border-radius: 16px
+    border: 1px solid #515050
+    background: #efeae5
+    padding: 5px 11px 7px
+    transition: all .3s ease
+  .label
+    font-family: "Noto Serif TC", serif
+    +fontSize(14px)
+    line-height: 1
+    font-weight: 500
+    transition: all .3s ease
+    white-space: nowrap
+    // transform: translateY(-2px)
+  &.is-outline
+    &
+      background: white
+      border: 1px solid #515050
+    .label
+      font-weight: 700
+    &:hover
+      &
+        background: var(--theme-color)
+        border: 1px solid var(--theme-color)
+      .label
+        color: black
+  &.is-invert
+    &
+      background: #000
+    .label
+      color: white
+  &:hover
+    &
+      border-color: #515151
+      background: #515151
+    .label
+      color: var(--theme-color)
+
+.panel--search,
+.panel--search--mobile
+  label
+    display: flex
+    cursor: pointer
+  input[type='checkbox']
+    appearance: none
+  input[type='text']
+    &
+      font-family: 'Noto Sans TC', sans-serif
+      width: 0
+      transition: all .3s ease
+      border-bottom: 1px solid #000
+      background: transparent
+    &:focus
+      outline: none
+  // input:checked + input[type='text']
+  //   width: 120px
+
+.panel--search
+  &:hover
+    input[type='text']
+      padding: 4px 8px
+      width: 160px
+
+.panel--search
+  input[type='text']
+    &:not(:placeholder-shown)
+      padding: 4px 8px
+      width: 160px
+
+.panel--search--mobile,
+.panel--search--element
+  &
+    display: flex
+    justify-content: flex-end
+    padding: 0 20px
+    margin: 16px 0
+  label
+    display: flex
+    width: 100%
+    padding: 0 8px 0 8px
+    border-radius: 20px
+    overflow: hidden
+    border: 1px solid #515050
+  input[type='text']
+    &
+      width: 100%
+      border-bottom: none
+    &:focus
+      outline: none
+  .icon
+    &
+      width: 40px
+      aspect-ratio: 1/1
+      display: flex
+      justify-content: center
+      align-items: center
+    > *
+      width: 28px
+
+
+.card--cover--xl
+  &
+    +card--set--basic
+    position: relative
+    display: block
+  > .pic
+    &
+      margin-bottom: 0
+    &::before
+      display: none
+  > .caption
+    &
+      position: absolute
+      z-index: 2
+      width: 100%
+      bottom: 0
+      padding: 16px 20px 20px
+      margin-bottom: 0
+      background: rgba(white, .7)
+    h3
+      +fontSize(28px)
+  @media (max-width: theme('breakpoints.md'))
+    > .caption
+      &
+        position: absolute
+        top: unset
+        bottom: 0
+        padding: 10px 20px
+        height: unset
+        background: rgba(white, .7)
+      h3
+        +fontSize(20px)
+
+.card--cover
+  &
+    +card--set--basic
+    position: relative
+  > .pic
+    margin-bottom: 10px
+  @media (max-width: theme('breakpoints.lg'))
+    &
+      display: grid
+      grid-template-columns: 1fr 200px
+      gap: 20px
+      align-items: center
+      padding-bottom: 20px
+      border-bottom: 1px solid #515050
+    > .pic
+      order: 2
+      margin-bottom: 0
+    > .caption
+      order: 1
+  @media (max-width: theme('breakpoints.md'))
+    &
+      grid-template-columns: 1fr 120px
+    &:last-child
+      padding-bottom: 0
+      border-bottom: none
+    .caption
+      h3
+        +fontSize(18px)
+      
+    
+
+.card--album
+  &
+    +card--set--basic
+    position: relative
+  > .pic
+    &::before
+      display: none
+  > .caption
+    &
+      position: absolute
+      z-index: 2
+      width: 100%
+      bottom: 0
+      padding: 20px 20px 10px
+      background: rgba(black, .6)
+    h3
+      color: white
+
+
+.card--event,
+.card--event--md,
+.card--event--xl
+  &
+    +card--set--basic
+  .caption
+    &
+      flex-direction: column
+      justify-content: space-between
+      padding-bottom: 16px
+    h4
+      &
+        min-height: 3.7em
+        padding-bottom: 8px
+    .info
+      color: white
+  @media (max-width: theme('breakpoints.md'))
+    &:first-child
+      .caption p
+        font-size: 24px
+        line-height: 1.4
+      .info
+        font-size: 18px
+
+.card--event--md
+  .caption
+    &
+      border-bottom: 1px solid #f6e600
+    p
+      +max-line-height(2)
+
+.card--event
+  .pic
+    margin-bottom: 0
+  .caption
+    &
+      padding: 8px 16px 16px
+      background: #000
+      color: white
+      height: 7rem
+    h3
+      margin-bottom: 0
+
+.card--event--md
+  &
+    position: relative
+  .status
+    position: absolute
+    z-index: 2
+    top: 0
+    left: 0
+    padding: 8px
+  .caption
+    h3
+      margin-bottom: 20px
+
+
+.card--event--xl
+  &
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+  .pic
+    &
+      grid-column: span 2
+      margin-bottom: 0
+    &::before
+      display: none
+  .caption
+    &
+      padding: 32px
+      display: flex
+      align-items: center
+      grid-column: span 1
+      color: white
+      background: #000
+    h3
+      +fontSize(28px)
+  &.is-sp
+    .caption
+      &
+        padding-top: 0
+        padding-bottom: 0
+      h3
+        +fontSize(28px)
+        -webkit-line-clamp: unset
+        padding-top: 32px
+        border-top: 1px solid #f6e600
+  @media (max-width: theme('breakpoints.lg'))
+    &
+      display: block
+    .pic
+      grid-column: span 1
+      margin-bottom: 0
+    .caption
+      padding: 16px
+      grid-column: span 1
+
+.swiper--banner--x
+  &
+    margin-bottom: 180px
+  swiper-slide
+    &
+      opacity: .4
+      max-width: 980px
+    &.swiper-slide-active
+      opacity: 1
+  // @media (max-width: theme('breakpoints.xl'))
+  //   swiper-slide
+  //     max-width: 800px
+  // @media (max-width: theme('breakpoints.lg'))
+  //   &
+  //     margin-bottom: 120px
+
+.swiper-pagination--x
+  &
+    position: absolute
+    z-index: 1100
+    left: 50% !important
+    bottom: 20px !important
+    transform: translateX(-50%)
+    z-index: 1100
+    max-width: 940px
+    display: grid
+    gap: 8px
+    grid-template-columns: repeat(7, 1fr)
+    padding: 20px
+    margin: 0 auto
+    width: 100%
+  .swiper-pagination-bullet
+    &
+      border-radius: 0
+      width: 100%
+      height: 4px
+      background: rgba(white, .5)
+    &.swiper-pagination-bullet-active
+      background: var(--theme-color)
+  @media (max-width: theme('breakpoints.xl'))
+    max-width: 760px
+  @media (max-width: theme('breakpoints.md'))
+    &
+      bottom: 0 !important
+
+.swiper-navigation
+  .swiper-button-prev,
+  .swiper-button-next
+    &
+      position: absolute
+      z-index: 2
+      top: 50%
+      transform: translateY(-50%)
+      width: 60px
+      height: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+      filter: grayscale(0)
+      transition: all .3s ease
+      cursor: pointer
+    &:hover
+      filter: grayscale(1)
+  .swiper-button-prev
+    left: 0
+  .swiper-button-next
+    right: 0
+  // @media (max-width: theme('breakpoints.xl'))
+  //   max-width: 800px
+  @media (max-width: theme('breakpoints.md'))
+    .swiper-button-prev,
+    .swiper-button-next
+      top: 8px
+      width: 24px
+    .swiper-button-prev
+      right: unset
+      left: 4px
+    .swiper-button-next
+      left: unset
+      right: 4px
+  
+.swiper--banner
+  .swiper-pagination
+    &
+      position: absolute
+      z-index: 9
+      bottom: 0
+      padding: 20px 200px
+      display: grid
+      grid-template-columns: repeat(3, 1fr)
+      justify-content: center
+      align-items: center
+      width: 100%
+      margin: 0 auto
+      gap: 8px
+    .swiper-pagination-bullet
+      &
+        display: block
+        width: 100%
+        height: 6px
+        border-radius: 3px
+        transition: all .3s ease
+        background: rgba(#dfdfdf, .5)
+      &.swiper-pagination-bullet-active
+        background: #f5e500
+      
+.swiper--banner,
+.swiper--album,
+.swiper--mobile
+  position: relative
+
+.swiper--banner
+  @media (max-width: theme('breakpoints.md'))
+    .swiper-navigation
+      .swiper-button-prev,
+      .swiper-button-next
+          top: calc(50% - 40px)
+
+.swiper--mobile
+  @media (max-width: theme('breakpoints.lg'))
+    .swiper-navigation
+      .swiper-button-prev,
+      .swiper-button-next
+          top: calc(50%)
+
+
+
+.swiper--snippet
+  &
+    position: absolute
+    width: 100%
+    height: 100%
+    overflow: hidden
+  swiper-container
+    max-width: 100%
+  swiper-slide
+    position: relative
+  .swiper-navigation
+    .swiper-button-disabled
+      display: none !important
+    .swiper-button-prev,
+    .swiper-button-next
+      &
+        position: absolute
+        z-index: 2
+        width: 100%
+        height: 40px
+        transform: none
+        display: flex
+        justify-content: center
+        align-items: center
+        background: rgba(black, .002)
+      > *
+        width: 32px
+    .swiper-button-next
+      &
+        top: unset
+        bottom: 0
+      > *
+        transform: rotate(90deg)
+    .swiper-button-prev
+      &
+        top: 0
+        left: 0
+      > *
+        transform: rotate(90deg)
+    
+
+.swiper--album
+  .swiper-navigation
+    .swiper-button-prev
+      left: unset
+      right: 100%
+    .swiper-button-next
+      right: unset
+      left: 100%
+      
+#App
+  position: fixed
+  left: -999px
+
+.button--go-top
+  &
+    cursor: pointer
+    width: 40px
+    aspect-ratio: 1/1
+    border-radius: 50%
+    position: fixed
+    z-index: 9
+    bottom: 16px
+    right: 16px
+    background: #000
+    transform: translateY(150%)
+    transition: all .3s ease
+    border: 1px solid #898989
+  &.is-active
+    transform: translateY(0)
+  > .icon
+    &
+      width: 40px
+      aspect-ratio: 1/1
+      display: flex
+      justify-content: center
+      align-items: center
+    i
+      text-align: center
+      font-size: 20px
+      line-height: 1
+      color: var(--theme-color)
+
+.banner
+  &
+    position: relative
+    max-width: 1000px
+    margin: 0 auto
+    display: flex
+    justify-content: center
+    align-items: center
+  > img
+    max-width: 100%
+
+.button--more,
+.button--more--sm
+  &
+    position: relative
+    cursor: pointer
+    width: 100%
+    max-width: 320px
+    height: 70px
+    display: flex
+    justify-content: center
+    align-items: center
+    border: 1px solid #515050
+    background: white
+  &::before
+    position: absolute
+    top: 0
+    left: 0
+    content: ''
+    width: 100%
+    height: 0
+    background: #F8E800
+    transition: all .4s ease
+  .label
+    font-family: "Noto Serif TC", serif
+    +fontSize(18px)
+    position: relative
+    z-index: 2
+    font-weight: 600
+    letter-spacing: 1rem
+    padding-left: 1rem
+  .icon
+    &
+      position: relative
+      z-index: 2
+      width: 40px
+      aspect-ratio: 1/1
+      display: flex
+      justify-content: center
+      align-items: center
+    i
+      +fontSize(24px)
+      line-height: 1
+  &.is-invert
+    &
+      background: var(--theme-color)
+  &:hover
+    &:before
+      height: 100%
+  @media (max-width: theme('breakpoints.md'))
+    &
+      max-width: 300px
+      height: 60px
+    .label
+      +fontSize(18px)
+    .icon
+      &
+        width: 32px
+      i
+        +fontSize(18px)
+
+.button--more--sm
+  &
+    border-radius: 3px
+    max-width: 240px
+    height: 50px
+  .label
+    letter-spacing: .5rem
+    padding-left: .5rem
+
+.banner--weekly,
+.banner--donate
+  &
+    position: relative
+    margin: 40px 0
+  img
+    width: 100%
+  form
+    position: absolute
+    left: 0
+    bottom: 32px
+    width: 100%
+    display: flex
+    justify-content: center
+    padding: 0 20px
+  .input-group
+    &
+      max-width: 540px
+      margin: 0 auto
+      border-radius: 4px
+      overflow: hidden
+      flex-wrap: nowrap
+    input[type='text']
+      appearance: none
+      width: 100%
+      height: 44px
+      padding: 4px 16px
+      font-size: 18px
+      font-family: 'Noto Sans TC', sans-serif
+    button
+      &
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 80px
+        height: 44px
+        background: #f0ea3c
+      .label
+        font-family: 'Noto Sans TC', sans-serif
+        font-size: 18px
+
+.breadcrumb
+  ul
+    &
+      margin: 0
+      display: flex
+      justify-content: flex-start
+    li
+      &
+        font-family: "Noto Serif TC", serif
+        +fontSize(16px)
+        list-style: none
+        font-weight: 600
+      &:hover
+        font-weight: 900
+    li:not(:first-child):before
+      content: '/'
+      margin: 0 8px
+
+      
+
+.tab--course
+  &
+    max-width: 680px
+    margin: 0 auto
+    display: flex
+    justify-content: center
+    gap: 16px
+    margin-bottom: 40px
+
+.card--course--xl
+  &
+    +card--set--basic
+  .pic
+    &
+      aspect-ratio: 2/1
+      margin-bottom: 0
+    &::before
+      display: none
+
+.buttons.is-cart
+  &
+    width: 133px
+      
+.button--cart,
+.button--cart--xs
+  &
+    cursor: pointer
+    display: flex
+    align-items: center
+    padding-right: 10px
+    height: 40px
+    background: #f8e800
+    overflow: hidden
+    transition: all .3s ease
+  .icon
+    &
+      min-width: 40px
+      height: 40px
+      aspect-ratio: 1/1
+      display: flex
+      justify-content: center
+      align-items: center
+    i
+      font-size: 24px
+      line-height: 1
+      transition: all .3s ease
+  .label
+    white-space: nowrap
+    font-size: 16px
+    font-weight: 600
+    transition: all .3s ease
+  &:hover
+    &
+      background: #b7b8b8
+    .label,
+    .icon
+      color: white
+
+.button--cart--xs
+  &
+    width: 60px
+    padding-right: 0
+    background: #b7b8b8
+    display: flex
+    justify-content: center
+  .icon
+    color: white
+    transition: all .5s ease
+  .label
+    display: none
+  &:hover
+    &
+      width: 60px
+      background: #f8e800
+    .icon
+      color: black
+
+.card--selection
+  &
+    border: 1px solid #515050
+  .caption
+    display: flex
+    flex-direction: column
+    gap: 10px
+    padding: 20px
+  .footer
+    display: flex
+    justify-content: space-between
+  .buttons
+    margin-bottom: 0
+
+.panel--donate,
+.panel--latest,
+.panel--review
+  &
+    position: sticky
+    top: 80px
+    background: #f8e800
+    border: 1px solid #222
+    padding: 20px
+
+.panel--latest,
+.panel--review
+  background: white
+
+.panel--review
+  &
+    padding: 0
+  .title
+    margin: 10px 0 20px
+  .caption
+    padding: 0 20px
+    margin-bottom: 20px
+  .buttons
+    padding: 20px
+    background: #eee9e4
+    margin-bottom: 0
+  
+
+.card--faq
+  &
+    display: flex
+    flex-direction: column
+  .question
+    &
+      cursor: pointer
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: 10px 20px
+      border-radius: 8px
+      background: #eee9e4
+    .icon
+      display: flex
+      justify-content: center
+      align-items: center
+  .answer
+    .wrapper
+      margin-top: 10px
+      padding: 10px 20px 20px
+      border-radius: 8px
+      background: rgba(#b7b8b8, .1)
+  .question:not(.collapsed)
+    .icon
+      > i
+        transform: rotate(180deg)
+    
+.form--cooperate
+  &
+    background: rgba(#b7b8b8, .1)
+    padding: 30px 80px
+    border-radius: 30px
+    margin-bottom: 40px
+  .row
+    row-gap: 20px
+
+.panel--subscription
+  &
+    background: #eee9e4
+    padding: 40px 60px 40px
+    border: 1.5px solid #f8e800
+    margin-bottom: 40px
+  .buttons
+    margin-bottom: 0
+    gap: 40px
+  
+.dropdown--article
+  &
+    width: 100%
+    --bs-dropdown-border-width: var(--bs-border-width)
+    --bs-dropdown-border-color: rgba(0, 0, 0, 0.15)
+    margin-bottom: 20px
+  .label
+    padding: 10px
+    border: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color)
+  .dropdown-menu
+    width: 100%
+    border-radius: 0
+    border-top: none
+    --bs-dropdown-font-size: 100%
+
+.article--player 
+  &
+    display: flex
+    align-items: center
+    gap: 10px
+    margin-bottom: 20px
+
+.card--review 
+  &
+    display: grid
+    align-items: center
+    grid-template-columns: 400px 1fr
+    grid-template-rows: auto auto
+    gap: 40px
+    padding-bottom: 40px
+    border-bottom: 2px solid var(--theme-color)
+    margin-bottom: 40px
+  &:last-child
+    padding-bottom: 0
+    border-bottom: none
+  .pic
+    grid-column: span 1
+    grid-row: span 2
+    margin-bottom: 0
+  .caption
+    &
+      display: flex
+      flex-direction: column
+      gap: 10px
+    .catalog
+      margin-bottom: 0
+
+.card--review--spec
+  &
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(2, auto)
+    justify-content: flex-start
+    align-items: flex-start
+    row-gap: 20px
+    background: rgba(#b7b8b8, .1)
+    margin-bottom: 40px
+  .pic
+    &
+      position: relative
+      aspect-ratio: 1/1
+      grid-column: span 1
+      grid-row: span 1
+      margin-bottom: 0
+    img
+      transform: translate(-20px, -20px)
+  .status
+    &
+      position: relative
+      grid-column: span 1
+      grid-row: span 1
+    .card--review--status
+      transform: translate(-20px, -20px)
+  .caption
+    &
+      position: relative
+      grid-column: 2 / span 1
+      grid-row: 1 / span 2
+    > article
+      padding: 40px 30px 40px 20px
+    
+
+.card--review--status
+  &
+    display: grid
+    grid-template-columns: 1fr 1fr
+    background: white
+    padding: 10px
+    border-radius: 20px
+    border: 1px solid #000
+  .col
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding: 0 10px
+  .col + .col
+    border-left: 2px solid var(--theme-color)
+
+.tab--review
+  ul.nav
+    padding: 0
+    margin: 0
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 10px
+  li.nav-item
+    margin: 0
+    list-style: none
+  a.nav-link
+    &
+      font-family: "Noto Serif TC", serif
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      height: 65px
+      padding: 10px 20px
+      border-top-left-radius: 20px
+      border-top-right-radius: 20px
+      background: #eee9e4
+      color: #515050
+      font-weight: 700
+    &.active
+      background: var(--theme-color)
+      color: #000
+
+.tab--review + .tab-content
+  &
+    padding: 40px
+    border: 4px solid var(--theme-color)
+
+.card--upload--preview
+  &
+    display: flex
+    justify-content: center
+    align-items: center
+    background: white
+    aspect-ratio: 16/9
+    border-radius: 2px
+    border: 1px solid #515050
+  i
+    color: #515050
+    font-size: 48px
+    line-height: 1
+
+.card--campaign
+  &
+    background: white
+    padding: 40px
+    border: 1px solid #515050
+    display: grid
+    grid-template-columns: 70% 1fr
+    gap: 40px
+    margin-bottom: 40px
+  .caption
+    &
+      display: grid
+      grid-template-rows: 1fr auto auto
+      gap: 40px
+    .title
+      +fontSize(24px)
+      font-weight: 600
+      color: #515151
+      font-family: "Noto Serif TC", serif
+    .buttons
+      margin-bottom: 0
+
+
+.dl--campaign--detail
+  &
+    border-top: 2px solid #f8e800
+    padding-top: 40px
+    display: grid
+    grid-template-columns: 30px 1fr
+    gap: 10px
+  .icon
+    &
+      width: 30px
+      height: 30px
+      color: white
+      background: #000
+      display: flex
+      justify-content: center
+      align-items: center
+      border-radius: 50%

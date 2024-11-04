@@ -1,0 +1,15 @@
+{{#createPlaceholder}}
+{{#items}}
+.{{prefix}}{{basename}}
+  &
+    position: relative
+    display: inline-block
+    max-width: 100%
+    width: calc({{width}}px*.5)
+    height: auto
+    aspect-ratio: {{width}}/{{height}}
+  > *
+    max-width: 100%
+
+{{/items}}
+{{/createPlaceholder}}

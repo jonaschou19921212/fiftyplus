@@ -1,0 +1,101 @@
+extends _layout.pug
+
+block vars
+  - $id = 'eventDetail'
+
+block main
+  section.section--event--cover 
+    .bg
+      img(
+        data-src=`${getLoremSlide()}`
+      ).lazyload
+    .caption--event--cover 
+      .text 
+        h1 健康大未來！預約不生病的老後
+        p 如果活到100歲，還可以不病、不痛、不失能，盡情做自己喜歡的事，那會是什麼樣的世界？隨著醫療科技的進步，這不是天方夜譚，而是我們即將迎接的未來。如何在病兆發生之前，就揪出疾病對症下藥？出不了門的長者，怎麼更便利的看病？各種智慧裝置，如何幫助我們即時掌握健康數據、優化生活型態？未來的醫療保險，怎麼助我們更積極管理健康？跟著《50+》一起探索未來的趨勢！
+  .section--event--detail 
+    .container 
+      article.article--slim 
+        p 過往，人們對於老年總是聞之色變：隨著年紀增長，器官慢慢退化、疾病上身、自主能力喪失……。然而，醫療與科技的進步，卻改寫了這看似不可逆的命運。
+
+        .pic--wrapper 
+          .pic 
+            img(
+              data-src=`${getLoremPic()}`
+            ).lazyload
+          .caption 未來的醫療，將不再是「治病」，而是「預防」。台大醫院老年醫學科主任陳建仁表示，現在的醫療科技已經能夠透過基因檢測，提前發現疾病的風險，並提供個人化的治療方案。
+
+        p 除了治病，飲食也是如此。中研院生醫所特聘研究員潘文涵指出，即使不做基因檢測，營養師只要看體檢報告，能提供個案「精準營養」的飲食介入建議。
+
+        p 例如，同樣是50歲面臨更年期的女性，膽固醇高的人需要攝取多元不飽和脂肪酸、糖尿病得避免精緻澱粉、糖。有高血壓的話，除了前述建議，還要控制食物中的鈉、鉀。根據個人的健康狀況，提供更客製化的飲食指南。
+
+  section.section--event--youtube 
+    .container
+      article.article--slim
+        .youtube--wrapper 
+          | <iframe src="https://www.youtube.com/embed/QtnXcRULS4s?si=EXiVhGiUgqFo7h02" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  section.section--event--album 
+    .container
+      .section__title.is-sp
+        .title 圖片故事
+      .grid--snippet
+        .col
+          .card--snippet--preview
+            .pic
+              img
+            .caption
+              h3
+        .col 
+          .swiper--snippet
+            .swiper-navigation 
+              .swiper-button-prev
+                .chevron--left
+              .swiper-button-next
+                .chevron--right
+            swiper-container(
+              init='false'
+            )
+              each item, index in [0, 1, 2, 3, 4, 5, 6, 7]
+                swiper-slide
+                  .card--snippet(
+                    onclick='gotoSnippet(this)'
+                  )
+                    .pic
+                      img(
+                        src=`${getLoremSlide()}`
+                      ).lazyload
+                    .caption
+                      h3
+                        != getLoremText()
+                    .icon 
+                      i.bi.bi-plus
+
+  section.section--article
+    each catalog in ['人物', '健康', '心靈']
+      .container
+        .section__title 
+          .title
+            != catalog
+      .container--slim
+        .row.row--article
+          each item, index in [0, 1, 2, 3, 4, 5]
+            .col-md-6
+              .card--article
+                a.pic(
+                  href="./article.html"
+                )
+                  img(
+                    data-src=`./assets/images/article--${index%5+1}.jpg`
+                  ).lazyload
+                .info 
+                  .date 2024.09.01
+                  .view
+                    .icon
+                      i.bi.bi-eye
+                    .label 1000
+                a.caption(
+                  href="./article.html"
+                )
+                  h3
+                    != getLoremText()

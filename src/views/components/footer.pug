@@ -1,0 +1,43 @@
+footer
+  .container
+    .grid--footer 
+      .logo--row 
+        .logo--white
+        .logo--crop
+      .col--siteinfo
+        nav.nav--siteinfo
+          ul
+            each item, index in ["遠見雜誌", "天下文化", "未來親子學習平台", "哈佛商業評論"]
+              li
+                a(
+                  href
+                )
+                  != item
+        .siteinfo
+          | Copyright © 2024 遠見天下文化出版股份有限公司
+          br
+          | 讀者服務部電話：(02)2662-0012
+          br
+          | 服務時間：週一 ~ 週五 9:00～12:30；13:30～17:00
+          br
+          | 服務信箱：
+          a(
+            href='mailto:50plus@cwgv.com.tw'
+          ) 50plus@cwgv.com.tw
+      .col--footer
+        nav.nav--footer
+          ul
+            each item, index in footer
+              li
+                a(
+                  href=`${item.id}.html`
+                )
+                  != item.title
+      .col--sns
+        nav.nav--sns
+          ul
+            each item, index in ["facebook", "line", "instagram", "youtube"]
+              li
+                a(
+                  class=`button--${item}`
+                )

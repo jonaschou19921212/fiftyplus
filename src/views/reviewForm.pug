@@ -1,0 +1,98 @@
+extends _layout.pug
+
+block vars
+  - $id = 'index'
+
+block main
+  section.section--breadcrumb
+    .container
+      .breadcrumb 
+        ul 
+          li
+            a(
+              href='/'
+            ) 首頁
+          li
+            a(
+              href=""
+            ) 評鑑
+          li
+            a(
+              href=""
+            ) 亞培安素-香草減甜版
+          li
+            a(
+              href=""
+            ) 心得回填
+  
+  section.section--review--header 
+    img(
+      src="./assets/images/pic--review.jpg"
+    )
+
+  section.section--review--body 
+    .container
+      .review--title
+        .title 亞培安素-香草減甜版
+      .section__title.is-form
+        .title 心得回填
+        .required--text
+          span ＊全區皆為必填欄位
+      form.form--review
+        .form--caption
+          span 個人資料
+          small （資料僅供本次產品評鑑聯繫與寄送，不會外流做其他用途，敬請放心填寫。）
+        .row
+          .col-12.col-md-6
+            .form--input.is-required
+              label(for='name') 姓名
+              input#name.form--input(type='text', placeholder='請輸入姓名')
+          .col-12.col-md-6
+            .form--input.is-required
+              label 手機
+                small （請留下手機，方便入選後與您聯繫）
+              input
+          .col-12
+            .form--textarea.is-required
+              label 回填心得
+                small （請簡述您試用後的心得，字數需至少300字）
+              textarea
+          .col-12
+            .form--upload 
+              label 上傳照片
+              ul 
+                li 請上傳至少3張、至多4張圖片。
+                li 請盡量在光線明亮處，拍攝清楚的產品照。
+                li 請發揮創意，拍攝您與產品美麗的照片吧！
+              .grid--upload--preview
+                each item, index in [0, 1, 2, 3]
+                  .card--upload--preview
+                    i.bi.bi-image
+          .col-12
+            .form--input
+              label 評分
+                small （5顆星為高分，1顆星為低分，請依使用感受選填評分）
+
+          .col-12
+            each rating, i in [0, 1, 2, 3, 4]
+              .form--rating
+                .no 
+                  =`${ i + 1 }.`
+                .q 
+                  != getLoremText()
+                .rating--group
+                  label
+                    each item, index in [0, 1, 2, 3, 4]
+                      input(type='radio', name=`rating${ i + 1 }`, value=`${ index + 1 }`)
+                    .stars
+                      each item, index in [0, 1, 2, 3, 4]
+                        .icon
+                          i.bi.bi-star-fill
+        
+      .buttons
+        a.button--pill--xl(
+          href="./reviewStep4.html"
+        )
+          .label 送出申請
+
+          

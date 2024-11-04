@@ -1,0 +1,55 @@
+extends _layout.pug
+
+block vars
+  - $id = 'index'
+
+block main
+  section.section--breadcrumb
+    .container
+      .breadcrumb 
+        ul 
+          li
+            a(
+              href='/'
+            ) 首頁
+          li
+            a(
+              href=""
+            ) 搜尋：說話
+  
+  section.section--article
+    .container
+      //- .panel--search--element 
+      //-   label
+      //-     a.icon(
+      //-       href='./search.html'
+      //-     )
+      //-       .icon--search
+      //-     input(
+      //-       type='text'
+      //-       placerholder='輸入搜尋文字'
+      //-     )
+      .section__title.is-left.is-small
+        .title 共有 88 篇關於 說話 的結果
+    .container--slim
+      .row.row--article
+        each item, index in ['人物', '健康', '心靈', '人物', '健康', '心靈', '人物', '健康', '心靈']
+          .col-md-6
+            .card--article
+              a.pic(
+                href="./article.html"
+              )
+                img(
+                  data-src=`./assets/images/article--${index%5+1}.jpg`
+                ).lazyload
+              .info 
+                .date 2020.01.01
+                .view
+                  .icon
+                    i.bi.bi-eye
+                  .label 1000
+              a.caption(
+                href="./article.html"
+              )
+                h3
+                  != getLoremText()

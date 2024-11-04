@@ -1,0 +1,26 @@
+<form class="form">
+  <div class="form--input">
+    <div class="label">公司名稱</div><input type="text" name="corp" placeholder="請填寫公司名稱" style="color:black" />
+  </div>
+  <div class="form--input">
+    <div class="label">統一編號</div><input type="text" name="Q1" placeholder="請填寫統一編號"
+      onKeyUp="value=value.replace(/[^0123456789]/g,'')" maxlength="8" style="color:black" />
+  </div>
+  <div class="form--input">
+    <div class="label">聯絡人</div><input type="text" name="name" placeholder="請填寫聯絡人姓名" style="color:black" />
+  </div>
+  <div class="form--input">
+    <div class="label">電話</div><input type="text" name="office_tel" placeholder="請填寫手機號碼或連絡電話及分機" style="color:black" />
+  </div>
+  <div class="form--input">
+    <div class="label">信箱</div><input type="text" name="email" placeholder="請填寫常用信箱以利寄送通知" style="color:black" />
+  </div>
+  <div class="form--input">
+    <div class="label"></div>
+    <div class="text">送出表單，即表示您已閱讀並同意遠見天下文化事業群 <a href="https://www.gvm.com.tw/privacy_policy" target="_blank">隱私權政策</a>
+      及 <a href="https://www.gvm.com.tw/privaterights" target="_blank">個資保護聲明</a> 之所有內容。</div>
+  </div>
+  <div class="buttons"> <a class="button--cta" onclick="final();" href="javascript:void(0);">
+      <div class="label">送出</div>
+    </a></div>
+</form>

@@ -1,0 +1,496 @@
+.drawer
+  &
+    position: fixed
+    top: 60px
+    left: 0
+    // display: none
+    flex-direction: column
+    width: 100%
+    height: calc(100vh - 56px)
+    overflow: auto
+    background: white
+    transform: translateX(100%)
+    transition: all 0.3s ease
+    padding-bottom: 120px
+  &.is-active
+    transform: translateX(0)
+  .buttons
+    padding: 24px 0
+    margin-bottom: 0
+  .nav--sns,
+  .grid--qlinks
+    margin-bottom: 30px
+  // @media (max-width: theme('breakpoints.lg'))
+  //   &
+  //     position: fixed
+  //     display: flex
+  //     transform: translateX(-100%)
+  //     transition: all 0.3s
+  //   &.is-active
+  //     transform: translateX(0)
+
+header
+  &
+    position: relative
+    z-index: 9
+  > .container
+    width: 100%
+    max-width: 100%
+    padding: 0
+  &.is-active
+    .header--fixed
+      box-shadow: 0 0 16px rgba(black, .1)
+      transform: translateY(0)
+  // @media (max-width: theme('breakpoints.lg'))
+  //   &
+  //     height: 56px
+
+.buttons--action
+  &
+    display: flex
+    align-items: center
+    gap: 8px
+    padding: 0 20px 16px
+  &.is-flex-start
+    justify-content: flex-start
+  &.is-flex-end
+    justify-content: flex-end
+
+.logo--wrapper
+  &
+    display: flex
+    justify-content: center
+    width: 100px
+    height: 100px
+    background: var(--theme-color)
+  > .logo--black
+    max-width: 70px
+
+.header--desktop
+  &
+    padding: 0
+    width: 100%
+    padding: 0
+    transition: all 0.3s ease
+    background: white
+  > section
+    &
+      padding: 0
+      border-bottom: 1px solid #515050
+    > .container
+      height: 70px
+      display: grid
+      grid-template-columns: 1fr 100px 1fr
+      gap: 20px
+      align-items: center
+      justify-content: space-between
+  .logo--wrapper
+    transform: translateY(12px)
+  .logo--h
+    width: 235px
+  @media (max-width: theme('breakpoints.lg'))
+    &
+      display: none
+
+.header--nav
+  &
+    padding: 0
+    width: 100%
+    background: white
+  > .container
+    display: grid
+    grid-template-columns: 1fr 100px 1fr
+    gap: 20px
+  @media (max-width: theme('breakpoints.lg'))
+    &
+      display: none
+
+.header--desktop + .header--nav
+  &::after
+    content: ''
+    display: block
+    width: 100%
+    height: 10px
+
+.menu--toggle
+  &
+    cursor: pointer
+    width: 44px
+    aspect-ratio: 1/1
+    display: flex
+    justify-content: center
+    align-items: center
+  > .icon
+    &
+      width: 44px
+      height: 44px
+      position: relative
+    > span
+      position: absolute
+      top: 50%
+      left: 50%
+      width: 24px
+      height: 2px
+      background: #000
+      border-radius: 2px
+      transform: translate(-50%, -50%)
+      transition: all 0.3s
+      transform-origin: center
+    > span:nth-child(1)
+      transform: translate(-50%, calc(-50% - 6px))
+    > span:nth-child(2)
+      transform: translate(-50%, calc(-50% + 6px))
+    > span:nth-child(3)
+      transform: translate(-50%, -50%)
+  &.is-active
+    > .icon
+      > span:nth-child(1)
+        transform: translate(-50%, -50%) rotate(45deg)
+      > span:nth-child(2)
+        transform: translate(-50%, -50%) rotate(-45deg)
+      > span:nth-child(3)
+        opacity: 0
+
+.header--mobile
+  &
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 9
+    width: 100%
+    transition: all 0.3s
+    background: white
+    border-bottom: 1px solid #ebe6e1
+  &.is-active
+    transform: translateX(0)
+  > .container
+    padding: 0
+    display: grid
+    grid-template-columns: 60px 1fr 60px
+    align-items: center
+    max-width: 100%
+    height: 60px
+  .menu--toggle
+    &
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 60px
+      height: 60px
+      aspect-ratio: unset
+    .icon
+      cursor: pointer
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 44px
+      height: 44px
+  .buttons
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    margin-bottom: 0
+  .logo--wrapper
+    &
+      position: relative
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 60px
+      height: 60px
+    > *
+      width: calc(100% - 16px)
+  .logo--h
+    max-width: 200px
+  @media (min-width: theme('screens.lg'))
+    &
+      display: none
+
+.header--nav
+  > ul,
+  > .container > ul
+    &
+      width: 100%
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin: 0
+    > li
+      &
+        position: relative
+        width: 100%
+        list-style: none
+        transition: all 0.3s ease
+      a
+        &
+          font-family: 'Noto Serif TC', serif
+          cursor: pointer
+          position: relative
+          width: 100%
+          height: 40px
+          display: flex
+          justify-content: center
+          align-items: center
+        .label
+          +fontSize(16px)
+          position: relative
+          z-index: 2
+          font-weight: 600
+          transition: all 0.3s
+          white-space: nowrap
+      &:hover
+        &
+          background: var(--theme-color)
+        > ul
+          max-height: 500px
+      > ul
+        &
+          position: absolute
+          max-height: 0
+          overflow: hidden
+          transition: all 0.7s ease
+          top: 100%
+          left: 0
+          margin: 0
+        > li
+          &
+            list-style: none
+          a
+            &
+              position: relative
+              display: flex
+              justify-content: flex-start
+              align-items: center
+              border-left: 8px solid var(--theme-color)
+              background: #ffffff
+              height: 40px
+              transition: all 0.3s ease
+            &:hover
+              background: #efeae5
+              border-left: 8px solid #515050
+            .label
+              padding: 0 24px 0 16px
+              position: relative
+              z-index: 2
+              +fontSize(16px)
+              font-weight: 600
+              transition: all 0.3s
+              white-space: nowrap
+  @media (max-width: theme('breakpoints.xl'))
+    > .container > ul > li > a
+      .label
+        +fontSize(16px)
+
+
+        
+
+.menu--bar 
+  &
+    position: fixed
+    bottom: 30px
+    left: 0
+    z-index: 7
+    width: 100%
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    box-shadow: 0px 0 8px rgba(0, 0, 0, 0.1)
+  .menu--item
+    &
+      padding: 8px 4px
+      display: flex
+      gap: 4px
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      background: #007D34
+      cursor: pointer
+      transition: all 0.3s
+    .icon
+      &
+        position: relative
+        width: 100%
+        height: 24px
+      > *
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        transition: all 0.3s
+      > *:nth-child(1)
+        opacity: 1
+      > *:nth-child(2)
+        opacity: 0
+    .label
+      color: white
+      font-size: 15px
+      font-style: normal
+      font-weight: 500
+      line-height: 1.2
+      letter-spacing: -1px
+    &:hover,
+    &.is-active
+      &
+        background: linear-gradient(180deg, #FFF 5.42%, #EDEDED 100%)
+      .label
+        color: #13670B
+      .icon
+        > *:nth-child(1)
+          opacity: 0
+        > *:nth-child(2)
+          opacity: 1
+  @media (min-width: theme('screens.lg'))
+    &
+      display: none
+    
+.header--fixed
+  &
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 9
+    width: 100%
+    height: 66px
+    transform: translateY(-100%)
+    transition: all 0.3s ease
+    background: linear-gradient(to right, var(--theme-color) 50%, white 50%)
+  .container
+    &
+      padding: 0
+      max-width: 100%
+      display: grid
+      grid-template-columns: 120px 1fr
+      align-items: center
+      justify-content: space-between
+  .header--nav
+    &
+      padding: 0 54px
+    ul
+      &::before,
+      &::after
+        display: none
+    > ul > li > a
+      height: 66px 
+  .logo--wrapper
+    &
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 120px
+      height: 66px
+      padding: 16px 0
+      background: var(--theme-color)
+    > *
+      height: 40px
+  @media (max-width: theme('breakpoints.lg'))
+    &
+      display: none
+
+
+.grid--qlinks
+  &
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 8px
+    margin: 0 auto
+    width: 100%
+
+
+.button--qlink
+  &
+    position: relative
+    width: 100%
+    display: flex
+    flex-direction: column
+  .icon
+    &
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 100%
+      aspect-ratio: 1/1
+    > *
+      max-width: 80px
+  .label
+    position: relative
+    z-index: 2
+    font-weight: 600
+    text-align: center
+
+.nav--drawer
+  &
+    width: 100%
+  > ul
+    &
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      margin: 0
+      padding: 0
+    li
+      &
+        width: 100%
+        list-style: none
+        margin-bottom: 1px
+      a
+        display: block
+        width: 100%
+        font-size: 21px
+        font-weight: 600
+        padding: 8px 20px
+  > ul > li > a
+    background: #eee9e4
+  > ul > li > ul > li > a
+    font-size: 18px
+    color: #515050
+    padding: 8px 20px 8px 40px
+  > ul > li > ul
+    margin: 0
+    padding: 0
+    background: #ffffff
+  [data-bs-toggle]
+    &
+      position: relative
+    .icon
+      position: absolute
+      top: 50%
+      right: 10px
+      // transition: all 0.3s ease
+      transform: translateY(-50%)
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 30px
+      height: 30px
+      color: #fff
+    &:not(.collapsed)
+      .icon
+        transform: translateY(-50%) rotate(180deg)
+  
+.nav--sns
+  ul
+    &
+      display: flex
+      justify-content: center
+      gap: 8px
+      margin: 0
+    li
+      list-style: none
+      width: 44px
+    a
+      cursor: pointer
+
+.header--event
+  &
+    position: absolute
+    top: 0
+    left: 0
+  .logo--wrapper
+    &
+      width: 90px
+      height: 90px
+      background: var(--theme-color)
+    > .logo--black
+      max-width: 66px
+  @media (max-width: theme('breakpoints.lg'))
+    &
+      display: none

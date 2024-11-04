@@ -1,0 +1,161 @@
+extends _layout.pug
+
+block vars
+  - $id = 'index'
+
+block main
+  section.section--breadcrumb
+    .container
+      .breadcrumb 
+        ul 
+          li
+            a(
+              href='/'
+            ) 首頁
+          li
+            a(
+              href=""
+            ) 評鑑
+          li
+            a(
+              href="./review.html"
+            ) 亞培安素-香草減甜版
+  
+  section.section--review--header 
+    img(
+      src="./assets/images/pic--review.jpg"
+    )
+
+  section.section--review--body 
+    .container
+      .row
+        .col-12.col-md-9
+          .review--title
+            .title 亞培安素-香草減甜版
+
+          block list
+
+          .card--review--spec
+            .pic 
+              img(
+                src="https://picsum.photos/900/900"
+              )
+            .status
+              .card--review--status
+                .col
+                  .label 報名人數
+                  .value
+                    strong 111
+                    | 人
+                .col
+                  .label 關注人數
+                  .value
+                    strong 88888
+                    | 人
+            .caption
+              article.is-review-spec
+                h3 產品規格
+                dl
+                  dt 品牌：
+                  dd 亞培安素
+                  dt 容量：
+                  dd 220ml/瓶，共7瓶
+                  dt 效期：
+                  dd 2025/04/27
+                p 【全新升級 安素HMB雙效好體力】
+                ul 
+                  li HMB+三重優蛋白，守護肌肉(護肌)幫助肌肉生長(增肌)
+                  li 三重優蛋白(乳清蛋白、酪蛋白、大豆蛋白)，作用更持久
+                  li Omega 3不飽和脂肪，幫助調節生理機能
+                  li 隨身曲線瓶，上班/運動/出遊，隨時補充體力
+                p * 安素均衡營養升級配方提供3重優蛋白(乳清蛋白，酪蛋白，大豆蛋白)守護肌肉(護肌)、幫助肌肉生長(增肌)、有助組織修復，提供HMB(白胺酸代謝物補充營養，雙效營養支持好體力。
+                
+          article.is-review
+            p 閱讀黃金雙激萃的使用說明，上面說「於早上或晚上使用」。但我想，既然要試用，就早晚都用吧！於是晚上我用黃金雙激萃取代原來的晚霜，在化妝水後使用。這是我第一次晚上不用「乳霜」狀保養品，我一直倚賴乳霜來保濕。沒想到，黃金雙激萃的保濕潤澤度出奇的好！整個晚上都感覺皮膚非常水嫩！早上我則是洗完臉就直接使用它，用量稍減。它不會油膩，也很容易再上後續的隔離乳。因為好吸收的關係，立刻上隔離乳也不會有屑屑產生。 用完兩週，我覺得最明顯的改變是皮膚的緊緻度，而且幾乎一用就有感。皮膚的緊緻，感覺真的很明顯。同樣的保養程序，竟帶來這麼好的效果。也因為這樣，上彩粧也變得容易，不易掉粉。沒預料到的收穫是，出門前在化妝檯前的準備時間變短了，讓人開心。值得推薦！值得推薦！值得推薦！值得推薦！
+            h3 開箱影音
+          
+            .video--wrapper
+              iframe(
+                src="https://www.youtube.com/embed/1Q3wv4J6Z1A"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              )
+        .col-12.col-md-3
+          block sidebar
+
+  section.section--article--steps 
+    .container
+      .grid--steps 
+        .card--step(
+          class=(step == 1)? 'is-active' : ''
+        )
+          .label Step.1
+          .process
+          .caption
+            .title 評鑑募集中
+            .text 申請評鑑囉！只需在網頁上填寫簡單的申請資訊報名。
+          .date 11.06 — 11.11
+        .card--step(
+          class=(step == 2)? 'is-active' : ''
+        )
+          .label Step.2
+          .process
+          .caption
+            .title 評鑑名單公告
+            .text 開始評鑑吧！公告入選名單及寄出產品至您提供的地址。
+          .date 11.12 — 11.14
+        .card--step(
+          class=(step == 3)? 'is-active' : ''
+        )
+          .label Step.3
+          .process
+          .caption
+            .title 心得回填
+            .text 回填心得喔！評鑑後別忘了拍攝照片並回填心得喔。
+          .date 11.15 — 11.30
+        .card--step(
+          class=(step == 4)? 'is-active' : ''
+        )
+          .label Step.4
+          .process
+          .caption
+            .title 查看評鑑報告
+            .text 看評鑑報告！看看心得報告，說不定有意想不到的收穫呢。
+          .date 12.01 — 12.11
+
+  section.section--article--body 
+    .container
+      .row
+        .col-12.col-md-9
+          article.is-review-rules
+            h3 活動期間
+            h5 2024/11/06 — 11/11
+            h3 評鑑辦法
+            h6 本次評鑑建議有使用蛋白類營養品習慣的族群參加，體驗品共50份，因體驗數量有限，若報名人數超過50人，我們將從中選出50位評鑑員並寄發試用品，若最後您未中選，將不會收到試用品，請您見諒。維護評鑑品質，每位申請者享有單次申請機會，若重複報名將自動視為無效。
+            h6 Step 1：申請評鑑 
+            ol 
+              li 請登入會員，填寫個人基本資料
+              li 簡述150字想體驗產品的原因
+              li 等候入選通知
+            h6 Step 2：心得回填/好禮加碼贈
+            ol 
+              li 收到體驗品並開始試用
+              li 上傳使用產品後300字以上感想，依照自身試用經驗書寫心得
+              li 請上傳至少3張圖片，至多可上傳4張圖片，歡迎與產品合照，展現活力充沛的自己
+              li 好禮加碼贈：若您將心得文同時PO在您個人臉書上，並截圖您的FB PO文，與心得圖片一起上傳，待評鑑報告出爐後，將依此為依據，額外再贈送3罐亞培安素給評鑑員做為鼓勵！
+              li 4項評鑑雷達圖評分
+            h3 評鑑條件
+            ol 
+              li 有使用蛋白類營養品習慣者
+              li 想在日常生活中增強體力者
+            h3 注意事項
+            ol 
+              li 收到體驗品後，請至少使用7天，請體驗7天後回填評鑑心得，
+                i 請確認願意分享使用意見後再報名參加。
+              li 體驗品於評鑑名單公告5個工作天內送到，若未收到任何通知，請與客服聯繫，聯繫客服信箱：50plus@cwgv.com.tw ; 電話 02-2517-3688 轉 467 陳小姐，週一～週五09:30~12:30 ; 13:30~18:30
+              li 參加本次試用活動，50+將蒐集您的個人資訊 (姓名、電話、地址)，僅做為本次活動聯繫及體驗品寄送使用，不會移作他用，請協助提供正確資訊。
+              li 50+與體驗品提供之廠商保留變更活動及各項回饋獎項、兌換標準之權利，如評鑑活動因不可抗力因素無法執行，50+有暫停或終止本活動之權利。​
+              li 本體驗希望找到真心想了解並對產品有興趣者，若申請評鑑並開始試用後，最終未回覆心得者，往後將喪失參與體驗之資格。
+              li 若您入選為評鑑員，50+將有專人與您電話聯繫，請入選者留意手機來電。
+              li 如申請本次體驗，即表示同意50+網站及體驗品提供之廠商就您所提供的圖文心得有以任何方式使用之權利，並得以在不影響原意下修改文字及保有活動細節調整之權利。

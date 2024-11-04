@@ -1,0 +1,65 @@
+extends _layout.pug
+
+block vars
+  - $id = 'index'
+
+block main
+  section.section--breadcrumb
+    .container
+      .breadcrumb 
+        ul 
+          li
+            a(
+              href='/'
+            ) 首頁
+          li
+            a(
+              href=""
+            ) 健康
+          li
+            a(
+              href=""
+            ) 週刊
+  
+  section.section--weekly
+    .container--slim.d-none.d-md-block
+      .banner--weekly
+        .pic
+          img(
+            data-src='./assets/images/banner--weekly.jpg'
+            alt='廣告'
+          ).lazyload
+        form
+          .input-group
+            input(
+              type='text'
+              placeholder='請輸入電子信箱'
+            )
+            button(
+              type='submit'
+            )
+              .label 訂閱
+    .container
+      .section__title 
+        .title 週刊
+    .container--slim
+      .row.row--weekly
+        each item, index in ["020", "019", "018", "017", "016", "015", "014", "013", "012", "011", "010", "009"]
+          .col-6.col-md-6.col-lg-3
+            .card--weekly
+              .label 
+                != `第${item}期`
+              .no 
+                != `${item}`
+              .pic
+                img(
+                  data-src=`${getLoremWeekly()}`
+                ).lazyload
+              .caption
+                h3
+                  != getLoremText()
+      .buttons
+        .button--more 
+          .label 查看更多
+          .icon 
+            i.bi.bi-caret-down-fill

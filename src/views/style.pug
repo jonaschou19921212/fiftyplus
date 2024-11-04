@@ -1,0 +1,394 @@
+extends _layout.pug
+
+block vars
+  - $id = 'index'
+
+block main
+  section.section--breadcrumb.is-sp
+    .container
+      .breadcrumb 
+        ul 
+          li
+            a(
+              href='/'
+            ) 首頁
+          li
+            a(
+              href="/"
+            ) Style Guide
+
+  section
+    .container
+      .section__title
+        .title 文字樣式
+      each item, index in [ { label: "標題 2 內容類文章 主標題", tagname: "h2" }, { label: "標題 3 段落內標題", tagname: "h3" }, { label: "段落", tagname: "p" } ]
+        .card--style 
+          .label
+            = item.tagname
+            = " "
+            = item.label
+          .content
+            article
+              #{item.tagname}
+                != getLoremText()
+      .card--style 
+        .label 文章中超連結
+        .content
+          article
+            p
+              != getLoremText()
+              |  
+              a(
+                href="#"
+              ) 看更多
+      .card--style 
+        .label 項次符號 ul
+        .content
+          article
+            ul
+              each item, index in [1, 2, 3]
+                li
+                  != getLoremText()
+      .card--style 
+        .label 項次符號 ol
+        .content
+          article
+            ol
+              each item, index in [1, 2, 3]
+                li
+                  != getLoremText()
+      .card--style 
+        .label 項次符號 dl
+        .content
+          article
+            dl
+              each item, index in [ { dt: "項目 1", dd: "內容 1" }, { dt: "項目 2", dd: "內容 2" }, { dt: "項目 3", dd: "內容 3" } ]
+                dt 
+                  != item.dt
+                dd
+                  != item.dd
+      .card--style 
+        .label 引用區塊 blockquote
+        .content
+          article
+            blockquote 
+              p
+                != getLoremText()
+      .card--style 
+        .label 表格 table
+        .content
+          article
+            table.table
+              thead 
+                tr 
+                  th 標題 1
+                  th 標題 2
+                  th 標題 3
+              tbody
+                each item, index in [ { td1: "內容 1", td2: "內容 2", td3: "內容 3" }, { td1: "內容 4", td2: "內容 5", td3: "內容 6" }, { td1: "內容 7", td2: "內容 8", td3: "內容 9" } ]
+                  tr
+                    td
+                      != item.td1
+                    td
+                      != item.td2
+                    td
+                      != item.td3
+
+  section
+    .container
+      .section__title
+        .title 按鈕樣式
+      
+      .card--style 
+        .label button pill xs
+        .content
+          .buttons
+            .button--pill--xs
+              .label 按鈕標題
+            .button--pill--xs.is-invert
+              .label 按鈕標題
+      .card--style 
+        .label button pill lg
+        .content
+          .buttons
+            .button--pill--lg
+              .label 按鈕標題
+            .button--pill--lg.is-invert
+              .label 按鈕標題
+      .card--style 
+        .label button pill xl
+        .content
+          .buttons
+            .button--pill--xl
+              .label 按鈕標題
+            .button--pill--xl.is-invert
+              .label 按鈕標題
+      
+      .card--style 
+        .label button more small
+        .content
+          .buttons
+            .button--more--sm
+              .label 按鈕標題
+            .button--more--sm.is-invert
+              .label 按鈕標題
+
+      .card--style 
+        .label button more
+        .content
+          .buttons
+            .button--more
+              .label 按鈕標題
+            .button--more.is-invert
+              .label 按鈕標題
+      
+  section
+    .container
+      .section__title
+        .title 標題款式
+      .card--style 
+        .label 列表用單元標題
+        .content
+          .section__title 
+            .title 列表用單元標題
+      .card--style 
+        .label 文章大標
+        .content
+          .page--title
+            article 
+              h2 文章大標。未來該注意哪些病，基因告訴你！
+      .card--style 
+        .label 文章段落標題
+        .content
+          article
+            h3 文章段落標題
+      .card--style 
+        .label 會員操作提示
+        .content
+          .subscription--title
+            .title 會員操作提示
+      .card--style 
+        .label 評鑑對象標題
+        .content
+          .review--title
+            .title 評鑑對象標題
+      .card--style 
+        .label 說明文字段落標題？（目前只有 review 單元用到）
+        .content
+          article.is-review
+            h3 說明文字段落標題
+      .card--style 
+        .label 文章卡片內的分類標題
+        .content
+          .card--article
+            .caption
+              .catalog
+                | 文章卡片內的分類標題
+      
+
+  section
+    .container--slim
+      .section__title
+        .title 卡片款式
+      .card--style
+        .label 文章卡片
+        .content
+          .row.row--article
+            each item, index in ['人物', '健康', '心靈']
+              .col-md-6.col-lg-4
+                .card--article
+                  a.pic(
+                    href="./article.html"
+                  )
+                    img(
+                      data-src=`${getLoremPic()}`
+                    ).lazyload
+                  a.caption(
+                    href="./article.html"
+                  )
+                    .catalog
+                      != item
+                    h3
+                      != getLoremText()
+                  .info 
+                    .date 2024.09.01
+                    .view
+                      .icon
+                        i.bi.bi-eye
+                      .label 1000
+
+      .card--style
+        .label 週刊卡片
+        .content
+          .row.row--weekly
+            each item, index in ["020", "019", "018", "017"]
+              .col-6.col-md-6.col-lg-3
+                .card--weekly
+                  .label 
+                    != `第${item}期`
+                  .no 
+                    != `${item}`
+                  .pic
+                    img(
+                      data-src=`${getLoremWeekly()}`
+                    ).lazyload
+                  .caption
+                    h3
+                      != getLoremText()
+      .card--style
+        .label 策展卡片 - 首頁
+        .content
+          .grid--event(
+            style='grid-template-rows: unset'
+          )
+            each item, index in ["健康大未來！預約不生病的老後", "確診、長新冠、新冠後遺症 自我照顧指南", "50後的「心裡學」：表演自我", "屏東‧佇足 我的慢旅行"]
+              a(
+                class=(index === 0) ? 'card--event--xl' : 'card--event'
+                style=(index === 0) ? 'display: none;' : ''
+                href='./eventDetail.html'
+              )
+                .pic
+                  img(
+                    data-src=(index === 0) ? `${getLoremSlide()}` : `${getLoremPic()}`
+                  ).lazyload
+                .caption
+                  h3
+                    != item
+                  - if (index === 0)
+                    p 如果活到100歲，還可以不病、不痛、不失能，盡情做自己喜歡的事那會是什麼樣的世界？隨著醫療科技的發...
+      .card--style
+        .label 策展卡片 - 列表
+        .content
+          .row.row--event
+            each item, index in ["健康大未來！預約不生病的老後", "確診、長新冠、新冠後遺症 自我照顧指南"]
+              .col-md-6
+                a.card--event--md(
+                  href='./eventDetail.html'
+                )
+                  -if( index == 5 || index == 6)
+                    .status 
+                      .button--pill--xs
+                        .label 品牌合作
+                  .pic
+                    img(
+                      data-src=`./assets/images/column--${index%4+1}.jpg`
+                    ).lazyload
+                  .caption
+                    h3
+                      != item
+                    p 精準醫療、AI、智慧醫療……日新月異的科技，如何改變超高齡社會的樣貌？隨著醫療與科技進展，過往的「常識」很可能被推翻，老年不一定伴隨著疾病，健康到100歲真的有可能！本文介紹5大最新健康趨勢，活到老、健康到老。
+      .card--style
+        .label 學院卡片 - 列表
+        .content
+          .row.row--course
+            each item, index in [0, 1]
+              .col-lg-6 
+                .card--course
+                  .pic
+                    img(
+                      data-src=`${getLoremCourse()}`
+                    ).lazyload
+                  .caption
+                    .info
+                      .date 2024.11.06 — 2024.12.11
+                    h3 50+聲音表達工作坊進階班第5期
+                    .buttons
+                      .button--pill--xl
+                        .label 我要報名
+      .card--style
+        .label 選品卡片 - 列表
+        .content
+          .row.row--selection
+            each item, index in ["020", "019"]
+              .col-6
+                .card--selection
+                  .pic 
+                    img(
+                      src=`https://picsum.photos/400/400?random=${item}`
+                    )
+                  .caption
+                    .title 這是商品名稱這是商品名稱這是商品名稱
+                    .footer
+                      .sale--price
+                        .original--price
+                          .label 原價
+                          .price 500
+                        .discount--price
+                          .label 會員價
+                          .price 800
+                      .buttons
+                        .button--cart--xs
+                          .icon 
+                            i.bi.bi-cart-fill
+      .card--style
+        .label 評鑑卡片 - 列表
+        .content
+          .tab--review
+            ul.nav
+              li.nav-item
+                a.nav-link.active(
+                  data-bs-toggle="tab"
+                  data-bs-target="#active"
+                ) 評鑑進行中
+              li.nav-item
+                a.nav-link(
+                  data-bs-toggle="tab"
+                  data-bs-target="#review"
+                ) 查看得獎評鑑報告
+          .tab-content
+            .tab-pane.show.active(
+              id="active"
+            )
+              .card--review 
+                .pic 
+                  img(
+                    src=`https://picsum.photos/900/600/?random=${item}`
+                  )
+                .caption 
+                  .catalog 美妝保養
+                  .title 亞培安素-香草減甜版
+                  .date 申請試用時間： 2024.11.06 — 2024.12.11
+                  .info 40歲後肌肉流失每十年可能高達8%！蛋白質可幫助增加肌肉，但同時要護肌才能從問題根本著手，如果流失速度大於補...
+                .countdown
+                  .text
+                    .label 募集倒數
+                    span 11
+                    span 天
+                    span 23
+                    span 時
+                    span 08
+                    span 分
+                    span 08
+                    span 秒
+                  a.button--pill--lg(
+                    href="./reviewStep1.html"
+                  )
+                    .label 申請試用
+
+
+  section
+    .container
+      .section__title
+        .title 文字粗細
+      .card--style 
+        .label 思源黑體
+        .content
+          article
+            each item, index in ["300", "400", "500", "600", "700", "800", "900"]
+              p(
+                style=`font-weight: ${item}`
+              ) 
+                = `font-weight: ${item}`
+                = " "
+                | 職場上和年輕人價值觀差異太大
+      .card--style 
+        .label 思源明體
+        .content
+          article
+            each item, index in ["300", "400", "500", "600", "700", "800", "900"]
+              p(
+                style=`font-weight: ${item}; font-family: 'Noto Serif TC', sans-serif;`
+              ) 
+                = `font-weight: ${item}`
+                = " "
+                | 職場上和年輕人價值觀差異太大

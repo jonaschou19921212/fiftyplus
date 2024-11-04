@@ -1,0 +1,87 @@
+.tab-content
+  &
+    position: relative
+  > *
+    transition: all 0.15s ease
+    display: none
+  > *[data-te-tab-active]
+    display: block
+
+@mixin fontSize($size, $base:18px)
+  font-size: $size
+  font-size: percentage(math.div($size, $base))
+
+@mixin max-line-height($n)
+  display: -webkit-box
+  -webkit-line-clamp: $n
+  -webkit-box-orient: vertical
+  overflow: hidden
+  text-overflow: ellipsis
+
+@mixin card--set--basic
+  .pic
+    &
+      display: block
+      cursor: pointer
+      position: relative
+      width: 100%
+      aspect-ratio: 600/360
+      margin-bottom: 20px
+      overflow: hidden
+    img
+      position: absolute
+      z-index: 1
+      width: 100%
+      height: 100%
+      object-fit: cover
+      transition: all .7s ease
+    &::before
+      transition: all .7s ease
+      position: absolute
+      z-index: 2
+      top: 0
+      left: 0
+      content: ""
+      display: block
+      width: 100%
+      height: 100%
+  .caption
+    h3
+      &
+        +fontSize(18px)
+        +max-line-height(2)
+        font-family: "Noto Serif TC", serif
+        cursor: pointer
+        line-height: 1.6
+        font-weight: 600
+        transition: all .7s ease
+    p
+      font-family: 'Noto Sans TC', sans-serif
+  .info
+    +fontSize(14px)
+    color: #515050
+  &:hover
+    .pic
+      img
+        transform: scale(1.1)
+      &::before
+        border: 4px solid var(--theme-color)
+  @media (max-width: theme('breakpoints.xl'))
+    .pic
+      margin-bottom: 20px
+  @media (max-width: theme('breakpoints.lg'))
+    &:hover
+      .pic
+        img
+          transform: unset
+        &::before
+          display: none
+  @media (max-width: theme('breakpoints.md'))
+    .pic
+      margin-bottom: 20px
+    &:hover
+      .pic
+        img
+          transform: scale(1)
+        &::before
+          border: 4px solid var(--theme-color)

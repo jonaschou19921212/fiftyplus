@@ -1,0 +1,216 @@
+-
+  let formattedText = function(text){
+    return text.split('\n').map(paragraph => `${paragraph}`).join('')
+  }
+
+mixin formElements(data)
+  each item in data
+    case item.type
+      when 'date'
+        .form--date 
+          label= item.label
+          .select 
+            select
+              option 1日
+          .select 
+            select
+              option 一月
+          .select 
+            select
+              option 2000 年
+      when 'text'
+        .form--input
+          label= item.label
+          input(
+            type='text'
+            value=item.value
+            placeholder=item.placeholder
+            disabled=(item.value)?true:false
+          )
+      when 'textarea'
+        .form--textarea
+          label= item.label
+          textarea(
+            value=item.value
+            placeholder=item.placeholder
+          )
+      when 'upload-photo'
+        .form--upload
+          label
+            | 上傳店舖照片
+          input(
+            type='file'
+          )
+          i.bi.bi-camera-fill
+      when 'text-inline'
+        .form--input.is-row
+          label
+            = item.label
+          input(
+            type='text'
+          )
+      when 'checkbox'
+        .form--checkbox
+          label
+            span
+              input(
+                type='checkbox'
+              )
+              .icon 
+                i.bi.bi-check-square
+                i.bi.bi-square
+            span
+              != item.label
+      when 'select'
+        .form--select
+          - if(item.label)
+            label
+              = item.label
+          .select
+            select
+              - if(item.placeholder)
+                option= item.placeholder
+              - if(item.value)
+                option(
+                  selected=(item.value)?true:false
+                )
+                  = item.value
+              - if(item.options)
+                each option in item.options
+                  option= option
+      when 'ul'
+        ul
+          each text in item.text
+            li
+              = text
+      when 'buttons'
+        .form--buttons
+          each button in item.buttons
+            a.button(
+              href=button.href
+              class=button.style
+            )
+              .label= button.label
+      when 'buttons-sp'
+        .form--buttons.is-sp
+          each button in item.buttons
+            a.button(
+              href=button.href
+              class=button.style
+            )
+              .label= button.label
+  
+-
+  let loremTextTemplate = [
+    "98歲仍在幫病人看病！金氏世界紀錄最高齡醫師塔克：6個健康到100歲的秘訣，每個人都做得到",
+    "83歲一頭白髮，卻氣色絕佳！光田醫院總院長王乃弘的早餐菜單：50歲才開始健康生活，絕對來得及",
+    "雙腳穴道最多，動動腳可放鬆、晚上好睡！10個活絡腿部動作，每天挑一個來練",
+    "眼睛常過勞乾澀？眼科醫師徐浩恩：避免3件事，降低老後白內障風險",
+    "75歲終於踏出人生第一次自由行，像單身貴族好快樂！許美月：在家裡怕一輩子，永遠都走不出去",
+    "60歲告別主播台，轉行當心理諮商師！靳秀麗：幸福不是退休養老，「生產老化」活出無憾人生",
+    "怎麼挑鍋子，才不會把毒素吃下肚？達人選鍋，5大材質優缺點一次聽懂",
+    "未來該注意哪些病，基因告訴你！曾嶔元醫師：如何掌握健康弱點，精準預防？",
+    "如何退休後過更好？心理諮商師靳秀麗：1個「生產老化」新觀念，啟動身體健康、內心的內無比...",
+    "不爭，卻收穫最豐盛的人生！模仿天王郭子乾的「被動式積極」哲學",
+    "生氣是慢性自殺！洛桑加參醫師：每天1個練習，從此心平氣和",
+  ]
+  let loremSlideTemplate = [
+    'https://imgs.cwgv.com.tw/slides/90/4390/carousel/4390.png',
+    'https://imgs.cwgv.com.tw/slides/92/4392/carousel/4392.png',
+    'https://imgs.cwgv.com.tw/slides/92/4392/carousel/4392.png',
+    'https://imgs.cwgv.com.tw/slides/94/4394/carousel/4394.png',
+    'https://imgs.cwgv.com.tw/slides/93/4393/carousel/4393.png',
+    'https://imgs.cwgv.com.tw/slides/35/4335/carousel/4335.png',
+    'https://imgs.cwgv.com.tw/slides/52/4252/carousel/4252.png',
+    'https://imgs.cwgv.com.tw/slides/41/4041/carousel/4041.png',
+    'https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png',
+  ]
+  let loremPicTemplate = [
+    'https://imgs.cwgv.com.tw/articles/39/31039/preview/thumb/31039.png',
+    'https://imgs.cwgv.com.tw/articles/10/31010/preview/thumb/31010.png',
+    'https://imgs.cwgv.com.tw/articles/22/31022/preview/thumb/31022.png',
+    'https://imgs.cwgv.com.tw/articles/15/31015/preview/thumb/31015.png',
+    'https://imgs.cwgv.com.tw/articles/82/30882/preview/thumb/30882.png',
+    'https://imgs.cwgv.com.tw/articles/25/31025/preview/thumb/31025.png',
+    'https://imgs.cwgv.com.tw/articles/85/30985/preview/thumb/30985.png',
+  ]
+
+  let loremCourseTemplate = [
+    'https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png',
+    'https://imgs.cwgv.com.tw/slides/33/3233/carousel/3233.png',
+    'https://imgs.cwgv.com.tw/slides/35/4335/carousel/4335.png',
+    'https://imgs.cwgv.com.tw/slides/52/4252/carousel/4252.png',
+    'https://imgs.cwgv.com.tw/slides/42/4042/carousel/4042.png',
+    'https://imgs.cwgv.com.tw/slides/38/4338/carousel/4338.png',
+    'https://imgs.cwgv.com.tw/slides/36/4336/carousel/4336.png',
+    'https://imgs.cwgv.com.tw/slides/23/3923/carousel/3923.png',
+  ]
+  let loremWeeklyTemplate = [
+    'https://imgs.cwgv.com.tw/fiftyplus_project/24/24/preview/24.png',
+    'https://imgs.cwgv.com.tw/fiftyplus_project/23/23/preview/23.png',
+    'https://imgs.cwgv.com.tw/fiftyplus_project/22/22/preview/22.png',
+    'https://imgs.cwgv.com.tw/fiftyplus_project/21/21/preview/21.png',
+    'https://imgs.cwgv.com.tw/fiftyplus_project/20/20/preview/20.png',
+    'https://imgs.cwgv.com.tw/fiftyplus_project/19/19/preview/19.png',
+    'https://imgs.cwgv.com.tw/fiftyplus_project/18/18/preview/18.png',
+  ]
+
+  let loremYoutubeTemplate = [
+    'https://img.youtube.com/vi/spjfKr3KJUU/hqdefault.jpg',
+    'https://img.youtube.com/vi/tZuoKpyy8MI/hqdefault.jpg',
+    'https://img.youtube.com/vi/gsqBxwFbUaE/hqdefault.jpg',
+    'https://img.youtube.com/vi/T46OD3HSlts/hqdefault.jpg',
+    'https://img.youtube.com/vi/1hdPvzo4YP0/hqdefault.jpg',
+    'https://img.youtube.com/vi/hEhZ2kpCrcA/hqdefault.jpg',
+  ]
+
+  function shuffleArray(array) {
+    return array.sort(() => Math.random() - 0.5);
+  }
+
+  let loremPicIndex = 0
+  let loremSlideIndex = 0
+  let loremCourseIndex = 0
+  let loremWeeklyIndex = 0
+  let loremYoutubeIndex = 0
+
+  loremPicTemplate = shuffleArray(loremPicTemplate)
+  loremSlideTemplate = shuffleArray(loremSlideTemplate)
+  loremCourseTemplate = shuffleArray(loremCourseTemplate)
+  loremWeeklyTemplate = shuffleArray(loremWeeklyTemplate)
+  loremYoutubeTemplate = shuffleArray(loremYoutubeTemplate)
+
+  let getLoremText = function() {
+    let text = loremTextTemplate[Math.floor(Math.random() * loremTextTemplate.length)]
+    return formattedText(text)
+  }
+
+  let getLoremPic = function(){
+    let pic = loremPicTemplate[loremPicIndex%loremPicTemplate.length]
+    loremPicIndex++
+    return pic
+  }
+
+  let getLoremSlide = function(){
+    let slide = loremSlideTemplate[loremSlideIndex%loremSlideTemplate.length]
+    loremSlideIndex++
+    return slide
+  }
+  
+  let getLoremCourse = function(){
+    let course = loremCourseTemplate[loremCourseIndex%loremCourseTemplate.length]
+    loremCourseIndex++
+    return course
+  }
+
+  let getLoremWeekly = function(){
+    let weekly = loremWeeklyTemplate[loremWeeklyIndex%loremWeeklyTemplate.length]
+    loremWeeklyIndex++
+    return weekly
+  }
+
+  let getLoremYoutube = function(){
+    let youtube = loremYoutubeTemplate[loremYoutubeIndex%loremYoutubeTemplate.length]
+    loremYoutubeIndex++
+    return youtube
+  }

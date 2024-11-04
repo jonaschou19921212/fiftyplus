@@ -1,0 +1,16 @@
+{{#createPlaceholder}}
+{{#items}}
+.{{prefix}}{{basename}}
+  position: relative
+  display: inline-block
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: contain
+  max-width: 100%
+  background-image: url('/{{{ path }}}')
+  width: calc({{width}}px)
+  height: auto
+  aspect-ratio: {{width}}/{{height}}
+
+{{/items}}
+{{/createPlaceholder}}

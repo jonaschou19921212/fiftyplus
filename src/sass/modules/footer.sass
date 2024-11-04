@@ -1,0 +1,164 @@
+footer
+  &
+    position: relative
+    z-index: 2
+    color: white
+    background: black
+    padding: 40px 0
+  ul
+    &
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      column-gap: 16px
+      row-gap: 4px
+      margin-left: 0
+    li
+      list-style: none
+      font-weight: 400
+      line-height: 1.5
+      letter-spacing: 1.3px
+  .siteinfo
+    +fontSize(16px)
+    font-weight: 400
+    line-height: 1.5
+    letter-spacing: 2px
+  // @media (max-width: theme('breakpoints.2xl'))
+  //   ul
+  //     li
+  //       font-size: 14px
+  //   .siteinfo
+  //     font-size: 14px
+  @media (max-width: theme('breakpoints.md'))
+    .siteinfo
+      +fontSize(13px)
+      margin: 0 auto
+      letter-spacing: 0
+      line-height: 1.8
+      text-align: center
+
+footer
+  .logo--white
+    // @media (max-width: theme('breakpoints.2xl'))
+    //   max-width: 90px
+    @media (max-width: theme('breakpoints.md'))
+      max-width: 80px
+
+
+.nav--footer
+  ul
+    &
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+    li
+      +fontSize(16px)
+  a
+    cursor: pointer
+  @media (max-width: theme('breakpoints.md'))
+    &
+      width: 240px
+      margin: 0 auto
+    ul
+      display: grid
+      grid-template-columns: repeat(2, auto)
+      justify-content: center
+      column-gap: 20px
+      row-gap: 10px
+    a
+      font-weight: 400
+
+.grid--footer
+  &
+    position: relative
+    display: grid
+    grid-template-columns: 1fr 160px 320px
+    gap: 32px
+  .logo--row
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    gap: 16px
+    grid-column: span 3
+    align-items: center
+  .col--siteinfo
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    justify-content: space-between
+  .col--footer
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    justify-content: flex-end
+  .col--sns
+    display: flex    
+    align-items: flex-end
+    justify-content: flex-end
+  // @media (max-width: theme('breakpoints.xl'))
+  //   grid-template-columns: 1fr 140px 280px
+  @media (max-width: theme('breakpoints.lg'))
+    &
+      grid-template-columns: 1fr
+    .col--sns
+      order: 1
+      justify-content: center
+    .col--footer
+      order: 2
+      justify-content: center
+    .logo--row
+      &
+        grid-column: span 1
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        order: 3
+      > .logo--white
+        width: 68px
+      > .logo--crop
+        width: 120px
+    .col--siteinfo
+      order: 4
+
+.nav--siteinfo
+  &
+    margin-bottom: 20px
+  li
+    &
+      position: relative
+      +fontSize(16px)
+    &::before
+      position: absolute
+      top: 6px
+      left: -8px
+      content: ''
+      display: block
+      width: 1px
+      height: calc(100% - 8px)
+      background: white
+  @media (max-width: theme('breakpoints.md'))
+    &
+      margin-bottom: 30px
+    ul
+      li
+        &
+          line-height: 1.8
+        &::before
+          display: none
+      a
+        font-size: 13px
+      li:nth-child(1),
+      li:nth-child(4)
+        &
+          position: relative
+        &::after
+          position: absolute
+          right: -8px
+          top: calc(50% + 2px)
+          content: ''
+          display: block
+          width: 1px
+          height: 16px
+          background: white
+          transform: translateY(-50%)

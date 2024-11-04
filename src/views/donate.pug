@@ -1,0 +1,151 @@
+extends _layout.pug
+
+block vars
+  - $id = 'index'
+
+block main
+  section.section--breadcrumb.is-sp
+    .container
+      .breadcrumb 
+        ul 
+          li
+            a(
+              href='/'
+            ) 首頁
+          li
+            a(
+              href="/"
+            ) 贊助50+
+
+    .container--slim.d-none.d-md-block
+      .banner--donate
+        .pic
+          img(
+            data-src='./assets/images/banner--donate.jpg'
+            alt='廣告'
+          ).lazyload 
+  section.section--donate 
+    .container--slim
+      .row
+        .col-12.col-md-9
+          article.content
+            .blockquote--letter
+              blockquote
+                p 各位讀者：
+                p 您喜歡50+嗎？
+                p 雖然不一定認識您，但希望您有一種感覺：我們，一直陪伴您。
+                p 50後的人生，是奇特的人生十字路口，它看似脆弱，卻也可能更加強韌；會讓人恐懼，卻也讓人充滿勇氣；好像走下坡，但其實也可以是令人期待的開始！一切的差別在於：需要一些新方法的啟蒙，也要有新的心理力量注入。
+                p 50+的創立，秉持的核心理念即是：成為您心裡的那股「新」的力量。
+                p 每一天，您都會收到編輯採訪固定發送的新文章，範圍橫跨心靈、健康、理財、安養、居家、法律、家庭、時尚等領域專業知識。每兩週，我們也精心製作「生活百科」電子報，解答50後的生活難題。此外，還包括不定期的專題，樂於推動改變社會觀念的新實驗。每一年的熟齡街舞MV拍攝計畫，更讓社會大眾翻轉對50+族群的印象！
+            .pic 
+              img(
+                data-src=`https://via.placeholder.com/930x640`
+                alt='廣告'
+              ).lazyload
+              .caption 這裡是圖片說明這裡是圖片說明這裡是圖片說明這裡是圖片說明這裡是圖片說明
+            h4 贊助我們贊助我們贊助我們贊助我們
+            p 50+是一個獨立的網路媒體，我們的營運模式是依靠讀者的支持，以及廣告收入。如果您喜歡我們的內容，歡迎透過以下方式贊助我們，讓我們能夠持續提供更多有價值的內容給您！
+            .section__title 
+              .title FAQ
+            .list--faq 
+              .card--faq 
+                .question(
+                  data-bs-toggle='collapse'
+                  data-bs-target='#collapse--1'
+                )
+                  .label 1. 有哪些贊助方式？
+                  .icon 
+                    i.bi.bi-caret-down-fill
+                .answer.collapse.collapsed.show(
+                  id='collapse--1'
+                )
+                  .wrapper
+                    p 個人或企業皆歡迎透過網路直接贊助，主要提供兩種贊助方式：
+                    ol 
+                      li 定期定額贊助：每月固定金額、固定日期於信用卡扣款。
+                      li 單筆贊助：贊助一次，僅會一次扣款。
+                        br
+                        | ＊企業特別贊助需求，請聯繫50+行銷部王經理。
+                        br
+                        | 信箱：vickywang@cwgv.com.tw
+                        br
+                        | 電話：（02）2517-3688#819
+        .col-12.col-md-3 
+          .panel--donate
+            .title 贊助50+
+            .form--radio--switch 
+              label(
+                for='donate--personal'
+              )
+                input(
+                  type='radio'
+                  name='donate'
+                  id='donate--personal'
+                )
+                .label 個人贊助
+              label(
+                for='donate--crop'
+              )
+                input(
+                  type='radio'
+                  name='donate'
+                  id='donate--crop'
+                )
+                .label 企業贊助
+            .form--radio--switch 
+              label(
+                for='donate--monthly'
+              )
+                input(
+                  type='radio'
+                  name='donate--frequency'
+                  id='donate--monthly'
+                )
+                .label 每月定額
+              label(
+                for='donate--once'
+              )
+                input(
+                  type='radio'
+                  name='donate--frequency'
+                  id='donate--once'
+                )
+                .label 單筆贊助
+            .form--donate
+              input(
+                type='text'
+                placeholder='請輸入您想要贊助的金額'
+              )
+            .form--spacer 或
+            .form--radio--switch 
+              label(
+                for='donate--300'
+              )
+                input(
+                  type='radio'
+                  name='donate--cost'
+                  id='donate--300'
+                )
+                .label 300
+              label(
+                for='donate--500'
+              )
+                input(
+                  type='radio'
+                  name='donate--cost'
+                  id='donate--500'
+                )
+                .label 500
+            .form--totally 
+              .label
+                span 我要每月贊助
+                span 888
+                span 元
+
+
+    .container--slim
+      .buttons
+        .button--more 
+          .label 查看更多
+          .icon 
+            i.bi.bi-caret-down-fill

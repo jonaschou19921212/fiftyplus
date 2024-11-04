@@ -1,0 +1,14 @@
+extends reviewBasic.pug
+
+block vars
+  - let step = 4
+
+block sidebar
+  .panel--latest
+    .title 熱門文章
+    each item, index in [0, 1, 2, 3, 4]
+      .item--latest
+        .no
+          = index + 1
+        .caption
+          != getLoremText()

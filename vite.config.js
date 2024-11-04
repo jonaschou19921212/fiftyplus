@@ -1,0 +1,134 @@
+import { join, resolve } from "path"
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import beautify from 'vite-plugin-beautify'
+import handlebars from 'vite-plugin-handlebars'
+import imagemin from 'unplugin-imagemin/vite'
+import viteCompression from 'vite-plugin-compression'
+import vitePugPlugin from 'vite-plugin-pug-transformer'
+
+import {
+  visualizer
+} from "rollup-plugin-visualizer"
+import {
+  imagetools
+} from 'vite-imagetools'
+// import ViteWebp from 'vite-plugin-webp-generator'
+
+const ogDescription = ''
+
+const pageData = {
+  '/index.html': {
+    title: '',
+    description: ogDescription,
+  }
+};
+
+export default defineConfig({
+  base: './',
+  root: resolve(__dirname, "src"),
+  publicDir: resolve(__dirname, "public"),
+  server: {
+    port: 3000
+  },
+  resolve: {
+    alias: [
+      {
+        find: /~(.+)/,
+        replacement: join(process.cwd(), 'node_modules/$1'),
+      },
+      {
+        find: /@\//,
+        replacement: join(process.cwd(), 'src/'),
+      }
+    ],
+  },
+  css: {
+    devSourcemap: true
+  },
+  plugins: [
+    imagemin(),
+    imagetools(),
+    // visualizer({
+    //   open: true
+    // }),
+    vue(),
+    handlebars({
+      partialDirectory: resolve(__dirname, 'src/partials'),
+      context(pagePath) {
+        return pageData[pagePath]
+      },
+    }),
+    vitePugPlugin(),
+    // viteCompression({
+    //   threshold: 50000
+    // }),
+    beautify({
+      inDir: 'dist',
+      html: {
+        enabled: true,
+      },
+      js: {
+        enabled: false,
+      },
+      css: {
+        options: {
+          indent_size: 2,
+        },
+      },
+    }),
+  ],
+  build: {
+    chunkSizeWarningLimit: 1000,
+    minify: 'terser',
+    outDir: resolve(__dirname, "dist"),
+    emptyOutDir: true,
+    assetsInlineLimit: 0,
+    rollupOptions: {
+      input: {
+        index: resolve(__dirname, "./src/index.html"),
+        article: resolve(__dirname, "./src/article.html"),
+        articles: resolve(__dirname, "./src/articles.html"),
+        confirm: resolve(__dirname, "./src/confirm.html"),
+        course: resolve(__dirname, "./src/course.html"),
+        events: resolve(__dirname, "./src/events.html"),
+        eventDetail: resolve(__dirname, "./src/eventDetail.html"),
+        search: resolve(__dirname, "./src/search.html"),
+        weekly: resolve(__dirname, "./src/weekly.html"),
+        selection: resolve(__dirname, "./src/selection.html"),
+        faq: resolve(__dirname, "./src/faq.html"),
+        donate: resolve(__dirname, "./src/donate.html"),
+        cooperate: resolve(__dirname, "./src/cooperate.html"),
+        about: resolve(__dirname, "./src/about.html"),
+        reviews: resolve(__dirname, "./src/reviews.html"),
+        reviewStep1: resolve(__dirname, "./src/reviewStep1.html"),
+        reviewStep2: resolve(__dirname, "./src/reviewStep2.html"),
+        reviewStep3: resolve(__dirname, "./src/reviewStep3.html"),
+        reviewForm: resolve(__dirname, "./src/reviewForm.html"),
+        reviewRegister: resolve(__dirname, "./src/reviewRegister.html"),
+        campaign: resolve(__dirname, "./src/campaign.html"),
+        style: resolve(__dirname, "./src/style.html"),
+      },
+      output: {
+        entryFileNames: "assets/js/[name].js",
+        chunkFileNames: "assets/js/[name].js",
+        assetFileNames: (assetInfo) => {
+          let extType = assetInfo.name.split('.').pop()
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+            extType = 'images';
+          }
+          return 'assets/'+extType+'/[name][extname]';
+        },
+        // manualChunks: (id) => {
+        //   if (id.includes('node_modules')) {
+        //     const arr = id.toString().split('node_modules/')[1].split('/')
+        //     switch (arr[0]) {
+        //       default:
+        //         return arr[0]
+        //     }
+        //   }
+        // }
+      },
+    },
+  }
+})

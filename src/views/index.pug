@@ -1,0 +1,533 @@
+extends _layout.pug
+
+block vars
+  - $id = 'index'
+
+block main
+  section.section--cover
+    .container
+      .grid--cover
+        .swiper--banner
+          swiper-container(
+            navigation='true'
+            inject-styles=[
+              `
+              :host .swiper {
+                overflow: hidden;
+              }
+              :host {
+                --swiper-theme-color: #ede73c;
+                --swiper-navigation-size: 32px;
+              }
+              `,
+            ],
+          )
+            each item, index in [0, 1, 2]
+              swiper-slide
+                a.card--cover--xl(
+                  href='./article.html'
+                )
+                  .pic
+                    img(
+                      data-src=`${getLoremSlide()}`
+                    ).lazyload
+                  .caption
+                    h3
+                      != getLoremText()
+          //- .swiper-pagination
+        each item, index in [0, 1, 2]
+          a.card--cover(
+            href='./article.html'
+          )
+            .pic
+              img(
+                data-src=`${getLoremSlide()}`
+              ).lazyload
+            .caption
+              h3
+                != getLoremText()
+
+  section.section--banner
+    .container--slim
+      .banner.d-none.d-md-flex
+        img(
+          data-src='https://via.placeholder.com/970x250'
+          alt='廣告'
+        ).lazyload
+      .banner.d-flex.d-md-none
+        img(
+          data-src='https://via.placeholder.com/360x300'
+          alt='廣告'
+        ).lazyload
+      
+  section.section--article
+    .container
+      .section__title 
+        .title 最新文章
+        a.button--pill--xs.is-outline(
+          href='./articles.html'
+        )
+          .label more
+    .container--slim
+      .row.row--article
+        each item, index in ['人物', '健康', '心靈']
+          .col-md-6.col-lg-4
+            .card--article
+              a.pic(
+                href="./article.html"
+              )
+                img(
+                  data-src=`${getLoremPic()}`
+                ).lazyload
+              a.caption(
+                href="./article.html"
+              )
+                .catalog
+                  != item
+                h3
+                  != getLoremText()
+              .info 
+                .date 2024.09.01
+                .view
+                  .icon
+                    i.bi.bi-eye
+                  .label 1000
+      
+      .buttons.d-md-none
+        .button--more 
+          .label 查看更多
+          .icon 
+            i.bi.bi-caret-down-fill
+  
+  section.section--banner
+    .container--slim
+      .banner.d-none.d-md-flex
+        img(
+          data-src='https://via.placeholder.com/970x250'
+          alt='廣告'
+        ).lazyload
+      .banner.d-flex.d-md-none
+        img(
+          data-src='https://via.placeholder.com/360x300'
+          alt='廣告'
+        ).lazyload
+
+  section.section--video
+    .container
+      .section__title 
+        .title 最新影音
+        a.button--pill--xs.is-outline
+          .label more
+    
+    .container--slim.d-block.d-lg-none
+      .swiper--mobile
+        swiper-container(
+          inject-styles=[
+            `
+            :host .swiper {
+              overflow: hidden;
+            }
+            :host {
+              --swiper-theme-color: #ede73c;
+              --swiper-navigation-size: 22px;
+              --swiper-pagination-bottom: -100px;
+            }`,
+          ],
+        )
+          each item, index in [0, 1, 2]
+            swiper-slide
+              .card--video 
+                .pic 
+                  img(
+                    data-src=`${getLoremYoutube()}`
+                  ).lazyload
+                .caption
+                  h3
+                    != getLoremText()
+    
+    .container--slim.d-none.d-lg-block
+      .grid--video
+        each item, index in ['人物', '健康', '心靈']
+          .card--video 
+            .pic 
+              img(
+                data-src=`${getLoremYoutube()}`
+              ).lazyload
+            .caption
+              h3
+                != getLoremText()
+  
+    .container--slim.d-block.d-md-none
+      .buttons.d-md-none
+        .button--more 
+          .label 查看更多
+          .icon 
+            i.bi.bi-caret-down-fill
+
+  section.section--banner
+    .container--slim
+      .banner.d-none.d-md-flex
+        img(
+          data-src='https://via.placeholder.com/970x250'
+          alt='廣告'
+        ).lazyload
+      .banner.d-flex.d-md-none
+        img(
+          data-src='https://via.placeholder.com/360x300'
+          alt='廣告'
+        ).lazyload
+
+  section.section--podcast
+    .container
+      .section__title.is-en 
+        .title Podcast
+        a.button--pill--xs.is-outline
+          .label more
+    .container--slim
+      .grid--podcast
+        .embed--podcast
+          | <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/tw/podcast/50-talk/id1697436016"></iframe>
+        .list--podcast
+          each item, index in ["ep 70", "ep 69", "ep 100", "ep 123", "ep 104"]
+            .card--podcast
+              .ep
+                != item
+              .title
+                span
+                  != getLoremText()
+              .date 2024.09.01
+      
+      .buttons.d-md-none
+        .button--more 
+          .label 查看更多
+          .icon 
+            i.bi.bi-caret-down-fill
+
+  section.section--banner
+    .container--slim
+      .banner.d-none.d-md-flex
+        img(
+          data-src='https://via.placeholder.com/970x250'
+          alt='廣告'
+        ).lazyload
+      .banner.d-flex.d-md-none
+        img(
+          data-src='https://via.placeholder.com/360x300'
+          alt='廣告'
+        ).lazyload
+  
+  section.section--weekly
+    .container
+      .section__title 
+        .title 週刊
+        a.button--pill--xs.is-outline(
+          href='./weekly.html'
+        )
+          .label more
+    .container--slim
+      .swiper--weekly
+        swiper-container(
+          navigation='true'
+          slides-per-view='2'
+          space-between='20'
+          breakpoints=JSON.stringify({ 768: { slidesPerView: 2, spaceBetween: 20 }, 1024: { slidesPerView: 3, spaceBetween: 40 }, 1280: { slidesPerView: 4, spaceBetween: 40 } })
+          inject-styles=[
+            `
+            :host .swiper {
+              overflow: hidden;
+            }
+            :host {
+              --swiper-theme-color: #ede73c;
+              --swiper-navigation-size: 32px;
+            }
+            :host .swiper-button-prev, :host .swiper-button-next {
+              top: var(--swiper-navigation-top-offset, calc(50% - 40px));
+            }
+            `,
+          ],
+        )
+          each item, index in ["020", "019", "018", "017", "016"]
+            swiper-slide
+              .card--weekly
+                .label 
+                  != `第${item}期`
+                .no 
+                  != `${item}`
+                .pic
+                  img(
+                    data-src=`${getLoremWeekly()}`
+                  ).lazyload
+                .caption
+                  h3
+                    != getLoremText()
+      
+      //- .row.row--weekly
+      //-   each item, index in ["020", "019", "018", "017"]
+      //-     .col-6.col-md-6.col-lg-3
+      //-       .card--weekly
+      //-         .label 
+      //-           != `第${item}期`
+      //-         .no 
+      //-           != `${item}`
+      //-         .pic
+      //-           img(
+      //-             data-src=`${getLoremWeekly()}`
+      //-           ).lazyload
+      //-         .caption
+      //-           h3
+      //-             != getLoremText()
+
+
+      .buttons.d-md-none
+        .button--more 
+          .label 查看更多
+          .icon 
+            i.bi.bi-caret-down-fill
+
+  section.section--banner
+    .container--slim
+      .banner.d-none.d-md-flex
+        img(
+          data-src='https://via.placeholder.com/970x250'
+          alt='廣告'
+        ).lazyload
+      .banner.d-flex.d-md-none
+        img(
+          data-src='https://via.placeholder.com/360x300'
+          alt='廣告'
+        ).lazyload
+
+  //- .container--slim.d-none.d-md-block
+  //-   .banner--weekly
+  //-     .pic
+  //-       img(
+  //-         data-src='./assets/images/banner--weekly.jpg'
+  //-         alt='廣告'
+  //-       ).lazyload
+  //-     form
+  //-       .input-group
+  //-         input(
+  //-           type='text'
+  //-           placeholder='請輸入電子信箱'
+  //-         )
+  //-         button(
+  //-           type='submit'
+  //-         )
+  //-           .label 訂閱
+
+  section.section--event
+    .container
+      .section__title 
+        .title 數位策展
+        a.button--pill--xs.is-outline(
+          href='./events.html'
+        )
+          .label more
+  
+    .container--slim.d-block.d-md-none 
+      .swiper--mobile
+        //- .swiper-navigation 
+        //-   .swiper-button-prev
+        //-     .chevron--left
+        //-   .swiper-button-next
+        //-     .chevron--right
+        swiper-container(
+          navigation='true'
+          slides-per-view='1'
+          space-between='20'
+          inject-styles=[
+            `
+            :host .swiper {
+              overflow: hidden;
+            }
+            :host {
+              --swiper-theme-color: #ede73c;
+              --swiper-navigation-size: 32px;
+            }
+            :host .swiper-button-prev, :host .swiper-button-next {
+              top: var(--swiper-navigation-top-offset, calc(50% - 40px));
+            }
+            `,
+          ],
+        )
+          each item, index in [0, 1, 2]
+            swiper-slide
+              .card--event
+                .pic
+                  img(
+                    data-src=`${getLoremSlide()}`
+                  ).lazyload
+                .caption
+                  h3
+                    != getLoremText()
+    
+    .container--slim.d-none.d-md-block
+      .grid--event 
+        each item, index in ["健康大未來！預約不生病的老後", "確診、長新冠、新冠後遺症 自我照顧指南", "50後的「心裡學」：表演自我", "屏東‧佇足 我的慢旅行"]
+          a(
+            class=(index === 0) ? 'card--event--xl' : 'card--event'
+            href='./eventDetail.html'
+          )
+            .pic
+              img(
+                data-src=(index === 0) ? `${getLoremSlide()}` : `${getLoremPic()}`
+              ).lazyload
+            .caption
+              h3
+                != item
+              - if (index === 0)
+                p 如果活到100歲，還可以不病、不痛、不失能，盡情做自己喜歡的事那會是什麼樣的世界？隨著醫療科技的發...
+      
+      .buttons.d-md-none
+        .button--more 
+          .label 查看更多
+          .icon 
+            i.bi.bi-caret-down-fill
+  
+  section.section--course
+    .container
+      .section__title 
+        .title 50+學院
+        a.button--pill--xs.is-outline(
+          href='./course.html'
+        )
+          .label more
+    .container--slim
+      .row.row--course
+        each item, index in [0, 1, 2, 3, 4, 5]
+          .col-lg-6 
+            .card--course
+              .pic
+                img(
+                  data-src=`${getLoremCourse()}`
+                ).lazyload
+              .caption
+                .info
+                  .date 2024.11.06 — 2024.12.11
+                h3 50+聲音表達工作坊進階班第5期
+                .buttons
+                  .button--pill--xl
+                    .label 我要報名
+      
+      .buttons.d-md-none
+        .button--more 
+          .label 查看更多
+          .icon 
+            i.bi.bi-caret-down-fill
+      
+  section.section--banner
+    .container--slim
+      .banner.d-none.d-md-flex
+        img(
+          data-src='https://via.placeholder.com/1500x450'
+          alt='廣告'
+        ).lazyload
+
+      .banner.d-flex.d-md-none
+        img(
+          data-src='https://via.placeholder.com/360x450'
+          alt='廣告'
+        ).lazyload
+
+  section.section--snippet
+    .container
+      .section__title 
+        .title 活動花絮
+        a.button--pill--xs.is-outline
+          .label more
+
+    .container--slim.d-block.d-lg-none 
+      .card--snippet--preview
+        .pic
+          img(
+            src=`${getLoremSlide()}`
+          )
+        .caption
+          h3
+      .swiper--snippet--mobile
+        //- .swiper-navigation 
+        //-   .swiper-button-prev
+        //-     .chevron--left
+        //-   .swiper-button-next
+        //-     .chevron--right
+        swiper-container(
+          navigation='true'
+          slides-per-view='3'
+          inject-styles=[
+            `
+            :host .swiper {
+              overflow: hidden;
+            }
+            :host {
+              --swiper-theme-color: #ede73c;
+              --swiper-navigation-size: 32px;
+            }
+            `,
+          ],
+        )
+          each item, index in [0, 1, 2, 3, 4]
+            swiper-slide
+              .card--snippet--mobile(
+                onclick='gotoSnippet(this)'
+              )
+                .pic
+                  img(
+                    src=`${getLoremSlide()}`
+                  ).lazyload
+                .caption
+                  h3
+                    != getLoremText()
+                //- .icon 
+                //-   i.bi.bi-plus
+
+    .container--slim.d-none.d-lg-block
+      .grid--snippet
+        .col
+          .card--snippet--preview
+            .pic
+              img(
+                src=`${getLoremSlide()}`
+              )
+            .caption
+              h3
+        .col 
+          .swiper--snippet
+            .swiper-navigation 
+              .swiper-button-prev
+                .chevron--left
+              .swiper-button-next
+                .chevron--right
+            swiper-container(
+              init='false'
+            )
+              each item, index in [0, 1, 2, 3, 4]
+                swiper-slide
+                  .card--snippet(
+                    onclick='gotoSnippet(this)'
+                  )
+                    .pic
+                      img(
+                        src=`${getLoremSlide()}`
+                      )
+                    .caption
+                      h3
+                        != getLoremText()
+      
+      .buttons.d-md-none
+        .button--more 
+          .label 查看更多
+          .icon 
+            i.bi.bi-caret-down-fill
+
+  section.section--banner
+    .container--slim
+      .banner.d-none.d-md-flex
+        img(
+          data-src='https://via.placeholder.com/970x250'
+          alt='廣告'
+        ).lazyload
+      .banner.d-flex.d-md-none
+        img(
+          data-src='https://via.placeholder.com/360x300'
+          alt='廣告'
+        ).lazyload

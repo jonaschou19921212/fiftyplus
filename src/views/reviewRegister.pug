@@ -1,0 +1,120 @@
+extends _layout.pug
+
+block vars
+  - $id = 'index'
+
+block main
+  section.section--breadcrumb
+    .container
+      .breadcrumb 
+        ul 
+          li
+            a(
+              href='/'
+            ) 首頁
+          li
+            a(
+              href=""
+            ) 評鑑
+          li
+            a(
+              href=""
+            ) 亞培安素-香草減甜版
+          li
+            a(
+              href=""
+            ) 申請試用
+  
+  section.section--review--header 
+    img(
+      src="./assets/images/pic--review.jpg"
+    )
+
+  section.section--review--body 
+    .container
+      .review--title
+        .title 亞培安素-香草減甜版
+      .section__title.is-form
+        .title 申請資料填寫
+      form.form--review
+        .form--caption
+          span 個人資料
+          small （資料僅供本次產品評鑑聯繫與寄送，不會外流做其他用途，敬請放心填寫。）
+        .row
+          .col-12.col-md-6
+            .form--input.is-required
+              label(for='name') 姓名
+              input#name.form--input(type='text', placeholder='請輸入姓名')
+          .col-12.col-md-6
+            .form--gender
+              .label 性別
+              .radio--group
+                label
+                  input(
+                    type='radio'
+                    name='gender'
+                  )
+                  span 男
+                label
+                  input(
+                    type='radio'
+                    name='gender'
+                  )
+                  span 女
+          .col-12.col-md-6
+            .form--date 
+              .label 生日
+              .select
+                select
+                  option 1999
+              .select
+                select
+                  option 一月
+              .select
+                select
+                  option 11
+          .col-12.col-md-6
+            .form--input.is-required
+              label 手機
+                small （請留下手機，方便入選後與您聯繫）
+              input
+          .col-12.col-md-6
+            .form--input.is-required
+              label Email
+              input
+          .col-12
+            .form--address
+              .label 地址
+                small （請留下地址，方便後續將試用品寄給您）
+              .address--code 
+                .select
+                  select
+                    option 104
+                .select
+                  select
+                    option 台北市
+                .select
+                  select
+                    option 大安區
+              .address--text
+                input
+          .col-6
+            .form--input
+              label 請問您過去是否有使用過類似高蛋白產品？
+              .select
+                select
+                  option 有
+                  option 沒有
+          .col-12
+            .form--textarea.is-required
+              label 留言
+                small （請簡述您想要試用的原因，字數需至少100字）
+              textarea.form--input(type='text')
+        
+      .buttons
+        a.button--pill--xl(
+          href="./reviewStep2.html"
+        )
+          .label 送出申請
+
+          

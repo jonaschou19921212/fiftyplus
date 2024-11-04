@@ -1,0 +1,64 @@
+extends _layout.pug
+
+block vars
+  - $id = 'index'
+
+block main
+  section.section--breadcrumb
+    .container
+      .breadcrumb 
+        ul 
+          li
+            a(
+              href='/'
+            ) 首頁
+          li
+            a(
+              href=""
+            ) 數位策展
+    
+  section.section--black
+    .container--slim
+      .row.row--event
+        each item, index in ["健康大未來！預約不生病的老後"]
+          .col-12 
+            a.card--event--xl.is-sp(
+              href='./eventDetail.html'
+            )
+              .pic
+                img(
+                  data-src=`./assets/images/column--${index%4+1}.jpg`
+                ).lazyload
+              .caption
+                h3
+                  != item
+                p 精準醫療、AI、智慧醫療……日新月異的科技，如何改變超高齡社會的樣貌？隨著醫療與科技進展，過往的「常識」很可能被推翻，老年不一定伴隨著疾病，健康到100歲真的有可能！本文介紹5大最新健康趨勢，活到老、健康到老。
+  section.section--weekly
+    //- .container
+    //-   .section__title 
+    //-     .title 數位策展
+    .container--slim
+      .row.row--event
+        each item, index in ["健康大未來！預約不生病的老後", "確診、長新冠、新冠後遺症 自我照顧指南", "50後的「心裡學」：表演自我", "屏東‧佇足 我的慢旅行", "健康大未來！預約不生病的老後", "確診、長新冠、新冠後遺症 自我照顧指南", "50後的「心裡學」：表演自我", "屏東‧佇足 我的慢旅行"]
+          .col-md-6
+            a.card--event--md(
+              href='./eventDetail.html'
+            )
+              -if( index == 5 || index == 6)
+                .status 
+                  .button--pill--xs
+                    .label 品牌合作
+              .pic
+                img(
+                  data-src=`./assets/images/column--${index%4+1}.jpg`
+                ).lazyload
+              .caption
+                h3
+                  != item
+                p 精準醫療、AI、智慧醫療……日新月異的科技，如何改變超高齡社會的樣貌？隨著醫療與科技進展，過往的「常識」很可能被推翻，老年不一定伴隨著疾病，健康到100歲真的有可能！本文介紹5大最新健康趨勢，活到老、健康到老。
+      
+      .buttons
+        .button--more 
+          .label 查看更多
+          .icon 
+            i.bi.bi-caret-down-fill

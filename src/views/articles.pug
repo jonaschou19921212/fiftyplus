@@ -1,0 +1,53 @@
+extends _layout.pug
+
+block vars
+  - $id = 'index'
+
+block main
+  section.section--breadcrumb
+    .container
+      .breadcrumb 
+        ul 
+          li
+            a(
+              href='/'
+            ) 首頁
+          li
+            a(
+              href=""
+            ) 健康
+          li
+            a(
+              href=""
+            ) 運動
+  section.section--article
+    .container
+      .section__title 
+        .title 運動
+    .container--slim
+      .row.row--article
+        each item, index in ['人物', '健康', '心靈', '人物', '健康', '心靈', '人物', '健康', '心靈', '人物']
+          .col-md-6
+            .card--article
+              a.pic(
+                href="./article.html"
+              )
+                img(
+                  data-src=`./assets/images/article--${index%5+1}.jpg`
+                ).lazyload
+              .info 
+                .date 2024.09.01
+                .view
+                  .icon
+                    i.bi.bi-eye
+                  .label 1000
+              a.caption(
+                href="./article.html"
+              )
+                h3
+                  != getLoremText()
+      .buttons
+        .button--more 
+          .label 查看更多
+          .icon 
+            i.bi.bi-caret-down-fill

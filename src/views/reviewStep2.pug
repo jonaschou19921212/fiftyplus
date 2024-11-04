@@ -1,0 +1,26 @@
+extends reviewBasic.pug
+
+block vars
+  - let step = 2
+
+block list 
+  .review--list 
+    ul 
+      each item, index in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+        li 伊○○
+
+block sidebar
+  .panel--review
+    .title 活動募集截止
+    .caption
+      .status--review 
+        .label
+          span 報名人數
+          br
+          b 111
+          span 人
+        .label
+          span 關注人數
+          br
+          b 50
+          span 人

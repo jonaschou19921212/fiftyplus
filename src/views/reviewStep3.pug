@@ -1,0 +1,26 @@
+extends reviewBasic.pug
+
+block vars
+  - let step = 3
+
+block sidebar
+  .panel--review
+    .title 心得回填中
+    .caption
+      .review--countdown 
+        .label
+          span 心得倒數
+          b 11
+          span 天
+        .label
+          b 12
+          span 時
+          b 30
+          span 分
+          b 12
+          span 秒
+    .buttons 
+      a.button--pill--lg(
+        href='./reviewForm.html'
+      )
+        .label 點此回填

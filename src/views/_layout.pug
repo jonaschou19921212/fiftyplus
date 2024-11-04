@@ -1,0 +1,14 @@
+block vars
+include ./components/data.pug
+include ./components/mixins.pug
+
+#top
+main(
+  style='visibility: hidden;'
+)
+  #App
+    include components/controler
+  include components/header
+  block main
+  include components/footer
+

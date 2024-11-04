@@ -1,0 +1,1512 @@
+body
+  &
+    font-family: "Noto Sans TC", sans-serif
+    // font-family: "Noto Serif TC", serif
+    font-size: 18px
+    font-style: normal
+    font-weight: 400
+    line-height: 1.4
+    letter-spacing: 1px
+    color: #222222
+    letter-spacing: 1px
+  @media (min-width: theme('screens.xl'))
+    font-size: 20px
+  @media (min-width: theme('screens.1440px'))
+    font-size: 20px
+  @media (min-width: theme('screens.1600px'))
+    font-size: 22px
+
+h2
+  font-size: 24px
+  font-weight: 600
+
+ul
+  &
+    margin-left: 24px
+  li
+    list-style: disc
+
+.buttons
+  &
+    display: flex
+    gap: 8px
+    justify-content: center
+    align-items: center
+    margin-bottom: 32px
+
+.select
+  &
+    position: relative
+    border: 1px solid rgba(#343434, .2)
+    height: 50px
+  select
+    appearance: none
+    position: absolute
+    width: 100%
+    height: 100%
+    padding: 0 32px 0 8px
+    border: none
+  &::after
+    position: absolute
+    top: 50%
+    right: 8px
+    width: 16px
+    height: 16px
+    transform: translateY(-50%)
+    display: inline-block
+    content: ""
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16"><path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/></svg>')
+    background-repeat: no-repeat
+    background-size: 1rem 1rem
+
+.form--select
+  &
+    display: flex
+    flex-direction: column
+    gap: 8px
+  label
+    color: #13670B
+    font-size: 16px
+    font-style: normal
+    font-weight: 600
+    line-height: 1.8
+    letter-spacing: 0.48px
+
+.form--input,
+.form--upload,
+.form--gender,
+.form--address,
+.form--date,
+.form--textarea
+  &
+    display: flex
+    flex-direction: column
+    gap: 8px
+  input
+    &
+      width: 100%
+      border: 1px solid rgba(#343434, .2)
+      padding: 4px 16px
+      border-radius: 4px
+      height: 48px
+    &:focus
+      outline: 1px solid rgba(#343434, 1)
+  textarea
+    min-height: 8rem
+    border: 1px solid rgba(#343434, .2)
+    padding: 10px
+  > label,
+  > .label
+    +fontSize(18px)
+    font-style: normal
+    font-weight: 600
+    line-height: 1.8
+    letter-spacing: 0.48px
+  small
+    font-weight: 400
+  &.is-row
+    &
+      flex-direction: row
+      flex: 120px 1
+  &.is-required
+    label
+      &::after
+        +fontSize(12px)
+        font-weight: 400
+        margin-left: 5px
+        content: "＊此為必填欄位"
+        color: #ff0000
+
+.form--gender
+  .radio--group
+    &
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      gap: 10px
+    label
+      &
+        position: relative
+        cursor: pointer
+      input
+        position: absolute
+        opacity: 0
+      input + span
+        border-radius: 2px
+        display: flex
+        justify-content: center
+        align-items: center
+        border: 1px solid rgba(#343434, .2)
+        width: 100%
+        height: 50px
+        background: white
+      input:checked + span
+        border: 1px solid rgba(#343434, .4)
+        background: var(--theme-color)
+
+.form--address
+  &
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 10px
+  .label
+    grid-column: span 2
+  .address--code
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 10px
+    grid-column: 1 / span
+  .address--text
+    grid-column: span 2
+
+.form--rating
+  &
+    display: grid
+    grid-template-columns: 30px 1fr
+    +fontSize(18px)
+    color: #515050
+    margin-bottom: 20px
+  .no
+    grid-column: 1 / span
+  .q
+    grid-column-start: 2
+    margin-bottom: 10px
+  .rating--group
+    position: relative
+    grid-column-start: 2
+  label,
+  .stars
+    display: flex
+    gap: 10px
+  .stars
+    &
+      position: absolute
+      top: 0
+      left: 0
+      pointer-events: none
+    .icon
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 30px
+      height: 30px
+  i
+    -webkit-text-stroke: 1px #515050
+    font-size: 24px
+    color: white
+    cursor: pointer
+  input
+    opacity: 0
+    cursor: pointer
+    width: 30px
+    height: 30px
+  input[value="1"]:checked ~ .stars
+    .icon:nth-child(1) i
+      color: var(--theme-color)
+  input[value="2"]:checked ~ .stars
+    .icon:nth-child(1) i,
+    .icon:nth-child(2) i
+      color: var(--theme-color)
+  input[value="3"]:checked ~ .stars
+    .icon:nth-child(1) i,
+    .icon:nth-child(2) i,
+    .icon:nth-child(3) i
+      color: var(--theme-color)
+  input[value="4"]:checked ~ .stars
+    .icon:nth-child(1) i,
+    .icon:nth-child(2) i,
+    .icon:nth-child(3) i,
+    .icon:nth-child(4) i
+      color: var(--theme-color)
+  input[value="5"]:checked ~ .stars
+    .icon:nth-child(1) i,
+    .icon:nth-child(2) i,
+    .icon:nth-child(3) i,
+    .icon:nth-child(4) i,
+    .icon:nth-child(5) i
+      color: var(--theme-color)
+    
+    
+.form--date
+  &
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 10px
+  .label
+    grid-column: span 3
+
+.form--text
+  &
+    display: flex
+    gap: 16px
+  label
+    color: #13670B
+    font-size: 16px
+    font-style: normal
+    font-weight: 600
+    line-height: 1.8
+    letter-spacing: 0.48px
+  .text
+    color: #13670B
+    font-size: 20px
+    font-style: normal
+    font-weight: 600
+    line-height: 1.4
+    letter-spacing: 0.6px
+
+.section__title
+  &
+    position: relative
+    z-index: 3
+    padding-bottom: 16px
+    margin-bottom: 40px
+    border-bottom: 1px solid #515050
+  .title
+    font-family: 'Noto Serif TC', serif
+    +fontSize(calc(18px * 1.6))
+    font-weight: 600
+    text-align: center
+    font-style: normal
+    line-height: 1.2
+    color: #515050
+    letter-spacing: 1rem
+    transform: translateX(1rem)
+  &.is-mb-0
+    margin-bottom: 0
+  &.is-form
+    &
+      display: flex
+      justify-content: center
+      align-items: center
+    .title
+      position: relative
+      +fontSize(24px)
+      font-family: 'Noto Sans TC', serif
+      letter-spacing: .25rem
+      padding-left: 0.25rem
+      color: #222222
+    .required--text
+      &
+        position: relative
+        margin-left: 1.5rem
+      span
+        +fontSize(16px)
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        font-weight: 600
+        color: #ff0000
+        white-space: nowrap
+  &.is-small
+    .title
+      +fontSize(28px)
+      letter-spacing: .25rem
+  &.is-en
+    .title
+      letter-spacing: .25rem
+  &.is-sp
+    &
+      padding-bottom: 0
+      border-bottom: none
+    .title
+      color: white
+  &.is-left
+    .title
+      text-align: left
+  p
+    +fontSize(28px)
+    font-weight: 600
+  .button--pill--xs
+    &
+      position: absolute
+      right: 0
+      cursor: pointer
+    .label
+      font-family: 'Noto Serif TC', serif
+  @media (max-width: theme('breakpoints.md'))
+    .title
+      +fontSize(24px)
+      font-weight: 900
+      letter-spacing: 3px
+      text-align: left
+      transform: translateX(0)
+    p
+      +fontSize(18px)
+  
+
+
+.button--text
+  &
+    display: flex
+    gap: 4px
+    padding: 8px 0
+    background: transparent
+    transition: all .3s ease
+  .icon
+    &
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 24px
+      aspect-ratio: 1/1
+    i
+      color: #888888
+      line-height: 1
+  .label
+    color: #888888
+    font-size: 18px
+    font-style: normal
+    font-weight: 500
+    line-height: 1.7
+    letter-spacing: 0.28px
+  &:hover
+    gap: 0
+
+article.content
+  margin-bottom: 40px
+
+.form
+  width: 100%
+  display: flex
+  flex-direction: column
+  gap: 16px
+
+.form--date
+  &
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 4px
+  label
+    display: none
+
+
+.form--number
+  &
+    display: grid
+    grid-template-columns: 32px 40px 32px
+    border: 1px solid rgba(#343434, 0.2)
+  .button--text
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 48px
+  > * + *
+    border-left: 1px solid rgba(#343434, 0.2)
+  
+  input
+    text-align: center
+
+  
+.link--text
+  &
+    cursor: pointer
+    color: #343434
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: 1.8
+    letter-spacing: 0.48px
+    text-decoration: underline
+    text-underline-offset: 4px
+
+
+.form--checkbox
+  label
+    &
+      cursor: pointer
+      display: grid
+      grid-template-columns: 24px 1fr
+      justify-content: flex-start
+      align-items: flex-start
+      color: #343434
+      font-size: 16px
+      font-style: normal
+      font-weight: 400
+      line-height: 1.8
+      letter-spacing: 0.48px
+    span:first-child
+      display: flex
+      align-items: flex-start
+    a
+      text-decoration: underline
+      text-underline-offset: 4px
+    input
+      appearance: none
+    input + .icon
+      i.bi.bi-check-square
+        display: none
+      i.bi.bi-square
+        display: inline-block
+    input:checked + .icon
+      i.bi.bi-check-square
+        display: inline-block
+      i.bi.bi-square
+        display: none
+
+
+
+.form--search 
+  &
+    width: 800px
+    height: 50px
+    border-radius: 25px
+    overflow: hidden
+    display: grid
+    grid-template-columns: repeat(5, 1fr)
+    padding-left: 30px
+    background: white
+  .form--select
+    .select
+      border: none
+  .form--input
+    input
+      border: none
+  .button--search
+    &
+      background: #000
+    .label
+      color: white
+  @media (max-width: theme('breakpoints.lg'))
+    &
+      width: 100%
+      grid-template-columns: repeat(2, 1fr)
+      height: unset
+      padding-left: 0
+      border-radius: 24px
+      padding-top: 8px
+    > .button--search
+      grid-column: span 2
+      height: 60px
+
+
+.card--podcast
+  &
+    cursor: pointer
+    display: grid
+    grid-template-columns: 80px 1fr 120px
+    gap: 32px
+    align-items: center
+    padding-bottom: 16px
+    border-bottom: 1px solid #000
+  .ep
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 77px
+    height: 77px
+    border-radius: 50%
+    background: #f9e900
+    white-space: nowrap
+  .title
+    &
+      +fontSize(21px)
+      font-weight: 500
+      // font-family: "Noto Serif TC", serif
+      font-family: 'Noto Sans TC', sans-serif
+      display: -webkit-box
+      -webkit-line-clamp: 2
+      -webkit-box-orient: vertical
+      overflow: hidden
+      text-overflow: ellipsis
+    span
+      transition: all 1s ease
+      text-decoration-color: var(--theme-color)
+      text-underline-offset: 4px
+      // background:
+      //   image: linear-gradient(180deg, #FFFFFF 24px, #f5e500 24px)
+      //   size: 0 26px
+      //   repeat: no-repeat
+  .date
+    text-align: right
+    line-height: 2
+    font-family: 'Noto Sans TC', sans-serif
+  &
+    grid-template-columns: 60px 1fr 100px
+    gap: 24px
+  .ep
+    width: 52px
+    height: 52px
+    font-weight: 600
+  .title
+    transition: background-position .5s ease
+    text-decoration: none
+    text-decoration-color: var(--theme-color)
+    text-underline-offset: 2px
+  .date
+    +fontSize(14px)
+  &:hover
+    span
+      text-decoration: underline
+      text-decoration-color: var(--theme-color)
+      // background:
+      //   size: 100% 26px
+  @media (max-width: theme('breakpoints.md'))
+    &
+      grid-template-columns: 45px 1fr
+      gap: 16px
+    .ep
+      +fontSize(14px)
+      width: 45px
+      height: 45px
+      font-weight: 600
+    .title
+      +fontSize(18px)
+      line-height: 1.6
+    .date
+      display: none
+    &:hover
+      span
+        background:
+          size: 0 26px
+
+.card--course
+  &
+    +card--set--basic
+    padding: 16px 20px 20px
+    background: white
+    border: 1px solid #515050
+  .pic
+    &
+      aspect-ratio: 9/5 !important
+      margin-bottom: 20px
+    &::before
+      display: none
+  .caption
+    &
+      text-align: center
+    .date
+      +fontSize(18px)
+      font-family: 'Noto Sans TC', sans-serif
+      width: 70%
+      padding-bottom: 8px
+      margin: 0 15% 20px
+      border-bottom: 1px solid var(--theme-color)
+    .buttons
+      margin-top: 20px
+      margin-bottom: 0
+
+.card--article,
+.card--review
+  &
+    +card--set--basic
+  // .caption + .info
+  //   margin-top: 16px
+  .catalog
+    &
+      font-family: 'Noto Sans TC', sans-serif
+      cursor: pointer
+      margin-bottom: 20px
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      gap: 8px
+      font-size: 18px
+      font-weight: 900
+      transition: all .5s ease
+    &::before
+      width: 4px
+      height: 22px
+      background: #f9e900
+      content: ""
+      display: block
+    &:hover
+      color: #f9e900
+  .caption
+    &
+      padding-bottom: 10px
+    h3
+      -webkit-line-clamp: 3
+      min-height: 5em
+  .title
+    +fontSize(21px)
+    font-family: 'Noto Serif TC', serif
+    font-weight: 600
+    line-height: 1.6
+  .date
+    +fontSize(16px)
+    font-family: "Noto Serif TC", serif
+  .info
+    color: #515050
+    display: flex
+    justify-content: space-between
+    align-items: center
+  .view
+    &
+      display: flex
+      align-items: center
+      gap: 8px
+    .icon
+      width: 16px
+      height: 16px
+      display: flex
+      justify-content: center
+      align-items: center
+  @media (max-width: theme('breakpoints.md'))
+    .catalog
+      color: #515050
+    .caption h3
+      +fontSize(18px)
+      min-height: unset
+
+.card--review
+  .caption
+    .info
+      +fontSize(16px)
+  .countdown
+    &
+      +fontSize(16px)
+      display: flex
+      justify-content: space-between
+      align-items: center
+    .text
+      display: flex
+      justify-content: flex-start
+      gap: 5px
+
+.card--video
+  &
+    position: relative
+    +card--set--basic
+  &::after
+    opacity: 0.5
+    position: absolute
+    z-index: 3
+    top: 16px
+    left: 16px
+    content: ""
+    display: block
+    width: 10%
+    aspect-ratio: 1/1
+    background:
+      image: url(./assets/images/button--play.svg)
+      size: cover
+  @media (max-width: theme('breakpoints.lg'))
+    .pic
+      margin-bottom: 0
+    .caption
+      position: absolute
+      height: 80px
+      padding: 8px 0 0
+
+.card--snippet
+  &
+    position: absolute
+    width: 100%
+    height: 100%
+    cursor: pointer
+  &::before
+    position: absolute
+    content: ""
+    display: block
+    width: 100%
+    height: 100%
+    background: rgba(black, .2)
+    transition: all .3s ease
+  &::before
+    opacity: 0
+    z-index: 2
+  &:hover
+    &::before
+      opacity: 1
+  .pic
+    &
+      position: absolute
+      width: 100%
+      height: 100%
+    img
+      position: absolute
+      width: 100%
+      height: 100%
+      object-fit: cover
+  .caption
+    display: none
+  .icon
+    &
+      position: absolute
+      bottom: 0
+      right: 0
+      background: var(--theme-color)
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 30px
+      height: 30px
+      line-height: 1
+    i
+      font-size: 24px
+
+.card--snippet--preview
+  &
+    +card--set--basic
+    position: relative
+  .pic
+    margin-bottom: 0
+  .pic::before
+    display: none
+  .caption
+    &
+      position: absolute
+      z-index: 2
+      width: 100%
+      bottom: 0
+      padding: 16px
+      background: rgba(white, .5)
+      color: 121212
+    h3
+      font-family: 'Noto Sans TC', sans-serif
+      -webkit-line-clamp: unset
+      +max-line-height(2)
+  &:hover
+    .caption
+      h3
+        color: #121212
+  &:not(first-child)
+    .caption
+      display: none
+  @media (max-width: theme('breakpoints.md'))
+    &
+      margin-bottom: 20px
+    &:not(first-child)
+      .caption
+        display: block
+    .caption
+      &
+        padding: 8px
+      p
+        font-size: 18px
+        margin-bottom: 0
+
+.card--snippet--mobile
+  &
+    +card--set--basic
+    position: relative
+  .pic
+    margin-bottom: 0
+  .pic::before
+    display: none
+  .caption
+    position: absolute
+    bottom: 0
+    z-index: 2
+    width: 100%
+    padding: 8px 20px
+    background: rgba(white, .7)
+    display: none
+  .icon
+    &
+      position: absolute
+      z-index: 2
+      bottom: 0
+      right: 0
+      background: var(--theme-color)
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 30px
+      height: 30px
+      line-height: 1
+    i
+      font-size: 24px
+
+.card--weekly
+  &
+    +card--set--basic
+    width: 100%
+    position: relative
+    margin-bottom: 20px
+    overflow: hidden
+  > .pic
+    &
+      width: 100%
+      aspect-ratio: 320/400
+      background: var(--theme-color)
+    &::before
+      display: none
+  > .label
+    position: absolute
+    z-index: 2
+    top: 0
+    left: 0
+    width: 100%
+    color: white
+    font-size: 32px
+    font-family: 'Noto Sans TC', sans-serif
+    font-weight: 600
+    text-align: center
+    padding: 16px
+    white-space: nowrap
+    transition: all .5s ease
+    opacity: 1
+  .no
+    font-family: 'Noto Sans TC', sans-serif
+    position: absolute
+    z-index: 2
+    top: 0
+    left: 50%
+    transform: translateX(-50%) translateY(50%)
+    color: rgba(white, .7)
+    line-height: 1
+    font-size: 160px
+    font-weight: 600
+    opacity: 0
+    transition: all .5s ease
+  > .caption
+    &
+      position: relative
+      z-index: 3
+      margin-bottom: 20px
+    > h3
+      min-height: unset
+    > p
+      display: -webkit-box
+      -webkit-line-clamp: 4
+      -webkit-box-orient: vertical
+      overflow: hidden
+      text-overflow: ellipsis
+  .info
+    color: #515050
+    display: flex
+    justify-content: space-between
+    align-items: center
+    font-family: 'Noto Sans TC', sans-serif
+  .view
+    &
+      display: flex
+      align-items: center
+      gap: 8px
+    .icon
+      width: 16px
+      height: 16px
+      display: flex
+      justify-content: center
+      align-items: center
+  @media (min-width: theme('screens.lg'))
+    &:hover
+      > .pic img
+        opacity: .5
+      > .label
+        opacity: 0
+      > .no
+        opacity: 1
+  @media (max-width: theme('breakpoints.md'))
+    .caption p,
+    .caption h3
+      +fontSize(18px)
+      line-height: 1.6
+    .info
+      +fontSize(14px)
+
+
+
+// .caption--confirm
+//   &
+//     padding-top: 40px
+  // article
+  //   &
+  //     width: 1080px
+  //     margin: 0 auto
+  //     letter-spacing: .2rem
+  //   h4
+  //     +fontSize(24px)
+  //     font-family: 'Noto Sans TC', sans-serif
+  //     font-weight: 600
+  //     line-height: 1.8
+  //     margin-bottom: 16px
+  //   p
+  //     font-family: 'Noto Sans TC', sans-serif
+  //     font-weight: 400
+  //     line-height: 1.8
+  //   dl
+  //     &
+  //       display: grid
+  //       grid-template-columns: 200px 1fr
+  //       column-gap: 8px
+  //     dt
+  //       font-family: 'Noto Sans TC', sans-serif
+  //       font-weight: 600
+  //       line-height: 1.8
+  //     dd
+  //       font-family: 'Noto Sans TC', sans-serif
+  //       font-size: 18px
+  //       line-height: 1.8
+  //       text-align: left
+  //   ul,
+  //   ol
+  //     li
+  //       font-family: 'Noto Sans TC', sans-serif
+  //       line-height: 1.8
+
+.caption--event--cover
+  &
+    position: relative
+    z-index: 2
+    max-width: 800px
+  .text
+    &
+      padding: 20px
+      background: rgba(white, .7)
+    h1
+      font-family: 'Noto Sans TC', sans-serif
+      text-align: center
+      font-size: 40px
+      font-weight: 600
+      text-shadow: 0 0 8px rgba(white, 1)
+      margin-bottom: 20px
+    p
+      font-family: 'Noto Sans TC', sans-serif
+      font-size: 18px
+
+.card--selection
+  .title
+    +fontSize(19px)
+    font-weight: 600
+  .footer
+    .sale--price
+      &
+        font-family: 'Noto Sans TC', sans-serif
+      > .original--price,
+      > .discount--price
+        &
+          display: flex
+          align-items: center
+          gap: 5px
+        .label
+          +fontSize(13px)
+      > .original--price
+        &
+          color: #b7b8b8
+          text-decoration: line-through
+        .price
+          +fontSize(13px)
+      .discount--price
+        .price
+          +fontSize(19px)
+          font-weight: 900
+      .price
+        &::before
+          content: "NT$"
+        &::after
+          content: "元"
+
+.blockquote--letter
+  &
+    background: rgba(#b7b8b8, .1)
+    padding: 40px
+    margin-bottom: 40px
+  blockquote
+    &
+      padding-top: 0
+      border-left: none
+      padding-left: 0
+      background: linear-gradient(180deg, transparent 97%, #b7b8b8 97%)
+      background:
+        size: 100% 40px
+    p
+      +fontSize(18px)
+      line-height: 40px
+      font-family: 'Noto Sans TC', sans-serif
+      margin-bottom: 40px
+
+article
+  // > *:last-child
+  //   margin-bottom: 0 !important
+  .pic
+    &
+      margin-bottom: 20px
+    .caption
+      +fontSize(16px)
+  .video--wrapper
+    &
+      position: relative
+      width: 100%
+      margin-bottom: 40px
+      aspect-ratio: 16/9
+    > iframe
+      position: absolute
+      width: 100%
+      height: 100%
+  > h2
+    +fontSize(calc(18px/22*48))
+    font-family: 'Noto Serif TC', serif
+    margin-bottom: 20px
+  > h3
+    letter-spacing: .2rem
+    font-weight: 600
+    margin-bottom: 20px
+  > h4
+    line-height: 1.6
+    margin-bottom: 20px
+  > h5
+    +fontSize(25px)
+    font-family: 'Noto Sans TC', sans-serif
+    line-height: 1.6
+    font-weight: 700
+    margin-bottom: 20px
+  > h6
+    line-height: 1.6
+    font-weight: 700
+    margin-bottom: 20px
+  a
+    color: #C0684D
+    text-decoration: underline
+    text-underline-offset: 4px
+  dl,
+  ol,
+  ul
+    line-height: 1.6
+    margin-bottom: 20px
+  > p
+    letter-spacing: .1rem
+    margin-bottom: 20px
+  h3
+    +fontSize(calc(18px/22*24))
+    color: #000
+    font-style: normal
+    font-weight: 600
+    line-height: 1.6
+    letter-spacing: 0.5px
+  p,
+  ol li
+    +fontSize(18px)
+    color: #000
+    font-style: normal
+    font-weight: 400
+    line-height: 1.6
+  ol
+    &
+      margin-left: 24px
+    li
+      list-style: decimal
+  dl
+    display: grid
+    grid-template-columns: auto 1fr
+    column-gap: 20px
+  blockquote.quote
+    &
+      background: rgba(#b7b8b8, .1)
+      padding: 40px
+      margin-bottom: 40px
+    p
+      +fontSize(22px)
+      font-family: 'Noto Serif TC', serif
+  blockquote
+    &
+      margin-left: 40px
+      margin-bottom: 20px
+      padding: 20px
+      border-left: 7px solid var(--theme-color)
+      line-height: 1.8
+  i
+    font-style: normal
+    color: #ff0500
+    
+
+.card--faq
+  &
+    font-family: 'Noto Sans TC', sans-serif
+  .question
+    .label
+      +fontSize(18px)
+      color: #222
+  .answer
+    &
+      +fontSize(18px)
+      color: #515050
+    p,
+    ol
+      line-height: 2
+      margin-bottom: 0
+
+.form--radio--switch
+  &
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    font-family: 'Noto Sans TC', sans-serif
+    margin-bottom: 10px
+  label
+    &
+      cursor: pointer
+    input
+      position: absolute
+      appearance: none
+    input:checked + .label
+      color: white
+      background: #324163
+    .label
+      height: 38px
+      line-height: 36px
+      text-align: center
+      background: white
+      border: 1px solid #515050
+  label + label
+    .label
+      border-left: none
+      
+.form--donate
+  input
+    text-align: center
+    font-family: 'Noto Sans TC', sans-serif
+    width: 100%
+    border: 1px solid #515050
+    padding: 4px 16px
+    border-radius: 0
+    height: 38px
+
+.form--spacer
+  text-align: center
+
+.form--totally
+  &
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 48px
+    border-radius: 24px
+    background: #324163
+    padding: 8px
+  .label
+    color: white
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 38px
+    // border: 1px solid #fff
+    line-height: 1
+    font-weight: 700
+    border-radius: 20px
+    letter-spacing: .2rem
+
+.panel--donate,
+.panel--latest,
+.panel--review
+  .title
+    &
+      +fontSize(24px)
+      font-family: 'Noto Serif TC', serif
+      margin: 0 -20px
+      display: flex
+      align-items: center
+      gap: 10px
+      font-weight: 700
+      margin-bottom: 20px
+      transform: skew(-5deg)
+      white-space: nowrap
+    &:before,
+    &::after
+      content: ""
+      display: block
+      width: 100%
+      height: 1px
+      background: #222222
+
+.panel--review
+  .caption
+    .review--text
+      font-weight: 700
+      text-align: center
+      margin-bottom: 20px
+
+.card--style
+  &
+    display: flex
+    flex-direction: column
+    gap: 10px
+    margin-bottom: 20px
+  > .label
+    color: #999999
+    font-size: 16px
+    font-family: 'Noto Sans TC', sans-serif
+  .content
+    article
+      > *
+        margin-bottom: 0
+  &.is-slim
+    width: 600px
+
+.panel--subscription
+  .caption
+    &
+      line-height: 1.6
+      padding-bottom: 20px
+      border-bottom: 1px solid #515050
+      margin-bottom: 20px
+    ul
+      li
+        list-style: none
+      i
+        font-size: 150%
+        color: var(--theme-color)
+        text-shadow: 0 2px 4px rgba(black, .2)
+  &.is-center
+    .caption
+      text-align: center
+      display: flex
+      flex-direction: column
+      justify-content: center
+
+.item--latest
+  &
+    display: grid
+    grid-template-columns: 40px 1fr
+    padding-bottom: 20px
+    margin-bottom: 20px
+    border-bottom: 1px solid #b7b8b8
+  .no
+    +fontSize(36px)
+    line-height: 1
+    font-family: 'Noto Serif TC', serif
+    color: var(--theme-color)
+    transform: skewX(-10deg)
+  .caption
+    +fontSize(16px)
+    font-weight: 700
+    font-family: "Noto Serif TC", serif
+
+.page--cover
+  .caption
+    +fontSize(16px)
+    font-weight: 400
+    padding: 10px 0
+    color: #515050
+
+.page--caption
+  .information
+    &
+      color: #515050
+      text-align: right
+    .view
+      i
+        margin-right: 5px
+  .author
+    text-align: right
+    font-family: "Noto Serif TC", serif
+    font-weight: 700
+  .buttons
+    > *
+      width: 40px
+
+.review--title
+  &
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    margin-bottom: 40px
+  .title
+    +fontSize(25px)
+    display: flex
+    font-weight: 700
+    letter-spacing: .2rem
+    padding-left: 0.2rem
+    background: linear-gradient(180deg, transparent 75%, #f5e500 75%)
+
+article.is-review-spec,
+article.is-review-rules,
+article.is-review
+  h3
+    +fontSize(23px)
+    font-family: 'Noto Serif TC', serif
+    font-weight: 700
+    display: inline-flex
+    line-height: 1.2
+    padding: 0 20px
+    border-left: 16px solid var(--theme-color)
+    border-right: 16px solid var(--theme-color)
+    letter-spacing: .5rem
+    padding-left: calc(20px + .5rem)
+
+article.is-review-spec
+  ul, ol
+    margin-bottom: 0
+  p,
+  dl,
+  ul li
+    +fontSize(16px)
+    color: #515050
+    margin-bottom: 0
+  dl
+    &
+      display: grid
+      grid-template-columns: auto 1fr
+      column-gap: 8px
+      
+    dt
+      font-weight: 400
+    dd
+      text-align: left
+
+.card--review--status
+  &
+    +fontSize(19px)
+    font-weight: 400
+    color: #515050
+  .value
+    strong
+      color: #121212
+      font-weight: 700
+
+.review--list
+  &
+    padding: 30px
+    border-radius: 30px
+    border: 2px solid var(--theme-color)
+    margin-bottom: 40px
+  ul
+    &
+      display: flex
+      flex-wrap: wrap
+      column-gap: 40px
+      row-gap: 20px
+    li
+      +fontSize(21px)
+      list-style: none
+
+.card--step
+  &
+    display: grid
+    grid-row: span 4
+    grid-template-rows: subgrid
+    gap: 10px
+  .label
+    +fontSize(25px)
+    font-weight: 700
+    font-family: 'Noto Serif TC', serif
+    text-align: center
+  .title
+    +fontSize(21px)
+    font-weight: 600
+    color: #515050
+    text-align: center
+    padding-bottom: 10px
+    margin-bottom: 10px
+    border-bottom: 2px solid var(--theme-color)
+  .caption
+    margin: 0 20px
+    padding: 20px
+    background: #eee9e4
+    border-radius: 20px
+  .text
+    +fontSize(18px)
+    color: #b7b8b8
+  .date
+    +fontSize(16px)
+    font-weight: 700
+    font-family: "Noto Serif TC", serif
+    text-align: center
+  .process
+    &
+      position: relative
+      display: flex
+      justify-content: center
+      align-items: center
+    &::after
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      left: 0
+      content: ""
+      display: block
+      width: 100%
+      height: 4px
+      background: #515050
+    &::before
+      position: relative
+      z-index: 2
+      content: ""
+      display: block
+      width: 20px
+      height: 20px
+      border-radius: 50%
+      background: white
+      border: 2px solid #515050
+  &:first-child
+    .process::after
+      width: 50%
+      left: 50%
+  &:last-child
+    .process::after
+      width: 50%
+  &.is-active
+    .process
+      &::before
+        background: #000
+    .caption
+      background: white
+    .title
+      color: #222222
+    .text
+      color: #515050
+
+.review--countdown
+  &
+    +fontSize(16px)
+    color: #b7b8b8
+    width: 220px
+    padding: 10px 20px
+    border-radius: 20px
+    margin: 0 auto
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1)
+  .label
+    display: flex
+    justify-content: space-between
+    gap: 10px
+    padding: 10px 0
+  .label + .label
+    border-top: 1px solid #b7b8b8
+  b
+    color: #000
+
+.status--review
+  &
+    display: grid
+    grid-template-columns: 1fr 1fr
+  b
+    color: #000
+  .label
+    +fontSize(16px)
+    text-align: center
+    color: #b7b8b8
+    padding: 20px 0
+  .label + .label
+    border-left: 2px solid var(--theme-color)
+
+.form--review
+  &
+    border-radius: 40px
+    padding: 40px
+    background: rgba(#b7b8b8, .1)
+    margin-bottom: 40px
+  .form--caption
+    span
+      +fontSize(24px)
+      font-weight: 700
+    small
+      +fontSize(14px)
+      color: #515050
+  .row
+    --bs-gutter-x: 20px
+    --bs-gutter-y: 20px
+
+.form--upload
+  ul
+    margin-bottom: 20px
+
+.subscription--title
+  &
+    display: flex
+    justify-content: center
+    margin: 0 auto 20px
+  .title
+    +fontSize(24px)
+    display: flex
+    font-weight: 700
+    letter-spacing: .2rem
+    padding-left: 0.2rem
+    background: linear-gradient(180deg, transparent 75%, #f5e500 75%)
+
+table.table
+  th, td
+    transition: all .3s ease
+  tr
+    &:hover
+      th, td
+        background: rgba(#eee9e4, .5)

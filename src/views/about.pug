@@ -1,0 +1,42 @@
+extends _layout.pug
+
+block vars
+  - $id = 'index'
+
+block main
+  section.section--breadcrumb.is-sp
+    .container
+      .breadcrumb 
+        ul 
+          li
+            a(
+              href='/'
+            ) 首頁
+          li
+            a(
+              href="/"
+            ) 關於我們
+
+    .container.d-none.d-md-block
+      .banner--donate
+        .pic
+          img(
+            data-src='./assets/images/banner--about.jpg'
+            alt='廣告'
+          ).lazyload 
+
+  section.section--about 
+    .container
+      article.content
+        h4 這裡是標題這裡是標題這裡是標題這裡是標題這裡是標題
+        p 這裡是文字這裡是文字這裡是文字這裡是文字這裡是文字這裡是文字這裡是文字這裡是文字這裡是文字這裡是文字這裡是文字這裡是文字這裡是文字這裡是文字這裡是文字這裡是文字這裡是文字這裡是文字這裡是文字這裡是文字這裡是文字這裡是文字這裡是文字
+        .pic 
+          img(
+            data-src=`https://via.placeholder.com/930x640`
+            alt='廣告'
+          ).lazyload
+          .caption 這裡是圖片說明這裡是圖片說明這裡是圖片說明這裡是圖片說明這裡是圖片說明
+        
+      .buttons
+        .button--pill--xl
+          .label 合作洽談
