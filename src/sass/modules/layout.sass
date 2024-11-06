@@ -415,7 +415,7 @@ section
 .section--course--cover
   &
     padding-top: 0
-    background: linear-gradient(180deg, #f5e500 0%, #FFFFFF 50%)
+    background: linear-gradient(180deg, #f5e50080 0%, #FFFFFF 50%)
   .swiper--banner
     max-width: 800px
     margin: 0 auto
@@ -485,10 +485,18 @@ section
 
 .row--selection
   &
-    width: 840px
+    width: 100%
+    max-width: 1080px
     margin: 0 auto 40px
     --bs-gutter-x: 40px
     --bs-gutter-y: 40px
+  .pic
+    width: 100%
+    height: 100%
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
 
 .container > .content
   max-width: 720px
