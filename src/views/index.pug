@@ -470,8 +470,10 @@ block main
         //-   .swiper-button-next
         //-     .chevron--right
         swiper-container(
-          navigation='true'
-          slides-per-view='3'
+          init='false'
+          slides-per-view='5'
+          autoplay={ delay: 5000, disableOnInteraction: false, stopOnLastSlide: false }
+          space-between='10'
           inject-styles=[
             `
             :host .swiper {
@@ -481,20 +483,11 @@ block main
               --swiper-theme-color: #ede73c;
               --swiper-navigation-size: 32px;
             }
-            :host .swiper-button-prev,
-              :host .swiper-button-next {
-                background-color: #66666680;
-                border-radius: 100%;
-                width: 28px;
-                height: 28px;
-                padding: 10px;
-                stroke: #ede73c;
-                stroke-width: 1;
-              }
+            
             `,
           ],
         )
-          each item, index in [0, 1, 2, 3, 4]
+          each item, index in [0, 1, 2, 3, 4, 5, 6]
             swiper-slide
               .card--snippet--mobile(
                 onclick='gotoSnippet(this)'
@@ -521,16 +514,15 @@ block main
               h3
         .col 
           .swiper--snippet
-            .swiper-navigation 
-              .swiper-button-prev
-                .chevron--left
-              .swiper-button-next
-                .chevron--right
+            //- .swiper-navigation 
+            //-   .swiper-button-prev
+            //-     .chevron--left
+            //-   .swiper-button-next
+            //-     .chevron--right
             swiper-container(
-              init='false',
-              navigation='true'
+              init='false'
               autoplay={ delay: 5000, disableOnInteraction: false, stopOnLastSlide: false }
-              slides-per-view='3'
+              slides-per-view='5'
               inject-styles=[
             `
             :host .swiper {
@@ -540,20 +532,10 @@ block main
               --swiper-theme-color: #ede73c;
               --swiper-navigation-size: 32px;
             }
-            :host .swiper-button-prev,
-              :host .swiper-button-next {
-                background-color: #66666680;
-                border-radius: 100%;
-                width: 28px;
-                height: 28px;
-                padding: 10px;
-                stroke: #ede73c;
-                stroke-width: 1;
-              }
               `,
             ],
             )
-              each item, index in [0, 1, 2, 3, 4]
+              each item, index in [0, 1, 2, 3, 4, 5, 6]
                 swiper-slide
                   .card--snippet(
                     onclick='gotoSnippet(this)'

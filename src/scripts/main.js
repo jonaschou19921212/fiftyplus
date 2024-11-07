@@ -201,3 +201,30 @@ if (document.querySelector(".swiper--snippet swiper-container")) {
 window.onload = function () {
   document.getElementsByTagName("main")[0].style.visibility = "visible";
 };
+
+if (document.querySelector(".swiper--snippet--mobile swiper-container")) {
+  const swiperMobileSnippetEl = document.querySelector(
+    ".swiper--snippet--mobile swiper-container"
+  );
+  const paramsSnippet = {
+    simulateTouch: false,
+    slidesPerView: 5,
+    spaceBetween: 10,
+    on: {
+      afterInit: function () {
+        try {
+          document
+            .querySelector(".swiper-slide-active .card--snippet--mobile")
+            .dispatchEvent(new Event("click"));
+        } catch (error) {}
+      },
+    },
+  };
+
+  Object.assign(swiperMobileSnippetEl, paramsSnippet);
+  swiperMobileSnippetEl.initialize();
+}
+
+window.onload = function () {
+  document.getElementsByTagName("main")[0].style.visibility = "visible";
+};
