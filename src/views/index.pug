@@ -17,7 +17,16 @@ block main
               }
               :host {
                 --swiper-theme-color: #ede73c;
-                --swiper-navigation-size: 32px;
+              }
+              :host .swiper-button-prev,
+              :host .swiper-button-next {
+                background-color: #66666680;
+                border-radius: 100%;
+                width: 28px;
+                height: 28px;
+                padding: 10px;
+                stroke: #ede73c;
+                stroke-width: 1;
               }
               `,
             ],
@@ -243,6 +252,16 @@ block main
             :host .swiper-button-prev, :host .swiper-button-next {
               top: var(--swiper-navigation-top-offset, calc(50% - 40px));
             }
+            :host .swiper-button-prev,
+              :host .swiper-button-next {
+                background-color: #66666680;
+                border-radius: 100%;
+                width: 28px;
+                height: 28px;
+                padding: 10px;
+                stroke: #ede73c;
+                stroke-width: 1;
+              }
             `,
           ],
         )
@@ -436,7 +455,7 @@ block main
         a.button--pill--xs.is-outline
           .label more
 
-    .container--slim.d-block.d-lg-none 
+    .container--slim.d-block.d-lg-none
       .card--snippet--preview
         .pic
           img(
@@ -462,6 +481,16 @@ block main
               --swiper-theme-color: #ede73c;
               --swiper-navigation-size: 32px;
             }
+            :host .swiper-button-prev,
+              :host .swiper-button-next {
+                background-color: #66666680;
+                border-radius: 100%;
+                width: 28px;
+                height: 28px;
+                padding: 10px;
+                stroke: #ede73c;
+                stroke-width: 1;
+              }
             `,
           ],
         )
@@ -498,7 +527,31 @@ block main
               .swiper-button-next
                 .chevron--right
             swiper-container(
-              init='false'
+              init='false',
+              navigation='true'
+              autoplay={ delay: 5000, disableOnInteraction: false, stopOnLastSlide: false }
+              slides-per-view='3'
+              inject-styles=[
+            `
+            :host .swiper {
+              overflow: hidden;
+            }
+            :host {
+              --swiper-theme-color: #ede73c;
+              --swiper-navigation-size: 32px;
+            }
+            :host .swiper-button-prev,
+              :host .swiper-button-next {
+                background-color: #66666680;
+                border-radius: 100%;
+                width: 28px;
+                height: 28px;
+                padding: 10px;
+                stroke: #ede73c;
+                stroke-width: 1;
+              }
+              `,
+            ],
             )
               each item, index in [0, 1, 2, 3, 4]
                 swiper-slide
