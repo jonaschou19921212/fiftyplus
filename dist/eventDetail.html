@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="">
+  <meta property="og:image" content="/assets/images/fbshare.png">
+  <meta property="og:description" content="">
+  <meta property="og:url" content="">
+  <meta itemprop="name" content="">
+  <meta itemprop="description" content="">
+  <meta itemprop="image" content="/assets/images/fbshare.png">
+  <!-- Favicons-->
+  <link rel="preconnect" href="" />
+  <link rel="shortcut icon" href="" type="image/x-icon">
+  <!-- Stylesheets-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script> <!-- <script defer src="./assets/js/p5.min.js"></script> -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net/">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="./assets/js/App.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/css/App.css">
+</head>
+
+<body>
+  <div id="top"></div>
+  <main style="visibility: hidden;">
+    <div id="App"><input id="isMenuActive" type="checkbox" /><input id="isMenuNow" type="text" /><input id="isScrollDown" type="checkbox" /></div>
+    <header>
+      <div class="button--go-top" onclick="window.scrollTo(0, 0)">
+        <div class="icon"> <i class="bi bi-chevron-up"></i></div>
+      </div>
+      <div class="header--event">
+        <div class="logo--wrapper"><a class="logo--black" href="./index.html"></a></div>
+      </div>
+      <div class="header--fixed">
+        <div class="container">
+          <div class="logo--wrapper"><a class="logo--black" href="./index.html"></a></div>
+          <nav class="header--nav">
+            <ul>
+              <li><a href="./articles.html">
+                  <div class="label">人物</div>
+                </a></li>
+              <li><a href="./articles.html">
+                  <div class="label">健康</div>
+                </a>
+                <ul>
+                  <li> <a href="./articles.html">
+                      <div class="label">醫療保健</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">性愛</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">更年期</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">失智</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">運動</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">飲食</div>
+                    </a></li>
+                </ul>
+              </li>
+              <li><a href="./articles.html">
+                  <div class="label">生活</div>
+                </a></li>
+              <li><a href="./articles.html">
+                  <div class="label">理財</div>
+                </a></li>
+              <li><a href="./events.html">
+                  <div class="label">策展</div>
+                </a></li>
+              <li><a href="">
+                  <div class="label">Podcast</div>
+                </a></li>
+              <li><a href="">
+                  <div class="label">影音</div>
+                </a></li>
+              <li><a href="./weekly.html">
+                  <div class="label">週刊</div>
+                </a></li>
+              <li><a href="./reviews.html">
+                  <div class="label">評鑑</div>
+                </a></li>
+              <li><a href="./course.html">
+                  <div class="label">50+學院</div>
+                </a></li>
+              <li><a href="./campaign.html">
+                  <div class="label">活動</div>
+                </a></li>
+              <li><a href="./selection.html">
+                  <div class="label">選品</div>
+                </a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="header--mobile">
+        <div class="container">
+          <div class="logo--wrapper"><a class="logo--black" href="href"></a></div>
+          <div class="buttons"><a class="button--pill--xs" href="./donate.html">
+              <div class="label">贊助50+</div>
+            </a></div>
+          <div class="menu--toggle">
+            <div class="icon"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="drawer">
+        <div class="container">
+          <div class="panel--search--mobile"> <label><input type="text" placerholder="輸入搜尋文字" /><a class="icon" href="./search.html">
+                <div class="icon--search"></div>
+              </a></label></div>
+          <div class="grid--qlinks">
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--academy"></div>
+              </div>
+              <div class="label">學院</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--weekly"></div>
+              </div>
+              <div class="label">週刊</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--review"></div>
+              </div>
+              <div class="label">評鑑</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--event"></div>
+              </div>
+              <div class="label">活動</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--video"></div>
+              </div>
+              <div class="label">影音</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--podcast"></div>
+              </div>
+              <div class="label">Podcast</div>
+            </div>
+          </div>
+        </div>
+        <div class="nav--drawer">
+          <ul>
+            <li><a href="./articles.html">
+                <div class="label">人物</div>
+              </a></li>
+            <li><a data-bs-toggle="collapse" href="#collapse--2">
+                <div class="label">健康</div>
+                <div class="icon"> <i class="bi bi-chevron-down"></i></div>
+              </a>
+              <ul class="collapse" id="collapse--2">
+                <li> <a href="./articles.html">
+                    <div class="label">醫療保健</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">性愛</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">更年期</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">失智</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">運動</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">飲食</div>
+                  </a></li>
+              </ul>
+            </li>
+            <li><a href="./articles.html">
+                <div class="label">生活</div>
+              </a></li>
+            <li><a href="./articles.html">
+                <div class="label">理財</div>
+              </a></li>
+            <li><a href="./events.html">
+                <div class="label">策展</div>
+              </a></li>
+            <li><a href="./campaign.html">
+                <div class="label">活動</div>
+              </a></li>
+            <li><a href="./selection.html">
+                <div class="label">選品</div>
+              </a></li>
+          </ul>
+        </div>
+        <div class="container">
+          <div class="buttons">
+            <div class="button--pill--xs is-outline">
+              <div class="label">會員中心</div>
+            </div>
+            <div class="button--pill--xs is-outline">
+              <div class="label">登出</div>
+            </div>
+          </div>
+          <nav class="nav--sns">
+            <ul>
+              <li><a class="button--facebook--dark"></a></li>
+              <li><a class="button--line--dark"></a></li>
+              <li><a class="button--instagram--dark"></a></li>
+              <li><a class="button--youtube--dark"></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <section class="section--event--cover">
+      <div class="bg"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png" /></div>
+      <div class="caption--event--cover">
+        <div class="text">
+          <h1>健康大未來！預約不生病的老後</h1>
+          <p>如果活到100歲，還可以不病、不痛、不失能，盡情做自己喜歡的事，那會是什麼樣的世界？隨著醫療科技的進步，這不是天方夜譚，而是我們即將迎接的未來。如何在病兆發生之前，就揪出疾病對症下藥？出不了門的長者，怎麼更便利的看病？各種智慧裝置，如何幫助我們即時掌握健康數據、優化生活型態？未來的醫療保險，怎麼助我們更積極管理健康？跟著《50+》一起探索未來的趨勢！</p>
+        </div>
+      </div>
+    </section>
+    <div class="section--event--detail">
+      <div class="container">
+        <article class="article--slim">
+          <p>過往，人們對於老年總是聞之色變：隨著年紀增長，器官慢慢退化、疾病上身、自主能力喪失……。然而，醫療與科技的進步，卻改寫了這看似不可逆的命運。</p>
+          <div class="pic--wrapper">
+            <div class="pic"> <img class="lazyload" data-src="https://imgs.cwgv.com.tw/articles/39/31039/preview/thumb/31039.png" /></div>
+            <div class="caption">未來的醫療，將不再是「治病」，而是「預防」。台大醫院老年醫學科主任陳建仁表示，現在的醫療科技已經能夠透過基因檢測，提前發現疾病的風險，並提供個人化的治療方案。</div>
+          </div>
+          <p>除了治病，飲食也是如此。中研院生醫所特聘研究員潘文涵指出，即使不做基因檢測，營養師只要看體檢報告，能提供個案「精準營養」的飲食介入建議。</p>
+          <p>例如，同樣是50歲面臨更年期的女性，膽固醇高的人需要攝取多元不飽和脂肪酸、糖尿病得避免精緻澱粉、糖。有高血壓的話，除了前述建議，還要控制食物中的鈉、鉀。根據個人的健康狀況，提供更客製化的飲食指南。</p>
+        </article>
+      </div>
+    </div>
+    <section class="section--event--youtube">
+      <div class="container">
+        <article class="article--slim">
+          <div class="youtube--wrapper"> <iframe src="https://www.youtube.com/embed/QtnXcRULS4s?si=EXiVhGiUgqFo7h02" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </article>
+      </div>
+    </section>
+    <section class="section--event--album">
+      <div class="container">
+        <div class="section__title is-sp">
+          <div class="title">圖片故事</div>
+        </div>
+        <div class="grid--snippet">
+          <div class="col">
+            <div class="card--snippet--preview">
+              <div class="pic"><img /></div>
+              <div class="caption">
+                <h3></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="swiper--snippet">
+              <div class="swiper-navigation">
+                <div class="swiper-button-prev">
+                  <div class="chevron--left"></div>
+                </div>
+                <div class="swiper-button-next">
+                  <div class="chevron--right"></div>
+                </div>
+              </div><swiper-container init="false"><swiper-slide>
+                  <div class="card--snippet" onclick="gotoSnippet(this)">
+                    <div class="pic"><img class="lazyload" src="https://imgs.cwgv.com.tw/slides/35/4335/carousel/4335.png" /></div>
+                    <div class="caption">
+                      <h3>83歲一頭白髮，卻氣色絕佳！光田醫院總院長王乃弘的早餐菜單：50歲才開始健康生活，絕對來得及</h3>
+                    </div>
+                    <div class="icon"> <i class="bi bi-plus"></i></div>
+                  </div>
+                </swiper-slide><swiper-slide>
+                  <div class="card--snippet" onclick="gotoSnippet(this)">
+                    <div class="pic"><img class="lazyload" src="https://imgs.cwgv.com.tw/slides/92/4392/carousel/4392.png" /></div>
+                    <div class="caption">
+                      <h3>98歲仍在幫病人看病！金氏世界紀錄最高齡醫師塔克：6個健康到100歲的秘訣，每個人都做得到</h3>
+                    </div>
+                    <div class="icon"> <i class="bi bi-plus"></i></div>
+                  </div>
+                </swiper-slide><swiper-slide>
+                  <div class="card--snippet" onclick="gotoSnippet(this)">
+                    <div class="pic"><img class="lazyload" src="https://imgs.cwgv.com.tw/slides/90/4390/carousel/4390.png" /></div>
+                    <div class="caption">
+                      <h3>眼睛常過勞乾澀？眼科醫師徐浩恩：避免3件事，降低老後白內障風險</h3>
+                    </div>
+                    <div class="icon"> <i class="bi bi-plus"></i></div>
+                  </div>
+                </swiper-slide><swiper-slide>
+                  <div class="card--snippet" onclick="gotoSnippet(this)">
+                    <div class="pic"><img class="lazyload" src="https://imgs.cwgv.com.tw/slides/52/4252/carousel/4252.png" /></div>
+                    <div class="caption">
+                      <h3>不爭，卻收穫最豐盛的人生！模仿天王郭子乾的「被動式積極」哲學</h3>
+                    </div>
+                    <div class="icon"> <i class="bi bi-plus"></i></div>
+                  </div>
+                </swiper-slide><swiper-slide>
+                  <div class="card--snippet" onclick="gotoSnippet(this)">
+                    <div class="pic"><img class="lazyload" src="https://imgs.cwgv.com.tw/slides/93/4393/carousel/4393.png" /></div>
+                    <div class="caption">
+                      <h3>眼睛常過勞乾澀？眼科醫師徐浩恩：避免3件事，降低老後白內障風險</h3>
+                    </div>
+                    <div class="icon"> <i class="bi bi-plus"></i></div>
+                  </div>
+                </swiper-slide><swiper-slide>
+                  <div class="card--snippet" onclick="gotoSnippet(this)">
+                    <div class="pic"><img class="lazyload" src="https://imgs.cwgv.com.tw/slides/92/4392/carousel/4392.png" /></div>
+                    <div class="caption">
+                      <h3>不爭，卻收穫最豐盛的人生！模仿天王郭子乾的「被動式積極」哲學</h3>
+                    </div>
+                    <div class="icon"> <i class="bi bi-plus"></i></div>
+                  </div>
+                </swiper-slide><swiper-slide>
+                  <div class="card--snippet" onclick="gotoSnippet(this)">
+                    <div class="pic"><img class="lazyload" src="https://imgs.cwgv.com.tw/slides/41/4041/carousel/4041.png" /></div>
+                    <div class="caption">
+                      <h3>怎麼挑鍋子，才不會把毒素吃下肚？達人選鍋，5大材質優缺點一次聽懂</h3>
+                    </div>
+                    <div class="icon"> <i class="bi bi-plus"></i></div>
+                  </div>
+                </swiper-slide><swiper-slide>
+                  <div class="card--snippet" onclick="gotoSnippet(this)">
+                    <div class="pic"><img class="lazyload" src="https://imgs.cwgv.com.tw/slides/94/4394/carousel/4394.png" /></div>
+                    <div class="caption">
+                      <h3>60歲告別主播台，轉行當心理諮商師！靳秀麗：幸福不是退休養老，「生產老化」活出無憾人生</h3>
+                    </div>
+                    <div class="icon"> <i class="bi bi-plus"></i></div>
+                  </div>
+                </swiper-slide></swiper-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section--article">
+      <div class="container">
+        <div class="section__title">
+          <div class="title">人物</div>
+        </div>
+      </div>
+      <div class="container--slim">
+        <div class="row row--article">
+          <div class="col-md-6">
+            <div class="card--article"><a class="pic" href="./article.html"><img class="lazyload" data-src="./assets/images/article--1.jpg" /></a>
+              <div class="info">
+                <div class="date">2024.09.01</div>
+                <div class="view">
+                  <div class="icon"><i class="bi bi-eye"></i></div>
+                  <div class="label">1000</div>
+                </div>
+              </div><a class="caption" href="./article.html">
+                <h3>不爭，卻收穫最豐盛的人生！模仿天王郭子乾的「被動式積極」哲學</h3>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card--article"><a class="pic" href="./article.html"><img class="lazyload" data-src="./assets/images/article--2.jpg" /></a>
+              <div class="info">
+                <div class="date">2024.09.01</div>
+                <div class="view">
+                  <div class="icon"><i class="bi bi-eye"></i></div>
+                  <div class="label">1000</div>
+                </div>
+              </div><a class="caption" href="./article.html">
+                <h3>如何退休後過更好？心理諮商師靳秀麗：1個「生產老化」新觀念，啟動身體健康、內心的內無比...</h3>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card--article"><a class="pic" href="./article.html"><img class="lazyload" data-src="./assets/images/article--3.jpg" /></a>
+              <div class="info">
+                <div class="date">2024.09.01</div>
+                <div class="view">
+                  <div class="icon"><i class="bi bi-eye"></i></div>
+                  <div class="label">1000</div>
+                </div>
+              </div><a class="caption" href="./article.html">
+                <h3>83歲一頭白髮，卻氣色絕佳！光田醫院總院長王乃弘的早餐菜單：50歲才開始健康生活，絕對來得及</h3>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card--article"><a class="pic" href="./article.html"><img class="lazyload" data-src="./assets/images/article--4.jpg" /></a>
+              <div class="info">
+                <div class="date">2024.09.01</div>
+                <div class="view">
+                  <div class="icon"><i class="bi bi-eye"></i></div>
+                  <div class="label">1000</div>
+                </div>
+              </div><a class="caption" href="./article.html">
+                <h3>60歲告別主播台，轉行當心理諮商師！靳秀麗：幸福不是退休養老，「生產老化」活出無憾人生</h3>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card--article"><a class="pic" href="./article.html"><img class="lazyload" data-src="./assets/images/article--5.jpg" /></a>
+              <div class="info">
+                <div class="date">2024.09.01</div>
+                <div class="view">
+                  <div class="icon"><i class="bi bi-eye"></i></div>
+                  <div class="label">1000</div>
+                </div>
+              </div><a class="caption" href="./article.html">
+                <h3>如何退休後過更好？心理諮商師靳秀麗：1個「生產老化」新觀念，啟動身體健康、內心的內無比...</h3>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card--article"><a class="pic" href="./article.html"><img class="lazyload" data-src="./assets/images/article--1.jpg" /></a>
+              <div class="info">
+                <div class="date">2024.09.01</div>
+                <div class="view">
+                  <div class="icon"><i class="bi bi-eye"></i></div>
+                  <div class="label">1000</div>
+                </div>
+              </div><a class="caption" href="./article.html">
+                <h3>雙腳穴道最多，動動腳可放鬆、晚上好睡！10個活絡腿部動作，每天挑一個來練</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="section__title">
+          <div class="title">健康</div>
+        </div>
+      </div>
+      <div class="container--slim">
+        <div class="row row--article">
+          <div class="col-md-6">
+            <div class="card--article"><a class="pic" href="./article.html"><img class="lazyload" data-src="./assets/images/article--1.jpg" /></a>
+              <div class="info">
+                <div class="date">2024.09.01</div>
+                <div class="view">
+                  <div class="icon"><i class="bi bi-eye"></i></div>
+                  <div class="label">1000</div>
+                </div>
+              </div><a class="caption" href="./article.html">
+                <h3>75歲終於踏出人生第一次自由行，像單身貴族好快樂！許美月：在家裡怕一輩子，永遠都走不出去</h3>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card--article"><a class="pic" href="./article.html"><img class="lazyload" data-src="./assets/images/article--2.jpg" /></a>
+              <div class="info">
+                <div class="date">2024.09.01</div>
+                <div class="view">
+                  <div class="icon"><i class="bi bi-eye"></i></div>
+                  <div class="label">1000</div>
+                </div>
+              </div><a class="caption" href="./article.html">
+                <h3>不爭，卻收穫最豐盛的人生！模仿天王郭子乾的「被動式積極」哲學</h3>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card--article"><a class="pic" href="./article.html"><img class="lazyload" data-src="./assets/images/article--3.jpg" /></a>
+              <div class="info">
+                <div class="date">2024.09.01</div>
+                <div class="view">
+                  <div class="icon"><i class="bi bi-eye"></i></div>
+                  <div class="label">1000</div>
+                </div>
+              </div><a class="caption" href="./article.html">
+                <h3>不爭，卻收穫最豐盛的人生！模仿天王郭子乾的「被動式積極」哲學</h3>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card--article"><a class="pic" href="./article.html"><img class="lazyload" data-src="./assets/images/article--4.jpg" /></a>
+              <div class="info">
+                <div class="date">2024.09.01</div>
+                <div class="view">
+                  <div class="icon"><i class="bi bi-eye"></i></div>
+                  <div class="label">1000</div>
+                </div>
+              </div><a class="caption" href="./article.html">
+                <h3>眼睛常過勞乾澀？眼科醫師徐浩恩：避免3件事，降低老後白內障風險</h3>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card--article"><a class="pic" href="./article.html"><img class="lazyload" data-src="./assets/images/article--5.jpg" /></a>
+              <div class="info">
+                <div class="date">2024.09.01</div>
+                <div class="view">
+                  <div class="icon"><i class="bi bi-eye"></i></div>
+                  <div class="label">1000</div>
+                </div>
+              </div><a class="caption" href="./article.html">
+                <h3>83歲一頭白髮，卻氣色絕佳！光田醫院總院長王乃弘的早餐菜單：50歲才開始健康生活，絕對來得及</h3>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card--article"><a class="pic" href="./article.html"><img class="lazyload" data-src="./assets/images/article--1.jpg" /></a>
+              <div class="info">
+                <div class="date">2024.09.01</div>
+                <div class="view">
+                  <div class="icon"><i class="bi bi-eye"></i></div>
+                  <div class="label">1000</div>
+                </div>
+              </div><a class="caption" href="./article.html">
+                <h3>不爭，卻收穫最豐盛的人生！模仿天王郭子乾的「被動式積極」哲學</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="section__title">
+          <div class="title">心靈</div>
+        </div>
+      </div>
+      <div class="container--slim">
+        <div class="row row--article">
+          <div class="col-md-6">
+            <div class="card--article"><a class="pic" href="./article.html"><img class="lazyload" data-src="./assets/images/article--1.jpg" /></a>
+              <div class="info">
+                <div class="date">2024.09.01</div>
+                <div class="view">
+                  <div class="icon"><i class="bi bi-eye"></i></div>
+                  <div class="label">1000</div>
+                </div>
+              </div><a class="caption" href="./article.html">
+                <h3>60歲告別主播台，轉行當心理諮商師！靳秀麗：幸福不是退休養老，「生產老化」活出無憾人生</h3>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card--article"><a class="pic" href="./article.html"><img class="lazyload" data-src="./assets/images/article--2.jpg" /></a>
+              <div class="info">
+                <div class="date">2024.09.01</div>
+                <div class="view">
+                  <div class="icon"><i class="bi bi-eye"></i></div>
+                  <div class="label">1000</div>
+                </div>
+              </div><a class="caption" href="./article.html">
+                <h3>75歲終於踏出人生第一次自由行，像單身貴族好快樂！許美月：在家裡怕一輩子，永遠都走不出去</h3>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card--article"><a class="pic" href="./article.html"><img class="lazyload" data-src="./assets/images/article--3.jpg" /></a>
+              <div class="info">
+                <div class="date">2024.09.01</div>
+                <div class="view">
+                  <div class="icon"><i class="bi bi-eye"></i></div>
+                  <div class="label">1000</div>
+                </div>
+              </div><a class="caption" href="./article.html">
+                <h3>如何退休後過更好？心理諮商師靳秀麗：1個「生產老化」新觀念，啟動身體健康、內心的內無比...</h3>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card--article"><a class="pic" href="./article.html"><img class="lazyload" data-src="./assets/images/article--4.jpg" /></a>
+              <div class="info">
+                <div class="date">2024.09.01</div>
+                <div class="view">
+                  <div class="icon"><i class="bi bi-eye"></i></div>
+                  <div class="label">1000</div>
+                </div>
+              </div><a class="caption" href="./article.html">
+                <h3>雙腳穴道最多，動動腳可放鬆、晚上好睡！10個活絡腿部動作，每天挑一個來練</h3>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card--article"><a class="pic" href="./article.html"><img class="lazyload" data-src="./assets/images/article--5.jpg" /></a>
+              <div class="info">
+                <div class="date">2024.09.01</div>
+                <div class="view">
+                  <div class="icon"><i class="bi bi-eye"></i></div>
+                  <div class="label">1000</div>
+                </div>
+              </div><a class="caption" href="./article.html">
+                <h3>不爭，卻收穫最豐盛的人生！模仿天王郭子乾的「被動式積極」哲學</h3>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card--article"><a class="pic" href="./article.html"><img class="lazyload" data-src="./assets/images/article--1.jpg" /></a>
+              <div class="info">
+                <div class="date">2024.09.01</div>
+                <div class="view">
+                  <div class="icon"><i class="bi bi-eye"></i></div>
+                  <div class="label">1000</div>
+                </div>
+              </div><a class="caption" href="./article.html">
+                <h3>98歲仍在幫病人看病！金氏世界紀錄最高齡醫師塔克：6個健康到100歲的秘訣，每個人都做得到</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="grid--footer">
+          <div class="logo--row">
+            <div class="logo--white"></div>
+            <div class="logo--crop"></div>
+          </div>
+          <div class="col--siteinfo">
+            <nav class="nav--siteinfo">
+              <ul>
+                <li><a href="href">遠見雜誌</a></li>
+                <li><a href="href">天下文化</a></li>
+                <li><a href="href">未來親子學習平台</a></li>
+                <li><a href="href">哈佛商業評論</a></li>
+              </ul>
+            </nav>
+            <div class="siteinfo">Copyright © 2024 遠見天下文化出版股份有限公司<br />讀者服務部電話：(02)2662-0012<br />服務時間：週一 ~ 週五 9:00～12:30；13:30～17:00<br />服務信箱：<a href="mailto:50plus@cwgv.com.tw">50plus@cwgv.com.tw</a></div>
+          </div>
+          <div class="col--footer">
+            <nav class="nav--footer">
+              <ul>
+                <li><a href="about.html">關於我們</a></li>
+                <li><a href="privacy.html">隱私權政策</a></li>
+                <li><a href="terms.html">個資保護聲明</a></li>
+                <li><a href="faq.html">購物 Q&A</a></li>
+                <li><a href="contact.html">聯絡我們</a></li>
+                <li><a href="cooperate.html">合作洽談</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col--sns">
+            <nav class="nav--sns">
+              <ul>
+                <li><a class="button--facebook"></a></li>
+                <li><a class="button--line"></a></li>
+                <li><a class="button--instagram"></a></li>
+                <li><a class="button--youtube"></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="">
+  <meta property="og:image" content="/assets/images/fbshare.png">
+  <meta property="og:description" content="">
+  <meta property="og:url" content="">
+  <meta itemprop="name" content="">
+  <meta itemprop="description" content="">
+  <meta itemprop="image" content="/assets/images/fbshare.png">
+  <!-- Favicons-->
+  <link rel="preconnect" href="" />
+  <link rel="shortcut icon" href="" type="image/x-icon">
+  <!-- Stylesheets-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script> <!-- <script defer src="./assets/js/p5.min.js"></script> -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net/">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="./assets/js/App.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/css/App.css">
+</head>
+
+<body>
+  <div id="top"></div>
+  <main style="visibility: hidden;">
+    <div id="App"><input id="isMenuActive" type="checkbox" /><input id="isMenuNow" type="text" /><input id="isScrollDown" type="checkbox" /></div>
+    <header>
+      <div class="button--go-top" onclick="window.scrollTo(0, 0)">
+        <div class="icon"> <i class="bi bi-chevron-up"></i></div>
+      </div>
+      <div class="header--desktop">
+        <section>
+          <div class="container">
+            <div class="buttons--action is-flex-start"><a class="button--pill--xs" href="./confirm.html">
+                <div class="label">訂閱週刊</div>
+              </a></div>
+            <div class="logo--wrapper"><a class="logo--black" href="./index.html"></a></div>
+            <div class="buttons--action is-flex-end">
+              <div class="panel--search"><label><a class="icon" href="./search.html"><i class="bi bi-search"></i></a><input type="checkbox" /><input type="text" placeholder="輸入搜尋文字" /></label></div><a class="button--pill--xs" href="./confirm.html">
+                <div class="label">會員登入</div>
+              </a><a class="button--pill--xs is-invert" href="./donate.html">
+                <div class="label">贊助50+</div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <nav class="header--nav">
+        <div class="container">
+          <ul>
+            <li><a href="./articles.html">
+                <div class="label">人物</div>
+              </a></li>
+            <li><a href="./articles.html">
+                <div class="label">健康</div>
+              </a>
+              <ul>
+                <li> <a href="./articles.html">
+                    <div class="label">醫療保健</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">性愛</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">更年期</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">失智</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">運動</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">飲食</div>
+                  </a></li>
+              </ul>
+            </li>
+            <li><a href="./articles.html">
+                <div class="label">生活</div>
+              </a></li>
+            <li><a href="./articles.html">
+                <div class="label">理財</div>
+              </a></li>
+            <li><a href="./events.html">
+                <div class="label">策展</div>
+              </a></li>
+            <li><a href="">
+                <div class="label">Podcast</div>
+              </a></li>
+          </ul>
+          <ul></ul>
+          <ul>
+            <li><a href="">
+                <div class="label">影音</div>
+              </a></li>
+            <li><a href="./weekly.html">
+                <div class="label">週刊</div>
+              </a></li>
+            <li><a href="./reviews.html">
+                <div class="label">評鑑</div>
+              </a></li>
+            <li><a href="./course.html">
+                <div class="label">50+學院</div>
+              </a></li>
+            <li><a href="./campaign.html">
+                <div class="label">活動</div>
+              </a></li>
+            <li><a href="./selection.html">
+                <div class="label">選品</div>
+              </a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="header--fixed">
+        <div class="container">
+          <div class="logo--wrapper"><a class="logo--black" href="./index.html"></a></div>
+          <nav class="header--nav">
+            <ul>
+              <li><a href="./articles.html">
+                  <div class="label">人物</div>
+                </a></li>
+              <li><a href="./articles.html">
+                  <div class="label">健康</div>
+                </a>
+                <ul>
+                  <li> <a href="./articles.html">
+                      <div class="label">醫療保健</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">性愛</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">更年期</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">失智</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">運動</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">飲食</div>
+                    </a></li>
+                </ul>
+              </li>
+              <li><a href="./articles.html">
+                  <div class="label">生活</div>
+                </a></li>
+              <li><a href="./articles.html">
+                  <div class="label">理財</div>
+                </a></li>
+              <li><a href="./events.html">
+                  <div class="label">策展</div>
+                </a></li>
+              <li><a href="">
+                  <div class="label">Podcast</div>
+                </a></li>
+              <li><a href="">
+                  <div class="label">影音</div>
+                </a></li>
+              <li><a href="./weekly.html">
+                  <div class="label">週刊</div>
+                </a></li>
+              <li><a href="./reviews.html">
+                  <div class="label">評鑑</div>
+                </a></li>
+              <li><a href="./course.html">
+                  <div class="label">50+學院</div>
+                </a></li>
+              <li><a href="./campaign.html">
+                  <div class="label">活動</div>
+                </a></li>
+              <li><a href="./selection.html">
+                  <div class="label">選品</div>
+                </a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="header--mobile">
+        <div class="container">
+          <div class="logo--wrapper"><a class="logo--black" href="href"></a></div>
+          <div class="buttons"><a class="button--pill--xs" href="./donate.html">
+              <div class="label">贊助50+</div>
+            </a></div>
+          <div class="menu--toggle">
+            <div class="icon"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="drawer">
+        <div class="container">
+          <div class="panel--search--mobile"> <label><input type="text" placerholder="輸入搜尋文字" /><a class="icon" href="./search.html">
+                <div class="icon--search"></div>
+              </a></label></div>
+          <div class="grid--qlinks">
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--academy"></div>
+              </div>
+              <div class="label">學院</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--weekly"></div>
+              </div>
+              <div class="label">週刊</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--review"></div>
+              </div>
+              <div class="label">評鑑</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--event"></div>
+              </div>
+              <div class="label">活動</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--video"></div>
+              </div>
+              <div class="label">影音</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--podcast"></div>
+              </div>
+              <div class="label">Podcast</div>
+            </div>
+          </div>
+        </div>
+        <div class="nav--drawer">
+          <ul>
+            <li><a href="./articles.html">
+                <div class="label">人物</div>
+              </a></li>
+            <li><a data-bs-toggle="collapse" href="#collapse--2">
+                <div class="label">健康</div>
+                <div class="icon"> <i class="bi bi-chevron-down"></i></div>
+              </a>
+              <ul class="collapse" id="collapse--2">
+                <li> <a href="./articles.html">
+                    <div class="label">醫療保健</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">性愛</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">更年期</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">失智</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">運動</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">飲食</div>
+                  </a></li>
+              </ul>
+            </li>
+            <li><a href="./articles.html">
+                <div class="label">生活</div>
+              </a></li>
+            <li><a href="./articles.html">
+                <div class="label">理財</div>
+              </a></li>
+            <li><a href="./events.html">
+                <div class="label">策展</div>
+              </a></li>
+            <li><a href="./campaign.html">
+                <div class="label">活動</div>
+              </a></li>
+            <li><a href="./selection.html">
+                <div class="label">選品</div>
+              </a></li>
+          </ul>
+        </div>
+        <div class="container">
+          <div class="buttons">
+            <div class="button--pill--xs is-outline">
+              <div class="label">會員中心</div>
+            </div>
+            <div class="button--pill--xs is-outline">
+              <div class="label">登出</div>
+            </div>
+          </div>
+          <nav class="nav--sns">
+            <ul>
+              <li><a class="button--facebook--dark"></a></li>
+              <li><a class="button--line--dark"></a></li>
+              <li><a class="button--instagram--dark"></a></li>
+              <li><a class="button--youtube--dark"></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <section class="section--course--cover">
+      <section class="section--breadcrumb">
+        <div class="container">
+          <div class="breadcrumb">
+            <ul>
+              <li><a href="/">首頁</a></li>
+              <li><a href="">50+學院</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <div class="container--slim mb-4">
+        <div class="swiper--banner"><swiper-container navigation="true" slides-per-view="1" space-between="20" autoplay-delay="3000" inject-styles="[&quot;\n            :host .swiper {\n              overflow: hidden;\n            }\n            :host {\n              --swiper-theme-color: #ede73c;\n              --swiper-navigation-size: 32px;\n            }\n            :host .swiper-button-prev, :host .swiper-button-next {\n              top: var(--swiper-navigation-top-offset, calc(50%));\n            }\n            &quot;]"><swiper-slide>
+              <div class="card--course--xl">
+                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/35/4335/carousel/4335.png" /></div>
+              </div>
+            </swiper-slide><swiper-slide>
+              <div class="card--course--xl">
+                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4338/carousel/4338.png" /></div>
+              </div>
+            </swiper-slide><swiper-slide>
+              <div class="card--course--xl">
+                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/52/4252/carousel/4252.png" /></div>
+              </div>
+            </swiper-slide></swiper-container>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <div class="container--slim">
+        <div class="tab--course">
+          <div class="button--pill--lg">
+            <div class="label">實體課程</div>
+          </div>
+          <div class="button--pill--lg">
+            <div class="label">線上學校</div>
+          </div>
+          <div class="button--pill--lg">
+            <div class="label">過往課程</div>
+          </div>
+        </div>
+        <div class="row row--course">
+          <div class="col-lg-6">
+            <div class="card--course">
+              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/23/3923/carousel/3923.png" /></div>
+              <div class="caption">
+                <div class="info">
+                  <div class="date">2024.11.06 — 2024.12.11</div>
+                </div>
+                <h3>50+聲音表達工作坊進階班第5期</h3>
+                <div class="buttons">
+                  <div class="button--pill--xl">
+                    <div class="label">我要報名</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card--course">
+              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/33/3233/carousel/3233.png" /></div>
+              <div class="caption">
+                <div class="info">
+                  <div class="date">2024.11.06 — 2024.12.11</div>
+                </div>
+                <h3>50+聲音表達工作坊進階班第5期</h3>
+                <div class="buttons">
+                  <div class="button--pill--xl">
+                    <div class="label">我要報名</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card--course">
+              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png" /></div>
+              <div class="caption">
+                <div class="info">
+                  <div class="date">2024.11.06 — 2024.12.11</div>
+                </div>
+                <h3>50+聲音表達工作坊進階班第5期</h3>
+                <div class="buttons">
+                  <div class="button--pill--xl">
+                    <div class="label">我要報名</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card--course">
+              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/42/4042/carousel/4042.png" /></div>
+              <div class="caption">
+                <div class="info">
+                  <div class="date">2024.11.06 — 2024.12.11</div>
+                </div>
+                <h3>50+聲音表達工作坊進階班第5期</h3>
+                <div class="buttons">
+                  <div class="button--pill--xl">
+                    <div class="label">我要報名</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card--course">
+              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/36/4336/carousel/4336.png" /></div>
+              <div class="caption">
+                <div class="info">
+                  <div class="date">2024.11.06 — 2024.12.11</div>
+                </div>
+                <h3>50+聲音表達工作坊進階班第5期</h3>
+                <div class="buttons">
+                  <div class="button--pill--xl">
+                    <div class="label">我要報名</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card--course">
+              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/35/4335/carousel/4335.png" /></div>
+              <div class="caption">
+                <div class="info">
+                  <div class="date">2024.11.06 — 2024.12.11</div>
+                </div>
+                <h3>50+聲音表達工作坊進階班第5期</h3>
+                <div class="buttons">
+                  <div class="button--pill--xl">
+                    <div class="label">我要報名</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section--course is-achieved">
+      <div class="container--slim">
+        <div class="section__title is-small">
+          <div class="title">以下課程已報名截止</div>
+        </div>
+        <div class="row row--course">
+          <div class="col-lg-6">
+            <div class="card--course">
+              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4338/carousel/4338.png" /></div>
+              <div class="caption">
+                <div class="info">
+                  <div class="date">2024.11.06 — 2024.12.11</div>
+                </div>
+                <h3>50+聲音表達工作坊進階班第5期</h3>
+                <div class="buttons">
+                  <div class="button--pill--xl">
+                    <div class="label">我要報名</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card--course">
+              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/52/4252/carousel/4252.png" /></div>
+              <div class="caption">
+                <div class="info">
+                  <div class="date">2024.11.06 — 2024.12.11</div>
+                </div>
+                <h3>50+聲音表達工作坊進階班第5期</h3>
+                <div class="buttons">
+                  <div class="button--pill--xl">
+                    <div class="label">我要報名</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card--course">
+              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/23/3923/carousel/3923.png" /></div>
+              <div class="caption">
+                <div class="info">
+                  <div class="date">2024.11.06 — 2024.12.11</div>
+                </div>
+                <h3>50+聲音表達工作坊進階班第5期</h3>
+                <div class="buttons">
+                  <div class="button--pill--xl">
+                    <div class="label">我要報名</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card--course">
+              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/33/3233/carousel/3233.png" /></div>
+              <div class="caption">
+                <div class="info">
+                  <div class="date">2024.11.06 — 2024.12.11</div>
+                </div>
+                <h3>50+聲音表達工作坊進階班第5期</h3>
+                <div class="buttons">
+                  <div class="button--pill--xl">
+                    <div class="label">我要報名</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card--course">
+              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png" /></div>
+              <div class="caption">
+                <div class="info">
+                  <div class="date">2024.11.06 — 2024.12.11</div>
+                </div>
+                <h3>50+聲音表達工作坊進階班第5期</h3>
+                <div class="buttons">
+                  <div class="button--pill--xl">
+                    <div class="label">我要報名</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card--course">
+              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/42/4042/carousel/4042.png" /></div>
+              <div class="caption">
+                <div class="info">
+                  <div class="date">2024.11.06 — 2024.12.11</div>
+                </div>
+                <h3>50+聲音表達工作坊進階班第5期</h3>
+                <div class="buttons">
+                  <div class="button--pill--xl">
+                    <div class="label">我要報名</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="buttons">
+          <div class="button--more">
+            <div class="label">查看更多</div>
+            <div class="icon"> <i class="bi bi-caret-down-fill"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="grid--footer">
+          <div class="logo--row">
+            <div class="logo--white"></div>
+            <div class="logo--crop"></div>
+          </div>
+          <div class="col--siteinfo">
+            <nav class="nav--siteinfo">
+              <ul>
+                <li><a href="href">遠見雜誌</a></li>
+                <li><a href="href">天下文化</a></li>
+                <li><a href="href">未來親子學習平台</a></li>
+                <li><a href="href">哈佛商業評論</a></li>
+              </ul>
+            </nav>
+            <div class="siteinfo">Copyright © 2024 遠見天下文化出版股份有限公司<br />讀者服務部電話：(02)2662-0012<br />服務時間：週一 ~ 週五 9:00～12:30；13:30～17:00<br />服務信箱：<a href="mailto:50plus@cwgv.com.tw">50plus@cwgv.com.tw</a></div>
+          </div>
+          <div class="col--footer">
+            <nav class="nav--footer">
+              <ul>
+                <li><a href="about.html">關於我們</a></li>
+                <li><a href="privacy.html">隱私權政策</a></li>
+                <li><a href="terms.html">個資保護聲明</a></li>
+                <li><a href="faq.html">購物 Q&A</a></li>
+                <li><a href="contact.html">聯絡我們</a></li>
+                <li><a href="cooperate.html">合作洽談</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col--sns">
+            <nav class="nav--sns">
+              <ul>
+                <li><a class="button--facebook"></a></li>
+                <li><a class="button--line"></a></li>
+                <li><a class="button--instagram"></a></li>
+                <li><a class="button--youtube"></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+
+</html>

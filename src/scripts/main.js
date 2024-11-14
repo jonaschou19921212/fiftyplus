@@ -176,13 +176,8 @@ if (document.querySelector(".swiper--snippet swiper-container")) {
     direction: "vertical",
     simulateTouch: false,
     slidesPerView: 5,
-    spaceBetween: 16,
+    loop: true,
     height: document.querySelector(".grid--snippet").clientHeight,
-    navigation: true,
-    navigation: {
-      nextEl: ".swiper--snippet .swiper-button-next",
-      prevEl: ".swiper--snippet .swiper-button-prev",
-    },
     on: {
       afterInit: function () {
         try {
@@ -191,7 +186,16 @@ if (document.querySelector(".swiper--snippet swiper-container")) {
             .dispatchEvent(new Event("click"));
         } catch (error) {}
       },
-    },
+      slideChange: function () {
+        try {
+          setTimeout(() => {
+            document
+              .querySelector(".swiper-slide-active .card--snippet")
+              .dispatchEvent(new Event("click"));
+          }, 0);
+        } catch (error) {}
+      }
+    }
   };
 
   Object.assign(swiperSnippetEl, paramsSnippet);

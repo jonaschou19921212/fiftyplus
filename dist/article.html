@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="">
+  <meta property="og:image" content="/assets/images/fbshare.png">
+  <meta property="og:description" content="">
+  <meta property="og:url" content="">
+  <meta itemprop="name" content="">
+  <meta itemprop="description" content="">
+  <meta itemprop="image" content="/assets/images/fbshare.png">
+  <!-- Favicons-->
+  <link rel="preconnect" href="" />
+  <link rel="shortcut icon" href="" type="image/x-icon">
+  <!-- Stylesheets-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script> <!-- <script defer src="./assets/js/p5.min.js"></script> -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net/">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="./assets/js/App.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/css/App.css">
+</head>
+
+<body>
+  <div id="top"></div>
+  <main style="visibility: hidden;">
+    <div id="App"><input id="isMenuActive" type="checkbox" /><input id="isMenuNow" type="text" /><input id="isScrollDown" type="checkbox" /></div>
+    <header>
+      <div class="button--go-top" onclick="window.scrollTo(0, 0)">
+        <div class="icon"> <i class="bi bi-chevron-up"></i></div>
+      </div>
+      <div class="header--desktop">
+        <section>
+          <div class="container">
+            <div class="buttons--action is-flex-start"><a class="button--pill--xs" href="./confirm.html">
+                <div class="label">訂閱週刊</div>
+              </a></div>
+            <div class="logo--wrapper"><a class="logo--black" href="./index.html"></a></div>
+            <div class="buttons--action is-flex-end">
+              <div class="panel--search"><label><a class="icon" href="./search.html"><i class="bi bi-search"></i></a><input type="checkbox" /><input type="text" placeholder="輸入搜尋文字" /></label></div><a class="button--pill--xs" href="./confirm.html">
+                <div class="label">會員登入</div>
+              </a><a class="button--pill--xs is-invert" href="./donate.html">
+                <div class="label">贊助50+</div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <nav class="header--nav">
+        <div class="container">
+          <ul>
+            <li><a href="./articles.html">
+                <div class="label">人物</div>
+              </a></li>
+            <li><a href="./articles.html">
+                <div class="label">健康</div>
+              </a>
+              <ul>
+                <li> <a href="./articles.html">
+                    <div class="label">醫療保健</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">性愛</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">更年期</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">失智</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">運動</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">飲食</div>
+                  </a></li>
+              </ul>
+            </li>
+            <li><a href="./articles.html">
+                <div class="label">生活</div>
+              </a></li>
+            <li><a href="./articles.html">
+                <div class="label">理財</div>
+              </a></li>
+            <li><a href="./events.html">
+                <div class="label">策展</div>
+              </a></li>
+            <li><a href="">
+                <div class="label">Podcast</div>
+              </a></li>
+          </ul>
+          <ul></ul>
+          <ul>
+            <li><a href="">
+                <div class="label">影音</div>
+              </a></li>
+            <li><a href="./weekly.html">
+                <div class="label">週刊</div>
+              </a></li>
+            <li><a href="./reviews.html">
+                <div class="label">評鑑</div>
+              </a></li>
+            <li><a href="./course.html">
+                <div class="label">50+學院</div>
+              </a></li>
+            <li><a href="./campaign.html">
+                <div class="label">活動</div>
+              </a></li>
+            <li><a href="./selection.html">
+                <div class="label">選品</div>
+              </a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="header--fixed">
+        <div class="container">
+          <div class="logo--wrapper"><a class="logo--black" href="./index.html"></a></div>
+          <nav class="header--nav">
+            <ul>
+              <li><a href="./articles.html">
+                  <div class="label">人物</div>
+                </a></li>
+              <li><a href="./articles.html">
+                  <div class="label">健康</div>
+                </a>
+                <ul>
+                  <li> <a href="./articles.html">
+                      <div class="label">醫療保健</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">性愛</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">更年期</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">失智</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">運動</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">飲食</div>
+                    </a></li>
+                </ul>
+              </li>
+              <li><a href="./articles.html">
+                  <div class="label">生活</div>
+                </a></li>
+              <li><a href="./articles.html">
+                  <div class="label">理財</div>
+                </a></li>
+              <li><a href="./events.html">
+                  <div class="label">策展</div>
+                </a></li>
+              <li><a href="">
+                  <div class="label">Podcast</div>
+                </a></li>
+              <li><a href="">
+                  <div class="label">影音</div>
+                </a></li>
+              <li><a href="./weekly.html">
+                  <div class="label">週刊</div>
+                </a></li>
+              <li><a href="./reviews.html">
+                  <div class="label">評鑑</div>
+                </a></li>
+              <li><a href="./course.html">
+                  <div class="label">50+學院</div>
+                </a></li>
+              <li><a href="./campaign.html">
+                  <div class="label">活動</div>
+                </a></li>
+              <li><a href="./selection.html">
+                  <div class="label">選品</div>
+                </a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="header--mobile">
+        <div class="container">
+          <div class="logo--wrapper"><a class="logo--black" href="href"></a></div>
+          <div class="buttons"><a class="button--pill--xs" href="./donate.html">
+              <div class="label">贊助50+</div>
+            </a></div>
+          <div class="menu--toggle">
+            <div class="icon"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="drawer">
+        <div class="container">
+          <div class="panel--search--mobile"> <label><input type="text" placerholder="輸入搜尋文字" /><a class="icon" href="./search.html">
+                <div class="icon--search"></div>
+              </a></label></div>
+          <div class="grid--qlinks">
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--academy"></div>
+              </div>
+              <div class="label">學院</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--weekly"></div>
+              </div>
+              <div class="label">週刊</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--review"></div>
+              </div>
+              <div class="label">評鑑</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--event"></div>
+              </div>
+              <div class="label">活動</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--video"></div>
+              </div>
+              <div class="label">影音</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--podcast"></div>
+              </div>
+              <div class="label">Podcast</div>
+            </div>
+          </div>
+        </div>
+        <div class="nav--drawer">
+          <ul>
+            <li><a href="./articles.html">
+                <div class="label">人物</div>
+              </a></li>
+            <li><a data-bs-toggle="collapse" href="#collapse--2">
+                <div class="label">健康</div>
+                <div class="icon"> <i class="bi bi-chevron-down"></i></div>
+              </a>
+              <ul class="collapse" id="collapse--2">
+                <li> <a href="./articles.html">
+                    <div class="label">醫療保健</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">性愛</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">更年期</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">失智</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">運動</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">飲食</div>
+                  </a></li>
+              </ul>
+            </li>
+            <li><a href="./articles.html">
+                <div class="label">生活</div>
+              </a></li>
+            <li><a href="./articles.html">
+                <div class="label">理財</div>
+              </a></li>
+            <li><a href="./events.html">
+                <div class="label">策展</div>
+              </a></li>
+            <li><a href="./campaign.html">
+                <div class="label">活動</div>
+              </a></li>
+            <li><a href="./selection.html">
+                <div class="label">選品</div>
+              </a></li>
+          </ul>
+        </div>
+        <div class="container">
+          <div class="buttons">
+            <div class="button--pill--xs is-outline">
+              <div class="label">會員中心</div>
+            </div>
+            <div class="button--pill--xs is-outline">
+              <div class="label">登出</div>
+            </div>
+          </div>
+          <nav class="nav--sns">
+            <ul>
+              <li><a class="button--facebook--dark"></a></li>
+              <li><a class="button--line--dark"></a></li>
+              <li><a class="button--instagram--dark"></a></li>
+              <li><a class="button--youtube--dark"></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <section class="section--breadcrumb">
+      <div class="container">
+        <div class="breadcrumb">
+          <ul>
+            <li><a href="/">首頁</a></li>
+            <li><a href="">健康</a></li>
+            <li><a href="">運動</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section--article--header">
+      <div class="container">
+        <div class="page--title">
+          <article>
+            <h2>職場上和年輕人價值觀差異太大，怎麼做都不對？如何和八、九年級生溝通，自己不心累？</h2>
+          </article>
+        </div>
+        <div class="page--cover"> <img src="https://picsum.photos/800/600" />
+          <div class="caption">主圖｜Shutterstock 內文圖片｜高寶提供</div>
+        </div>
+        <div class="page--caption">
+          <div class="information">
+            <div class="date">2024.05.01</div>
+            <div class="view"><i class="bi bi-eye"></i>888</div>
+          </div>
+          <div class="author">作者｜陳偉<br />責任編輯｜吳丹華</div>
+          <div class="buttons">
+            <div class="button--facebook--dark"></div>
+            <div class="button--line--dark"></div>
+            <div class="button--link--dark"></div>
+            <div class="button--textsize--dark"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section--article--body">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-9">
+            <div class="dropdown dropdown--article">
+              <div class="label" data-bs-toggle="dropdown" data-bs-offset="0, 0">文章目錄</div>
+              <div class="dropdown-menu">
+                <div class="dropdown-item">1. 大綱大綱大綱大綱大綱</div>
+                <div class="dropdown-item">2. 大綱大綱大綱大綱大綱</div>
+                <div class="dropdown-item">3. 大綱大綱大綱大綱大綱</div>
+              </div>
+            </div>
+            <div class="article--player">
+              <div class="label">文章用聽的</div>
+              <div class="player--wrapper"><audio controls="controls">
+                  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+                </audio></div>
+            </div>
+            <article>
+              <blockquote class="quote">
+                <p>編按：如何和年輕人共事？熟齡族群在職場待久了，不免感受到世代差異。和MZ世代一起工作，該怎麼給予指示，才能讓對方把事情做好？本文為韓國9位不同業界專家提出的建議，讓職場資深工作者們找到與MZ世代共事的舒服方式。</p>
+              </blockquote>
+              <p>對張經理而言，年輕的MZ世代（50+註：由1981～1996年間出生的M世代（Millennials）和1997～2010年之間出生的「Z世代」合成的族群）似乎是一道高牆。因為以經理的立場來說，應該要鼓勵同事間相互合作，但他們就好像從外太空來的人種一樣非常難理解。就算支援部分業務或是部分授權，還是無法從他們那裡得到好的回饋。</p>
+              <h3>以為ＭＺ世代都很主動 卻發現給彈性或規定太具體都引反感都引反感</h3>
+              <p>A公司今年已經邁入第37個年頭。在像現在這樣變化無常的時代中，他們擁有悠久的歷史，組織的規模大、部門多，員工人數也很多。不過，組織文化就像官僚體系一樣，某些部門文化甚至像軍隊一樣，必須絕對服從長官的命令。（閱讀相關文章：文章文章文章文章）</p>
+              <p>所以不久前甚至還花一大筆錢參加名為「激勵MZ世代的領導力」的演講，但反而發現更多難以理解的方面，無法抓到頭緒。教育內容核心提到：「MZ世代的員工會更投入在自己主動找來做的事情上，而不是被交代的事情。他們想被認同的欲望很強，想要得到充分的權力立下大功。」</p>
+              <blockquote>對張經理而言，年輕的MZ世代因為以經理的立場來說，應該要鼓勵同事間相互合作，但他們就好像從外太空來的人種一樣非常難理解。就算支援部分業務或是部分授權，還是無法從他們那裡得到好的回饋。</blockquote>
+            </article>
+            <div class="panel--subscription is-center">
+              <div class="subscription--title">
+                <div class="title">此為會員限定文章</div>
+              </div>
+              <div class="caption">
+                <p>免費加入50+，用新的方法創造你的理想老後！</p>
+                <ul>
+                  <li><span><i class="bi bi-check"></i></span>閱讀會員限定文章</li>
+                  <li><span><i class="bi bi-check"></i></span>參加會員限定活動</li>
+                  <li><span><i class="bi bi-check"></i></span>熟齡生活全方位知識庫</li>
+                </ul>
+                <p>《50+生活百科》、《50+週刊》免費看</p>
+              </div>
+              <div class="buttons">
+                <div class="button--more--sm is-invert">
+                  <div class="label">會員登入</div>
+                </div>
+                <div class="button--more--sm is-invert">
+                  <div class="label">加入會員</div>
+                </div>
+              </div>
+            </div>
+            <div class="panel--subscription" style="margin-bottom: 0;">
+              <div class="subscription--title">
+                <div class="title">用行動支持50+</div>
+              </div>
+              <div class="caption">
+                <p>媒體是推動社會朝向更好改變的關鍵。《50+》目前皆為免費閱讀，然而網站運作需要不同專業人員的投入。如您喜歡這篇文章，誠摯邀請您小額贊助，支持內容製作。希望我們在您的支持下，能持續對台灣熟齡生活有正向啟發、給予人盼望！</p>
+              </div>
+              <div class="buttons">
+                <div class="button--more--sm is-invert">
+                  <div class="label">贊助50+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="panel--latest">
+              <div class="title">熱門文章</div>
+              <div class="item--latest">
+                <div class="no">1</div>
+                <div class="caption">98歲仍在幫病人看病！金氏世界紀錄最高齡醫師塔克：6個健康到100歲的秘訣，每個人都做得到</div>
+              </div>
+              <div class="item--latest">
+                <div class="no">2</div>
+                <div class="caption">不爭，卻收穫最豐盛的人生！模仿天王郭子乾的「被動式積極」哲學</div>
+              </div>
+              <div class="item--latest">
+                <div class="no">3</div>
+                <div class="caption">60歲告別主播台，轉行當心理諮商師！靳秀麗：幸福不是退休養老，「生產老化」活出無憾人生</div>
+              </div>
+              <div class="item--latest">
+                <div class="no">4</div>
+                <div class="caption">60歲告別主播台，轉行當心理諮商師！靳秀麗：幸福不是退休養老，「生產老化」活出無憾人生</div>
+              </div>
+              <div class="item--latest">
+                <div class="no">5</div>
+                <div class="caption">雙腳穴道最多，動動腳可放鬆、晚上好睡！10個活絡腿部動作，每天挑一個來練</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="grid--footer">
+          <div class="logo--row">
+            <div class="logo--white"></div>
+            <div class="logo--crop"></div>
+          </div>
+          <div class="col--siteinfo">
+            <nav class="nav--siteinfo">
+              <ul>
+                <li><a href="href">遠見雜誌</a></li>
+                <li><a href="href">天下文化</a></li>
+                <li><a href="href">未來親子學習平台</a></li>
+                <li><a href="href">哈佛商業評論</a></li>
+              </ul>
+            </nav>
+            <div class="siteinfo">Copyright © 2024 遠見天下文化出版股份有限公司<br />讀者服務部電話：(02)2662-0012<br />服務時間：週一 ~ 週五 9:00～12:30；13:30～17:00<br />服務信箱：<a href="mailto:50plus@cwgv.com.tw">50plus@cwgv.com.tw</a></div>
+          </div>
+          <div class="col--footer">
+            <nav class="nav--footer">
+              <ul>
+                <li><a href="about.html">關於我們</a></li>
+                <li><a href="privacy.html">隱私權政策</a></li>
+                <li><a href="terms.html">個資保護聲明</a></li>
+                <li><a href="faq.html">購物 Q&A</a></li>
+                <li><a href="contact.html">聯絡我們</a></li>
+                <li><a href="cooperate.html">合作洽談</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col--sns">
+            <nav class="nav--sns">
+              <ul>
+                <li><a class="button--facebook"></a></li>
+                <li><a class="button--line"></a></li>
+                <li><a class="button--instagram"></a></li>
+                <li><a class="button--youtube"></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+
+</html>

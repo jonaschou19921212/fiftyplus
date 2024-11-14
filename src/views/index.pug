@@ -507,43 +507,39 @@ block main
         .col
           .card--snippet--preview
             .pic
-              img(
-                src=`${getLoremSlide()}`
-              )
+              img(src=`${getLoremSlide()}`)
             .caption
               h3
         .col 
           .swiper--snippet
-            //- .swiper-navigation 
-            //-   .swiper-button-prev
-            //-     .chevron--left
-            //-   .swiper-button-next
-            //-     .chevron--right
             swiper-container(
               init='false'
-              autoplay={ delay: 5000, disableOnInteraction: false, stopOnLastSlide: false }
+              direction='vertical'
               slides-per-view='5'
+              space-between='16'
+              autoplay='{ "delay": 5000, "disableOnInteraction": false }'
+              loop='true'
               inject-styles=[
-            `
-            :host .swiper {
-              overflow: hidden;
-            }
-            :host {
-              --swiper-theme-color: #ede73c;
-              --swiper-navigation-size: 32px;
-            }
-              `,
-            ],
+                `
+                :host .swiper {
+                  overflow: hidden;
+                }
+                :host {
+                  --swiper-theme-color: #ede73c;
+                  --swiper-navigation-size: 32px;
+                  height: 100%;
+                }
+                `,
+              ],
             )
-              each item, index in [0, 1, 2, 3, 4, 5, 6]
+              each item, index in Array(10).fill()
                 swiper-slide
                   .card--snippet(
+                    data-index=index
                     onclick='gotoSnippet(this)'
                   )
                     .pic
-                      img(
-                        src=`${getLoremSlide()}`
-                      )
+                      img(src=`${getLoremSlide()}`)
                     .caption
                       h3
                         != getLoremText()

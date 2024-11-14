@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="">
+  <meta property="og:image" content="/assets/images/fbshare.png">
+  <meta property="og:description" content="">
+  <meta property="og:url" content="">
+  <meta itemprop="name" content="">
+  <meta itemprop="description" content="">
+  <meta itemprop="image" content="/assets/images/fbshare.png">
+  <!-- Favicons-->
+  <link rel="preconnect" href="" />
+  <link rel="shortcut icon" href="" type="image/x-icon">
+  <!-- Stylesheets-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script> <!-- <script defer src="./assets/js/p5.min.js"></script> -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net/">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="./assets/js/App.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/css/App.css">
+</head>
+
+<body>
+  <div id="top"></div>
+  <main style="visibility: hidden;">
+    <div id="App"><input id="isMenuActive" type="checkbox" /><input id="isMenuNow" type="text" /><input id="isScrollDown" type="checkbox" /></div>
+    <header>
+      <div class="button--go-top" onclick="window.scrollTo(0, 0)">
+        <div class="icon"> <i class="bi bi-chevron-up"></i></div>
+      </div>
+      <div class="header--desktop">
+        <section>
+          <div class="container">
+            <div class="buttons--action is-flex-start"><a class="button--pill--xs" href="./confirm.html">
+                <div class="label">訂閱週刊</div>
+              </a></div>
+            <div class="logo--wrapper"><a class="logo--black" href="./index.html"></a></div>
+            <div class="buttons--action is-flex-end">
+              <div class="panel--search"><label><a class="icon" href="./search.html"><i class="bi bi-search"></i></a><input type="checkbox" /><input type="text" placeholder="輸入搜尋文字" /></label></div><a class="button--pill--xs" href="./confirm.html">
+                <div class="label">會員登入</div>
+              </a><a class="button--pill--xs is-invert" href="./donate.html">
+                <div class="label">贊助50+</div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <nav class="header--nav">
+        <div class="container">
+          <ul>
+            <li><a href="./articles.html">
+                <div class="label">人物</div>
+              </a></li>
+            <li><a href="./articles.html">
+                <div class="label">健康</div>
+              </a>
+              <ul>
+                <li> <a href="./articles.html">
+                    <div class="label">醫療保健</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">性愛</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">更年期</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">失智</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">運動</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">飲食</div>
+                  </a></li>
+              </ul>
+            </li>
+            <li><a href="./articles.html">
+                <div class="label">生活</div>
+              </a></li>
+            <li><a href="./articles.html">
+                <div class="label">理財</div>
+              </a></li>
+            <li><a href="./events.html">
+                <div class="label">策展</div>
+              </a></li>
+            <li><a href="">
+                <div class="label">Podcast</div>
+              </a></li>
+          </ul>
+          <ul></ul>
+          <ul>
+            <li><a href="">
+                <div class="label">影音</div>
+              </a></li>
+            <li><a href="./weekly.html">
+                <div class="label">週刊</div>
+              </a></li>
+            <li><a href="./reviews.html">
+                <div class="label">評鑑</div>
+              </a></li>
+            <li><a href="./course.html">
+                <div class="label">50+學院</div>
+              </a></li>
+            <li><a href="./campaign.html">
+                <div class="label">活動</div>
+              </a></li>
+            <li><a href="./selection.html">
+                <div class="label">選品</div>
+              </a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="header--fixed">
+        <div class="container">
+          <div class="logo--wrapper"><a class="logo--black" href="./index.html"></a></div>
+          <nav class="header--nav">
+            <ul>
+              <li><a href="./articles.html">
+                  <div class="label">人物</div>
+                </a></li>
+              <li><a href="./articles.html">
+                  <div class="label">健康</div>
+                </a>
+                <ul>
+                  <li> <a href="./articles.html">
+                      <div class="label">醫療保健</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">性愛</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">更年期</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">失智</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">運動</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">飲食</div>
+                    </a></li>
+                </ul>
+              </li>
+              <li><a href="./articles.html">
+                  <div class="label">生活</div>
+                </a></li>
+              <li><a href="./articles.html">
+                  <div class="label">理財</div>
+                </a></li>
+              <li><a href="./events.html">
+                  <div class="label">策展</div>
+                </a></li>
+              <li><a href="">
+                  <div class="label">Podcast</div>
+                </a></li>
+              <li><a href="">
+                  <div class="label">影音</div>
+                </a></li>
+              <li><a href="./weekly.html">
+                  <div class="label">週刊</div>
+                </a></li>
+              <li><a href="./reviews.html">
+                  <div class="label">評鑑</div>
+                </a></li>
+              <li><a href="./course.html">
+                  <div class="label">50+學院</div>
+                </a></li>
+              <li><a href="./campaign.html">
+                  <div class="label">活動</div>
+                </a></li>
+              <li><a href="./selection.html">
+                  <div class="label">選品</div>
+                </a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="header--mobile">
+        <div class="container">
+          <div class="logo--wrapper"><a class="logo--black" href="href"></a></div>
+          <div class="buttons"><a class="button--pill--xs" href="./donate.html">
+              <div class="label">贊助50+</div>
+            </a></div>
+          <div class="menu--toggle">
+            <div class="icon"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="drawer">
+        <div class="container">
+          <div class="panel--search--mobile"> <label><input type="text" placerholder="輸入搜尋文字" /><a class="icon" href="./search.html">
+                <div class="icon--search"></div>
+              </a></label></div>
+          <div class="grid--qlinks">
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--academy"></div>
+              </div>
+              <div class="label">學院</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--weekly"></div>
+              </div>
+              <div class="label">週刊</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--review"></div>
+              </div>
+              <div class="label">評鑑</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--event"></div>
+              </div>
+              <div class="label">活動</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--video"></div>
+              </div>
+              <div class="label">影音</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--podcast"></div>
+              </div>
+              <div class="label">Podcast</div>
+            </div>
+          </div>
+        </div>
+        <div class="nav--drawer">
+          <ul>
+            <li><a href="./articles.html">
+                <div class="label">人物</div>
+              </a></li>
+            <li><a data-bs-toggle="collapse" href="#collapse--2">
+                <div class="label">健康</div>
+                <div class="icon"> <i class="bi bi-chevron-down"></i></div>
+              </a>
+              <ul class="collapse" id="collapse--2">
+                <li> <a href="./articles.html">
+                    <div class="label">醫療保健</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">性愛</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">更年期</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">失智</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">運動</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">飲食</div>
+                  </a></li>
+              </ul>
+            </li>
+            <li><a href="./articles.html">
+                <div class="label">生活</div>
+              </a></li>
+            <li><a href="./articles.html">
+                <div class="label">理財</div>
+              </a></li>
+            <li><a href="./events.html">
+                <div class="label">策展</div>
+              </a></li>
+            <li><a href="./campaign.html">
+                <div class="label">活動</div>
+              </a></li>
+            <li><a href="./selection.html">
+                <div class="label">選品</div>
+              </a></li>
+          </ul>
+        </div>
+        <div class="container">
+          <div class="buttons">
+            <div class="button--pill--xs is-outline">
+              <div class="label">會員中心</div>
+            </div>
+            <div class="button--pill--xs is-outline">
+              <div class="label">登出</div>
+            </div>
+          </div>
+          <nav class="nav--sns">
+            <ul>
+              <li><a class="button--facebook--dark"></a></li>
+              <li><a class="button--line--dark"></a></li>
+              <li><a class="button--instagram--dark"></a></li>
+              <li><a class="button--youtube--dark"></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <section class="section--breadcrumb is-sp">
+      <div class="container">
+        <div class="breadcrumb">
+          <ul>
+            <li><a href="/">首頁</a></li>
+            <li><a href="/">Style Guide</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="section__title">
+          <div class="title">文字樣式</div>
+        </div>
+        <div class="card--style">
+          <div class="label">h2 標題 2 內容類文章 主標題</div>
+          <div class="content">
+            <article>
+              <h2>60歲告別主播台，轉行當心理諮商師！靳秀麗：幸福不是退休養老，「生產老化」活出無憾人生</h2>
+            </article>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">h3 標題 3 段落內標題</div>
+          <div class="content">
+            <article>
+              <h3>98歲仍在幫病人看病！金氏世界紀錄最高齡醫師塔克：6個健康到100歲的秘訣，每個人都做得到</h3>
+            </article>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">p 段落</div>
+          <div class="content">
+            <article>
+              <p>眼睛常過勞乾澀？眼科醫師徐浩恩：避免3件事，降低老後白內障風險</p>
+            </article>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">文章中超連結</div>
+          <div class="content">
+            <article>
+              <p>生氣是慢性自殺！洛桑加參醫師：每天1個練習，從此心平氣和 <a href="#">看更多</a></p>
+            </article>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">項次符號 ul</div>
+          <div class="content">
+            <article>
+              <ul>
+                <li>如何退休後過更好？心理諮商師靳秀麗：1個「生產老化」新觀念，啟動身體健康、內心的內無比...</li>
+                <li>怎麼挑鍋子，才不會把毒素吃下肚？達人選鍋，5大材質優缺點一次聽懂</li>
+                <li>雙腳穴道最多，動動腳可放鬆、晚上好睡！10個活絡腿部動作，每天挑一個來練</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">項次符號 ol</div>
+          <div class="content">
+            <article>
+              <ol>
+                <li>生氣是慢性自殺！洛桑加參醫師：每天1個練習，從此心平氣和</li>
+                <li>不爭，卻收穫最豐盛的人生！模仿天王郭子乾的「被動式積極」哲學</li>
+                <li>眼睛常過勞乾澀？眼科醫師徐浩恩：避免3件事，降低老後白內障風險</li>
+              </ol>
+            </article>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">項次符號 dl</div>
+          <div class="content">
+            <article>
+              <dl>
+                <dt> 項目 1</dt>
+                <dd>內容 1</dd>
+                <dt> 項目 2</dt>
+                <dd>內容 2</dd>
+                <dt> 項目 3</dt>
+                <dd>內容 3</dd>
+              </dl>
+            </article>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">引用區塊 blockquote</div>
+          <div class="content">
+            <article>
+              <blockquote>
+                <p>眼睛常過勞乾澀？眼科醫師徐浩恩：避免3件事，降低老後白內障風險</p>
+              </blockquote>
+            </article>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">表格 table</div>
+          <div class="content">
+            <article>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>標題 1</th>
+                    <th>標題 2</th>
+                    <th>標題 3</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>內容 1</td>
+                    <td>內容 2</td>
+                    <td>內容 3</td>
+                  </tr>
+                  <tr>
+                    <td>內容 4</td>
+                    <td>內容 5</td>
+                    <td>內容 6</td>
+                  </tr>
+                  <tr>
+                    <td>內容 7</td>
+                    <td>內容 8</td>
+                    <td>內容 9</td>
+                  </tr>
+                </tbody>
+              </table>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="section__title">
+          <div class="title">按鈕樣式</div>
+        </div>
+        <div class="card--style">
+          <div class="label">button pill xs</div>
+          <div class="content">
+            <div class="buttons">
+              <div class="button--pill--xs">
+                <div class="label">按鈕標題</div>
+              </div>
+              <div class="button--pill--xs is-invert">
+                <div class="label">按鈕標題</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">button pill lg</div>
+          <div class="content">
+            <div class="buttons">
+              <div class="button--pill--lg">
+                <div class="label">按鈕標題</div>
+              </div>
+              <div class="button--pill--lg is-invert">
+                <div class="label">按鈕標題</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">button pill xl</div>
+          <div class="content">
+            <div class="buttons">
+              <div class="button--pill--xl">
+                <div class="label">按鈕標題</div>
+              </div>
+              <div class="button--pill--xl is-invert">
+                <div class="label">按鈕標題</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">button more small</div>
+          <div class="content">
+            <div class="buttons">
+              <div class="button--more--sm">
+                <div class="label">按鈕標題</div>
+              </div>
+              <div class="button--more--sm is-invert">
+                <div class="label">按鈕標題</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">button more</div>
+          <div class="content">
+            <div class="buttons">
+              <div class="button--more">
+                <div class="label">按鈕標題</div>
+              </div>
+              <div class="button--more is-invert">
+                <div class="label">按鈕標題</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="section__title">
+          <div class="title">標題款式</div>
+        </div>
+        <div class="card--style">
+          <div class="label">列表用單元標題</div>
+          <div class="content">
+            <div class="section__title">
+              <div class="title">列表用單元標題</div>
+            </div>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">文章大標</div>
+          <div class="content">
+            <div class="page--title">
+              <article>
+                <h2>文章大標。未來該注意哪些病，基因告訴你！</h2>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">文章段落標題</div>
+          <div class="content">
+            <article>
+              <h3>文章段落標題</h3>
+            </article>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">會員操作提示</div>
+          <div class="content">
+            <div class="subscription--title">
+              <div class="title">會員操作提示</div>
+            </div>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">評鑑對象標題</div>
+          <div class="content">
+            <div class="review--title">
+              <div class="title">評鑑對象標題</div>
+            </div>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">說明文字段落標題？（目前只有 review 單元用到）</div>
+          <div class="content">
+            <article class="is-review">
+              <h3>說明文字段落標題</h3>
+            </article>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">文章卡片內的分類標題</div>
+          <div class="content">
+            <div class="card--article">
+              <div class="caption">
+                <div class="catalog">文章卡片內的分類標題</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container--slim">
+        <div class="section__title">
+          <div class="title">卡片款式</div>
+        </div>
+        <div class="card--style">
+          <div class="label">文章卡片</div>
+          <div class="content">
+            <div class="row row--article">
+              <div class="col-md-6 col-lg-4">
+                <div class="card--article"><a class="pic" href="./article.html"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/articles/15/31015/preview/thumb/31015.png" /></a><a class="caption" href="./article.html">
+                    <div class="catalog">人物</div>
+                    <h3>眼睛常過勞乾澀？眼科醫師徐浩恩：避免3件事，降低老後白內障風險</h3>
+                  </a>
+                  <div class="info">
+                    <div class="date">2024.09.01</div>
+                    <div class="view">
+                      <div class="icon"><i class="bi bi-eye"></i></div>
+                      <div class="label">1000</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card--article"><a class="pic" href="./article.html"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/articles/39/31039/preview/thumb/31039.png" /></a><a class="caption" href="./article.html">
+                    <div class="catalog">健康</div>
+                    <h3>75歲終於踏出人生第一次自由行，像單身貴族好快樂！許美月：在家裡怕一輩子，永遠都走不出去</h3>
+                  </a>
+                  <div class="info">
+                    <div class="date">2024.09.01</div>
+                    <div class="view">
+                      <div class="icon"><i class="bi bi-eye"></i></div>
+                      <div class="label">1000</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card--article"><a class="pic" href="./article.html"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/articles/25/31025/preview/thumb/31025.png" /></a><a class="caption" href="./article.html">
+                    <div class="catalog">心靈</div>
+                    <h3>怎麼挑鍋子，才不會把毒素吃下肚？達人選鍋，5大材質優缺點一次聽懂</h3>
+                  </a>
+                  <div class="info">
+                    <div class="date">2024.09.01</div>
+                    <div class="view">
+                      <div class="icon"><i class="bi bi-eye"></i></div>
+                      <div class="label">1000</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">週刊卡片</div>
+          <div class="content">
+            <div class="row row--weekly">
+              <div class="col-6 col-md-6 col-lg-3">
+                <div class="card--weekly">
+                  <div class="label"> 第020期</div>
+                  <div class="no"> 020</div>
+                  <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/fiftyplus_project/21/21/preview/21.png" /></div>
+                  <div class="caption">
+                    <h3>75歲終於踏出人生第一次自由行，像單身貴族好快樂！許美月：在家裡怕一輩子，永遠都走不出去</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-6 col-lg-3">
+                <div class="card--weekly">
+                  <div class="label"> 第019期</div>
+                  <div class="no"> 019</div>
+                  <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/fiftyplus_project/22/22/preview/22.png" /></div>
+                  <div class="caption">
+                    <h3>83歲一頭白髮，卻氣色絕佳！光田醫院總院長王乃弘的早餐菜單：50歲才開始健康生活，絕對來得及</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-6 col-lg-3">
+                <div class="card--weekly">
+                  <div class="label"> 第018期</div>
+                  <div class="no"> 018</div>
+                  <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/fiftyplus_project/23/23/preview/23.png" /></div>
+                  <div class="caption">
+                    <h3>生氣是慢性自殺！洛桑加參醫師：每天1個練習，從此心平氣和</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-6 col-lg-3">
+                <div class="card--weekly">
+                  <div class="label"> 第017期</div>
+                  <div class="no"> 017</div>
+                  <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/fiftyplus_project/20/20/preview/20.png" /></div>
+                  <div class="caption">
+                    <h3>未來該注意哪些病，基因告訴你！曾嶔元醫師：如何掌握健康弱點，精準預防？</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">策展卡片 - 首頁</div>
+          <div class="content">
+            <div class="grid--event" style="grid-template-rows: unset"><a class="card--event--xl" style="display: none;" href="./eventDetail.html">
+                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/90/4390/carousel/4390.png" /></div>
+                <div class="caption">
+                  <h3>健康大未來！預約不生病的老後</h3>
+                  <p>如果活到100歲，還可以不病、不痛、不失能，盡情做自己喜歡的事那會是什麼樣的世界？隨著醫療科技的發...</p>
+                </div>
+              </a><a class="card--event" href="./eventDetail.html">
+                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/articles/10/31010/preview/thumb/31010.png" /></div>
+                <div class="caption">
+                  <h3>確診、長新冠、新冠後遺症 自我照顧指南</h3>
+                </div>
+              </a><a class="card--event" href="./eventDetail.html">
+                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/articles/22/31022/preview/thumb/31022.png" /></div>
+                <div class="caption">
+                  <h3>50後的「心裡學」：表演自我</h3>
+                </div>
+              </a><a class="card--event" href="./eventDetail.html">
+                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/articles/82/30882/preview/thumb/30882.png" /></div>
+                <div class="caption">
+                  <h3>屏東‧佇足 我的慢旅行</h3>
+                </div>
+              </a></div>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">策展卡片 - 列表</div>
+          <div class="content">
+            <div class="row row--event">
+              <div class="col-md-6"><a class="card--event--md" href="./eventDetail.html">
+                  <div class="pic"><img class="lazyload" data-src="./assets/images/column--1.jpg" /></div>
+                  <div class="caption">
+                    <h3>健康大未來！預約不生病的老後</h3>
+                    <p>精準醫療、AI、智慧醫療……日新月異的科技，如何改變超高齡社會的樣貌？隨著醫療與科技進展，過往的「常識」很可能被推翻，老年不一定伴隨著疾病，健康到100歲真的有可能！本文介紹5大最新健康趨勢，活到老、健康到老。</p>
+                  </div>
+                </a></div>
+              <div class="col-md-6"><a class="card--event--md" href="./eventDetail.html">
+                  <div class="pic"><img class="lazyload" data-src="./assets/images/column--2.jpg" /></div>
+                  <div class="caption">
+                    <h3>確診、長新冠、新冠後遺症 自我照顧指南</h3>
+                    <p>精準醫療、AI、智慧醫療……日新月異的科技，如何改變超高齡社會的樣貌？隨著醫療與科技進展，過往的「常識」很可能被推翻，老年不一定伴隨著疾病，健康到100歲真的有可能！本文介紹5大最新健康趨勢，活到老、健康到老。</p>
+                  </div>
+                </a></div>
+            </div>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">學院卡片 - 列表</div>
+          <div class="content">
+            <div class="row row--course">
+              <div class="col-lg-6">
+                <div class="card--course">
+                  <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/42/4042/carousel/4042.png" /></div>
+                  <div class="caption">
+                    <div class="info">
+                      <div class="date">2024.11.06 — 2024.12.11</div>
+                    </div>
+                    <h3>50+聲音表達工作坊進階班第5期</h3>
+                    <div class="buttons">
+                      <div class="button--pill--xl">
+                        <div class="label">我要報名</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="card--course">
+                  <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4338/carousel/4338.png" /></div>
+                  <div class="caption">
+                    <div class="info">
+                      <div class="date">2024.11.06 — 2024.12.11</div>
+                    </div>
+                    <h3>50+聲音表達工作坊進階班第5期</h3>
+                    <div class="buttons">
+                      <div class="button--pill--xl">
+                        <div class="label">我要報名</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">選品卡片 - 列表</div>
+          <div class="content">
+            <div class="row row--selection">
+              <div class="col-6">
+                <div class="card--selection">
+                  <div class="pic"> <img src="https://picsum.photos/400/400?random=020" /></div>
+                  <div class="caption">
+                    <div class="title">這是商品名稱這是商品名稱這是商品名稱</div>
+                    <div class="footer">
+                      <div class="sale--price">
+                        <div class="original--price">
+                          <div class="label">原價</div>
+                          <div class="price">500</div>
+                        </div>
+                        <div class="discount--price">
+                          <div class="label">會員價</div>
+                          <div class="price">800</div>
+                        </div>
+                      </div>
+                      <div class="buttons">
+                        <div class="button--cart--xs">
+                          <div class="icon"> <i class="bi bi-cart-fill"></i></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card--selection">
+                  <div class="pic"> <img src="https://picsum.photos/400/400?random=019" /></div>
+                  <div class="caption">
+                    <div class="title">這是商品名稱這是商品名稱這是商品名稱</div>
+                    <div class="footer">
+                      <div class="sale--price">
+                        <div class="original--price">
+                          <div class="label">原價</div>
+                          <div class="price">500</div>
+                        </div>
+                        <div class="discount--price">
+                          <div class="label">會員價</div>
+                          <div class="price">800</div>
+                        </div>
+                      </div>
+                      <div class="buttons">
+                        <div class="button--cart--xs">
+                          <div class="icon"> <i class="bi bi-cart-fill"></i></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">評鑑卡片 - 列表</div>
+          <div class="content">
+            <div class="tab--review">
+              <ul class="nav">
+                <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" data-bs-target="#active">評鑑進行中</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#review">查看得獎評鑑報告</a></li>
+              </ul>
+            </div>
+            <div class="tab-content">
+              <div class="tab-pane show active" id="active">
+                <div class="card--review">
+                  <div class="pic"> <img src="https://picsum.photos/900/600/?random=undefined" /></div>
+                  <div class="caption">
+                    <div class="catalog">美妝保養</div>
+                    <div class="title">亞培安素-香草減甜版</div>
+                    <div class="date">申請試用時間： 2024.11.06 — 2024.12.11</div>
+                    <div class="info">40歲後肌肉流失每十年可能高達8%！蛋白質可幫助增加肌肉，但同時要護肌才能從問題根本著手，如果流失速度大於補...</div>
+                  </div>
+                  <div class="countdown">
+                    <div class="text">
+                      <div class="label">募集倒數</div><span>11</span><span>天</span><span>23</span><span>時</span><span>08</span><span>分</span><span>08</span><span>秒</span>
+                    </div><a class="button--pill--lg" href="./reviewStep1.html">
+                      <div class="label">申請試用</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="section__title">
+          <div class="title">文字粗細</div>
+        </div>
+        <div class="card--style">
+          <div class="label">思源黑體</div>
+          <div class="content">
+            <article>
+              <p style="font-weight: 300"> font-weight: 300 職場上和年輕人價值觀差異太大</p>
+              <p style="font-weight: 400"> font-weight: 400 職場上和年輕人價值觀差異太大</p>
+              <p style="font-weight: 500"> font-weight: 500 職場上和年輕人價值觀差異太大</p>
+              <p style="font-weight: 600"> font-weight: 600 職場上和年輕人價值觀差異太大</p>
+              <p style="font-weight: 700"> font-weight: 700 職場上和年輕人價值觀差異太大</p>
+              <p style="font-weight: 800"> font-weight: 800 職場上和年輕人價值觀差異太大</p>
+              <p style="font-weight: 900"> font-weight: 900 職場上和年輕人價值觀差異太大</p>
+            </article>
+          </div>
+        </div>
+        <div class="card--style">
+          <div class="label">思源明體</div>
+          <div class="content">
+            <article>
+              <p style="font-weight: 300; font-family: 'Noto Serif TC', sans-serif;"> font-weight: 300 職場上和年輕人價值觀差異太大</p>
+              <p style="font-weight: 400; font-family: 'Noto Serif TC', sans-serif;"> font-weight: 400 職場上和年輕人價值觀差異太大</p>
+              <p style="font-weight: 500; font-family: 'Noto Serif TC', sans-serif;"> font-weight: 500 職場上和年輕人價值觀差異太大</p>
+              <p style="font-weight: 600; font-family: 'Noto Serif TC', sans-serif;"> font-weight: 600 職場上和年輕人價值觀差異太大</p>
+              <p style="font-weight: 700; font-family: 'Noto Serif TC', sans-serif;"> font-weight: 700 職場上和年輕人價值觀差異太大</p>
+              <p style="font-weight: 800; font-family: 'Noto Serif TC', sans-serif;"> font-weight: 800 職場上和年輕人價值觀差異太大</p>
+              <p style="font-weight: 900; font-family: 'Noto Serif TC', sans-serif;"> font-weight: 900 職場上和年輕人價值觀差異太大</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="grid--footer">
+          <div class="logo--row">
+            <div class="logo--white"></div>
+            <div class="logo--crop"></div>
+          </div>
+          <div class="col--siteinfo">
+            <nav class="nav--siteinfo">
+              <ul>
+                <li><a href="href">遠見雜誌</a></li>
+                <li><a href="href">天下文化</a></li>
+                <li><a href="href">未來親子學習平台</a></li>
+                <li><a href="href">哈佛商業評論</a></li>
+              </ul>
+            </nav>
+            <div class="siteinfo">Copyright © 2024 遠見天下文化出版股份有限公司<br />讀者服務部電話：(02)2662-0012<br />服務時間：週一 ~ 週五 9:00～12:30；13:30～17:00<br />服務信箱：<a href="mailto:50plus@cwgv.com.tw">50plus@cwgv.com.tw</a></div>
+          </div>
+          <div class="col--footer">
+            <nav class="nav--footer">
+              <ul>
+                <li><a href="about.html">關於我們</a></li>
+                <li><a href="privacy.html">隱私權政策</a></li>
+                <li><a href="terms.html">個資保護聲明</a></li>
+                <li><a href="faq.html">購物 Q&A</a></li>
+                <li><a href="contact.html">聯絡我們</a></li>
+                <li><a href="cooperate.html">合作洽談</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col--sns">
+            <nav class="nav--sns">
+              <ul>
+                <li><a class="button--facebook"></a></li>
+                <li><a class="button--line"></a></li>
+                <li><a class="button--instagram"></a></li>
+                <li><a class="button--youtube"></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+
+</html>

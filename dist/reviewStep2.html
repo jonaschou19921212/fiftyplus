@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="">
+  <meta property="og:image" content="/assets/images/fbshare.png">
+  <meta property="og:description" content="">
+  <meta property="og:url" content="">
+  <meta itemprop="name" content="">
+  <meta itemprop="description" content="">
+  <meta itemprop="image" content="/assets/images/fbshare.png">
+  <!-- Favicons-->
+  <link rel="preconnect" href="" />
+  <link rel="shortcut icon" href="" type="image/x-icon">
+  <!-- Stylesheets-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script> <!-- <script defer src="./assets/js/p5.min.js"></script> -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net/">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="./assets/js/App.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/css/App.css">
+</head>
+
+<body>
+  <div id="top"></div>
+  <main style="visibility: hidden;">
+    <div id="App"><input id="isMenuActive" type="checkbox" /><input id="isMenuNow" type="text" /><input id="isScrollDown" type="checkbox" /></div>
+    <header>
+      <div class="button--go-top" onclick="window.scrollTo(0, 0)">
+        <div class="icon"> <i class="bi bi-chevron-up"></i></div>
+      </div>
+      <div class="header--desktop">
+        <section>
+          <div class="container">
+            <div class="buttons--action is-flex-start"><a class="button--pill--xs" href="./confirm.html">
+                <div class="label">訂閱週刊</div>
+              </a></div>
+            <div class="logo--wrapper"><a class="logo--black" href="./index.html"></a></div>
+            <div class="buttons--action is-flex-end">
+              <div class="panel--search"><label><a class="icon" href="./search.html"><i class="bi bi-search"></i></a><input type="checkbox" /><input type="text" placeholder="輸入搜尋文字" /></label></div><a class="button--pill--xs" href="./confirm.html">
+                <div class="label">會員登入</div>
+              </a><a class="button--pill--xs is-invert" href="./donate.html">
+                <div class="label">贊助50+</div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <nav class="header--nav">
+        <div class="container">
+          <ul>
+            <li><a href="./articles.html">
+                <div class="label">人物</div>
+              </a></li>
+            <li><a href="./articles.html">
+                <div class="label">健康</div>
+              </a>
+              <ul>
+                <li> <a href="./articles.html">
+                    <div class="label">醫療保健</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">性愛</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">更年期</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">失智</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">運動</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">飲食</div>
+                  </a></li>
+              </ul>
+            </li>
+            <li><a href="./articles.html">
+                <div class="label">生活</div>
+              </a></li>
+            <li><a href="./articles.html">
+                <div class="label">理財</div>
+              </a></li>
+            <li><a href="./events.html">
+                <div class="label">策展</div>
+              </a></li>
+            <li><a href="">
+                <div class="label">Podcast</div>
+              </a></li>
+          </ul>
+          <ul></ul>
+          <ul>
+            <li><a href="">
+                <div class="label">影音</div>
+              </a></li>
+            <li><a href="./weekly.html">
+                <div class="label">週刊</div>
+              </a></li>
+            <li><a href="./reviews.html">
+                <div class="label">評鑑</div>
+              </a></li>
+            <li><a href="./course.html">
+                <div class="label">50+學院</div>
+              </a></li>
+            <li><a href="./campaign.html">
+                <div class="label">活動</div>
+              </a></li>
+            <li><a href="./selection.html">
+                <div class="label">選品</div>
+              </a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="header--fixed">
+        <div class="container">
+          <div class="logo--wrapper"><a class="logo--black" href="./index.html"></a></div>
+          <nav class="header--nav">
+            <ul>
+              <li><a href="./articles.html">
+                  <div class="label">人物</div>
+                </a></li>
+              <li><a href="./articles.html">
+                  <div class="label">健康</div>
+                </a>
+                <ul>
+                  <li> <a href="./articles.html">
+                      <div class="label">醫療保健</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">性愛</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">更年期</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">失智</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">運動</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">飲食</div>
+                    </a></li>
+                </ul>
+              </li>
+              <li><a href="./articles.html">
+                  <div class="label">生活</div>
+                </a></li>
+              <li><a href="./articles.html">
+                  <div class="label">理財</div>
+                </a></li>
+              <li><a href="./events.html">
+                  <div class="label">策展</div>
+                </a></li>
+              <li><a href="">
+                  <div class="label">Podcast</div>
+                </a></li>
+              <li><a href="">
+                  <div class="label">影音</div>
+                </a></li>
+              <li><a href="./weekly.html">
+                  <div class="label">週刊</div>
+                </a></li>
+              <li><a href="./reviews.html">
+                  <div class="label">評鑑</div>
+                </a></li>
+              <li><a href="./course.html">
+                  <div class="label">50+學院</div>
+                </a></li>
+              <li><a href="./campaign.html">
+                  <div class="label">活動</div>
+                </a></li>
+              <li><a href="./selection.html">
+                  <div class="label">選品</div>
+                </a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="header--mobile">
+        <div class="container">
+          <div class="logo--wrapper"><a class="logo--black" href="href"></a></div>
+          <div class="buttons"><a class="button--pill--xs" href="./donate.html">
+              <div class="label">贊助50+</div>
+            </a></div>
+          <div class="menu--toggle">
+            <div class="icon"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="drawer">
+        <div class="container">
+          <div class="panel--search--mobile"> <label><input type="text" placerholder="輸入搜尋文字" /><a class="icon" href="./search.html">
+                <div class="icon--search"></div>
+              </a></label></div>
+          <div class="grid--qlinks">
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--academy"></div>
+              </div>
+              <div class="label">學院</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--weekly"></div>
+              </div>
+              <div class="label">週刊</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--review"></div>
+              </div>
+              <div class="label">評鑑</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--event"></div>
+              </div>
+              <div class="label">活動</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--video"></div>
+              </div>
+              <div class="label">影音</div>
+            </div>
+            <div class="button--qlink">
+              <div class="icon">
+                <div class="icon--podcast"></div>
+              </div>
+              <div class="label">Podcast</div>
+            </div>
+          </div>
+        </div>
+        <div class="nav--drawer">
+          <ul>
+            <li><a href="./articles.html">
+                <div class="label">人物</div>
+              </a></li>
+            <li><a data-bs-toggle="collapse" href="#collapse--2">
+                <div class="label">健康</div>
+                <div class="icon"> <i class="bi bi-chevron-down"></i></div>
+              </a>
+              <ul class="collapse" id="collapse--2">
+                <li> <a href="./articles.html">
+                    <div class="label">醫療保健</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">性愛</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">更年期</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">失智</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">運動</div>
+                  </a></li>
+                <li> <a href="./articles.html">
+                    <div class="label">飲食</div>
+                  </a></li>
+              </ul>
+            </li>
+            <li><a href="./articles.html">
+                <div class="label">生活</div>
+              </a></li>
+            <li><a href="./articles.html">
+                <div class="label">理財</div>
+              </a></li>
+            <li><a href="./events.html">
+                <div class="label">策展</div>
+              </a></li>
+            <li><a href="./campaign.html">
+                <div class="label">活動</div>
+              </a></li>
+            <li><a href="./selection.html">
+                <div class="label">選品</div>
+              </a></li>
+          </ul>
+        </div>
+        <div class="container">
+          <div class="buttons">
+            <div class="button--pill--xs is-outline">
+              <div class="label">會員中心</div>
+            </div>
+            <div class="button--pill--xs is-outline">
+              <div class="label">登出</div>
+            </div>
+          </div>
+          <nav class="nav--sns">
+            <ul>
+              <li><a class="button--facebook--dark"></a></li>
+              <li><a class="button--line--dark"></a></li>
+              <li><a class="button--instagram--dark"></a></li>
+              <li><a class="button--youtube--dark"></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <section class="section--breadcrumb">
+      <div class="container">
+        <div class="breadcrumb">
+          <ul>
+            <li><a href="/">首頁</a></li>
+            <li><a href="">評鑑</a></li>
+            <li><a href="./review.html">亞培安素-香草減甜版</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section--review--header"> <img src="./assets/images/pic--review.jpg" /></section>
+    <section class="section--review--body">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-9">
+            <div class="review--title">
+              <div class="title">亞培安素-香草減甜版</div>
+            </div>
+            <div class="review--list">
+              <ul>
+                <li>伊○○</li>
+                <li>伊○○</li>
+                <li>伊○○</li>
+                <li>伊○○</li>
+                <li>伊○○</li>
+                <li>伊○○</li>
+                <li>伊○○</li>
+                <li>伊○○</li>
+                <li>伊○○</li>
+                <li>伊○○</li>
+                <li>伊○○</li>
+                <li>伊○○</li>
+                <li>伊○○</li>
+                <li>伊○○</li>
+                <li>伊○○</li>
+                <li>伊○○</li>
+                <li>伊○○</li>
+                <li>伊○○</li>
+                <li>伊○○</li>
+                <li>伊○○</li>
+              </ul>
+            </div>
+            <div class="card--review--spec">
+              <div class="pic"> <img src="https://picsum.photos/900/900" /></div>
+              <div class="status">
+                <div class="card--review--status">
+                  <div class="col">
+                    <div class="label">報名人數</div>
+                    <div class="value"><strong>111</strong>人</div>
+                  </div>
+                  <div class="col">
+                    <div class="label">關注人數</div>
+                    <div class="value"><strong>88888</strong>人</div>
+                  </div>
+                </div>
+              </div>
+              <div class="caption">
+                <article class="is-review-spec">
+                  <h3>產品規格</h3>
+                  <dl>
+                    <dt>品牌：</dt>
+                    <dd>亞培安素</dd>
+                    <dt>容量：</dt>
+                    <dd>220ml/瓶，共7瓶</dd>
+                    <dt>效期：</dt>
+                    <dd>2025/04/27</dd>
+                  </dl>
+                  <p>【全新升級 安素HMB雙效好體力】</p>
+                  <ul>
+                    <li>HMB+三重優蛋白，守護肌肉(護肌)幫助肌肉生長(增肌)</li>
+                    <li>三重優蛋白(乳清蛋白、酪蛋白、大豆蛋白)，作用更持久</li>
+                    <li>Omega 3不飽和脂肪，幫助調節生理機能</li>
+                    <li>隨身曲線瓶，上班/運動/出遊，隨時補充體力</li>
+                  </ul>
+                  <p>* 安素均衡營養升級配方提供3重優蛋白(乳清蛋白，酪蛋白，大豆蛋白)守護肌肉(護肌)、幫助肌肉生長(增肌)、有助組織修復，提供HMB(白胺酸代謝物補充營養，雙效營養支持好體力。</p>
+                </article>
+              </div>
+            </div>
+            <article class="is-review">
+              <p>閱讀黃金雙激萃的使用說明，上面說「於早上或晚上使用」。但我想，既然要試用，就早晚都用吧！於是晚上我用黃金雙激萃取代原來的晚霜，在化妝水後使用。這是我第一次晚上不用「乳霜」狀保養品，我一直倚賴乳霜來保濕。沒想到，黃金雙激萃的保濕潤澤度出奇的好！整個晚上都感覺皮膚非常水嫩！早上我則是洗完臉就直接使用它，用量稍減。它不會油膩，也很容易再上後續的隔離乳。因為好吸收的關係，立刻上隔離乳也不會有屑屑產生。 用完兩週，我覺得最明顯的改變是皮膚的緊緻度，而且幾乎一用就有感。皮膚的緊緻，感覺真的很明顯。同樣的保養程序，竟帶來這麼好的效果。也因為這樣，上彩粧也變得容易，不易掉粉。沒預料到的收穫是，出門前在化妝檯前的準備時間變短了，讓人開心。值得推薦！值得推薦！值得推薦！值得推薦！</p>
+              <h3>開箱影音</h3>
+              <div class="video--wrapper"><iframe src="https://www.youtube.com/embed/1Q3wv4J6Z1A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></div>
+            </article>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="panel--review">
+              <div class="title">活動募集截止</div>
+              <div class="caption">
+                <div class="status--review">
+                  <div class="label"><span>報名人數</span><br /><b>111</b><span>人</span></div>
+                  <div class="label"><span>關注人數</span><br /><b>50</b><span>人</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section--article--steps">
+      <div class="container">
+        <div class="grid--steps">
+          <div class="card--step">
+            <div class="label">Step.1</div>
+            <div class="process"></div>
+            <div class="caption">
+              <div class="title">評鑑募集中</div>
+              <div class="text">申請評鑑囉！只需在網頁上填寫簡單的申請資訊報名。</div>
+            </div>
+            <div class="date">11.06 — 11.11</div>
+          </div>
+          <div class="card--step is-active">
+            <div class="label">Step.2</div>
+            <div class="process"></div>
+            <div class="caption">
+              <div class="title">評鑑名單公告</div>
+              <div class="text">開始評鑑吧！公告入選名單及寄出產品至您提供的地址。</div>
+            </div>
+            <div class="date">11.12 — 11.14</div>
+          </div>
+          <div class="card--step">
+            <div class="label">Step.3</div>
+            <div class="process"></div>
+            <div class="caption">
+              <div class="title">心得回填</div>
+              <div class="text">回填心得喔！評鑑後別忘了拍攝照片並回填心得喔。</div>
+            </div>
+            <div class="date">11.15 — 11.30</div>
+          </div>
+          <div class="card--step">
+            <div class="label">Step.4</div>
+            <div class="process"></div>
+            <div class="caption">
+              <div class="title">查看評鑑報告</div>
+              <div class="text">看評鑑報告！看看心得報告，說不定有意想不到的收穫呢。</div>
+            </div>
+            <div class="date">12.01 — 12.11</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section--article--body">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-9">
+            <article class="is-review-rules">
+              <h3>活動期間</h3>
+              <h5>2024/11/06 — 11/11</h5>
+              <h3>評鑑辦法</h3>
+              <h6>本次評鑑建議有使用蛋白類營養品習慣的族群參加，體驗品共50份，因體驗數量有限，若報名人數超過50人，我們將從中選出50位評鑑員並寄發試用品，若最後您未中選，將不會收到試用品，請您見諒。維護評鑑品質，每位申請者享有單次申請機會，若重複報名將自動視為無效。</h6>
+              <h6>Step 1：申請評鑑 </h6>
+              <ol>
+                <li>請登入會員，填寫個人基本資料</li>
+                <li>簡述150字想體驗產品的原因</li>
+                <li>等候入選通知</li>
+              </ol>
+              <h6>Step 2：心得回填/好禮加碼贈</h6>
+              <ol>
+                <li>收到體驗品並開始試用</li>
+                <li>上傳使用產品後300字以上感想，依照自身試用經驗書寫心得</li>
+                <li>請上傳至少3張圖片，至多可上傳4張圖片，歡迎與產品合照，展現活力充沛的自己</li>
+                <li>好禮加碼贈：若您將心得文同時PO在您個人臉書上，並截圖您的FB PO文，與心得圖片一起上傳，待評鑑報告出爐後，將依此為依據，額外再贈送3罐亞培安素給評鑑員做為鼓勵！</li>
+                <li>4項評鑑雷達圖評分</li>
+              </ol>
+              <h3>評鑑條件</h3>
+              <ol>
+                <li>有使用蛋白類營養品習慣者</li>
+                <li>想在日常生活中增強體力者</li>
+              </ol>
+              <h3>注意事項</h3>
+              <ol>
+                <li>收到體驗品後，請至少使用7天，請體驗7天後回填評鑑心得，<i>請確認願意分享使用意見後再報名參加。</i></li>
+                <li>體驗品於評鑑名單公告5個工作天內送到，若未收到任何通知，請與客服聯繫，聯繫客服信箱：50plus@cwgv.com.tw ; 電話 02-2517-3688 轉 467 陳小姐，週一～週五09:30~12:30 ; 13:30~18:30</li>
+                <li>參加本次試用活動，50+將蒐集您的個人資訊 (姓名、電話、地址)，僅做為本次活動聯繫及體驗品寄送使用，不會移作他用，請協助提供正確資訊。</li>
+                <li>50+與體驗品提供之廠商保留變更活動及各項回饋獎項、兌換標準之權利，如評鑑活動因不可抗力因素無法執行，50+有暫停或終止本活動之權利。​</li>
+                <li>本體驗希望找到真心想了解並對產品有興趣者，若申請評鑑並開始試用後，最終未回覆心得者，往後將喪失參與體驗之資格。</li>
+                <li>若您入選為評鑑員，50+將有專人與您電話聯繫，請入選者留意手機來電。</li>
+                <li>如申請本次體驗，即表示同意50+網站及體驗品提供之廠商就您所提供的圖文心得有以任何方式使用之權利，並得以在不影響原意下修改文字及保有活動細節調整之權利。</li>
+              </ol>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="grid--footer">
+          <div class="logo--row">
+            <div class="logo--white"></div>
+            <div class="logo--crop"></div>
+          </div>
+          <div class="col--siteinfo">
+            <nav class="nav--siteinfo">
+              <ul>
+                <li><a href="href">遠見雜誌</a></li>
+                <li><a href="href">天下文化</a></li>
+                <li><a href="href">未來親子學習平台</a></li>
+                <li><a href="href">哈佛商業評論</a></li>
+              </ul>
+            </nav>
+            <div class="siteinfo">Copyright © 2024 遠見天下文化出版股份有限公司<br />讀者服務部電話：(02)2662-0012<br />服務時間：週一 ~ 週五 9:00～12:30；13:30～17:00<br />服務信箱：<a href="mailto:50plus@cwgv.com.tw">50plus@cwgv.com.tw</a></div>
+          </div>
+          <div class="col--footer">
+            <nav class="nav--footer">
+              <ul>
+                <li><a href="about.html">關於我們</a></li>
+                <li><a href="privacy.html">隱私權政策</a></li>
+                <li><a href="terms.html">個資保護聲明</a></li>
+                <li><a href="faq.html">購物 Q&A</a></li>
+                <li><a href="contact.html">聯絡我們</a></li>
+                <li><a href="cooperate.html">合作洽談</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col--sns">
+            <nav class="nav--sns">
+              <ul>
+                <li><a class="button--facebook"></a></li>
+                <li><a class="button--line"></a></li>
+                <li><a class="button--instagram"></a></li>
+                <li><a class="button--youtube"></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+
+</html>
