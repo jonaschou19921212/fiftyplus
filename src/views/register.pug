@@ -1,0 +1,51 @@
+extends _layout.pug
+
+block vars
+	- $id = 'index'
+
+block main
+	section.section--weekly
+		.container--slim.card--login.mt-5.mt-xl-0
+			.section__title.w-100
+				.title 會員登入
+			.row.row--login.justify-content-center.align-item-start
+				.content
+					p(id="p", class="text-center") 還不是50+會員？點我
+						a(href="#", class="normal--link ms-2") 註冊
+				.col-12.justify-content-center.d-flex
+					.button--more--slim
+						.label--flex
+							.icon
+								i.bi.bi-facebook.text-primary.bi-5x
+							| 使用Facebook帳戶
+				.col-12.justify-content-center.d-flex
+					.button--more--slim
+						.label--flex
+							.icon
+								i.bi.bi-line.text-primary.bi-5x
+							| 使用Line帳戶
+				.col-12.justify-content-center.d-flex
+					.button--more--slim
+						.label--flex
+							.icon
+								i.bi.bi-google.text-primary.bi-5x
+							| 使用Google帳戶
+				.col-12.justify-content-center.align-item-start.mt-3
+					.dash--text 或登入註冊資料
+				.col-12.d-flex.justify-content-center
+					.form--input
+						input#name.form--input(type='text', placeholder="姓名")
+				.col-12.d-flex.justify-content-center
+					.form--input
+						input#name.form--input(type='text', placeholder="帳號(手機或Email二擇一)")
+				.col-12.d-flex.justify-content-center
+					.form--input.form--password
+						input#password.form--input(type='password', placeholder="密碼(6碼以上含英文數字混合)")
+						i#togglePassword.bi.bi-eye(onclick='togglePassword("togglePassword", "password")')
+				.col-12.d-flex.justify-content-center
+					.form--input.form--password
+						input#password2.form--input(type='password', placeholder="密碼(6碼以上含英文數字混合)")
+						i#togglePassword2.bi.bi-eye(onclick='togglePassword("togglePassword2", "password2")')
+				.col-12.justify-content-center.d-flex.mt-3
+					.button--pill--full
+						.label.label--hide--border 獲取驗證碼

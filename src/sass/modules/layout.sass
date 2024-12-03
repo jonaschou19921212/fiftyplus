@@ -296,6 +296,19 @@ section
     &
       --bs-gutter-x: 20px
 
+.row--login
+  &
+    max-width: 460px
+    --bs-gutter-x: 40px
+    --bs-gutter-y: 15px
+    margin-bottom: var(--bs-gutter-y)
+  @media (max-width: theme('breakpoints.xl'))
+    &
+      --bs-gutter-x: 20px
+  @media (max-width: theme('breakpoints.md'))
+    &
+      --bs-gutter-x: 20px
+
 .row--article
   @media (min-width: theme('screens.lg'))
     &

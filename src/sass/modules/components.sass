@@ -208,7 +208,7 @@ blockqoute
 //     font-weight: 600
 //     transition: all .3s ease
 
-
+.button--pill--full,
 .button--pill--xl,
 .button--pill--lg
   &
@@ -233,6 +233,8 @@ blockqoute
     line-height: 1
     font-weight: 600
     transition: all .3s ease
+  .label--hide--border
+    border: none
   &:hover
     .label
       background: white
@@ -250,6 +252,18 @@ blockqoute
   .label
     width: 232px
     height: 52px
+
+.button--pill--full
+  &
+    width: 100%
+    height: 60px
+    border: 1px solid #515050
+    .label
+      &
+        transition: none
+  &:hover
+    background-color: #fff
+  
 
 .button--pill--xs
   &
@@ -765,7 +779,8 @@ blockqoute
     max-width: 100%
 
 .button--more,
-.button--more--sm
+.button--more--sm,
+.button--more--slim
   &
     position: relative
     cursor: pointer
@@ -830,6 +845,24 @@ blockqoute
     max-width: 240px
     height: 50px
   .label
+    letter-spacing: .5rem
+    padding-left: .5rem
+.button--more--slim
+  &
+    max-width: 460px
+    border-radius: 3px
+    height: 55px
+  .label
+    +fontSize(18px)
+    letter-spacing: .5rem
+    padding-left: .5rem
+  .label--flex
+    display: flex
+    z-index: 2
+    justify-content: flex-start
+    align-items: center
+    +fontSize(18px)
+    width:80%
     letter-spacing: .5rem
     padding-left: .5rem
 

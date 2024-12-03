@@ -1,50 +1,46 @@
-import { join, resolve } from "path"
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import beautify from 'vite-plugin-beautify'
-import handlebars from 'vite-plugin-handlebars'
-import imagemin from 'unplugin-imagemin/vite'
-import viteCompression from 'vite-plugin-compression'
-import vitePugPlugin from 'vite-plugin-pug-transformer'
+import { join, resolve } from "path";
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import beautify from "vite-plugin-beautify";
+import handlebars from "vite-plugin-handlebars";
+import imagemin from "unplugin-imagemin/vite";
+import viteCompression from "vite-plugin-compression";
+import vitePugPlugin from "vite-plugin-pug-transformer";
 
-import {
-  visualizer
-} from "rollup-plugin-visualizer"
-import {
-  imagetools
-} from 'vite-imagetools'
+import { visualizer } from "rollup-plugin-visualizer";
+import { imagetools } from "vite-imagetools";
 // import ViteWebp from 'vite-plugin-webp-generator'
 
-const ogDescription = ''
+const ogDescription = "";
 
 const pageData = {
-  '/index.html': {
-    title: '',
+  "/index.html": {
+    title: "",
     description: ogDescription,
-  }
+  },
 };
 
 export default defineConfig({
-  base: './',
+  base: "./",
   root: resolve(__dirname, "src"),
   publicDir: resolve(__dirname, "public"),
   server: {
-    port: 3000
+    port: 3000,
   },
   resolve: {
     alias: [
       {
         find: /~(.+)/,
-        replacement: join(process.cwd(), 'node_modules/$1'),
+        replacement: join(process.cwd(), "node_modules/$1"),
       },
       {
         find: /@\//,
-        replacement: join(process.cwd(), 'src/'),
-      }
+        replacement: join(process.cwd(), "src/"),
+      },
     ],
   },
   css: {
-    devSourcemap: true
+    devSourcemap: true,
   },
   plugins: [
     imagemin(),
@@ -54,9 +50,9 @@ export default defineConfig({
     // }),
     vue(),
     handlebars({
-      partialDirectory: resolve(__dirname, 'src/partials'),
+      partialDirectory: resolve(__dirname, "src/partials"),
       context(pagePath) {
-        return pageData[pagePath]
+        return pageData[pagePath];
       },
     }),
     vitePugPlugin(),
@@ -64,7 +60,7 @@ export default defineConfig({
     //   threshold: 50000
     // }),
     beautify({
-      inDir: 'dist',
+      inDir: "dist",
       html: {
         enabled: true,
       },
@@ -80,13 +76,14 @@ export default defineConfig({
   ],
   build: {
     chunkSizeWarningLimit: 1000,
-    minify: 'terser',
+    minify: "terser",
     outDir: resolve(__dirname, "dist"),
     emptyOutDir: true,
     assetsInlineLimit: 0,
     rollupOptions: {
       input: {
         index: resolve(__dirname, "./src/index.html"),
+        login: resolve(__dirname, "./src/login.html"),
         article: resolve(__dirname, "./src/article.html"),
         articles: resolve(__dirname, "./src/articles.html"),
         confirm: resolve(__dirname, "./src/confirm.html"),
@@ -113,11 +110,11 @@ export default defineConfig({
         entryFileNames: "assets/js/[name].js",
         chunkFileNames: "assets/js/[name].js",
         assetFileNames: (assetInfo) => {
-          let extType = assetInfo.name.split('.').pop()
+          let extType = assetInfo.name.split(".").pop();
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
-            extType = 'images';
+            extType = "images";
           }
-          return 'assets/'+extType+'/[name][extname]';
+          return "assets/" + extType + "/[name][extname]";
         },
         // manualChunks: (id) => {
         //   if (id.includes('node_modules')) {
@@ -130,5 +127,5 @@ export default defineConfig({
         // }
       },
     },
-  }
-})
+  },
+});
