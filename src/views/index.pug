@@ -68,7 +68,7 @@ block main
           data-src='https://via.placeholder.com/360x300'
           alt='廣告'
         ).lazyload
-      
+
   section.section--article
     .container
       .section__title 
@@ -101,13 +101,13 @@ block main
                   .icon
                     i.bi.bi-eye
                   .label 1000
-      
+
       .buttons.d-md-none
         .button--more 
           .label 查看更多
           .icon 
             i.bi.bi-caret-down-fill
-  
+
   section.section--banner
     .container--slim
       .banner.d-none.d-md-flex
@@ -127,7 +127,7 @@ block main
         .title 最新影音
         a.button--pill--xs.is-outline
           .label more
-    
+
     .container--slim.d-block.d-lg-none
       .swiper--mobile
         swiper-container(
@@ -153,7 +153,7 @@ block main
                 .caption
                   h3
                     != getLoremText()
-    
+
     .container--slim.d-none.d-lg-block
       .grid--video
         each item, index in ['人物', '健康', '心靈']
@@ -165,7 +165,7 @@ block main
             .caption
               h3
                 != getLoremText()
-  
+
     .container--slim.d-block.d-md-none
       .buttons.d-md-none
         .button--more 
@@ -205,7 +205,7 @@ block main
                 span
                   != getLoremText()
               .date 2024.09.01
-      
+
       .buttons.d-md-none
         .button--more 
           .label 查看更多
@@ -224,7 +224,7 @@ block main
           data-src='https://via.placeholder.com/360x300'
           alt='廣告'
         ).lazyload
-  
+
   section.section--weekly
     .container
       .section__title 
@@ -279,7 +279,13 @@ block main
                 .caption
                   h3
                     != getLoremText()
-      
+                .info 
+                  .date 2024.09.01
+                  .view
+                    .icon
+                      i.bi.bi-eye
+                    .label 1000
+
       //- .row.row--weekly
       //-   each item, index in ["020", "019", "018", "017"]
       //-     .col-6.col-md-6.col-lg-3
@@ -342,7 +348,7 @@ block main
           href='./events.html'
         )
           .label more
-  
+
     .container--slim.d-block.d-md-none 
       .swiper--mobile
         //- .swiper-navigation 
@@ -379,7 +385,7 @@ block main
                 .caption
                   h3
                     != getLoremText()
-    
+
     .container--slim.d-none.d-md-block
       .grid--event 
         each item, index in ["健康大未來！預約不生病的老後", "確診、長新冠、新冠後遺症 自我照顧指南", "50後的「心裡學」：表演自我", "屏東‧佇足 我的慢旅行"]
@@ -396,13 +402,13 @@ block main
                 != item
               - if (index === 0)
                 p 如果活到100歲，還可以不病、不痛、不失能，盡情做自己喜歡的事那會是什麼樣的世界？隨著醫療科技的發...
-      
+
       .buttons.d-md-none
         .button--more 
           .label 查看更多
           .icon 
             i.bi.bi-caret-down-fill
-  
+
   section.section--course
     .container
       .section__title 
@@ -427,13 +433,13 @@ block main
                 .buttons
                   .button--pill--xl
                     .label 我要報名
-      
+
       .buttons.d-md-none
         .button--more 
           .label 查看更多
           .icon 
             i.bi.bi-caret-down-fill
-      
+
   section.section--banner
     .container--slim
       .banner.d-none.d-md-flex
@@ -483,7 +489,7 @@ block main
               --swiper-theme-color: #ede73c;
               --swiper-navigation-size: 32px;
             }
-            
+
             `,
           ],
         )
@@ -543,7 +549,7 @@ block main
                     .caption
                       h3
                         != getLoremText()
-      
+
       .buttons.d-md-none
         .button--more 
           .label 查看更多

@@ -1,0 +1,42 @@
+extends _layout.pug
+
+block vars
+	- $id = 'index'
+
+block main
+	section.section--weekly
+		.container--slim.card-member-center.mt-5.mt-xl-0
+			.section__title.w-100.is-form
+				.title 會員中心
+			.row.row--login.justify-content-center.align-item-start
+				.content
+					p(id="p", class="text-center") 小小兵 小姐，您好
+				.col-12.d-flex.justify-content-center.mt-3
+					.circle--camera
+						.icon.bi.bi-camera-fill
+						.bi.bi-plus-circle-fill
+				.col-12.justify-content-center.align-item-start.mt-3
+					.dash--text 我的帳號
+
+				.col-12.justify-content-center.d-flex.mt-3
+					a(href="/personalInfo.html", class="w-100")
+						.button--more.is--rounded.is--full--width
+							.label.text--tight 修改個人資料
+				.col-sm-6.col-12.justify-content-center.d-flex.mt-3
+					a(href="/loginManage.html", class="w-100")
+						.button--more.is--rounded.is--full--width
+							.label.text--tight 登入方式管理
+				.col-sm-6.col-12.justify-content-center.d-flex.mt-3
+					a(href="/memberCenter.html", class="w-100")
+						.button--more.is--rounded.is--full--width
+							.label.text--tight 歷史訂單
+				.col-12.d-flex.justify-content-center
+					a.normal--link 會員權益條款
+				.col-12.justify-content-center.d-flex.mt-3
+					a(href="/index.html", class="w-100")
+						.button--pill--full
+							.label.label--hide--border 回到首頁
+				.col-12.justify-content-center.d-flex.mt-3
+					a(href="/login.html", class="w-100")
+						.button--pill--full.is-black
+							.label.label--hide--border 登出

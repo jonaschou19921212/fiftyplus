@@ -1,0 +1,45 @@
+extends _layout.pug
+
+block vars
+  - $id = 'index'
+
+block main
+  section.section--breadcrumb
+    .container
+      .breadcrumb 
+        ul 
+          li
+            a(
+              href='/'
+            ) 首頁
+          li
+            a(
+              href=""
+            ) 影音
+          li
+            a(
+              href=""
+            ) 熱門
+  section.section--article
+    .container
+      .section__title 
+        .title 熱門
+    .container--slim
+      .row.row--video
+        each item, index in ['人物', '健康', '心靈', '火火']
+          .col-md-6.mb-5.mb-sm-0
+            .card--video
+              a.pic(
+                href="./audio.html"
+              )
+                img(
+                  data-src=`${getLoremYoutube()}`
+                ).lazyload
+              a.caption(href="./audio.html")
+                h3
+                  != getLoremText()
+      .buttons
+        .button--more 
+          .label 查看更多
+          .icon 
+            i.bi.bi-caret-down-fill

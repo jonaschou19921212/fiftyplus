@@ -1,0 +1,51 @@
+extends _layout.pug
+
+block vars
+	- $id = 'index'
+
+block main
+	section.section--breadcrumb
+		.container
+			.breadcrumb 
+				ul 
+					li
+						a(
+						href='/'
+						) 首頁
+					li
+						a(
+						href=""
+						) 會員中心
+					li
+						a(
+						href=""
+						) 登入方式管理
+	section.section--weekly
+		.container--slim.card--login.mt-5.mt-xl-0
+			.section__title.w-100.is-form
+				.title 登入方式管理
+			.row.row--login.justify-content-center.align-item-start
+				.content
+					p#p 若您有Facebook、Line、Google帳號，可點選以下方式分別綁定，方縣下次快速登入50+會員！
+				.col-12.justify-content-center.d-flex
+					.button--more--slim.is-active
+						.label--flex.text--tight
+							.icon
+								i.bi.bi-facebook.text-primary.bi-5x
+							| Facebook登入(已綁定)
+				.col-12.justify-content-center.d-flex
+					.button--more--slim
+						.label--flex.text--tight
+							.icon
+								i.bi.bi-line.text-primary.bi-5x
+							| Line登入
+				.col-12.justify-content-center.d-flex
+					.button--more--slim
+						.label--flex.text--tight
+							.icon
+								i.bi.bi-google.text-primary.bi-5x
+							| Google登入
+
+				.col-12.justify-content-center.d-flex.mt-3
+					.button--pill--full
+						.label.label--hide--border 會員中心

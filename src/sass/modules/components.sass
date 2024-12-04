@@ -235,9 +235,24 @@ blockqoute
     transition: all .3s ease
   .label--hide--border
     border: none
+  &.all--white
+    border: 1px solid #515050
+    &:hover
+      background: white
   &:hover
     .label
       background: white
+  &.is-black
+    &
+      background: #000
+      transition: all .3s ease
+      .label
+        color: #fff
+        background: transparent
+    &:hover
+      background: #fff
+      .label
+        color: #000
   &.is-invert
     &
       background: #ebe6e1
@@ -252,6 +267,7 @@ blockqoute
   .label
     width: 232px
     height: 52px
+    color: #515050
 
 .button--pill--full
   &
@@ -261,6 +277,9 @@ blockqoute
     .label
       &
         transition: none
+        +fontSize(22px)
+        font-weight: 700
+        color: #515050
   &:hover
     background-color: #fff
   
@@ -305,8 +324,8 @@ blockqoute
       color: white
   &:hover
     &
-      border-color: #515151
-      background: #515151
+      border-color: #515050
+      background: #515050
     .label
       color: var(--theme-color)
 
@@ -792,6 +811,12 @@ blockqoute
     align-items: center
     border: 1px solid #515050
     background: white
+  &.is--rounded
+    &
+      border-radius: 5px
+  &.is--full--width
+    &
+      max-width: 100%
   &::before
     position: absolute
     top: 0
@@ -809,6 +834,8 @@ blockqoute
     font-weight: 600
     letter-spacing: 1rem
     padding-left: 1rem
+    &.text--tight
+      letter-spacing: 0.2rem
   .icon
     &
       position: relative
@@ -822,6 +849,9 @@ blockqoute
       +fontSize(24px)
       line-height: 1
   &.is-invert
+    &
+      background: var(--theme-color)
+  &.is-active
     &
       background: var(--theme-color)
   &:hover
@@ -862,8 +892,9 @@ blockqoute
     justify-content: flex-start
     align-items: center
     +fontSize(18px)
+    color: #515050
     width:80%
-    letter-spacing: .5rem
+    letter-spacing: .2rem
     padding-left: .5rem
 
 .banner--weekly,
@@ -1116,7 +1147,6 @@ blockqoute
     align-items: center
     gap: 10px
     margin-bottom: 20px
-
 .card--review 
   &
     display: grid
@@ -1257,7 +1287,7 @@ blockqoute
     .title
       +fontSize(24px)
       font-weight: 600
-      color: #515151
+      color: #515050
       font-family: "Noto Serif TC", serif
     .buttons
       margin-bottom: 0
@@ -1280,3 +1310,65 @@ blockqoute
       justify-content: center
       align-items: center
       border-radius: 50%
+.table--record
+  &
+    
+    th
+      &
+        background: #EEE9E5
+        border:1px solid #777674
+        padding: 10px
+    td
+      &
+        padding: 10px
+        border:1px solid #777674
+        transition: .5s
+    tr
+      &
+        background: transparent
+        transition: .2s
+
+      &:hover
+        background: #EEE9E5
+
+.responsive-table
+  width: 100%
+  border-collapse: collapse
+  margin-bottom: 20px
+  th, td
+    border: 1px solid #777674
+    padding: 8px
+    text-align: center
+    color: #515050
+  th
+      &
+        background: #EEE9E5
+  tr
+    &
+      background: transparent
+      transition: .2s
+    &:hover
+        background: #EEE9E5
+  @media (max-width: 768px)
+    thead
+      display: none
+
+    tbody, tr
+      display: block
+
+    tr
+      margin-bottom: 15px
+      &:hover
+        background: transparent
+    td
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      padding: 0
+      &:before
+        content: attr(data-label)
+        padding: 10px
+        background: #EEE9E5
+        border-right: 1px solid #777674
+        flex-basis: 40%
+        text-align: center

@@ -6,29 +6,28 @@ block vars
 block main
 	section.section--weekly
 		.container--slim.card--login.mt-5.mt-xl-0
-			.section__title.w-100
-				.title 會員登入
+			.section__title.w-100.is-form
+				.title 會員註冊
 			.row.row--login.justify-content-center.align-item-start
 				.content
-					p(id="p", class="text-center") 還不是50+會員？點我
-						a(href="#", class="normal--link ms-2") 註冊
+					p(id="p", class="text-center") 請選擇一種方式快速註冊
 				.col-12.justify-content-center.d-flex
 					.button--more--slim
 						.label--flex
 							.icon
-								i.bi.bi-facebook.text-primary.bi-5x
+								.button--facebook--origin.me-2
 							| 使用Facebook帳戶
 				.col-12.justify-content-center.d-flex
 					.button--more--slim
 						.label--flex
 							.icon
-								i.bi.bi-line.text-primary.bi-5x
+								.button--line--origin.me-2
 							| 使用Line帳戶
 				.col-12.justify-content-center.d-flex
 					.button--more--slim
 						.label--flex
 							.icon
-								i.bi.bi-google.text-primary.bi-5x
+								.button--google--origin.me-2
 							| 使用Google帳戶
 				.col-12.justify-content-center.align-item-start.mt-3
 					.dash--text 或登入註冊資料
@@ -38,14 +37,29 @@ block main
 				.col-12.d-flex.justify-content-center
 					.form--input
 						input#name.form--input(type='text', placeholder="帳號(手機或Email二擇一)")
+						p.error-msg *海外用戶請填寫Email
 				.col-12.d-flex.justify-content-center
 					.form--input.form--password
 						input#password.form--input(type='password', placeholder="密碼(6碼以上含英文數字混合)")
 						i#togglePassword.bi.bi-eye(onclick='togglePassword("togglePassword", "password")')
+						p#passwordError.error-msg.hidden 密碼必須至少 6 個字符，並包含字母和數字。
 				.col-12.d-flex.justify-content-center
 					.form--input.form--password
-						input#password2.form--input(type='password', placeholder="密碼(6碼以上含英文數字混合)")
+						input#password2.form--input(type='password', placeholder="再次確認密碼")
 						i#togglePassword2.bi.bi-eye(onclick='togglePassword("togglePassword2", "password2")')
+						p#password2Error.error-msg.hidden 兩次密碼不相同。
+
+				.col-12.d-flex.justify-content-center
+					.form--checkbox
+						label
+							span
+							input(type='checkbox')
+							.icon 
+								i.bi.bi-check-circle
+								i.bi.bi-circle
+							span 我已詳閱並同意
+								a.normal--link 會員權益條款
+
 				.col-12.justify-content-center.d-flex.mt-3
 					.button--pill--full
 						.label.label--hide--border 獲取驗證碼

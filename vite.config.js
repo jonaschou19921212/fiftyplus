@@ -84,6 +84,10 @@ export default defineConfig({
       input: {
         index: resolve(__dirname, "./src/index.html"),
         login: resolve(__dirname, "./src/login.html"),
+        register: resolve(__dirname, "./src/register.html"),
+        resetPassword: resolve(__dirname, "./src/resetPassword.html"),
+        forgetPassword: resolve(__dirname, "./src/forgetPassword.html"),
+        memberCenter: resolve(__dirname, "./src/memberCenter.html"),
         article: resolve(__dirname, "./src/article.html"),
         articles: resolve(__dirname, "./src/articles.html"),
         confirm: resolve(__dirname, "./src/confirm.html"),

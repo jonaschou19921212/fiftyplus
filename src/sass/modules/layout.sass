@@ -282,6 +282,7 @@ section
 
 
 .row--article,
+.row--video,
 .row--weekly,
 .row--course,
 .row--event
@@ -342,6 +343,9 @@ section
 .section--breadcrumb
   &
     padding: 32px 0
+    @media (max-width: theme('screens.lg'))
+      margin-top: 50px
+      padding-bottom: 0
   &.is-sp
     background: #eee9e4
   > .container

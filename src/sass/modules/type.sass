@@ -29,6 +29,7 @@ a.normal--link
     color: #222222
     text-decoration: underline
     text-underline-offset: 4px
+    cursor: pointer
 
 .buttons
   &
@@ -86,6 +87,7 @@ a.normal--link
     display: flex
     flex-direction: column
     gap: 8px
+    position: relative
   input
     &
       width: 100%
@@ -124,6 +126,27 @@ a.normal--link
     &
       background-color: #B8B8B8
       color: #000
+  .verified
+    &
+      +fontSize(14px)
+      position: absolute
+      right: 15px
+      top: 55px
+      color: #B7B9B8
+  .unverified
+    &
+      +fontSize(14px)
+      position: absolute
+      right: 15px
+      top: 55px
+      color: #FF0F0A
+      background: var(--theme-color)
+  .error-msg
+    &
+      color: #FF0F0A
+      font-size: 12px
+    &.hidden
+      display: none
 
       
 .form--gender
@@ -161,11 +184,15 @@ a.normal--link
     grid-column: span 2
   .address--code
     display: grid
-    grid-template-columns: repeat(3, 1fr)
+    grid-template-columns: repeat(3, 2fr)
     gap: 10px
     grid-column: 1 / span
+    &.full
+      grid-column: span 2
   .address--text
     grid-column: span 2
+    .textarea
+      border-radius: 5px
 
 .form--rating
   &
@@ -239,6 +266,7 @@ a.normal--link
   &
     display: grid
     grid-template-columns: repeat(3, 1fr)
+    grid-column: 3 / span
     gap: 10px
   .label
     grid-column: span 3
@@ -279,6 +307,17 @@ a.normal--link
     color: #515050
     letter-spacing: 1rem
     transform: translateX(1rem)
+    position: relative
+    .sub-title
+      &
+        +fontSize(8px)
+        white-space: nowrap
+        position: absolute
+        right: -130px
+        bottom: 0px
+        color:#B7B9B8
+        font-weight: 500
+        letter-spacing: .1rem
   &.is-mb-0
     margin-bottom: 0
   &.is-form
@@ -453,6 +492,16 @@ article.content
       i.bi.bi-check-square
         display: inline-block
       i.bi.bi-square
+        display: none
+    input + .icon
+      i.bi.bi-check-circle
+        display: none
+      i.bi.bi-circle
+        display: inline-block
+    input:checked + .icon
+      i.bi.bi-check-circle
+        display: inline-block
+      i.bi.bi-circle
         display: none
 
 .form--password
@@ -684,6 +733,7 @@ article.content
 
 .card--video
   &
+    background: transparent
     position: relative
     +card--set--basic
   &::after
@@ -1500,7 +1550,8 @@ article.is-review-spec
   .label + .label
     border-left: 2px solid var(--theme-color)
 
-.form--review
+.form--review,
+.form--personal
   &
     border-radius: 40px
     padding: 40px
@@ -1516,7 +1567,9 @@ article.is-review-spec
   .row
     --bs-gutter-x: 20px
     --bs-gutter-y: 20px
-
+.form--personal
+  &
+    background: transparent
 .form--upload
   ul
     margin-bottom: 20px
@@ -1542,7 +1595,9 @@ table.table
       th, td
         background: rgba(#eee9e4, .5)
 
-.card--login
+.card--login,
+.card-member-center,
+.card-register
   &
     display: flex
     flex-direction: column
@@ -1571,3 +1626,63 @@ table.table
       background: #222222
   .form--input
     width: 100%
+.card-member-center
+  &
+    .circle--camera 
+      background-color: #B8B8B8
+      color: #514F50
+      border: 1px solid black
+      border-radius: 100%
+      width: 150px
+      height: 150px
+      display: flex
+      justify-content: center
+      align-items: center
+      position: relative
+      .icon
+        &
+          font-size: 54px
+      .bi-plus-circle-fill
+        &
+          width: 30px
+          height: 30px
+          background: #B8B8B8
+          border-radius: 50%
+          position: absolute
+          top: 75px
+          right: 40px
+          font-size: 30px
+        &::before
+          &
+            position: relative
+            top: -8px
+            left: 1px
+.card-subscribe-email
+  &
+    width: 80%
+    padding: 10px 30px
+    background: #FFFDE6
+    text-align: center
+    color: #514F50
+    @media (max-width: 600px)
+      width: 100%
+  .dash--text
+    &
+      +fontSize(20px)
+      font-family: "Noto Sans TC", sans-serif
+      color: #514F50
+      display: flex
+      align-items: center
+      justify-content: center
+      gap: 10px
+      margin-bottom: 20px
+      font-weight: 500
+      white-space: nowrap
+    &:before,
+    &::after
+      content: ""
+      display: block
+      width: 100%
+      max-width: 190px
+      height: 1px
+      background: #514F50

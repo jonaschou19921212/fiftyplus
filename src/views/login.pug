@@ -6,29 +6,29 @@ block vars
 block main
 	section.section--weekly
 		.container--slim.card--login.mt-5.mt-xl-0
-			.section__title.w-100
+			.section__title.w-100.is-form
 				.title 會員登入
 			.row.row--login.justify-content-center.align-item-start
 				.content
 					p(id="p", class="text-center") 還不是50+會員？點我
-						a(href="#", class="normal--link ms-2") 註冊
+						a(href="/register.html", class="normal--link ms-2") 註冊
 				.col-12.justify-content-center.d-flex
 					.button--more--slim
 						.label--flex
 							.icon
-								i.bi.bi-facebook.text-primary.bi-5x
+								.button--facebook--origin.me-2
 							| 使用Facebook帳戶
 				.col-12.justify-content-center.d-flex
 					.button--more--slim
 						.label--flex
 							.icon
-								i.bi.bi-line.text-primary.bi-5x
+								.button--line--origin.me-2
 							| 使用Line帳戶
 				.col-12.justify-content-center.d-flex
 					.button--more--slim
 						.label--flex
 							.icon
-								i.bi.bi-google.text-primary.bi-5x
+								.button--google--origin.me-2
 							| 使用Google帳戶
 				.col-12.justify-content-center.align-item-start.mt-3
 					.dash--text 或
@@ -40,7 +40,7 @@ block main
 						input#password.form--input(type='password', placeholder="密碼(6碼以上含英文數字混合)")
 						i#togglePassword.bi.bi-eye(onclick='togglePassword("togglePassword", "password")')
 				.col-12.d-flex.justify-content-end
-					a(href="#", class="normal--link ms-2") 忘記密碼
+					a(href="/forgetPassword", class="normal--link ms-2") 忘記密碼
 				.col-12.justify-content-center.d-flex.mt-3
 					.button--pill--full
 						.label.label--hide--border 下一步
