@@ -25,7 +25,7 @@ block main
 			.section__title.w-100.is-form
 				.title 登入方式管理
 			.row.row--login.justify-content-center.align-item-start
-				.content
+				.content.mb-3
 					p#p 若您有Facebook、Line、Google帳號，可點選以下方式分別綁定，方縣下次快速登入50+會員！
 				.col-12.justify-content-center.d-flex
 					.button--more--slim.is-active
@@ -46,6 +46,7 @@ block main
 								i.bi.bi-google.text-primary.bi-5x
 							| Google登入
 
-				.col-12.justify-content-center.d-flex.mt-3
-					.button--pill--full
-						.label.label--hide--border 會員中心
+				.col-12.justify-content-center.d-flex.mt-5
+					a(href="./memberCenter.html", class="w-100")
+						.button--pill--full
+							.label.label--hide--border 會員中心
