@@ -7,7 +7,7 @@ block main
 	section.section--weekly
 		.container.mt-5.mt-xl-0
 			.section__title.w-100.is-form
-				.title 歷史訂單
+				.login--title 歷史訂單
 			.row.justify-content-center.align-item-start
 				.col-12.col-md-3.justify-content-center.d-flex.mt-0.mt-sm-3.align-items-center
 					.d-flex.justify-content-center.align-items-center 
@@ -28,7 +28,7 @@ block main
 				.col-md-2.justify-content-center.mt-3.align-items-center.d-md-flex.d-none
 					.button--pill--lg.all--white
 						.label.label--hide--border 查詢
-				.col-12.justify-content-center.d-flex.mt-3.align-items-center
+				.col-12.justify-content-center.d-flex.mt-3.align-items-center.mt-5.pt-5.mb-5
 					table.responsive-table
 						thead
 							tr
@@ -65,28 +65,7 @@ block main
 									.ms-2.ms-md-0 訂單取消
 								td(data-label="購買日期")
 									.ms-2.ms-md-0 2024-04-01 23:59:59
-
-					//- table.table--record
-					//- 	thead
-					//- 		tr 
-					//- 			th 訂單編號
-					//- 			th 品項
-					//- 			th 單價
-					//- 			th 數量
-					//- 			th 訂單狀態
-					//- 			th 購買日期
-					//- 	tbody
-					//- 		each index in [0, 1, 2, 3, 4]
-					//- 			tr 
-					//- 				td W202403200007
-					//- 				td 50X50夢想計劃(新版)
-					//- 				td 8888
-					//- 				td 數量
-					//- 				td 訂單取消
-					//- 				td 2024-01-01 23:59:59
-
-
-				.col-12.justify-content-center.d-flex.mt-3
+				.col-12.justify-content-center.d-flex.mt-3(style="width: 420px;")
 					a(href="./memberCenter.html", class="w-100")
 						.button--pill--full
 							.label.label--hide--border 會員中心

@@ -95,6 +95,7 @@ a.normal--link
       padding: 4px 16px
       border-radius: 4px
       height: 48px
+      letter-spacing: 0.125rem
     &:focus
       outline: 1px solid rgba(#343434, 1)
   textarea
@@ -308,16 +309,7 @@ a.normal--link
     letter-spacing: 1rem
     transform: translateX(1rem)
     position: relative
-    .sub-title
-      &
-        +fontSize(8px)
-        white-space: nowrap
-        position: absolute
-        right: -130px
-        bottom: 0px
-        color:#B7B9B8
-        font-weight: 500
-        letter-spacing: .1rem
+    
   &.is-mb-0
     margin-bottom: 0
   &.is-form
@@ -332,6 +324,32 @@ a.normal--link
       letter-spacing: .25rem
       padding-left: 0.25rem
       color: #222222
+    .login--title
+      position: relative
+      +fontSize(24px)
+      font-family: 'Noto Sans TC', serif
+      letter-spacing: .25rem
+      font-weight: 600
+      color: #222222
+      text-align: center
+      &.is-subtitle
+        @media (max-width: 600px)
+            margin: 20px 0
+      .sub-title
+        &
+          +fontSize(8px)
+          white-space: nowrap
+          position: absolute
+          left: 50%
+          transform: translateX(70%)
+          bottom: 0px
+          color:#B7B9B8
+          font-weight: 500
+          letter-spacing: .1rem
+          @media (max-width: 600px)
+            left: 50%
+            transform: translateX(-50%)
+            bottom: -25px
     .required--text
       &
         position: relative
@@ -1608,14 +1626,13 @@ table.table
     
   .dash--text
     &
-      +fontSize(20px)
+      +fontSize(18px)
       font-family: "Noto Sans TC", sans-serif
-      color: #222222
+      color: #515151
       display: flex
       align-items: center
       justify-content: center
       gap: 10px
-      margin-bottom: 20px
       font-weight: 500
       white-space: nowrap
     &:before,
