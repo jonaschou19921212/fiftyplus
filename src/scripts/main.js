@@ -31,6 +31,9 @@ if (document.querySelector(".swiper--banner swiper-container")) {
     pagination: {
       el: ".swiper--banner .swiper-pagination",
       clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">' + (index + 1) + "</span>";
+      },
     },
     navigation: true,
     navigation: {

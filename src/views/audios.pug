@@ -24,10 +24,47 @@ block main
     .container
       .section__title 
         .title 熱門
+    .container--slim.mb-5.mb-sm-0.px-2.px-sm-5
+      .swiper--banner
+        swiper-container(
+          navigation='true'
+          inject-styles=[
+            `
+           
+            :host {
+              --swiper-theme-color: #ede73c;
+            }
+            :host .swiper-button-prev,
+            :host .swiper-button-next {
+              background-color: #66666680;
+              border-radius: 100%;
+              width: 28px;
+              height: 28px;
+              padding: 10px;
+              stroke: #ede73c;
+              stroke-width: 1;
+            }
+            `,
+          ],
+        )
+          each item, index in [0, 1, 2]
+            swiper-slide
+              .card--video.swiper-min-height
+                a.pic(
+                  href="./audio.html"
+                )
+                  img(
+                    data-src=`${getLoremYoutube()}`
+                  ).lazyload
+                a.caption(href="./audio.html")
+                  h3.mt-3
+                    != getLoremText()
+
+
     .container--slim
       .row.row--video
         each item, index in ['人物', '健康', '心靈', '火火']
-          .col-md-6.mb-5.mb-sm-0
+          .col-md-6.mb-5.mb-lg-3
             .card--video
               a.pic(
                 href="./audio.html"
