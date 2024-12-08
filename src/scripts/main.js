@@ -169,6 +169,13 @@ window.togglePassword = function (iconClass, targetClass) {
   }
 };
 
+window.toggleFontSize = function () {
+  const body = document.body;
+  const currentFontSize = parseFloat(getComputedStyle(body).fontSize);
+  let newSize = currentFontSize == 18 ? 20 : 18;
+  body.style.fontSize = newSize + "px";
+};
+
 window.gotoSnippet = function (e) {
   const targets = document.querySelectorAll(".card--snippet--preview");
   const imgsrc = e.children[0].children[0].src;

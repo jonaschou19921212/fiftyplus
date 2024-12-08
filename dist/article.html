@@ -312,7 +312,7 @@
         </div>
       </div>
     </header>
-    <section class="section--breadcrumb">
+    <section class="section--breadcrumb special--bg">
       <div class="container">
         <div class="breadcrumb">
           <ul>
@@ -331,21 +331,34 @@
           </article>
         </div>
         <div class="page--cover"> <img src="https://picsum.photos/800/600" />
-          <div class="caption">主圖｜Shutterstock 內文圖片｜高寶提供</div>
+          <div class="caption d-none d-md-flex">主圖｜Shutterstock 內文圖片｜高寶提供</div>
         </div>
-        <div class="page--caption">
+        <div class="page--caption d-none d-md-flex">
           <div class="information">
             <div class="date">2024.05.01</div>
             <div class="view"><i class="bi bi-eye"></i>888</div>
           </div>
-          <div class="author">作者｜陳偉<br />責任編輯｜吳丹華</div>
-          <div class="buttons">
-            <div class="button--facebook--dark"></div>
-            <div class="button--line--dark"></div>
-            <div class="button--link--dark"></div>
-            <div class="button--textsize--dark"></div>
-          </div>
+          <div class="author d-none d-md-block">作者｜陳偉<br />責任編輯｜吳丹華</div>
+          <div class="buttons d-none d-md-flex"><a href="">
+              <div class="button--facebook--dark"></div>
+            </a><a href="">
+              <div class="button--line--dark"></div>
+            </a><a href="">
+              <div class="button--link--dark"></div>
+            </a><a>
+              <div class="button--textsize--dark" onclick="toggleFontSize()"></div>
+            </a></div>
         </div>
+        <p class="mobile--caption d-block d-md-none"> <span class="normal-font">主圖｜Shutterstock 內文圖片｜高寶提供</span></p>
+        <p class="mobile--caption d-block d-md-none">作者｜陳偉<span class="float-end normal-font">2024.05.01</span></p>
+        <p class="mobile--caption d-flex justify-content-between align-items-center d-md-none">責任編輯｜吳丹華<span class="normal-font"><i class="bi bi-eye me-1"></i>888</span></p>
+      </div>
+      <div class="mobile-share-bar d-flex d-md-none">
+        <div class="item"> <a href="#">f</a></div>
+        <div class="item line"><a href="#">LINE</a></div>
+        <div class="item link"> <a href="#"><i class="bi bi-link-45deg"></i></a></div>
+        <div class="item subscribe"> <a href="#">訂閱50+</a></div>
+        <div class="item size" onclick="toggleFontSize()"><i class="bi bi-type"></i></div>
       </div>
     </section>
     <section class="section--article--body">
@@ -354,19 +367,19 @@
           <div class="col-12 col-md-9">
             <div class="article--player">
               <div class="label">文章用聽的</div>
-              <div class="player--wrapper"><audio controls="controls">
-                  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
-                </audio></div>
+              <div class="audio-player"><button class="play-btn"><i class="icon-play bi bi-play-fill play-center"></i></button>
+                <div class="controler-container"><span class="current-time">00:00</span><input class="audio-progress-bar" type="range" min="0" max="100" value="0" /><span class="total-time">00:00</span><button class="volume-btn"><i class="bi bi-volume-off-fill"></i></button><input class="volume-bar" type="range" min="0" max="1" step="0.01" value="0.5" /><span class="speed-btn"> <i class="bi bi-x"></i><span>1</span></span></div>
+              </div>
             </div>
             <article>
-              <blockquote class="quote">
+              <blockquote class="quote left--cancel">
                 <p>編按：如何和年輕人共事？熟齡族群在職場待久了，不免感受到世代差異。和MZ世代一起工作，該怎麼給予指示，才能讓對方把事情做好？本文為韓國9位不同業界專家提出的建議，讓職場資深工作者們找到與MZ世代共事的舒服方式。</p>
               </blockquote>
-              <p>對張經理而言，年輕的MZ世代（50+註：由1981～1996年間出生的M世代（Millennials）和1997～2010年之間出生的「Z世代」合成的族群）似乎是一道高牆。因為以經理的立場來說，應該要鼓勵同事間相互合作，但他們就好像從外太空來的人種一樣非常難理解。就算支援部分業務或是部分授權，還是無法從他們那裡得到好的回饋。</p>
+              <p class="color--second">對張經理而言，年輕的MZ世代（50+註：由1981～1996年間出生的M世代（Millennials）和1997～2010年之間出生的「Z世代」合成的族群）似乎是一道高牆。因為以經理的立場來說，應該要鼓勵同事間相互合作，但他們就好像從外太空來的人種一樣非常難理解。就算支援部分業務或是部分授權，還是無法從他們那裡得到好的回饋。</p>
               <h3>以為ＭＺ世代都很主動 卻發現給彈性或規定太具體都引反感都引反感</h3>
-              <p>A公司今年已經邁入第37個年頭。在像現在這樣變化無常的時代中，他們擁有悠久的歷史，組織的規模大、部門多，員工人數也很多。不過，組織文化就像官僚體系一樣，某些部門文化甚至像軍隊一樣，必須絕對服從長官的命令。（閱讀相關文章：文章文章文章文章）</p>
-              <p>所以不久前甚至還花一大筆錢參加名為「激勵MZ世代的領導力」的演講，但反而發現更多難以理解的方面，無法抓到頭緒。教育內容核心提到：「MZ世代的員工會更投入在自己主動找來做的事情上，而不是被交代的事情。他們想被認同的欲望很強，想要得到充分的權力立下大功。」</p>
-              <blockquote>對張經理而言，年輕的MZ世代因為以經理的立場來說，應該要鼓勵同事間相互合作，但他們就好像從外太空來的人種一樣非常難理解。就算支援部分業務或是部分授權，還是無法從他們那裡得到好的回饋。</blockquote>
+              <p class="color--second">A公司今年已經邁入第37個年頭。在像現在這樣變化無常的時代中，他們擁有悠久的歷史，組織的規模大、部門多，員工人數也很多。不過，組織文化就像官僚體系一樣，某些部門文化甚至像軍隊一樣，必須絕對服從長官的命令。<a href="#">(閱讀相關文章：文章文章文章文章）</a></p>
+              <p class="color--second">所以不久前甚至還花一大筆錢參加名為「激勵MZ世代的領導力」的演講，但反而發現更多難以理解的方面，無法抓到頭緒。教育內容核心提到：<span style="font-weight: 700"> MZ世代的員工會更投入在自己主動找來做的事情上，而不是被交代的事情。他們想被認同的欲望很強，想要得到充分的權力，立下大功。」</span></p>
+              <blockquote class="text-content"> 對張經理而言，年輕的MZ世代因為以經理的立場來說，應該要鼓勵同事間相互合作，但他們就好像從外太空來的人種一樣非常難理解。就算支援部分業務或是部分授權，還是無法從他們那裡得到好的回饋。</blockquote>
             </article>
             <div class="panel--subscription is-center">
               <div class="subscription--title">
@@ -405,33 +418,207 @@
             </div>
           </div>
           <div class="col-12 col-md-3">
+            <div class="container d-none d-md-block">
+              <div class="banner--donate">
+                <div class="pic"><img class="lazyload" data-src="https://via.placeholder.com/300x180" alt="廣告" /></div>
+              </div>
+            </div>
             <div class="panel--latest">
               <div class="title">熱門文章</div>
               <div class="item--latest">
                 <div class="no">1</div>
-                <div class="caption">60歲告別主播台，轉行當心理諮商師！靳秀麗：幸福不是退休養老，「生產老化」活出無憾人生</div>
+                <div class="caption font-light">怎麼挑鍋子，才不會把毒素吃下肚？達人選鍋，5大材質優缺點一次聽懂</div>
               </div>
               <div class="item--latest">
                 <div class="no">2</div>
-                <div class="caption">生氣是慢性自殺！洛桑加參醫師：每天1個練習，從此心平氣和</div>
+                <div class="caption font-light">未來該注意哪些病，基因告訴你！曾嶔元醫師：如何掌握健康弱點，精準預防？</div>
               </div>
               <div class="item--latest">
                 <div class="no">3</div>
-                <div class="caption">60歲告別主播台，轉行當心理諮商師！靳秀麗：幸福不是退休養老，「生產老化」活出無憾人生</div>
+                <div class="caption font-light">如何退休後過更好？心理諮商師靳秀麗：1個「生產老化」新觀念，啟動身體健康、內心的內無比...</div>
               </div>
               <div class="item--latest">
                 <div class="no">4</div>
-                <div class="caption">75歲終於踏出人生第一次自由行，像單身貴族好快樂！許美月：在家裡怕一輩子，永遠都走不出去</div>
+                <div class="caption font-light">怎麼挑鍋子，才不會把毒素吃下肚？達人選鍋，5大材質優缺點一次聽懂</div>
               </div>
               <div class="item--latest">
                 <div class="no">5</div>
-                <div class="caption">怎麼挑鍋子，才不會把毒素吃下肚？達人選鍋，5大材質優缺點一次聽懂</div>
+                <div class="caption font-light">75歲終於踏出人生第一次自由行，像單身貴族好快樂！許美月：在家裡怕一輩子，永遠都走不出去</div>
+              </div>
+            </div>
+            <div class="join-us row justify-content-around">
+              <div class="col-5 col-md-12">
+                <div class="fb-area col-6 col-md-12"><a class="join-text" href="">加FB熱議討論 <div class="dash">&nbsp;</div><i class="bi bi-play-fill"></i></a></div>
+              </div>
+              <div class="col-5 col-md-12">
+                <div class="line-area col-6 col-md-12"><a class="join-text" href="">加LINE或新知 <div class="dash">&nbsp;</div><i class="bi bi-play-fill"></i></a></div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="container courser-recomand d-none d-sm-flex">
+        <div class="row row--course">
+          <div class="col-lg-4">
+            <div class="card--course">
+              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/23/3923/carousel/3923.png" /></div>
+              <div class="caption">
+                <div class="info">
+                  <div class="date">2024.11.06 — 2024.12.11</div>
+                </div>
+                <h3>50+聲音表達工作坊進階班第5期</h3>
+                <div class="buttons">
+                  <div class="button--pill--xl">
+                    <div class="label">我要報名</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card--course">
+              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4338/carousel/4338.png" /></div>
+              <div class="caption">
+                <div class="info">
+                  <div class="date">2024.11.06 — 2024.12.11</div>
+                </div>
+                <h3>50+聲音表達工作坊進階班第5期</h3>
+                <div class="buttons">
+                  <div class="button--pill--xl">
+                    <div class="label">我要報名</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card--course">
+              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/36/4336/carousel/4336.png" /></div>
+              <div class="caption">
+                <div class="info">
+                  <div class="date">2024.11.06 — 2024.12.11</div>
+                </div>
+                <h3>50+聲音表達工作坊進階班第5期</h3>
+                <div class="buttons">
+                  <div class="button--pill--xl">
+                    <div class="label">我要報名</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container--slim d-block d-sm-none">
+        <div class="swiper--banner"><swiper-container navigation="true" inject-styles="[&quot;\n           \n            :host {\n              --swiper-theme-color: #ede73c;\n            }\n            :host .swiper-button-prev,\n            :host .swiper-button-next {\n              background-color: #66666680;\n              border-radius: 100%;\n              width: 28px;\n              height: 28px;\n              padding: 10px;\n              stroke: #ede73c;\n              stroke-width: 1;\n            }\n            &quot;]"><swiper-slide class="bg-theme">
+              <div class="card--course audio-type">
+                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png" /></div>
+                <div class="caption">
+                  <div class="info">
+                    <div class="date">2024.11.06 — 2024.12.11</div>
+                  </div>
+                  <h3>50+聲音表達工作坊進階班第5期</h3>
+                  <div class="buttons">
+                    <div class="button--pill--xl">
+                      <div class="label">我要報名</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </swiper-slide><swiper-slide class="bg-theme">
+              <div class="card--course audio-type">
+                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/33/3233/carousel/3233.png" /></div>
+                <div class="caption">
+                  <div class="info">
+                    <div class="date">2024.11.06 — 2024.12.11</div>
+                  </div>
+                  <h3>50+聲音表達工作坊進階班第5期</h3>
+                  <div class="buttons">
+                    <div class="button--pill--xl">
+                      <div class="label">我要報名</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </swiper-slide><swiper-slide class="bg-theme">
+              <div class="card--course audio-type">
+                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/52/4252/carousel/4252.png" /></div>
+                <div class="caption">
+                  <div class="info">
+                    <div class="date">2024.11.06 — 2024.12.11</div>
+                  </div>
+                  <h3>50+聲音表達工作坊進階班第5期</h3>
+                  <div class="buttons">
+                    <div class="button--pill--xl">
+                      <div class="label">我要報名</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </swiper-slide></swiper-container></div>
+      </div>
     </section>
+    <script>
+      const audio = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+      const playBtn = document.querySelector('.play-btn');
+      const progressBar = document.querySelector('.audio-progress-bar');
+      const currentTimeElem = document.querySelector('.current-time');
+      const totalTimeElem = document.querySelector('.total-time');
+      const volumeBar = document.querySelector('.volume-bar');
+      const speedBtn = document.querySelector('.speed-btn');
+      let isPlaying = false;
+      // 格式化时间
+      function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+      }
+      playBtn.addEventListener('click', () => {
+        if (isPlaying) {
+          audio.pause();
+          playBtn.querySelector('.icon-play').classList.remove('bi-pause-fill');
+          playBtn.querySelector('.icon-play').classList.add('play-center');
+          playBtn.querySelector('.icon-play').classList.add('bi-play-fill');
+        } else {
+          audio.play();
+          playBtn.querySelector('.icon-play').classList.remove('bi-play-fill');
+          playBtn.querySelector('.icon-play').classList.remove('play-center');
+          playBtn.querySelector('.icon-play').classList.add('bi-pause-fill');
+        }
+        isPlaying = !isPlaying;
+      });
+      // 更新进度条
+      audio.addEventListener('timeupdate', () => {
+        progressBar.value = (audio.currentTime / audio.duration) * 100;
+        currentTimeElem.textContent = formatTime(audio.currentTime);
+      });
+      // 拖动进度条
+      progressBar.addEventListener('input', (e) => {
+        audio.currentTime = (e.target.value / 100) * audio.duration;
+      });
+      // 音量控制
+      volumeBar.addEventListener('input', (e) => {
+        audio.volume = e.target.value;
+      });
+      // 播放速度
+      speedBtn.addEventListener('click', () => {
+        const speeds = [1, 1.5, 2];
+        let currentSpeed = speeds.indexOf(audio.playbackRate);
+        audio.playbackRate = speeds[(currentSpeed + 1) % speeds.length];
+        speedBtn.querySelector('span').textContent = `${audio.playbackRate}`;
+      });
+      // 加载音频元数据
+      audio.addEventListener('loadedmetadata', () => {
+        totalTimeElem.textContent = formatTime(audio.duration);
+      });
+      // 播放结束时
+      audio.addEventListener('ended', () => {
+        playBtn.querySelector('.icon-play').classList.remove('bi-pause-fill');
+        playBtn.querySelector('.icon-play').classList.add('bi-play-fill');
+        isPlaying = false;
+      });
+
+    </script>
     <footer>
       <div class="container">
         <div class="grid--footer">

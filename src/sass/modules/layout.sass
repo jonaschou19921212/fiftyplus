@@ -358,6 +358,10 @@ section
     justify-content: space-between
   > .container > .breadcrumb
     margin-bottom: 0
+  &.special--bg
+    @media (max-width: theme('breakpoints.md'))
+      background: #eee9e4
+
 
 .section--breadcrumb + .section--article,
 .section--breadcrumb + .section--weekly
@@ -524,7 +528,8 @@ section
   max-width: 720px
   margin: 0 auto
 
-.section--article--header
+.section--article--header,
+.section--audio--header
   &
     background: #eee9e4
   .container
@@ -533,13 +538,82 @@ section
       grid-template-columns: repeat(2, auto)
       grid-template-rows: repeat(3, auto)
       gap: 20px
+      @media (max-width: theme('breakpoints.md'))
+        gap: 15px
     > .page--title
       grid-column: span 2
       grid-row: span 1
+    .mobile--caption
+      font-family: "Noto Serif TC", serif
+      grid-column: span 2
+      grid-row: span 1
+      font-weight: 600
+      color: #515050
+      .normal-font
+        font-family: "Noto Sans TC", serif
+        font-weight: 400
+        .bi-eye
+          font-size: 22px
+  .mobile-share-bar
+    grid-column: span 2
+    grid-row: span 1
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background: var(--theme-color)
+    padding: 10px
+    position: relative
+    bottom: -40px
+    .item
+      flex: 1
+      height: 100%
+      text-align: center
+      border-right: 1px solid #515050
+      color: #515050
+      font-size: 24px
+      font-weight: 700
+      display: flex
+      align-items: center
+      justify-content: center
+      cursor: pointer
+      &.line
+        font-size: 16px
+        font-weight: 900
+        letter-spacing: 0px
+      &.link
+        .bi-link-45deg::before
+          font-weight: 800 !important
+      &.subscribe
+        font-size: 14px
+      &.size
+        border: none
+        .bi-type::before
+          font-weight: 800 !important
 
 .page--cover
+  @media (max-width: theme('breakpoints.md'))
+    grid-column: span 2
+    grid-row: span 1
+  img
+    aspect-ratio: 5 / 3
   .caption
     position: absolute
+.iframe-container
+  grid-column: span 2
+  grid-row: span 1
+  display: flex
+  justify-content: space-around
+  .iframe
+    flex: 1
+    display: flex
+    justify-content: flex-start
+    iframe
+      aspect-ratio: 5 / 3
+      width: 80%
+      height: 100%
+      @media (max-width: theme('breakpoints.md'))
+        width: 100%
+
 
 .page--caption
   &
@@ -577,3 +651,8 @@ section
     display: grid
     grid-template-columns: repeat(4, 1fr)
     gap: 20px
+.section--audio--body,
+.section--article--body
+  @media (max-width: theme('breakpoints.sm'))
+    padding-left: 18px
+    padding-right: 18px
