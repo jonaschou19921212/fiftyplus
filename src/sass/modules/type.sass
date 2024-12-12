@@ -818,6 +818,11 @@ article.content
       display: flex
       justify-content: space-between
       align-items: center
+      @media (max-width: theme('breakpoints.xl'))
+        flex-direction: column
+        gap: 20px
+        .text
+          align-self: flex-start
     .text
       display: flex
       justify-content: flex-start
@@ -1513,12 +1518,14 @@ article
     padding-left: 0.2rem
     background: linear-gradient(180deg, transparent 75%, #f5e500 75%)
 
-.class--title
+.class--title,
+.campaign--title
   &
     display: flex
     justify-content: flex-start
     align-items: center
-    margin-bottom: 20px
+    margin-top: 40px
+    margin-bottom: 40px
     border-bottom: 1px solid #CFCFCF
     font-family: "Noto Serif TC", serif
     white-space: nowrap
@@ -1559,6 +1566,8 @@ article.is-review
     border-right: 16px solid var(--theme-color)
     letter-spacing: .5rem
     padding-left: calc(20px + .5rem)
+    &.border-right-none
+      border-right: none
 
 article.is-review-spec
   ul, ol
@@ -1893,6 +1902,8 @@ article.is-class
       background: transparent
       li
         color: #515151
+        font-family: 'Noto Sans TC', serif
+        +fontSize(16px)
     .sub-title
       position: relative
       +fontSize(24px)
