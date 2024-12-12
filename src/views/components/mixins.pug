@@ -214,3 +214,7 @@ mixin formElements(data)
     loremYoutubeIndex++
     return youtube
   }
+
+  let formatAmount = function(amount) {
+    return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }

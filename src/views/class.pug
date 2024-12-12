@@ -1,0 +1,368 @@
+extends _layout.pug
+
+block vars
+  - $id = 'index'
+
+block main
+  section.section--breadcrumb.is-sp
+    .container
+      .breadcrumb 
+        ul 
+          li
+            a(
+              href='/'
+            ) 首頁
+          li
+            a(
+              href=""
+            ) 學院
+          li
+            a(
+              href=""
+            ) 探索課程
+  
+  section.section--class--header 
+    .container.d-flex.justify-content-center
+      .class-header--cover
+        .page--cover 
+          img(
+            src="https://picsum.photos/800/600"
+          )
+        .description
+          .title  亞培X50+保護力EP1-了解自己的身體狀態與基本知識
+          .address
+            .icon-bg
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-geo-alt-fill" viewBox="0 0 16 16"> <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/> </svg>
+            | 活動地點 | 想像表演藝宿場館
+          .address
+            .icon-bg
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-geo-alt-fill" viewBox="0 0 16 16"> <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/> </svg>
+            | 活動地址 | 台北市大安區忠孝東路四段15號
+          //- .date
+          //-   .icon-bg
+          //-     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#fff" class="bi bi-calendar-fill" viewBox="0 0 16 16"> <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5"/> </svg>
+          //-   | 日期 | 04/15 - 05/31
+          .date-circle
+            p 04/15
+            .seperate
+            p 05/31
+    .quick-bar 
+      a.item--link(href="#intro")
+        .item.active 課程介紹
+      a.item--link(href="#outline")
+        .item 課程大綱
+      a.item--link(href="#information")
+        .item 課程資訊
+      a.item--link(href="#notice")
+        .item 注意事項
+    .mobile-share-bar.hide-border.d-flex.d-lg-none
+      .item 
+        a(href="#") f
+      .item.line
+        a(href="#") LINE
+      .item.link 
+        a(href="#")
+          i.bi.bi-link-45deg
+      
+      .item.size(onclick='toggleFontSize()')
+        <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 18.5C10 19.329 9.328 20 8.5 20C7.672 20 7 19.329 7 18.5C7 17.672 7.672 17 8.5 17C9.328 17 10 17.672 10 18.5ZM13.5 17C12.672 17 12 17.671 12 18.5C12 19.329 12.672 20 13.5 20C14.328 20 15 19.329 15 18.5C15 17.672 14.328 17 13.5 17ZM19.804 0L16.373 14H14.271L16.812 3H0L4.615 16H17.854L21.328 2H23.506L24 0H19.804Z" fill="#525252"/>
+        </svg>
+
+  section.section--class--body.pb-0
+    .container
+      .row.reverse
+        .col-12.col-lg-9
+          .class--title#intro
+            .title 
+              span 課程介紹
+          article.is-class
+            .video--wrapper
+              iframe(
+                src="https://www.youtube.com/embed/1Q3wv4J6Z1A"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              )
+            h3 專為舞蹈基礎者設計的650+熟齡爵士舞課程！
+            p 閱讀黃金雙激萃的使用說明，上面說「於早上或晚上使用」。但我想，既然要試用，就早晚都用吧！於是晚上我
+              span.bold 用黃金雙激萃取代原來的晚霜，
+              | 在化妝水後使用。這是我第一次晚上不用「乳霜」狀保養品，我一直倚賴乳霜來保濕。沒想到，黃金雙激萃的保濕潤澤度出奇的好！整個晚上都感覺皮膚非常水嫩！早上我則是洗完臉就直接使用它，用量稍減。它不會油膩，也很容易再上後續的隔離乳。因為好吸收的關係，立刻上隔離乳也不會有屑屑產生。 用完兩週，我覺得最明顯的改變是皮膚的緊緻度，而且幾乎一用就有感。皮膚的緊緻，感覺真的很明顯。同樣的保養程序，竟帶來這麼好的效果。也因為這樣，上彩粧也變得容易，不易掉粉。沒預料到的收穫是，出門前在化妝檯前的準備時間變短了，讓人開心。值得推薦！值得推薦！值得推薦！值得推薦！
+            .pic 
+              img(
+                src="https://picsum.photos/900/900"
+              )
+          
+          .class--title#outline
+            .title 
+              span 課程大綱
+          article.is-class
+            .card-class-normal
+              .sub-title 課程大綱
+              .main-area
+                p 暖身運動：30分鐘爵士舞組合訓練
+                p 暖身運動：30分鐘爵士舞組合訓練
+                p 暖身運動：30分鐘爵士舞組合訓練
+                p 暖身運動：30分鐘爵士舞組合訓練
+          
+          article.is-class
+            .card-class-normal
+              .sub-title 課前準備
+              .main-area
+                ol
+                  each item, index in [1, 2, 3]
+                    li
+                      != getLoremText()
+
+          .class--title#information
+            .title 
+              span 課程資訊
+          article.is-class
+            .card-class-normal
+              .main-area
+                p 
+                  != getLoremText()
+                p 
+                  != getLoremText()
+          article.is-class
+            .card-class-normal
+              .sub-title 你將得到的收穫
+              .main-area
+                p 暖身運動：30分鐘爵士舞組合訓練
+                p 暖身運動：30分鐘爵士舞組合訓練
+                p 暖身運動：30分鐘爵士舞組合訓練
+                p 暖身運動：30分鐘爵士舞組合訓練
+          
+          .intro-area
+            .img-area
+              .title 講師介紹
+              .pic
+                img(
+                  src="https://picsum.photos/900/900"
+                )
+              .circle-bg
+            .main-content
+              .title  林 志斌
+              .main-area
+                != getLoremText()
+                |如何退休後過更好？心理諮商師靳秀麗：1個「生產老化」新觀念，啟動身體健康、內心的內無比...98歲仍在幫病人看病！金氏世界紀錄最高齡醫師塔克：6個健康到100歲的秘訣，每個人都做得到
+          
+          .intro-area
+            .img-area
+              .title 合作單位
+              .pic
+                img(
+                  src="https://picsum.photos/900/900"
+                )
+              .circle-bg
+            .main-content
+              .title  專為舞蹈基礎者設計的650+熟齡爵士舞課程！專為舞蹈基礎者設計的650+熟齡爵士舞課程！
+              .main-area
+                != getLoremText()
+                |如何退休後過更好？心理諮商師靳秀麗：1個「生產老化」新觀念，啟動身體健康、內心的內無比...98歲仍在幫病人看病！金氏世界紀錄最高齡醫師塔克：6個健康到100歲的秘訣，每個人都做得到
+            
+          .class--title#notice
+            .title 
+              span 報名注意事項
+          article.is-class
+            .card-class-normal.bg-transparent.ps-0.pt-0
+              ol
+                each item, index in [1, 2, 3, 4, 5, 6]
+                  li
+                    != getLoremText()
+          .join-us.d-flex.justify-content-center
+            .line-area.col-6.col-md-12 
+              span.text 50+學院
+              a.join-text(href="")
+                | 線上專人諮詢 
+                .dash &nbsp;
+                i.bi.bi-play-fill
+
+        .col-12.col-lg-3
+          .sticky-container
+            .panel--review.static
+              .title 活動倒數
+              .caption
+                .review--text 體驗品 100 份
+                .review--countdown 
+                  .label
+                    span 募集倒數
+                    b 11
+                    span 天
+                  .label
+                    b 12
+                    span 時
+                    b 30
+                    span 分
+                    b 30
+                    span 秒
+              .buttons.flex-column
+                a.button--pill--lg(
+                  href='./classDetail.html'
+                )
+                  .label 立即報名
+                span.discount--hint 2人同行另享折扣!
+            .share-bottons.d-none.d-lg-flex.align-items-center.justify-content-center
+              a(href="")
+                .button--facebook--dark
+              a(href="")
+                .button--line--dark
+              a(href="")
+                .button--link--dark
+              a(href="")
+                .button--cart--dark
+            .banner.mt-4.mb-4
+              img(
+                data-src='https://picsum.photos/300/300'
+                alt='廣告'
+              ).lazyload
+            .banner.mb-4
+              img(
+                data-src='https://picsum.photos/300/300'
+                alt='廣告'
+              ).lazyload
+    .choose--class#choose
+      .title 選擇課程
+      .discount
+        .discount--title 多人優惠
+        .content
+          p 優惠方案優惠方案
+          p 優惠方案優惠方案優惠方案優惠方案
+      form.apply
+        each item, index in [1, 2]
+          .item
+            .form--radio 
+              label
+                input(
+                      type='radio'
+                      name='subject'
+                      id=`subject${index}`
+                      onchange=`updateTotal(${index})`
+                    )
+                span
+              .subject.d-block.d-md-none 50+學院Ｘ享象熟領爵士舞- Classical Jazz
+            .content
+              .subject.d-none.d-md-block 50+學院Ｘ享象熟領爵士舞- Classical Jazz
+              .price
+                span.money $8200元
+                span.unit 起
+                  i.bi.bi-slash-lg
+                  | 人
+              .count--area
+                i.bi.bi-dash-lg(onclick=`changeCount(-1, ${index})`)
+                .form--text 
+                  input(
+                        type='text'
+                        name='count'
+                        id=`countInput${index}`
+                        value='0'
+                        disabled
+                      )
+                i.bi.bi-plus-lg(onclick=`changeCount(1, ${index})`)
+        .item.total
+          .form--radio 
+          .content.hide-border
+            .total--discount 您已符合多人優惠資格!
+            .price
+              span.money 總金額
+            .amount--area
+              del.origin-price 原價＄
+                != formatAmount(16000)
+              .amount#totalAmount 合計＄
+                != formatAmount(16000)
+      .mt-5.mb-4
+        a(href="./classDetail.html")
+          .button--pill--xl
+            .label 我要報名
+      .hint 此課程需會員登入才可報名，請
+        a(href="./login.html") 登入
+        | 或
+        a(href="./register.html") 註冊
+        | 後繼續報名，謝謝
+    .container.courser-recomand.mt-0.d-none.d-sm-flex
+      .row.row--course
+        each item, index in [0, 1, 2]
+          .col-lg-4 
+            .card--course
+              .pic
+                img(
+                  data-src=`${getLoremCourse()}`
+                ).lazyload
+              .caption
+                .info
+                  .date 2024.11.06 — 2024.12.11
+                h3 50+聲音表達工作坊進階班第5期
+                .buttons
+                  a(href="./classDetail.html")
+                    .button--pill--xl
+                      .label 我要報名
+    .container--slim.d-block.d-sm-none
+      .swiper--banner
+        swiper-container(
+          navigation='true'
+          inject-styles=[
+            `
+           
+            :host {
+              --swiper-theme-color: #ede73c;
+            }
+            :host .swiper-button-prev,
+            :host .swiper-button-next {
+              background-color: #66666680;
+              border-radius: 100%;
+              width: 28px;
+              height: 28px;
+              padding: 10px;
+              stroke: #ede73c;
+              stroke-width: 1;
+            }
+            `,
+          ],
+        )
+          each item, index in [0, 1, 2]
+            swiper-slide.bg-theme
+              .card--course.audio-type
+                .pic
+                  img(
+                    data-src=`${getLoremCourse()}`
+                  ).lazyload
+                .caption
+                  .info
+                    .date 2024.11.06 — 2024.12.11
+                  h3 50+聲音表達工作坊進階班第5期
+                  .buttons
+                    .button--pill--xl
+                      .label 我要報名
+    script.
+      const quickBarItems = document.querySelectorAll('.quick-bar .item');
+      quickBarItems.forEach(item => {
+        item.addEventListener('click', () => {
+          // 移除其他項目的 active 類
+          quickBarItems.forEach(i => i.classList.remove('active'));
+          // 為當前點擊的項目添加 active 類
+          item.classList.add('active');
+        });
+      });
+
+      function changeCount(delta, index) {
+        const input = document.getElementById('countInput'+index);
+        const radio = document.getElementById('subject' + index);
+        const totalElement = document.getElementById('totalAmount');
+        let currentValue = parseInt(input.value) || 0;
+        currentValue += delta;
+        let newValue = currentValue < 0 ? 0 : currentValue;
+        input.value = newValue
+         if (radio.checked) {
+          totalElement.textContent = formatAmount(newValue*8200); 
+        }
+      }
+      let formatAmount = function(amount) {
+        return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+      function updateTotal(index) {
+        const input = document.getElementById('countInput'+index);
+        const totalElement = document.getElementById('totalAmount');
+        let currentValue = parseInt(input.value) || 0;
+        let total = currentValue * 8200;
+        totalElement.textContent = formatAmount(currentValue*8200); 
+      }

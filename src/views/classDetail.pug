@@ -1,0 +1,265 @@
+extends _layout.pug
+
+block vars
+  - $id = 'index'
+
+block main
+  section.section--breadcrumb.is-sp
+    .container
+      .breadcrumb 
+        ul 
+          li
+            a(
+              href='/'
+            ) 首頁
+          li
+            a(
+              href=""
+            ) 學院
+          li
+            a(
+              href=""
+            ) 探索課程
+          li
+            a(
+              href=""
+            ) 線上直播
+
+  section.section--classDetail--header 
+    .container.d-flex.justify-content-center
+      .class-header--cover
+        .page--cover 
+          img(
+            src="https://picsum.photos/800/600"
+          )
+        .description.hide-border
+          .title  亞培X50+保護力EP1-了解自己的身體狀態與基本知識
+          .address
+            .icon-bg
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-geo-alt-fill" viewBox="0 0 16 16"> <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/> </svg>
+            | 活動地點 | 想像表演藝宿場館
+          .address
+            .icon-bg
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-geo-alt-fill" viewBox="0 0 16 16"> <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/> </svg>
+            | 活動地址 | 台北市大安區忠孝東路四段15號
+          .normal-info.is--sub
+            .info-subject 費用
+            .info-content 8000元/人
+              .sub-hint.color-red 原價8,200元，多人優惠折扣200元
+
+          .normal-info
+            .info-subject 日期
+            .info-content 2024/03/03 - 05/03 (每週五，共10堂)
+
+          .normal-info.is--sub
+            .info-subject 時間
+            .info-content 下午 2:00 - 3:00
+              .sub-hint 90分鐘，含10分鐘老師諮詢
+
+          .normal-info
+            .info-subject 人數
+            .info-content 1人
+
+  section.section--class--body.pb-0
+    .container
+      .section__title.is-form
+        .login--title.is-subtitle 資料填寫
+          .sub-title.is-red *全區皆為必填欄位
+      each item, index in ["一", "二"]
+        form.form--review
+          .form--caption.d-flex.aligin-items-center
+            span.red.me-4 學員#{item}
+            if index === 0
+              .form--checkbox.d-inline-block
+                label.align-center
+                  span
+                  input(type='checkbox')
+                  .icon 
+                    i.bi.bi-check-circle
+                    i.bi.bi-circle
+                  span 自動帶入我的會員資料
+          .row
+            .col-12.col-md-6
+              .form--input
+                label(for='name') 姓名
+                  span.label--hint (請務必填寫真實姓名，以利刷卡資料核對。)
+                input#name.form--input(type='text', placeholder='請輸入姓名')
+            .col-6
+              .form--gender
+                .label 性別
+                .radio--group
+                  label
+                    input(
+                      type='radio'
+                      name='gender'
+                    )
+                    span 男
+                  label
+                    input(
+                      type='radio'
+                      name='gender'
+                    )
+                    span 女
+            .col-12.col-md-6
+              .form--date 
+                .label 生日
+                .select
+                  select
+                    option 1999
+                .select
+                  select
+                    option 一月
+                .select
+                  select
+                    option 11
+            .col-12.col-md-6
+              .form--input.is-required
+                label 手機
+                  small （請留下手機，方便入選後與您聯繫）
+                input
+            .col-12
+              .form--input.is-required
+                label Email
+                input
+            .col-12
+              .form--address
+                .label 地址
+                  small （請留下地址，方便後續將試用品寄給您）
+                .address--code.full
+                  .select
+                    select
+                      option 104
+                  .select
+                    select
+                      option 台北市
+                  .select
+                    select
+                      option 大安區
+                .address--text
+                  input
+            .col-12.col-md-6
+              .form--radio-select
+                .label 餐點需求
+                .radio--group.triple
+                  label
+                    input(
+                      type='radio'
+                      name='meal'
+                    )
+                    span 葷
+                  label
+                    input(
+                      type='radio'
+                      name='meal'
+                    )
+                    span 素
+                  label
+                    input(
+                      type='radio'
+                      name='meal'
+                    )
+                    span 無
+            .col-12
+              .form--input
+                label 請問您過去是否有使用過類似高蛋白產品？
+                .select
+                  select
+                    option 有
+                    option 沒有
+            .col-12.col-md-6
+              .form--radio-select
+                .label 單選題
+                  span.label--hint (備註備註備註備註備註備註)
+                .radio--group.single
+                  label
+                    input(
+                      type='radio'
+                      name='meal'
+                    )
+                    span.from--start 是:我不排斥食用乳製品
+                  label
+                    input(
+                      type='radio'
+                      name='meal'
+                    )
+                    span.from--start 否:我不排斥食用乳製品
+
+            .col-12
+              .form--radio-select
+                .label 多選題
+                  span.label--hint (備註備註備註備註備註備註)
+                .radio--group.mutiple
+                  - for (var i = 0; i < 6; i++)
+                    label
+                      input(
+                        type='radio'
+                        name='muti'
+                      )
+                      span.from--start 眼睛退化
+                    label
+                      input(
+                        type='radio'
+                        name='muti'
+                      )
+                      span.from--start 便秘便秘便秘便秘便秘便秘便秘
+                .address--text
+                  input(placeholder="其他(請說明)")
+
+            .col-12
+              .form--textarea.is-required
+                label 留言
+                  span.label--hint (備註備註備註備註備註備註)
+                textarea.form--input(type='text')
+
+            .col-12
+              .form--upload
+                label 圖片上傳
+                .grid--upload--preview
+                  each item, index in [0, 1, 2, 3]
+                    .card--upload--preview
+                      label(for=`upload-input-${index}`)
+                        input.upload-input(id=`upload-input-${index}` type='file' style='display: none;' onchange=`handleFileUpload(this, ${index})`)
+                        img.upload-preview(id=`upload-preview-${index}` src='' style='display: none; width: 100%; height: 100%; object-fit: cover;')
+                        i.bi.bi-image.upload-icon(style='display: block;')
+                        p.d-block.d-sm-none 新增圖片
+                        p.d-block.d-sm-none 限定 JPEG & PNG 格式
+    //- .row
+    //-   .col-12.d-flex.justify-content-center
+    //-     .form--checkbox
+    //-       label
+    //-         span
+    //-         input(type='checkbox')
+    //-         .icon 
+    //-           i.bi.bi-check-circle
+    //-           i.bi.bi-circle
+    //-         span 我已詳閱並同意
+    //-           a.normal--link 會員權益條款
+    //- .row.justify-content-center
+    //-   .col-6.class--amount
+    //-     .button--pill--xl
+    //-       .label.label--hide--border.black--font 馬上結帳
+
+    .row
+      .col-12
+        .join-us.d-flex.justify-content-center
+          .line-area.col-6.col-md-12 
+            span.text 50+學院
+            a.join-text(href="")
+              | 線上專人諮詢 
+              .dash &nbsp;
+              i.bi.bi-play-fill
+    script.
+      function handleFileUpload(input, index) {
+        const preview = document.getElementById(`upload-preview-${index}`);
+        const icon = preview.nextElementSibling;
+        console.log('asd',input)
+        if (input.files && input.files[0]) {
+          preview.src = window.URL.createObjectURL(input.files[0]);
+          preview.style.display = 'block';
+          icon.style.display = 'none';
+        } else {
+          preview.src = '';
+          preview.style.display = 'none';
+          icon.style.display = 'block';
+        }
+      }

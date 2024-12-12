@@ -554,46 +554,63 @@ section
         font-weight: 400
         .bi-eye
           font-size: 22px
-  .mobile-share-bar
-    grid-column: span 2
-    grid-row: span 1
-    display: flex
-    justify-content: space-between
-    align-items: center
-    background: var(--theme-color)
-    padding: 10px
-    position: relative
-    bottom: -40px
-    height: 50px
-    border-top: 1px solid #515151
-    .item
-      flex: 1
-      height: 100%
-      text-align: center
-      border-right: 1px solid #515050
-      color: #515050
-      font-size: 24px
-      font-weight: 700
+    .iframe-container
+      grid-column: span 2
+      grid-row: span 1
       display: flex
-      align-items: center
-      justify-content: center
-      cursor: pointer
-      &.line
-        font-size: 16px
-        font-weight: 900
-        letter-spacing: 0px
-      &.link
-        .bi-link-45deg::before
-          font-weight: 800 !important
-      &.subscribe
-        font-size: 14px
-      &.size
-        &
-          border: none
-        .aa
-          width: 26px
-        .bi-type::before
-          font-weight: 800 !important
+      justify-content: space-around
+      .iframe
+        flex: 1
+        display: flex
+        justify-content: flex-start
+        iframe
+          aspect-ratio: 5 / 3
+          width: 80%
+          height: 100%
+          @media (max-width: theme('breakpoints.md'))
+            width: 100%
+.mobile-share-bar
+  grid-column: span 2
+  grid-row: span 1
+  display: flex
+  justify-content: space-between
+  align-items: center
+  background: var(--theme-color)
+  padding: 10px
+  position: relative
+  bottom: -40px
+  height: 50px
+  border-top: 1px solid #515151
+  &.hide-border
+    border: none
+  .item
+    flex: 1
+    height: 100%
+    text-align: center
+    border-right: 1px solid #515050
+    color: #515050
+    font-size: 24px
+    font-weight: 700
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+    &.line
+      font-size: 16px
+      font-weight: 900
+      letter-spacing: 0px
+    &.link
+      .bi-link-45deg::before
+        font-weight: 800 !important
+    &.subscribe
+      font-size: 14px
+    &.size
+      &
+        border: none
+      .aa
+        width: 26px
+      .bi-type::before
+        font-weight: 800 !important
 
 .page--cover
   @media (max-width: theme('breakpoints.md'))
@@ -601,23 +618,11 @@ section
     grid-row: span 1
   img
     aspect-ratio: 5 / 3
+    width: 100%
+    max-width: 960px
   .caption
     position: absolute
-.iframe-container
-  grid-column: span 2
-  grid-row: span 1
-  display: flex
-  justify-content: space-around
-  .iframe
-    flex: 1
-    display: flex
-    justify-content: flex-start
-    iframe
-      aspect-ratio: 5 / 3
-      width: 80%
-      height: 100%
-      @media (max-width: theme('breakpoints.md'))
-        width: 100%
+
 
 
 .page--caption
@@ -644,6 +649,137 @@ section
 .section--article--steps
   &
     background: #f8e800
+.section--class--header,
+.section--classDetail--header
+  &
+    background: #eee9e4
+  .container
+    border-right: 2px solid #B1B0AC
+    border-left: 2px solid #B1B0AC
+    @media (max-width: theme('breakpoints.lg'))
+      border: none
+
+.section--classDetail--header,
+.section--class--header
+  .container
+    .normal-info
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      font-weight: 700
+      color: #222
+      font-family: "Noto Sans TC", serif
+      margin-top: 10px
+      position: relative
+      &.is--sub
+        margin-bottom: 30px
+      .info-subject 
+        &::after
+          margin-left: 10px
+          content: "|"
+      .info-content
+        padding-left: 10px
+        position: relative
+        .sub-hint
+          +fontSize(14px)
+          color: #515151
+          font-weight: 500
+          position: absolute
+          bottom: -25px
+          white-space: nowrap
+          &.color-red
+            color: red
+      
+  .description
+    &
+      text-align: left
+      position: relative
+      border: none
+      @media (max-width: theme('breakpoints.lg'))
+        padding: 0 20px
+        border-right: 2px solid #B1B0AC
+        border-left: 2px solid #B1B0AC
+      &.hide-border
+        border: none
+    .title
+      margin-top: 30px
+      +fontSize(24px)
+      @media (min-width: 1440px)
+        font-size: 26px
+      font-weight: 700
+      font-family: 'Noto Serif TC', sans-serif  
+    .date,
+    .address
+      &
+        display: flex
+        align-items: center
+        color: #515151
+        margin-top: 10px
+        +fontSize(18px)
+        .icon-bg
+          width: 24px
+          height: 24px
+          background: #525252
+          border-radius: 50%
+          display: flex
+          justify-content: center
+          align-items: center
+          margin-right: 10px
+        i
+          color: #fff
+          font-size: 12px
+          margin-left: 1px
+          margin-bottom: 1px
+      
+    .date-circle
+      &
+        position: absolute
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        border: 2px solid #000
+        border-radius: 50%
+        padding: 25px
+        width: 120px
+        height: 120px
+        background: #fff
+        right: 0
+        top: 0
+        font-weight: 600
+        font-family: 'Noto Serif TC', sans-serif
+        @media (max-width: theme('breakpoints.lg'))
+          display: none
+      .seperate
+        height: 40%
+        width: 1px
+        border-right: 2px solid #000
+        min-height: 25px
+        margin: 3px 0
+.quick-bar 
+  &
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background: #fff
+    width: 100%
+    position: relative
+    bottom: -40px
+    +fontSize(18px)
+    font-weight: 500
+  .item--link
+    width: 100%
+  .item
+    &
+      flex: 1
+      text-align: center
+      padding: 15px
+      background: #fff
+      font-family: "Noto Serif TC", serif
+      cursor: pointer
+    &.active
+      background: #FEFACB
+
 
 .grid--steps
   &
@@ -656,8 +792,286 @@ section
     display: grid
     grid-template-columns: repeat(4, 1fr)
     gap: 20px
+    @media (max-width: theme('breakpoints.sm'))
+      display: flex
+      flex-direction: column
 .section--audio--body,
 .section--article--body
   @media (max-width: theme('breakpoints.sm'))
     padding-left: 18px
     padding-right: 18px
+
+.section--class--body
+  .reverse
+    flex-wrap: wrap-reverse
+  .sticky-container
+    position: sticky
+    top: 80px
+    @media (max-width: theme('breakpoints.lg'))
+      position: relative
+      top: 0
+    .share-bottons
+      border: 1px solid #000
+      border-radius: 50px
+      padding: 10px
+      gap: 15px
+      margin: 30px 0
+      > *
+        width: 40px
+        height: 40px
+  .class--amount
+    border: 1px solid #000
+    padding: 20px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    .botton--check-out
+      font-weight: 700
+      font-family: "Noto Sans TC", serif
+  .intro-area
+    display: flex
+    align-items: flex-start
+    justify-content: flex-start
+    min-height: 300px
+    margin-bottom: 40px
+    @media (max-width: theme('breakpoints.md'))
+      flex-direction: column
+      align-items: center
+    .img-area
+      position: relative
+      padding: 20px
+      @media (max-width: theme('breakpoints.md'))
+        width: 100%
+      .title
+        position: relative
+        font-family: "Noto Serif TC", serif
+        +fontSize(22px)
+        font-weight: 700
+        color: #515151
+        padding-left: 30px
+        margin-bottom: 5px
+        letter-spacing: 2px
+        &::before
+          content: " "
+          display: inline-block
+          position: absolute
+          margin-right: 25px
+          width: 20px
+          height: 20px
+          border-radius: 50%
+          background: var(--theme-color)
+          top: 50%
+          transform: translateY(-50%)
+          left: 0
+      .pic
+        width: 150px
+        height: 150px
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 50%
+        overflow: hidden
+        @media (max-width: theme('breakpoints.md'))
+          position: relative
+          left: 50%
+          transform: translateX(-50%)
+        img
+          width: 100%
+          height: 100%
+      .circle-bg
+        position: absolute
+        width: 100px
+        height: 100px
+        border: 1px solid var(--theme-color)
+        border-radius: 50%
+        top: -10px
+        right: 20px
+        z-index: -1
+        @media (max-width: theme('breakpoints.md'))
+          width: 150px
+          height: 150px
+          left: 50%
+          top: 50%
+          margin-top: 16px
+          transform: translate(-20%, -50%)
+    .main-content
+      padding-left: 20px
+      flex: 1
+      height: 100%
+      border-left: 1px solid #BABABA
+      @media (max-width: theme('breakpoints.md'))
+        border: none
+      .title
+        font-family: "Noto Sans TC", serif
+        padding-left: 10px
+        margin-bottom: 30px
+        +fontSize(24px)
+        font-weight: 800
+        @media (max-width: theme('breakpoints.md'))
+          text-align: center
+      .main-area
+        background: #F8F8F8
+        padding: 15px
+        font-weight: 600
+        line-height: 1.8
+        letter-spacing: 2px
+  .choose--class
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    background: #514F50
+    padding: 40px
+    @media (max-width: theme('breakpoints.md'))
+      padding: 40px 20px
+    .title
+      width: 100%
+      text-align: center
+      color: #fff
+      font-family: "Noto Serif TC", serif
+      letter-spacing: 2px
+      font-weight: 600
+      border-bottom: 1px solid #606060
+      padding-bottom: 10px
+    .discount
+      background: #EEE9E5
+      padding: 20px
+      width: 80%
+      border-radius: 50px
+      margin: 30px 0px
+      display: flex
+      align-items: center
+      @media (max-width: theme('breakpoints.md'))
+        width: 100%
+        flex-direction: column
+        align-items: center
+        gap: 20px
+        border-radius: 20px
+
+      .discount--title
+        +fontSize(22px)
+        color: #222222
+        font-weight: 800
+        border: none
+        margin-right: 40px  
+      .content
+        color: #515151
+    .apply
+      width: 80%
+      background: #fff
+      padding: 30px 40px
+      @media (max-width: theme('breakpoints.md'))
+        width: 100%
+        padding: 20px
+      .item
+        display: flex
+        @media (max-width: theme('breakpoints.md'))
+          flex-direction: column
+          align-items: center
+        .form--radio 
+          display: flex
+          align-items: center
+          width: 25px
+          margin-right: 20px
+          @media (max-width: theme('breakpoints.md'))
+            width: 100%
+          label
+            &
+              position: relative
+              cursor: pointer
+              border: 1px solid #515151
+              width: 24px
+              height: 24px
+              min-width: 24px
+              min-height: 24px
+              border-radius: 50%
+            input
+              position: relative
+              opacity: 0
+            input + span
+              position: absolute
+              top: 2px
+              left: 2px
+              background: #fff
+              display: block
+              width: 18px
+              height: 18px
+              border-radius: 50%
+            input:checked + span
+              background: #b8b8b8
+          .subject
+            color: #515151
+            margin-left: 10px
+            +fontSize(22px)
+
+        .content
+          display: flex
+          justify-content: center
+          align-items: center
+          width: 100%
+          padding: 30px 0
+          border-bottom: 1px solid #606060
+          color: #515151
+          @media (max-width: theme('breakpoints.md'))
+            flex-direction: column
+            align-items: center
+            justify-content: space-around
+            padding: 20px
+            gap: 20px
+          &.hide-border
+            border: none
+          .total--discount
+            color: #B7B9B8
+            flex: 3
+            letter-spacing: 2.5px
+          .subject
+            flex: 3
+            letter-spacing: 3px
+          .price
+            flex: 2
+            font-weight: 500
+            span.money 
+              +fontSize(24px)
+            span.unit 
+              margin-left: 10px
+          .amount--area
+            flex: 1
+            display: flex
+            flex-direction: column
+            align-items: flex-end
+            @media (max-width: theme('breakpoints.md'))
+              align-items: center
+              gap: 20px
+            .origin-price
+              color: #B7B9B8
+            .amount
+              color: #222222
+              white-space: nowrap
+              +fontSize(20px)
+          .count--area
+            flex: 1
+            display: flex
+            justify-content: space-around
+            align-items: center
+            i.bi::before
+              font-weight: 1000 !important
+            .form--text 
+              input[type='text']
+                &
+                  font-family: 'Noto Sans TC', sans-serif
+                  width: 50px
+                  height: 40px
+                  border: 1px solid #000
+                  background: transparent
+                  text-align: center
+                &:focus
+                  outline: none
+  .hint
+    color: var(--theme-color)
+    font-family: "Noto Serif TC", serif
+    @media (max-width: theme('breakpoints.md'))
+      text-align: center
+    a
+      text-decoration: underline
+      text-underline-offset: 4px

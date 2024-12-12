@@ -82,6 +82,8 @@ a.normal--link
 .form--input,
 .form--upload,
 .form--gender,
+.form--radio-select,
+.form--single,
 .form--address,
 .form--date,
 .form--textarea
@@ -111,6 +113,10 @@ a.normal--link
     font-weight: 600
     line-height: 1.8
     letter-spacing: 0.48px
+    > .label--hint
+      +fontSize(12px)
+      margin-left: 10px
+      color: #D0D2D1
   small
     font-weight: 400
   &.is-row
@@ -152,12 +158,13 @@ a.normal--link
       display: none
 
       
+
 .form--gender
   .radio--group
     &
       display: grid
-      grid-template-columns: repeat(2, 1fr)
       gap: 10px
+      grid-template-columns: repeat(2, 1fr)
     label
       &
         position: relative
@@ -177,6 +184,53 @@ a.normal--link
       input:checked + span
         border: 1px solid rgba(#343434, .4)
         background: var(--theme-color)
+
+.form--radio-select
+  .radio--group
+    &
+      display: grid
+      gap: 10px
+    &.triple
+      grid-template-columns: repeat(3, 1fr)
+    &.double
+      grid-template-columns: repeat(2, 1fr)
+    &.single
+      grid-template-columns: repeat(1, 1fr)
+    &.mutiple
+      display: flex
+      flex-wrap: wrap
+      > label
+        flex: 1
+        width: auto
+        // min-width: 150px
+        white-space: nowrap
+    label
+      &
+        position: relative
+        cursor: pointer
+      input
+        position: absolute
+        opacity: 0
+      input + span
+        border-radius: 2px
+        display: flex
+        justify-content: center
+        align-items: center
+        border: 1px solid rgba(#343434, .2)
+        width: 100%
+        height: 50px
+        background: white
+        &.from--start
+          justify-content: flex-start
+          padding-left: 20px
+          padding-right: 20px
+
+      input:checked + span
+        border: 1px solid rgba(#343434, .4)
+        background: var(--theme-color)
+
+  
+
 
 .form--address
   &
@@ -358,6 +412,8 @@ a.normal--link
             left: 50%
             transform: translateX(-50%)
             bottom: -25px
+        &.is-red
+          color: #ff0000
     .required--text
       &
         position: relative
@@ -372,7 +428,8 @@ a.normal--link
         white-space: nowrap
   &.is-small
     .title
-      +fontSize(28px)
+      text-align: center
+      +fontSize(24px)
       letter-spacing: .25rem
   &.is-xsmall
     .title
@@ -506,6 +563,8 @@ article.content
       font-weight: 400
       line-height: 1.8
       letter-spacing: 0.48px
+    &.align-center
+      align-items: center
     span:first-child
       display: flex
       align-items: flex-start
@@ -1454,6 +1513,38 @@ article
     padding-left: 0.2rem
     background: linear-gradient(180deg, transparent 75%, #f5e500 75%)
 
+.class--title
+  &
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    margin-bottom: 20px
+    border-bottom: 1px solid #CFCFCF
+    font-family: "Noto Serif TC", serif
+    white-space: nowrap
+  @media (max-width: theme('breakpoints.md'))
+    justify-content: center
+  .title
+    +fontSize(26px)
+    margin-left: 30px
+    font-weight: 700
+    letter-spacing: .2rem
+    width: 160px
+    height: 80px
+    position: relative
+    background: var(--theme-color)
+    border-top-left-radius: 80px
+    border-top-right-radius: 80px
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+    @media (max-width: theme('breakpoints.md'))
+      margin: 0
+    span
+      position: absolute
+      bottom: 5px
+      left: 20px
+
+
 article.is-review-spec,
 article.is-review-rules,
 article.is-review
@@ -1595,7 +1686,8 @@ article.is-review-spec
   &
     +fontSize(16px)
     color: #b7b8b8
-    width: 220px
+    width: 70%
+    min-width: 220px
     padding: 10px 20px
     border-radius: 20px
     margin: 0 auto
@@ -1635,6 +1727,8 @@ article.is-review-spec
     span
       +fontSize(24px)
       font-weight: 700
+      &.red
+        color: #ff0000
     small
       +fontSize(14px)
       color: #515050
@@ -1643,6 +1737,7 @@ article.is-review-spec
     --bs-gutter-y: 20px
 .form--personal
   &
+    padding: 0px
     background: transparent
 .form--upload
   ul
@@ -1770,3 +1865,56 @@ table.table
     justify-content: center
     align-items: center
     padding: 20px 100px
+
+article.is-class
+  h3
+    +fontSize(24px)
+    font-family: 'Noto Sans TC', serif
+    font-weight: 700
+    display: inline-flex
+    line-height: 1.2
+    letter-spacing: .2rem
+  p
+    .bold
+      font-weight: 700
+  .pic
+    img
+      width: 100%
+      aspect-ratio: 5/3
+  .card-class-normal
+    width: 100%
+    height: auto
+    background: #F8F8F8
+    border-radius: 20px
+    padding: 20px
+    font-family: 'Noto Serif TC', serif
+    margin-bottom: 30px
+    &.bg-transparent
+      background: transparent
+      li
+        color: #515151
+    .sub-title
+      position: relative
+      +fontSize(24px)
+      font-weight: 700
+      color: #515151
+      padding-left: 30px
+      margin-bottom: 5px
+      &::before
+        content: " "
+        display: inline-block
+        position: absolute
+        margin-right: 25px
+        width: 20px
+        height: 20px
+        border-radius: 50%
+        background: var(--theme-color)
+        top: 50%
+        transform: translateY(-50%)
+        left: 0
+    .main-area
+      +fontSize(22px)
+      padding-left: 30px
+      font-family: 'Noto Sans TC', serif
+      color: #222222
+      letter-spacing: 1.2px
