@@ -116,6 +116,7 @@ export default defineConfig({
         reviewRegister: resolve(__dirname, "./src/reviewRegister.html"),
         campaign: resolve(__dirname, "./src/campaign.html"),
         campaignDetail: resolve(__dirname, "./src/campaignDetail.html"),
+        confirmCampaign: resolve(__dirname, "./src/confirmCampaign.html"),
         style: resolve(__dirname, "./src/style.html"),
       },
       output: {

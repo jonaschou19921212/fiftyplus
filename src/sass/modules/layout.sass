@@ -356,11 +356,21 @@ section
   > .container
     display: flex
     justify-content: space-between
+    
   > .container > .breadcrumb
     margin-bottom: 0
   &.special--bg
     @media (max-width: theme('breakpoints.md'))
       background: #eee9e4
+.border--bottom
+  width: 80%
+  border-bottom: 1px solid #222
+  padding-bottom: 20px
+  position: relative
+  left: 50%
+  transform: (translateX(-50%))
+  @media (max-width: theme('breakpoints.md'))
+    width: 90%
 
 
 .section--breadcrumb + .section--article,
