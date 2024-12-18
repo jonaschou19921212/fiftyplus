@@ -457,16 +457,17 @@ block main
             p 我已詳閱並
               a.normal--link 報名注意事項
               | 並同意配合
-    .row.justify-content-center.mb-5.mt-3
-      .col-6.class--amount
-        .d-flex.align-items-end
-          .total-text 總金額
-          .total-text.m-0 合計
-          .total-price 
-            del 原價16,800
-            p $16,000元
-        .button--pill--2xl.mt-3
-          .label.label--hide--border.black--font 馬上結帳
+    .container
+      .row.justify-content-center.mb-5.mt-3
+        .col-10.col-lg-6.class--amount
+          .d-flex.align-items-end
+            .total-text 總金額
+            .total-text.m-0 合計
+            .total-price 
+              del 原價16,800
+              p $16,000元
+          .button--pill--2xl.mt-3
+            .label.label--hide--border.black--font 馬上結帳
     .container.courser-recomand.mt-0.d-none.d-sm-flex
       .row.row--course
         each item, index in [0, 1, 2]
