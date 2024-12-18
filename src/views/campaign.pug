@@ -19,11 +19,6 @@ block main
               ) 活動
     .container--slim.mb-4
       .swiper--banner
-        //- .swiper-navigation 
-        //-   .swiper-button-prev
-        //-     .chevron--left
-        //-   .swiper-button-next
-        //-     .chevron--right
         swiper-container(
           navigation='true'
           slides-per-view='1'
@@ -38,9 +33,16 @@ block main
               --swiper-theme-color: #ede73c;
               --swiper-navigation-size: 32px;
             }
-            :host .swiper-button-prev, :host .swiper-button-next {
-              top: var(--swiper-navigation-top-offset, calc(50%));
-            }
+            :host .swiper-button-prev,
+              :host .swiper-button-next {
+                background-color: #66666680;
+                border-radius: 100%;
+                width: 28px;
+                height: 28px;
+                padding: 10px;
+                stroke: #ede73c;
+                stroke-width: 1;
+              }
             `,
           ],
         )

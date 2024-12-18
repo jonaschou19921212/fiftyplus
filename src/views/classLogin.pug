@@ -15,13 +15,13 @@ block main
           li
             a(
               href=""
-            ) 活動
+            ) 學院
           li
             a(
               href=""
-            ) 活動頁
+            ) 探索課程
 
-  section.section--campaign--header 
+  section.section--class--header 
     .container.d-flex.justify-content-center
       .class-header--cover
         .page--cover 
@@ -48,34 +48,34 @@ block main
             p 05/31
     .quick-bar 
       a.item--link(href="#intro")
-        .item.active 活動介紹
+        .item.active 課程介紹
       a.item--link(href="#outline")
-        .item 活動資訊
-      a.item--link(href="#teacher")
-        .item 講師介紹
+        .item 課程大綱
+      a.item--link(href="#information")
+        .item 課程資訊
       a.item--link(href="#notice")
         .item 注意事項
-    .mobile-share-bar.hide-border.d-flex.d-lg-none
-      .item 
-        a(href="#") f
-      .item.line
-        a(href="#") LINE
-      .item.link 
-        a(href="#")
-          i.bi.bi-link-45deg
+    //- .mobile-share-bar.hide-border.d-flex.d-lg-none
+    //-   .item 
+    //-     a(href="#") f
+    //-   .item.line
+    //-     a(href="#") LINE
+    //-   .item.link 
+    //-     a(href="#")
+    //-       i.bi.bi-link-45deg
 
-      .item.size(onclick='toggleFontSize()')
-        <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 18.5C10 19.329 9.328 20 8.5 20C7.672 20 7 19.329 7 18.5C7 17.672 7.672 17 8.5 17C9.328 17 10 17.672 10 18.5ZM13.5 17C12.672 17 12 17.671 12 18.5C12 19.329 12.672 20 13.5 20C14.328 20 15 19.329 15 18.5C15 17.672 14.328 17 13.5 17ZM19.804 0L16.373 14H14.271L16.812 3H0L4.615 16H17.854L21.328 2H23.506L24 0H19.804Z" fill="#525252"/>
-        </svg>
+    //-   .item.size(onclick='toggleFontSize()')
+    //-     <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    //-       <path d="M10 18.5C10 19.329 9.328 20 8.5 20C7.672 20 7 19.329 7 18.5C7 17.672 7.672 17 8.5 17C9.328 17 10 17.672 10 18.5ZM13.5 17C12.672 17 12 17.671 12 18.5C12 19.329 12.672 20 13.5 20C14.328 20 15 19.329 15 18.5C15 17.672 14.328 17 13.5 17ZM19.804 0L16.373 14H14.271L16.812 3H0L4.615 16H17.854L21.328 2H23.506L24 0H19.804Z" fill="#525252"/>
+    //-     </svg>
 
-  section.section--campaign--body.pb-0
+  section.section--class--body.pb-0
     .container
       .row.reverse
         .col-12.col-lg-9
-          .campaign--title.mt-0#intro
+          .class--title.mt-0#intro
             .title 
-              span 活動介紹
+              span 課程介紹
           article.is-class
             .video--wrapper
               iframe(
@@ -92,66 +92,81 @@ block main
               img(
                 src="https://picsum.photos/900/900"
               )
-          article.is-class
-            .card-class-normal.bg-transparent
-              .sub-title 活動準備
-              article.main-area
-                p 
-                  != getLoremText()
-                  != getLoremText()
-                  != getLoremText()
-                 
 
-          .campaign--title#outline
+          .class--title#outline
             .title 
-              span 活動資訊
+              span 課程大綱
           article.is-class
             .card-class-normal
+              .sub-title 課程大綱
               article.main-area
+                dl
+                  each item, index in [ { dt: "暖身運動", dd: "30分鐘爵士舞組合訓練" }, { dt: "暖身運動", dd: "30分鐘爵士舞組合訓練" }, { dt: "暖身運動", dd: "30分鐘爵士舞組合訓練" }, { dt: "暖身運動", dd: "30分鐘爵士舞組合訓練" }]
+                    dt 
+                      != item.dt
+                    dd
+                      != item.dd
+
+          article.is-class
+            .card-class-normal
+              .sub-title 課前準備
+              article.main-area
+                ol
+                  each item, index in [1, 2, 3]
+                    li
+                      != getLoremText()
+
+          .class--title#information
+            .title 
+              span 課程資訊
+          article.is-class
+            .card-class-normal
+              .main-area
                 p 
                   != getLoremText()
                   != getLoremText()
                   != getLoremText()
+
           article.is-class
             .card-class-normal
+              .sub-title 你將得到的收穫
               article.main-area
-                p 
-                  != getLoremText()
-                  != getLoremText()
-                  != getLoremText()
+                dl
+                  each item, index in [ { dt: "暖身運動", dd: "30分鐘爵士舞組合訓練" }, { dt: "暖身運動", dd: "30分鐘爵士舞組合訓練" }, { dt: "暖身運動", dd: "30分鐘爵士舞組合訓練" }, { dt: "暖身運動", dd: "30分鐘爵士舞組合訓練" }]
+                    dt 
+                      != item.dt
+                    dd
+                      != item.dd
 
+          .intro-area
+            .img-area
+              .title 講師介紹
+              .pic
+                img(
+                  src="https://picsum.photos/900/900"
+                )
+              .circle-bg
+            .main-content
+              .title  林 志斌
+              .main-area
+                != getLoremText()
+                |如何退休後過更好？心理諮商師靳秀麗：1個「生產老化」新觀念，啟動身體健康、內心的內無比...98歲仍在幫病人看病！金氏世界紀錄最高齡醫師塔克：6個健康到100歲的秘訣，每個人都做得到
 
-          
-          .campaign--title--border#teacher 講師介紹
+          .intro-area
+            .img-area
+              .title 合作單位
+              .pic
+                img(
+                  src="https://picsum.photos/900/900"
+                )
+              .circle-bg
+            .main-content
+              .title  專為舞蹈基礎者設計的650+熟齡爵士舞課程！專為舞蹈基礎者設計的650+熟齡爵士舞課程！
+              .main-area
+                != getLoremText()
+                |如何退休後過更好？心理諮商師靳秀麗：1個「生產老化」新觀念，啟動身體健康、內心的內無比...98歲仍在幫病人看病！金氏世界紀錄最高齡醫師塔克：6個健康到100歲的秘訣，每個人都做得到
 
-          .teacher-area
-            .name 林志斌
-            .campaign-intro-area
-              .img-area
-                .pic
-                  img(
-                    src="https://picsum.photos/900/900"
-                  )
-                .circle-bg
-              .mobile--intro--line
-                .line 
-                .text 講師介紹
-                .line
-              article.main-content
-                h3.text-center.d-block.d-md-none 林志斌
-                p
-                  != getLoremText()
-                  != getLoremText()
-                  != getLoremText()
-                  |如何退休後過更好？心理諮商師靳秀麗：1個「生產老化」新觀念，啟動身體健康、內心的內無比...98歲仍在幫病人看病！金氏世界紀錄最高齡醫師塔克：6個健康到100歲的秘訣，每個人都做得到
-                p
-                  != getLoremText()
-                  != getLoremText()
-                //- ul
-                //- each item, index in [1, 2, 3]
-                //-   li
-                //-     != getLoremText()
-          .campaign--title#notice
+          .class--title#notice
             .title 
               span 報名注意事項
           article.is-class
@@ -160,14 +175,19 @@ block main
                 each item, index in [1, 2, 3, 4, 5, 6]
                   li
                     != getLoremText()
-         
+          .join-us.d-flex.justify-content-center
+            .line-area.col-6.col-md-12 
+              span.text 50+學院
+              a.join-text(href="")
+                | 線上專人諮詢 
+                .dash &nbsp;
+                i.bi.bi-play-fill
 
-        .col-12.col-lg-3
+        .col-12.col-lg-3.pb-4
           .sticky-container
             .panel--review.static
-              .title 活動倒數
+              .title 即將開課
               .caption
-                .review--text 體驗品 100 份
                 .review--countdown 
                   .label
                     span 募集倒數
@@ -180,6 +200,8 @@ block main
                     span 分
                     b 30
                     span 秒
+                .review--text.mt-3 $8200元 起 / 人
+                
               .buttons.flex-column
                 a.button--pill--lg(
                   href='./classDetail.html'
@@ -206,7 +228,7 @@ block main
                 alt='廣告'
               ).lazyload
     .choose--class#choose
-      .title 選擇活動
+      .title 選擇課程
       .discount
         .discount--title 多人優惠
         .content
@@ -255,17 +277,13 @@ block main
               .amount#totalAmount 合計＄
                 != formatAmount(16000)
 
-      .hint 此課程需會員登入才可報名，請
-        a(href="./login.html") 登入
-        | 或
-        a(href="./register.html") 註冊
-        | 後繼續報名，謝謝
+      
 
     include components/form
 
     .container
       .row.justify-content-center.mb-5.mt-3
-        .col-10.col-lg-6.class--amount.d-none.d-sm-flex
+        .col-10.col-lg-6.class--amount.d-none.d-lg-flex
           .d-flex.align-items-end
             .total-text 總金額
             .total-text.m-0 合計
@@ -274,7 +292,8 @@ block main
               p $16,000元
           .button--pill--2xl.mt-3
             .label.label--hide--border.black--font 馬上結帳
-    .container.courser-recomand.mt-0.d-none.d-lg-flex
+      
+    .container.courser-recomand.mt-0.d-none.d-sm-flex
       .row.row--course
         each item, index in [0, 1, 2]
           .col-lg-4 
@@ -291,22 +310,7 @@ block main
                   a(href="./classDetail.html")
                     .button--pill--xl
                       .label 我要報名
-    .fixed-checkout.d-flex.d-lg-none
-      .button--more.is-invert.mt-3.is--full--width
-        .label.label--hide--border.black--font 馬上結帳
-      .mobile-share-bar.hide-border.d-flex.d-lg-none.bottom-0.mt-3
-        .item 
-          a(href="#") f
-        .item.line
-          a(href="#") LINE
-        .item.link 
-          a(href="#")
-            i.bi.bi-link-45deg
-        .item.size(onclick='toggleFontSize()')
-          <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 18.5C10 19.329 9.328 20 8.5 20C7.672 20 7 19.329 7 18.5C7 17.672 7.672 17 8.5 17C9.328 17 10 17.672 10 18.5ZM13.5 17C12.672 17 12 17.671 12 18.5C12 19.329 12.672 20 13.5 20C14.328 20 15 19.329 15 18.5C15 17.672 14.328 17 13.5 17ZM19.804 0L16.373 14H14.271L16.812 3H0L4.615 16H17.854L21.328 2H23.506L24 0H19.804Z" fill="#525252"/>
-            </svg>
-    .container--slim.d-block.d-sm-none
+    .container--slim.d-block.d-lg-none
       .swiper--banner
         swiper-container(
           navigation='true'
@@ -343,6 +347,21 @@ block main
                   .buttons
                     .button--pill--xl
                       .label 我要報名
+    .fixed-checkout.d-flex.d-lg-none
+        .button--more.is-invert.mt-3.is--full--width
+          .label.label--hide--border.black--font 馬上結帳
+        .mobile-share-bar.hide-border.d-flex.d-lg-none.bottom-0.mt-3
+          .item 
+            a(href="#") f
+          .item.line
+            a(href="#") LINE
+          .item.link 
+            a(href="#")
+              i.bi.bi-link-45deg
+          .item.size(onclick='toggleFontSize()')
+            <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 18.5C10 19.329 9.328 20 8.5 20C7.672 20 7 19.329 7 18.5C7 17.672 7.672 17 8.5 17C9.328 17 10 17.672 10 18.5ZM13.5 17C12.672 17 12 17.671 12 18.5C12 19.329 12.672 20 13.5 20C14.328 20 15 19.329 15 18.5C15 17.672 14.328 17 13.5 17ZM19.804 0L16.373 14H14.271L16.812 3H0L4.615 16H17.854L21.328 2H23.506L24 0H19.804Z" fill="#525252"/>
+            </svg>
     script.
       var studentCount = 1;
       const quickBarItems = document.querySelectorAll('.quick-bar .item');
@@ -369,6 +388,7 @@ block main
           if (radio.checked) {
             totalElement.textContent = formatAmount(newValue*8200); 
             discountElement.textContent = formatAmount(newValue*8200); 
+           
         }
       }
 

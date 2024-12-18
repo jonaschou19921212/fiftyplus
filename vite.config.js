@@ -107,6 +107,7 @@ export default defineConfig({
         cooperate: resolve(__dirname, "./src/cooperate.html"),
         about: resolve(__dirname, "./src/about.html"),
         class: resolve(__dirname, "./src/class.html"),
+        classLogin: resolve(__dirname, "./src/classLogin.html"),
         classDetail: resolve(__dirname, "./src/classDetail.html"),
         reviews: resolve(__dirname, "./src/reviews.html"),
         reviewStep1: resolve(__dirname, "./src/reviewStep1.html"),

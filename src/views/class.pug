@@ -55,19 +55,19 @@ block main
         .item 課程資訊
       a.item--link(href="#notice")
         .item 注意事項
-    .mobile-share-bar.hide-border.d-flex.d-lg-none
-      .item 
-        a(href="#") f
-      .item.line
-        a(href="#") LINE
-      .item.link 
-        a(href="#")
-          i.bi.bi-link-45deg
+    //- .mobile-share-bar.hide-border.d-flex.d-lg-none
+    //-   .item 
+    //-     a(href="#") f
+    //-   .item.line
+    //-     a(href="#") LINE
+    //-   .item.link 
+    //-     a(href="#")
+    //-       i.bi.bi-link-45deg
 
-      .item.size(onclick='toggleFontSize()')
-        <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 18.5C10 19.329 9.328 20 8.5 20C7.672 20 7 19.329 7 18.5C7 17.672 7.672 17 8.5 17C9.328 17 10 17.672 10 18.5ZM13.5 17C12.672 17 12 17.671 12 18.5C12 19.329 12.672 20 13.5 20C14.328 20 15 19.329 15 18.5C15 17.672 14.328 17 13.5 17ZM19.804 0L16.373 14H14.271L16.812 3H0L4.615 16H17.854L21.328 2H23.506L24 0H19.804Z" fill="#525252"/>
-        </svg>
+    //-   .item.size(onclick='toggleFontSize()')
+    //-     <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    //-       <path d="M10 18.5C10 19.329 9.328 20 8.5 20C7.672 20 7 19.329 7 18.5C7 17.672 7.672 17 8.5 17C9.328 17 10 17.672 10 18.5ZM13.5 17C12.672 17 12 17.671 12 18.5C12 19.329 12.672 20 13.5 20C14.328 20 15 19.329 15 18.5C15 17.672 14.328 17 13.5 17ZM19.804 0L16.373 14H14.271L16.812 3H0L4.615 16H17.854L21.328 2H23.506L24 0H19.804Z" fill="#525252"/>
+    //-     </svg>
 
   section.section--class--body.pb-0
     .container
@@ -183,12 +183,11 @@ block main
                 .dash &nbsp;
                 i.bi.bi-play-fill
 
-        .col-12.col-lg-3
+        .col-12.col-lg-3.pb-4
           .sticky-container
             .panel--review.static
-              .title 活動倒數
+              .title 即將開課
               .caption
-                .review--text 體驗品 100 份
                 .review--countdown 
                   .label
                     span 募集倒數
@@ -201,6 +200,8 @@ block main
                     span 分
                     b 30
                     span 秒
+                .review--text.mt-3 $8200元 起 / 人
+                
               .buttons.flex-column
                 a.button--pill--lg(
                   href='./classDetail.html'
@@ -215,7 +216,7 @@ block main
               a(href="")
                 .button--link--dark
               a(href="")
-                .button--cart--dark
+                .cart
             .banner.mt-4.mb-4
               img(
                 data-src='https://picsum.photos/300/300'
@@ -282,184 +283,173 @@ block main
         a(href="./register.html") 註冊
         | 後繼續報名，謝謝
 
-    .container.mt-5#form-container
-      .section__title.is-form
-        .login--title.is-subtitle 資料填寫
-          .sub-title.is-red *全區皆為必填欄位
+    //- .container.mt-5#form-container
+    //-   .section__title.is-form
+    //-     .login--title.is-subtitle 資料填寫
+    //-       //- .sub-title.is-red *全區皆為必填欄位
 
-      each item, index in ["一", "二"]
-        form.form--review
-          .form--caption.d-flex.aligin-items-center
-            span.red.me-4 學員#{item}
-            if index === 0
-              .form--checkbox.d-inline-block
-                label.align-center
-                  span
-                  input(type='checkbox')
-                  .icon 
-                    i.bi.bi-check-circle
-                    i.bi.bi-circle
-                  span 自動帶入我的會員資料
-          .row
-            .col-12.col-md-6
-              .form--input
-                label(for='name') 姓名
-                  span.label--hint (請務必填寫真實姓名，以利刷卡資料核對。)
-                input#name.form--input(type='text', placeholder='請輸入姓名')
-            .col-6
-              .form--gender
-                .label 性別
-                .radio--group
-                  label
-                    input(
-                      type='radio'
-                      name='gender'
-                    )
-                    span 男
-                  label
-                    input(
-                      type='radio'
-                      name='gender'
-                    )
-                    span 女
-            .col-12.col-md-6
-              .form--date 
-                .label 生日
-                .select
-                  select
-                    option 1999
-                .select
-                  select
-                    option 一月
-                .select
-                  select
-                    option 11
-            .col-12.col-md-6
-              .form--input.is-required
-                label 手機
-                  small （請留下手機，方便入選後與您聯繫）
-                input
-            .col-12
-              .form--input.is-required
-                label Email
-                input
-            .col-12
-              .form--address
-                .label 地址
-                  small （請留下地址，方便後續將試用品寄給您）
-                .address--code.full
-                  .select
-                    select
-                      option 104
-                  .select
-                    select
-                      option 台北市
-                  .select
-                    select
-                      option 大安區
-                .address--text
-                  input
-            .col-12.col-md-6
-              .form--radio-select
-                .label 餐點需求
-                .radio--group.triple
-                  label
-                    input(
-                      type='radio'
-                      name='meal'
-                    )
-                    span 葷
-                  label
-                    input(
-                      type='radio'
-                      name='meal'
-                    )
-                    span 素
-                  label
-                    input(
-                      type='radio'
-                      name='meal'
-                    )
-                    span 無
-            .col-12
-              .form--input
-                label 請問您過去是否有使用過類似高蛋白產品？
-                .select
-                  select
-                    option 有
-                    option 沒有
-            .col-12.col-md-6
-              .form--radio-select
-                .label 單選題
-                  span.label--hint (備註備註備註備註備註備註)
-                .radio--group.single
-                  label
-                    input(
-                      type='radio'
-                      name='meal'
-                    )
-                    span.from--start 是:我不排斥食用乳製品
-                  label
-                    input(
-                      type='radio'
-                      name='meal'
-                    )
-                    span.from--start 否:我不排斥食用乳製品
+    //-   each item, index in ["一", "二"]
+    //-     form.form--review
+    //-       .form--caption.d-flex.aligin-items-center
+    //-         span.red.me-4 學員#{item}
+    //-       .row
+    //-         .col-12.col-md-6
+    //-           .form--input
+    //-             label(for='name') 姓名
+    //-               span.label--hint (請務必填寫真實姓名，以利刷卡資料核對。)
+    //-             input#name.form--input(type='text', placeholder='請輸入姓名')
+    //-         .col-6
+    //-           .form--gender
+    //-             .label 性別
+    //-             .radio--group
+    //-               label
+    //-                 input(
+    //-                   type='radio'
+    //-                   name='gender'
+    //-                 )
+    //-                 span 男
+    //-               label
+    //-                 input(
+    //-                   type='radio'
+    //-                   name='gender'
+    //-                 )
+    //-                 span 女
+    //-         .col-12.col-md-6
+    //-           .form--date 
+    //-             .label 生日
+    //-             .select
+    //-               select
+    //-                 option 1999
+    //-             .select
+    //-               select
+    //-                 option 一月
+    //-             .select
+    //-               select
+    //-                 option 11
+    //-         .col-12.col-md-6
+    //-           .form--input.is-required
+    //-             label 手機
+    //-             input
+    //-         .col-12
+    //-           .form--input.is-required
+    //-             label Email
+    //-             input
+    //-         .col-12
+    //-           .form--address
+    //-             .label 地址
+    //-             .address--code.full
+    //-               .select
+    //-                 select
+    //-                   option 104
+    //-               .select
+    //-                 select
+    //-                   option 台北市
+    //-               .select
+    //-                 select
+    //-                   option 大安區
+    //-             .address--text
+    //-               input
+    //-         .col-12.col-md-6
+    //-           .form--radio-select
+    //-             .label 餐點需求
+    //-             .radio--group.triple
+    //-               label
+    //-                 input(
+    //-                   type='radio'
+    //-                   name='meal'
+    //-                 )
+    //-                 span 葷
+    //-               label
+    //-                 input(
+    //-                   type='radio'
+    //-                   name='meal'
+    //-                 )
+    //-                 span 素
+    //-               label
+    //-                 input(
+    //-                   type='radio'
+    //-                   name='meal'
+    //-                 )
+    //-                 span 無
+    //-         .col-12
+    //-           .form--input
+    //-             label 請問您過去是否有使用過類似高蛋白產品？
+    //-             .select
+    //-               select
+    //-                 option 有
+    //-                 option 沒有
+    //-         .col-12.col-md-6
+    //-           .form--radio-select
+    //-             .label 單選題
+    //-               //- span.label--hint (備註備註備註備註備註備註)
+    //-             .radio--group.single
+    //-               label
+    //-                 input(
+    //-                   type='radio'
+    //-                   name='meal'
+    //-                 )
+    //-                 span.from--start 是:我不排斥食用乳製品
+    //-               label
+    //-                 input(
+    //-                   type='radio'
+    //-                   name='meal'
+    //-                 )
+    //-                 span.from--start 否:我不排斥食用乳製品
 
-            .col-12
-              .form--radio-select
-                .label 多選題
-                  span.label--hint (備註備註備註備註備註備註)
-                .radio--group.mutiple
-                  - for (var i = 0; i < 6; i++)
-                    label
-                      input(
-                        type='radio'
-                        name='muti'
-                      )
-                      span.from--start 眼睛退化
-                    label
-                      input(
-                        type='radio'
-                        name='muti'
-                      )
-                      span.from--start 便秘便秘便秘便秘便秘便秘便秘
-                .address--text
-                  input(placeholder="其他(請說明)")
+    //-         .col-12
+    //-           .form--radio-select
+    //-             .label 多選題
+    //-               //- span.label--hint (備註備註備註備註備註備註)
+    //-             .radio--group.mutiple
+    //-               - for (var i = 0; i < 6; i++)
+    //-                 label
+    //-                   input(
+    //-                     type='radio'
+    //-                     name='muti'
+    //-                   )
+    //-                   span.from--start 眼睛退化
+    //-                 label
+    //-                   input(
+    //-                     type='radio'
+    //-                     name='muti'
+    //-                   )
+    //-                   span.from--start 便秘便秘便秘便秘便秘便秘便秘
+    //-             .address--text
+    //-               input(placeholder="其他(請說明)")
 
-            .col-12
-              .form--textarea.is-required
-                label 留言
-                  span.label--hint (備註備註備註備註備註備註)
-                textarea.form--input(type='text')
+    //-         .col-12
+    //-           .form--textarea
+    //-             label 留言
+    //-               //- span.label--hint (備註備註備註備註備註備註)
+    //-             textarea.form--input(type='text')
 
-            .col-12
-              .form--upload
-                label 圖片上傳
-                .grid--upload--preview
-                  each item, index in [0, 1, 2, 3]
-                    .card--upload--preview
-                      label(for=`upload-input-${index}`)
-                        input.upload-input(id=`upload-input-${index}` type='file' style='display: none;' onchange=`handleFileUpload(this, ${index})`)
-                        img.upload-preview(id=`upload-preview-${index}` src='' style='display: none; width: 100%; height: 100%; object-fit: cover;')
-                        i.bi.bi-image.upload-icon(style='display: block;')
-                        p 新增 圖片 #{index}
-                        p 限定 JPEG & PNG 格式
-      .row
-      .col-12.d-flex.justify-content-center
-        .form--checkbox
-          label
-            span
-            input(type='checkbox')
-            .icon 
-              i.bi.bi-check-circle
-              i.bi.bi-circle
-            p 我已詳閱並
-              a.normal--link 報名注意事項
-              | 並同意配合
+    //-         .col-12
+    //-           .form--upload
+    //-             label 圖片上傳
+    //-             .grid--upload--preview
+    //-               each item, index in [0, 1, 2, 3]
+    //-                 .card--upload--preview
+    //-                   label(for=`upload-input-${index}`)
+    //-                     input.upload-input(id=`upload-input-${index}` type='file' style='display: none;' onchange=`handleFileUpload(this, ${index})`)
+    //-                     img.upload-preview(id=`upload-preview-${index}` src='' style='display: none; width: 100%; height: 100%; object-fit: cover;')
+    //-                     i.bi.bi-image.upload-icon(style='display: block;')
+    //-                     p 新增 圖片 #{index}
+    //-                     p 限定 JPEG & PNG 格式
+    //-   .row
+    //-   .col-12.d-flex.justify-content-center
+    //-     .form--checkbox
+    //-       label.align-center
+    //-         span
+    //-         input(type='checkbox')
+    //-         .icon 
+    //-           i.bi.bi-check-circle
+    //-           i.bi.bi-circle
+    //-         p(style="font-size: 20px") 我已詳閱並
+    //-           a.normal--link 報名注意事項
+    //-           | 並同意配合
     .container
       .row.justify-content-center.mb-5.mt-3
-        .col-10.col-lg-6.class--amount
+        .col-10.col-lg-6.class--amount.d-none.d-lg-flex
           .d-flex.align-items-end
             .total-text 總金額
             .total-text.m-0 合計
@@ -468,6 +458,7 @@ block main
               p $16,000元
           .button--pill--2xl.mt-3
             .label.label--hide--border.black--font 馬上結帳
+      
     .container.courser-recomand.mt-0.d-none.d-sm-flex
       .row.row--course
         each item, index in [0, 1, 2]
@@ -485,7 +476,7 @@ block main
                   a(href="./classDetail.html")
                     .button--pill--xl
                       .label 我要報名
-    .container--slim.d-block.d-sm-none
+    .container--slim.d-block.d-lg-none
       .swiper--banner
         swiper-container(
           navigation='true'
@@ -522,6 +513,21 @@ block main
                   .buttons
                     .button--pill--xl
                       .label 我要報名
+    .fixed-checkout.d-flex.d-lg-none
+      .button--more.is-invert.mt-3.is--full--width
+        .label.label--hide--border.black--font 馬上結帳
+      .mobile-share-bar.hide-border.d-flex.d-lg-none.bottom-0.mt-3
+        .item 
+          a(href="#") f
+        .item.line
+          a(href="#") LINE
+        .item.link 
+          a(href="#")
+            i.bi.bi-link-45deg
+        .item.size(onclick='toggleFontSize()')
+          <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 18.5C10 19.329 9.328 20 8.5 20C7.672 20 7 19.329 7 18.5C7 17.672 7.672 17 8.5 17C9.328 17 10 17.672 10 18.5ZM13.5 17C12.672 17 12 17.671 12 18.5C12 19.329 12.672 20 13.5 20C14.328 20 15 19.329 15 18.5C15 17.672 14.328 17 13.5 17ZM19.804 0L16.373 14H14.271L16.812 3H0L4.615 16H17.854L21.328 2H23.506L24 0H19.804Z" fill="#525252"/>
+          </svg>
     script.
       var studentCount = 1;
       const quickBarItems = document.querySelectorAll('.quick-bar .item');
