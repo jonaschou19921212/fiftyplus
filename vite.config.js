@@ -102,6 +102,7 @@ export default defineConfig({
         search: resolve(__dirname, "./src/search.html"),
         weekly: resolve(__dirname, "./src/weekly.html"),
         selection: resolve(__dirname, "./src/selection.html"),
+        selectionDetail: resolve(__dirname, "./src/selectionDetail.html"),
         faq: resolve(__dirname, "./src/faq.html"),
         donate: resolve(__dirname, "./src/donate.html"),
         cooperate: resolve(__dirname, "./src/cooperate.html"),
@@ -118,6 +119,7 @@ export default defineConfig({
         campaign: resolve(__dirname, "./src/campaign.html"),
         campaignDetail: resolve(__dirname, "./src/campaignDetail.html"),
         confirmCampaign: resolve(__dirname, "./src/confirmCampaign.html"),
+        confirmReview: resolve(__dirname, "./src/confirmReview.html"),
         style: resolve(__dirname, "./src/style.html"),
       },
       output: {

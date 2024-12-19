@@ -1,0 +1,183 @@
+extends _layout.pug
+
+block vars
+  - $id = 'index'
+
+block main
+  section.section--breadcrumb
+    .container
+      .breadcrumb 
+        ul 
+          li
+            a(
+              href='/'
+            ) 首頁
+          li
+            a(
+              href="./selection.html"
+            ) 選品
+          li
+            a(
+              href=""
+            ) 顛覆提案
+
+  section.section--selectionDetail--header
+    .container.border-l-none
+      .col.d-block.d-lg-none
+        .header-text-area
+          .title 50+帆布袋帆布袋帆布袋帆布袋帆布袋
+      .grid--snippet.selection-detail
+        .col
+          .card--snippet--preview.full-height
+            .pic
+              img(src=`${getLoremSlide()}`)
+        .col
+          .swiper--snippet.d-none.d-lg-block
+            swiper-container(
+              init='false'
+              direction='vertical'
+              slides-per-view='5'
+              space-between='16'
+              autoplay='{ "delay": 5000, "disableOnInteraction": false }'
+              loop='true'
+              inject-styles=[
+                `
+                :host .swiper {
+                  overflow: hidden;
+                }
+                :host {
+                  --swiper-theme-color: #ede73c;
+                  --swiper-navigation-size: 32px;
+                  height: 100%;
+                }
+                `,
+              ],
+            )
+              each item, index in Array(10).fill()
+                swiper-slide
+                  .card--snippet(
+                    data-index=index
+                    onclick='gotoSnippet(this)'
+                  )
+                    .pic
+                      img(src=`${getLoremSlide()}`)
+          
+          .swiper--snippet.d-block.d-lg-none
+            swiper-container(
+              init='true'
+              direction='horizontal'
+              slides-per-view='5'
+              space-between='16'
+              autoplay='{ "delay": 5000, "disableOnInteraction": false }'
+              loop='true'
+              inject-styles=[
+                `
+                :host .swiper {
+                  overflow: hidden;
+                }
+                :host {
+                  --swiper-theme-color: #ede73c;
+                  --swiper-navigation-size: 32px;
+                  height: 100%;
+                }
+                `,
+              ],
+            )
+              each item, index in Array(10).fill()
+                swiper-slide
+                  .card--snippet(
+                    data-index=index
+                    onclick='gotoSnippet(this)'
+                  )
+                    .pic
+                      img(src=`${getLoremSlide()}`)
+              
+        .col
+          .header-text-area
+            .title.d-none.d-lg-block 50+帆布袋帆布袋帆布袋帆布袋帆布袋
+            .price.d-none.d-lg-block 會員價
+              span NT$49,900元
+              del.origin-price 原價$50,000元
+            .text 介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字
+            .price-mobile 會員價
+              span NT$49,900元
+              del.origin-price 原價$50,000元
+    .mobile-share-bar.hide-border.d-flex.d-lg-none
+      .item 
+        a(href="#") f
+      .item.line
+        a(href="#") LINE
+      .item.link 
+        a(href="#")
+          i.bi.bi-link-45deg
+
+      .item.size(onclick='toggleFontSize()')
+        <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 18.5C10 19.329 9.328 20 8.5 20C7.672 20 7 19.329 7 18.5C7 17.672 7.672 17 8.5 17C9.328 17 10 17.672 10 18.5ZM13.5 17C12.672 17 12 17.671 12 18.5C12 19.329 12.672 20 13.5 20C14.328 20 15 19.329 15 18.5C15 17.672 14.328 17 13.5 17ZM19.804 0L16.373 14H14.271L16.812 3H0L4.615 16H17.854L21.328 2H23.506L24 0H19.804Z" fill="#525252"/>
+        </svg>
+
+  section.section--selectDetail--body 
+    .container.position-relative
+      .row.reverse
+        .col-12.col-md-8
+          article.is-review
+            h3 設計概念
+          article
+            blockquote.quote.left--cancel
+              p 優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊優惠資訊
+            p.color--second 對張經理而言，年輕的MZ世代（50+註：由1981～1996年間出生的M世代（Millennials）和1997～2010年之間出生的「Z世代」合成的族群）似乎是一道高牆。因為以經理的立場來說，應該要鼓勵同事間相互合作，但他們就好像從外太空來的人種一樣非常難理解。就算支援部分業務或是部分授權，還是無法從他們那裡得到好的回饋。
+            h3 以為ＭＺ世代都很主動 卻發現給彈性或規定太具體都引反感都引反感
+            p.color--second A公司今年已經邁入第37個年頭。在像現在這樣變化無常的時代中，他們擁有悠久的歷史，組織的規模大、部門多，員工人數也很多。不過，組織文化就像官僚體系一樣，某些部門文化甚至像軍隊一樣，必須絕對服從長官的命令。
+              a(href="#") (閱讀相關文章：文章文章文章文章）
+            p.color--second
+              | 所以不久前甚至還花一大筆錢參加名為「激勵MZ世代的領導力」的演講，但反而發現更多難以理解的方面，無法抓到頭緒。教育內容核心提到：
+              span(style="font-weight: 700")  MZ世代的員工會更投入在自己主動找來做的事情上，而不是被交代的事情。他們想被認同的欲望很強，想要得到充分的權力，立下大功。」
+        .col-12.col-md-4.pb-4
+          .sticky-container
+            .panel--review.static
+              .title 50+選品
+              .caption
+                .review--text.serif.mt-3 50+帆布袋帆布袋帆布袋帆布袋帆布袋
+                .review--countdown.selectDetail 
+                  p 
+                    del 原價$50,000元
+                  p 會員價
+                  p.price NT$49,900元
+                  
+                
+              .buttons
+                .count--area
+                  i.bi.bi-dash-lg(onclick=`changeCount(-1, ${index})`)
+                  .form--text 
+                    input(
+                      type='text'
+                      name='count'
+                      id=`countInput${index}`
+                      value='0'
+                      disabled
+                    )
+                  i.bi.bi-plus-lg(onclick=`changeCount(1, ${index})`)
+                a.button--pill--lg(
+                  href='./classDetail.html'
+                )
+                  .label 立即購買
+            .share-bottons.d-none.d-lg-flex.align-items-center.justify-content-center
+              a(href="")
+                .button--facebook--dark
+              a(href="")
+                .button--line--dark
+              a(href="")
+                .button--link--dark
+              a(href="")
+                .cart
+            //- .banner.mt-4.mb-4
+            //-   img(
+            //-     data-src='https://picsum.photos/300/300'
+            //-     alt='廣告'
+            //-   ).lazyload
+            //- .banner.mb-4
+            //-   img(
+            //-     data-src='https://picsum.photos/300/300'
+            //-     alt='廣告'
+            //-   ).lazyload
+    

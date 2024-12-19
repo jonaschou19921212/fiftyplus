@@ -300,6 +300,8 @@ blockqoute
         transition: none
         font-weight: 700
         color: #515050
+        width: calc(100% - 10px)
+        height: calc(100% - 10px)
   &:hover
     background-color: #fff
   
@@ -1126,11 +1128,30 @@ blockqoute
     padding: 20px
     background: #eee9e4
     margin-bottom: 0
+    flex-wrap: wrap
     .discount--hint
       +fontSize(14px)
       color: red
       text-decoration: underline
       text-underline-offset: 2px
+    .count--area
+      display: flex
+      justify-content: space-around
+      align-items: center
+      i.bi::before
+        font-weight: 1000 !important
+      .form--text 
+        input[type='text']
+          &
+            font-family: 'Noto Sans TC', sans-serif
+            width: 50px
+            height: 40px
+            border: 1px solid #000
+            background: #fff
+            text-align: center
+            margin: 0 10px
+          &:focus
+            outline: none
 .card--faq
   &
     display: flex
@@ -1241,25 +1262,39 @@ blockqoute
     margin-bottom: 40px
   .pic
     &
-      position: relative
       aspect-ratio: 1/1
       grid-column: span 1
       grid-row: span 1
       margin-bottom: 0
+      @media (max-width: theme('breakpoints.md'))
+        grid-column: span 2
     img
       transform: translate(-20px, -20px)
+      @media (max-width: theme('breakpoints.md'))
+        transform: none
+  .panel--review
+    display: none
+    @media (max-width: theme('breakpoints.md'))
+      display: block
+      grid-column: span 2
+      position: static
   .status
     &
-      position: relative
       grid-column: span 1
       grid-row: span 1
+      @media (max-width: theme('breakpoints.md'))
+        grid-column: span 2
     .card--review--status
       transform: translate(-20px, -20px)
+      @media (max-width: theme('breakpoints.md'))
+        transform: none
   .caption
     &
-      position: relative
       grid-column: 2 / span 1
       grid-row: 1 / span 2
+      @media (max-width: theme('breakpoints.md'))
+        grid-column: span 2
+        grid-row: 4 / span 1 
     > article
       padding: 40px 30px 40px 20px
     

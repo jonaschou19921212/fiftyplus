@@ -21,13 +21,16 @@ block main
               href="./review.html"
             ) 亞培安素-香草減甜版
   
-  section.section--review--header 
+  section.section--review--header.mt-3
     img(
       src="./assets/images/pic--review.jpg"
     )
 
   section.section--review--body 
     .container
+      .row
+        .col-3
+          .review-collect.d-block.d-sm-none 評鑒募集中
       .row
         .col-12.col-md-9
           .review--title
@@ -40,6 +43,22 @@ block main
               img(
                 src="https://picsum.photos/900/900"
               )
+            .panel--review
+              .title 試用募集中
+              .caption
+                .review--text 體驗品 100 份
+                .review--countdown 
+                  .label
+                    span 募集倒數
+                    b 11
+                    span 天
+                  .label
+                    b 12
+                    span 時
+                    b 30
+                    span 分
+                    b 30
+                    span 秒
             .status
               .card--review--status
                 .col
@@ -125,7 +144,7 @@ block main
           .date 12.01 — 12.11
 
   section.section--article--body 
-    .container
+    .container.position-relative
       .row
         .col-12.col-md-9
           article.is-review-rules
@@ -159,3 +178,6 @@ block main
               li 本體驗希望找到真心想了解並對產品有興趣者，若申請評鑑並開始試用後，最終未回覆心得者，往後將喪失參與體驗之資格。
               li 若您入選為評鑑員，50+將有專人與您電話聯繫，請入選者留意手機來電。
               li 如申請本次體驗，即表示同意50+網站及體驗品提供之廠商就您所提供的圖文心得有以任何方式使用之權利，並得以在不影響原意下修改文字及保有活動細節調整之權利。
+      .fixed-bottom.d-flex.d-sm-none.juctify-content-center.p-4
+          .button--pill--full
+            .label 搶先報名

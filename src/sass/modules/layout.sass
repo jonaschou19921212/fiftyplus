@@ -193,7 +193,8 @@ section
       grid-template-columns: 69.1% 1fr
   
 
-.grid--snippet
+.grid--snippet,
+.selection-detail
   &
     display: grid
     grid-template-columns: 78.9% 1fr
@@ -235,8 +236,114 @@ section
         display: block
         grid-column: unset
         grid-row: unset
-    
 
+.selection-detail
+  &
+    display: grid
+    grid-template-columns: repeat(10, 1fr)
+    grid-template-rows: repeat(5, 1fr)
+    gap: 16px
+    margin: 0
+  > *
+    position: relative
+  > *:nth-child(3)
+    &
+      grid-column: span 4
+      grid-row: span 5
+  > *:nth-child(2)
+    &
+      grid-column: span 1
+      grid-row: span 5
+  > *:nth-child(1)
+    &
+      grid-column: span 5
+      grid-row: span 5
+    .caption
+      display: block
+    .pic
+      &
+        position: relative
+        width: 100%
+        height: 100%
+      img
+        position: absolute
+        width: 100%
+        height: 100%
+        object-fit: cover
+  @media (max-width: theme('breakpoints.lg'))
+    gap: 16px
+    > *
+      display: block
+    > *:nth-child(3)
+      &
+        grid-column: span 10
+        grid-row: span 4
+    > *:nth-child(2)
+      &
+        grid-column: span 10
+        grid-row: span 4
+    > *:nth-child(1)
+      &
+        grid-column: span 10
+        grid-row: span 5
+.section--selectionDetail--header
+  .header-text-area
+    text-align: right
+    padding-left: 20px
+    @media (max-width: theme('breakpoints.lg'))
+      padding-left: 0px
+
+    .title 
+      +fontSize(39px)
+      font-weight: 600
+      font-family: "Noto Serif TC", serif
+      letter-spacing: 3px
+      margin-bottom: 60px
+      @media (max-width: theme('breakpoints.lg'))
+        +fontSize(30px)
+        text-align: left
+
+    .price
+      position: relative
+      margin-bottom: 20px
+      display: flex
+      justify-content: flex-end
+      align-items: center
+      span
+        font-weight: 700
+        font-family: "Noto Sans TC", serif
+        +fontSize(26px)
+        letter-spacing: 2px
+        margin-left: 10px
+      .origin-price 
+        color: #B7B9B8
+        position: absolute
+        font-weight: 300
+        top: -20px
+        right: 0
+      
+    .price-mobile
+      position: relative
+      text-align: center
+      margin-top: 40px
+      font-weight: 700
+      span
+        font-family: "Noto Sans TC", serif
+        +fontSize(20px)
+        letter-spacing: 2px
+        margin-left: 10px
+      .origin-price 
+        color: #B7B9B8
+        position: absolute
+        font-weight: 300
+        top: -30px
+        left: 0
+        right: 0
+    .text
+      text-align: right
+      font-family: "Noto Sans TC", serif
+      @media (max-width: theme('breakpoints.lg'))
+        text-align: left
 .grid--event 
   &
     display: grid
@@ -653,18 +760,22 @@ section
 .section--review--header
   &
     position: relative
-    height: 400px
+    height: auto
     padding: 0
   img
-    position: absolute
+    position: relative
+    left: 50%
+    transform: translateX(-50%)
     width: 100%
     height: 100%
-    object-fit: cover
+    max-width: 960px
+    aspect-ratio: 5 / 3
   
 .section--article--steps
   &
     background: #f8e800
 .section--class--header,
+.section--selectionDetail--header,
 .section--campaign--header,
 .section--classDetail--header
   &
@@ -672,6 +783,8 @@ section
   .container
     border-right: 2px solid #B1B0AC
     border-left: 2px solid #B1B0AC
+    &.border-l-none
+      border-left: none
     @media (max-width: theme('breakpoints.lg'))
       border: none
 
@@ -803,6 +916,9 @@ section
     display: grid
     grid-template-columns: repeat(4, 1fr)
     grid-template-rows: repeat(4, auto)
+    @media (max-width: theme('breakpoints.sm'))
+      grid-template-columns: 2fr 1fr 3fr
+      grid-template-rows: repeat(4, 1fr)
 
 .grid--upload--preview
   &
@@ -819,7 +935,8 @@ section
     padding-right: 18px
 
 .section--class--body,
-.section--campaign--body
+.section--campaign--body,
+.section--selectDetail--body 
   article
     p
       color: #222222
@@ -1231,3 +1348,15 @@ section
     a
       text-decoration: underline
       text-underline-offset: 4px
+.section--review--body
+  padding: 10px 20px
+  .review-collect
+    background: var(--theme-color)
+    width: 160px
+    padding: 15px
+    border-radius: 50px
+    text-align: center
+    font-weight: 600
+    +fontSize(18px)
+    font-family: 'Noto Sans TC', sans-serif
+    margin-bottom: 20px

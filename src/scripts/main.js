@@ -179,10 +179,16 @@ window.toggleFontSize = function () {
 window.gotoSnippet = function (e) {
   const targets = document.querySelectorAll(".card--snippet--preview");
   const imgsrc = e.children[0].children[0].src;
-  const text = e.children[1].children[0].textContent;
+  let text = "";
+  if (!!e.children[1]) {
+    text = e.children[1].children[0].textContent;
+  }
   targets.forEach((target) => {
     target.children[0].children[0].src = imgsrc;
-    target.children[1].children[0].textContent = text;
+
+    if (!!e.children[1]) {
+      target.children[1].children[0].textContent = text;
+    }
   });
   document.querySelectorAll(".card--snippet").forEach((el) => {
     el.classList.remove("is-active");
