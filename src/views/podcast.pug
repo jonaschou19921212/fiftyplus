@@ -4,7 +4,7 @@ block vars
   - $id = 'index'
 
 block main
-  section.section--breadcrumb.special--bg
+  section.section--breadcrumb
     .container
       .breadcrumb 
         ul 
@@ -14,147 +14,18 @@ block main
             ) 首頁
           li
             a(
-              href="./audios"
-            ) 影音
-          li
-            a(
               href=""
-            ) 影音標題
-  section.section--audio--header 
-    .container
-      .page--title.d-none.d-md-block
-        article 
-          h2 【亞培X50+】保護力EP1-了解自己的身體狀態與基本知識
-      .iframe-container
-        .iframe
-          iframe(src="https://www.youtube.com/embed/i856VdaFb5k?si=PNJT1R6EGfTd5ZGY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
-        .page--caption.d-none.d-md-flex
-          .information 
-            .date 2024.05.01
-            .view
-              i.bi.bi-eye
-              | 888
-          .author.d-none.d-md-block 作者｜陳偉
-            br
-            | 責任編輯｜吳丹華
-          .buttons.d-none.d-md-flex
-            a(href="")
-              .button--facebook--dark
-            a(href="")
-              .button--line--dark
-            a(href="")
-              .button--link--dark
-            a
-              .button--textsize--dark(onclick='toggleFontSize()')
-      .page--title.d-block.d-md-none
-        article 
-          h2 【亞培X50+】保護力EP1-了解自己的身體狀態與基本知識
-      
-     
-    .mobile-share-bar.d-flex.d-md-none
-      .item 
-        a(href="#") f
-      .item.line
-        a(href="#") LINE
-      .item.link 
-        a(href="#")
-          i.bi.bi-link-45deg
-      .item.subscribe 
-        a(href="#") 贊助50+
-      .item.size(onclick='toggleFontSize()')
-        i.bi.bi-type
-
+            ) Podcast列表
   section.section--audio--body
-    .container
-      .row
-        .col-12.col-md-9
-          article 
-            blockquote.quote.left--padding-cancel
-              p 編按：如何和年輕人共事？熟齡族群在職場待久了，不免感受到世代差異。和MZ世代一起工作，該怎麼給予指示，才能讓對方把事情做好？本文為韓國9位不同業界專家提出的建議，讓職場資深工作者們找到與MZ世代共事的舒服方式。
-            p.color--second 對張經理而言，年輕的MZ世代（50+註：由1981～1996年間出生的M世代（Millennials）和1997～2010年之間出生的「Z世代」合成的族群）似乎是一道高牆。因為以經理的立場來說，應該要鼓勵同事間相互合作，但他們就好像從外太空來的人種一樣非常難理解。就算支援部分業務或是部分授權，還是無法從他們那裡得到好的回饋。
-            h3 以為ＭＺ世代都很主動 卻發現給彈性或規定太具體都引反感都引反感
-            p.color--second A公司今年已經邁入第37個年頭。在像現在這樣變化無常的時代中，他們擁有悠久的歷史，組織的規模大、部門多，員工人數也很多。不過，組織文化就像官僚體系一樣，某些部門文化甚至像軍隊一樣，必須絕對服從長官的命令。
-              a(href="#") (閱讀相關文章：文章文章文章文章）
-            p.color--second
-              | 所以不久前甚至還花一大筆錢參加名為「激勵MZ世代的領導力」的演講，但反而發現更多難以理解的方面，無法抓到頭緒。教育內容核心提到：
-              span(style="font-weight: 700")  MZ世代的員工會更投入在自己主動找來做的事情上，而不是被交代的事情。他們想被認同的欲望很強，想要得到充分的權力，立下大功。」
-            .banner.mb-4
-              img(
-                data-src='https://via.placeholder.com/360x100'
-                alt='廣告'
-                style="width:100%"
-              ).lazyload
-            
-        .col-12.col-md-3
-          .banner.mb-4
-            img(
-              data-src='https://via.placeholder.com/360x300'
-              alt='廣告'
-            ).lazyload
-          
-          .join-us.row.justify-content-around
-            .col-5.col-md-12
-              .fb-area.col-6.col-md-12
-                a.join-text(href="")
-                  | 加FB熱議討論 
-                  .dash &nbsp;
-                  i.bi.bi-play-fill
-            .col-5.col-md-12
-              .line-area.col-6.col-md-12
-                a.join-text(href="")
-                  | 加LINE或新知 
-                  .dash &nbsp;
-                  i.bi.bi-play-fill
-    .container.courser-recomand.d-none.d-sm-flex
-      .row.row--course
-        each item, index in [0, 1, 2]
-          .col-lg-4 
-            .card--course
-              .pic
-                img(
-                  data-src=`${getLoremCourse()}`
-                ).lazyload
-              .caption
-                .info
-                  .date 2024.11.06 — 2024.12.11
-                h3 50+聲音表達工作坊進階班第5期
-                .buttons
-                  .button--pill--xl
-                    .label 我要報名
-    .container--slim.d-block.d-sm-none
-      .swiper--banner
-        swiper-container(
-          navigation='true'
-          inject-styles=[
-            `
-           
-            :host {
-              --swiper-theme-color: #ede73c;
-            }
-            :host .swiper-button-prev,
-            :host .swiper-button-next {
-              background-color: #66666680;
-              border-radius: 100%;
-              width: 28px;
-              height: 28px;
-              padding: 10px;
-              stroke: #ede73c;
-              stroke-width: 1;
-            }
-            `,
-          ],
-        )
-          each item, index in [0, 1, 2]
-            swiper-slide.bg-theme
-              .card--course.audio-type
-                .pic
-                  img(
-                    data-src=`${getLoremCourse()}`
-                  ).lazyload
-                .caption
-                  .info
-                    .date 2024.11.06 — 2024.12.11
-                  h3 50+聲音表達工作坊進階班第5期
-                  .buttons
-                    .button--pill--xl
-                      .label 我要報名
+    
+
+    .container--slim
+      .row.row--podcast
+        each item, index in [1, 2, 3, 4, 5]
+          .col-12
+            iframe(height="175", width="100%", title="媒體播放器", src="https://embed.podcasts.apple.com/tw/podcast/s3-ep80-%E9%81%B8%E8%AE%80%E6%96%B0%E8%A6%96%E9%87%8E-%E7%99%BE%E6%AD%B2%E4%BA%BA%E7%91%9E%E6%97%A9%E9%A4%90%E7%A7%98%E5%AF%86-%E8%8B%B1%E5%9C%8B%E7%A0%94%E7%A9%B6-%E4%BB%96%E5%80%91%E9%9D%A03%E7%A8%AE%E9%95%B7%E5%A3%BD%E9%A3%B2%E9%A3%9F%E5%A4%9A10%E5%B9%B4%E5%A3%BD%E5%91%BD/id1589171941?i=1000681100949&amp;itscg=30200&amp;itsct=podcast_box_player&amp;ls=1&amp;mttnsubad=1000681100949&amp;theme=light", id="embedPlayer", sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation", allow="autoplay *; encrypted-media *; clipboard-write")
+      .buttons
+        .button--more 
+          .label 查看更多
+          .icon 
+            i.bi.bi-caret-down-fill

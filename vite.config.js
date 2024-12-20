@@ -107,6 +107,7 @@ export default defineConfig({
         donate: resolve(__dirname, "./src/donate.html"),
         cooperate: resolve(__dirname, "./src/cooperate.html"),
         about: resolve(__dirname, "./src/about.html"),
+        podcast: resolve(__dirname, "./src/podcast.html"),
         class: resolve(__dirname, "./src/class.html"),
         classLogin: resolve(__dirname, "./src/classLogin.html"),
         classDetail: resolve(__dirname, "./src/classDetail.html"),

@@ -2,7 +2,21 @@ extends reviewBasic.pug
 
 block vars
   - let step = 2
-
+block pannel-mobile
+  .panel--review
+    .title 活動募集截止
+    .caption
+      .status--review 
+        .label
+          span 報名人數
+          br
+          b 111
+          span 人
+        .label
+          span 關注人數
+          br
+          b 50
+          span 人
 block list 
   .review--list 
     ul 
@@ -10,7 +24,7 @@ block list
         li 伊○○
 
 block sidebar
-  .panel--review
+  .panel--review.d-none.d-md-block
     .title 活動募集截止
     .caption
       .status--review 

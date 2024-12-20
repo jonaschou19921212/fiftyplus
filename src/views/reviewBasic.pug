@@ -43,22 +43,8 @@ block main
               img(
                 src="https://picsum.photos/900/900"
               )
-            .panel--review
-              .title 試用募集中
-              .caption
-                .review--text 體驗品 100 份
-                .review--countdown 
-                  .label
-                    span 募集倒數
-                    b 11
-                    span 天
-                  .label
-                    b 12
-                    span 時
-                    b 30
-                    span 分
-                    b 30
-                    span 秒
+            block pannel-mobile
+            
             .status
               .card--review--status
                 .col
@@ -105,7 +91,7 @@ block main
 
   section.section--article--steps 
     .container
-      .grid--steps 
+      .grid--steps.d-none.d-sm-grid
         .card--step(
           class=(step == 1)? 'is-active' : ''
         )
@@ -142,7 +128,18 @@ block main
             .title 查看評鑑報告
             .text 看評鑑報告！看看心得報告，說不定有意想不到的收穫呢。
           .date 12.01 — 12.11
-
+      
+      .timeline.d-flex.d-sm-none
+        each step, index in ["Step.1", "Step.2", "Step.3", "Step.4"]
+          .timeline-step(class=(index === 1 ? 'active' : ''))
+            .timeline-marker 
+              span #{step}
+            .timeline-content
+              //- .step-title #{step}
+              .status-box
+                h3 評鑑募集中
+                p 申請評鑑囉！只需在網頁上填寫簡單的申請資訊報名。
+                span.date 11.06 — 11.11
   section.section--article--body 
     .container.position-relative
       .row

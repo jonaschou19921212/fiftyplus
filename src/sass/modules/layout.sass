@@ -390,6 +390,7 @@ section
 
 .row--article,
 .row--video,
+.row--podcast,
 .row--weekly,
 .row--course,
 .row--event
@@ -774,6 +775,8 @@ section
 .section--article--steps
   &
     background: #f8e800
+  @media (max-width: 580px)
+    background: #EEE9E5
 .section--class--header,
 .section--selectionDetail--header,
 .section--campaign--header,
@@ -916,9 +919,6 @@ section
     display: grid
     grid-template-columns: repeat(4, 1fr)
     grid-template-rows: repeat(4, auto)
-    @media (max-width: theme('breakpoints.sm'))
-      grid-template-columns: 2fr 1fr 3fr
-      grid-template-rows: repeat(4, 1fr)
 
 .grid--upload--preview
   &
@@ -1350,6 +1350,8 @@ section
       text-underline-offset: 4px
 .section--review--body
   padding: 10px 20px
+  .reverse
+    flex-wrap: wrap-reverse
   .review-collect
     background: var(--theme-color)
     width: 160px
@@ -1360,3 +1362,114 @@ section
     +fontSize(18px)
     font-family: 'Noto Sans TC', sans-serif
     margin-bottom: 20px
+
+
+.timeline
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  margin: 50px auto
+  padding: 0 20px
+  max-width: 300px
+  position: relative
+
+  // 垂直線條
+  // &::before
+  //   content: ''
+  //   position: absolute
+    
+  //   top: 0
+  //   bottom: 0
+  //   left: 26px
+  //   width: 2px
+  //   background-color: black
+
+  .timeline-step
+    display: flex
+    align-items: flex-start
+    margin-bottom: 40px
+    position: relative
+
+    &:last-child
+      margin-bottom: 0
+      .timeline-content::before // 仅针对最后一个
+        display: none
+    // 圓形標記
+    .timeline-marker
+      flex-shrink: 0
+      width: 16px
+      height: 16px
+      background-color: black
+      border-radius: 50%
+      position: absolute
+      margin-right: 10px
+      top: 50%
+      transform: translateY(-50%)
+      left: -26px
+      span
+        position: relative
+        right: 65px
+        bottom: 6px
+        font-family: "Noto Serif TC", serif
+        font-weight: 600
+
+      
+
+    // 內容區域
+    .timeline-content
+      background-color: white
+      border-radius: 8px
+      padding: 15px
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
+      border: 1px solid transparent
+      transition: 0.3s
+      position: relative
+      top: 0
+      // transform: translateY(-50%)
+      &::before
+        content: ''
+        position: absolute
+        height: calc(100% + 42px)
+        top: 50%
+        left: -20px
+        width: 2px
+        background-color: black
+      
+
+      .step-title
+        +fontSize(14px)
+        font-weight: bold
+        color: #555
+        margin-bottom: 8px
+
+      .status-box
+        h3
+          position: relative
+          +fontSize(20px)
+          font-weight: bold
+          margin: 0 0 5px
+          color: #222
+          text-align: center
+          border-bottom: 1px solid var(--theme-color)
+          padding-bottom: 10px
+        p
+          padding-top: 10px
+          +fontSize(18px)
+          color: #666
+          margin: 0 0 10px
+        .date
+          position: absolute
+          +fontSize(16px)
+          color: #222
+          bottom: -30px
+          left: 50%
+          transform: translateX(-50%)
+          font-family: "Noto Serif TC", serif
+          font-weight: 600
+
+    &.active .timeline-content
+      background-color: var(--theme-color)
+      border-color: #222
+      .status-box
+        h3
+          border-bottom: 1px solid #fff

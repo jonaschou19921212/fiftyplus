@@ -36,25 +36,26 @@ block main
       .row.row--selection
         each item, index in ["020", "019", "018", "017", "016", "015", "014", "013", "012", "011"]
           .col-12.col-sm-6
-            .card--selection
-              .pic 
-                img(
-                  src=`https://picsum.photos/500/300?random=${item}`
-                )
-              .caption
-                .title 這是商品名稱這是商品名稱這是商品名稱
-                .footer
-                  .sale--price
-                    .original--price
-                      .label 原價
-                      .price 500
-                    .discount--price
-                      .label 會員價
-                      .price 800
-                  .buttons
-                    .button--cart--xs
-                      .icon 
-                        i.bi.bi-cart-fill
+            a(href="./selectionDetail.html")
+              .card--selection
+                .pic 
+                  img(
+                    src=`https://picsum.photos/500/300?random=${item}`
+                  )
+                .caption
+                  .title 這是商品名稱這是商品名稱這是商品名稱
+                  .footer
+                    .sale--price
+                      .original--price
+                        .label 原價
+                        .price 500
+                      .discount--price
+                        .label 會員價
+                        .price 800
+                    .buttons
+                      .button--cart--xs
+                        .icon 
+                          i.bi.bi-cart-fill
 
       .buttons
         .button--more 
