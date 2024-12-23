@@ -108,6 +108,7 @@ export default defineConfig({
         cooperate: resolve(__dirname, "./src/cooperate.html"),
         about: resolve(__dirname, "./src/about.html"),
         podcast: resolve(__dirname, "./src/podcast.html"),
+        report: resolve(__dirname, "./src/report.html"),
         class: resolve(__dirname, "./src/class.html"),
         classLogin: resolve(__dirname, "./src/classLogin.html"),
         classDetail: resolve(__dirname, "./src/classDetail.html"),

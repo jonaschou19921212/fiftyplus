@@ -256,6 +256,19 @@ blockqoute
       background: #fff
       .label
         color: #000
+  &.is-white
+    &
+      background: #fff
+      transition: all .3s ease
+      border: 1px solid #000
+      .label
+        color: #000
+        background: transparent
+        border: none
+    &:hover
+      background: var(--theme-color)
+      .label
+        color: #000
   &.is-dark-gray
     &
       background: #515151
@@ -275,6 +288,7 @@ blockqoute
 .button--pill--xl
   &
     width: 240px
+    min-width: 240px 
     height: 60px
   .label
     width: 232px
@@ -1073,7 +1087,6 @@ blockqoute
     justify-content: center
   .icon
     color: white
-    transition: all .5s ease
   .label
     display: none
   &:hover
@@ -1106,6 +1119,10 @@ blockqoute
     background: #f8e800
     border: 1px solid #222
     padding: 20px
+    @media (max-width: theme('breakpoints.md'))
+      position: relative
+      &.article-margin
+        margin-bottom: 80px
   &.static
     position: static
   &.hide-border
@@ -1287,6 +1304,7 @@ blockqoute
         grid-column: span 2
         background: #fff
         padding-bottom: 20px
+        padding-top: 20px
     .card--review--status
       transform: translate(-20px, -20px)
       @media (max-width: theme('breakpoints.md'))
@@ -1300,7 +1318,19 @@ blockqoute
         grid-row: 4 / span 1 
     > article
       padding: 40px 30px 40px 20px
-    
+  .report-buy
+    &
+      grid-column: 2 / span 1
+      grid-row: 2 / span 1
+      display: flex
+      justify-content: flex-end
+      padding-right: 40px
+      padding-bottom: 30px 
+      @media (max-width: theme('breakpoints.sm'))
+        grid-column: span 2
+        justify-content: center
+        align-items: center
+        padding: 0
 
 .card--review--status
   &
@@ -1602,8 +1632,13 @@ blockqoute
 
     
 .join-us
-  width: 100%
+  // width: 100%
   height: auto
+  justify-content: center
+  @media (max-width: theme('breakpoints.sm'))
+    flex-direction: column
+    align-items: center
+    justify-content: center
   .fb-area,
   .line-area
     position: relative
@@ -1613,7 +1648,10 @@ blockqoute
     background-repeat: no-repeat
     background-position: center center
     background-size: contain
+    margin-top: 30px
     margin-bottom: 30px
+    margin-left: auto
+    margin-right: auto
     span.text
       font-weight: bold
       position: absolute
@@ -1651,3 +1689,37 @@ blockqoute
      background-image: url('/assets/sprite/article_line.svg')
      .join-text
         border: 2px solid #01B901
+
+.chart-container 
+  display: flex
+  flex-direction: column
+  align-items: center
+  margin-top: 20px
+  .canva-container
+    display: flex
+    justify-content: center
+    align-content: center
+    width: 30vw
+    height: 30vw
+    @media (max-width: theme('breakpoints.sm'))
+      width: 100%
+      height: 100%
+
+  .labels-container 
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    margin-bottom: 20px
+
+    .label 
+      display: flex
+      align-items: center
+      +fontSize(14px)
+      color: #222222
+
+      span:first-child 
+        font-weight: bold
+        margin-right: 5px
+        margin: 5px 10px
+        padding: 5px 10px
+        border-radius: 5px

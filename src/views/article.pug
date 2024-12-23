@@ -146,7 +146,7 @@ block main
                   data-src='https://via.placeholder.com/300x180'
                   alt='廣告'
                 ).lazyload 
-          .panel--latest 
+          .panel--latest.article-margin
             .title 熱門文章
             each item, index in [0, 1, 2, 3, 4]
               .item--latest
@@ -154,7 +154,7 @@ block main
                   = index + 1
                 .caption.font-light
                   != getLoremText()
-          .join-us.row.justify-content-around
+          .join-us.row
             .col-5.col-md-12
               .fb-area.col-6.col-md-12
                 a.join-text(href="")

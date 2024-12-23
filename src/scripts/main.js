@@ -1,6 +1,6 @@
 import "../sass/global.sass";
 import { setupValidation } from "./valid.js";
-
+import { Chart } from "chart.js";
 window.scrollToElById = function (id) {
   let element = document.getElementById(id);
   element.scrollIntoView({

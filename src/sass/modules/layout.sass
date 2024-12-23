@@ -1328,6 +1328,15 @@ section
                   text-align: center
                 &:focus
                   outline: none
+    .bottom-group
+      display: flex
+      justify-content: space-between
+      align-items: center
+      width: 80%
+      margin-top: 40px
+      gap: 20px
+      @media (max-width: theme('breakpoints.sm'))
+        flex-direction: column
   .fixed-checkout
     position: fixed
     bottom: 0
@@ -1473,3 +1482,17 @@ section
       .status-box
         h3
           border-bottom: 1px solid #fff
+.section--report--body 
+  &
+    .recomand
+      width: 100%
+      display: flex
+      justify-content: flex-end
+      align-items: center
+      &::before
+        content: ""
+        width: 100%
+        border-bottom: 1px solid #000
+        margin-right: 10px
+    .rank
+      background: var(--theme-color)

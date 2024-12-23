@@ -1,0 +1,166 @@
+extends _layout.pug
+
+block vars
+  - $id = 'index'
+
+block main
+  section.section--breadcrumb
+    .container
+      .breadcrumb 
+        ul 
+          li
+            a(
+              href='/'
+            ) 首頁
+          li
+            a(
+              href=""
+            ) 評鑑
+          li
+            a(
+              href="./review.html"
+            ) 亞培安素-香草減甜版
+
+  section.section--review--header.mt-3
+    img(
+      src="./assets/images/pic--review.jpg"
+    )
+
+  section.section--report--body 
+    .container--slim
+      .row
+        .col-12
+          .review--title
+            .title 亞培安素-香草減甜版
+
+          .card--review--spec
+            .pic 
+              img(
+                src="https://picsum.photos/900/900"
+              )
+            .status
+              .card--review--status
+                .col
+                  .label 報名人數
+                  .value
+                    strong 111
+                    | 人
+                .col
+                  .label 關注人數
+                  .value
+                    strong 88888
+                    | 人
+            .caption
+              article.is-review-spec
+                //- h3 產品規格
+                dl
+                  dt 品牌：
+                  dd 亞培安素
+                  dt 容量：
+                  dd 220ml/瓶，共7瓶
+                  dt 效期：
+                  dd 2025/04/27
+                p 【全新升級 安素HMB雙效好體力】
+                ul 
+                  li HMB+三重優蛋白，守護肌肉(護肌)幫助肌肉生長(增肌)
+                  li 三重優蛋白(乳清蛋白、酪蛋白、大豆蛋白)，作用更持久
+                  li Omega 3不飽和脂肪，幫助調節生理機能
+                  li 隨身曲線瓶，上班/運動/出遊，隨時補充體力
+                p * 安素均衡營養升級配方提供3重優蛋白(乳清蛋白，酪蛋白，大豆蛋白)守護肌肉(護肌)、幫助肌肉生長(增肌)、有助組織修復，提供HMB(白胺酸代謝物補充營養，雙效營養支持好體力。
+            .report-buy
+              .button--pill--lg
+                .label 我要購買
+          article.is-review
+            p 閱讀黃金雙激萃的使用說明，上面說「於早上或晚上使用」。但我想，既然要試用，就早晚都用吧！於是晚上我用黃金雙激萃取代原來的晚霜，在化妝水後使用。這是我第一次晚上不用「乳霜」狀保養品，我一直倚賴乳霜來保濕。沒想到，黃金雙激萃的保濕潤澤度出奇的好！整個晚上都感覺皮膚非常水嫩！早上我則是洗完臉就直接使用它，用量稍減。它不會油膩，也很容易再上後續的隔離乳。因為好吸收的關係，立刻上隔離乳也不會有屑屑產生。 用完兩週，我覺得最明顯的改變是皮膚的緊緻度，而且幾乎一用就有感。皮膚的緊緻，感覺真的很明顯。同樣的保養程序，竟帶來這麼好的效果。也因為這樣，上彩粧也變得容易，不易掉粉。沒預料到的收穫是，出門前在化妝檯前的準備時間變短了，讓人開心。值得推薦！值得推薦！值得推薦！值得推薦！
+            h3 開箱影音
+
+            .video--wrapper
+              iframe(
+                src="https://www.youtube.com/embed/1Q3wv4J6Z1A"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              )
+        .col-12.col-md-3
+          block sidebar
+
+      .row
+        .col-12
+          article.is-review-rules
+
+            h3 推薦閱讀
+            .pic 
+              img(
+                src="https://picsum.photos/900/900"
+              )
+            p 推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀
+      .row.d-sm-flex.d-none
+        .col-12
+          .recomand
+            .button--pill--lg.is-white
+              .label 推薦閱讀
+      .row
+        .col-12
+          .chart-container
+            .labels-container
+              each label, index in [{ text: "41-45歲", color: "#E57373", value: "6%" },{ text: "46-50歲", color: "#FFA726", value: "15%" },{ text: "51-55歲", color: "#BA68C8", value: "30%" },{ text: "56-60歲", color: "#4DB6AC", value: "30%" },{ text: "61-65歲", color: "#4FC3F7", value: "15%" },{ text: "65+", color: "#A1887F", value: "4%" }]
+                .label
+                  span.percent(style=`background-color: ${label.color}`)= label.value
+                  span= label.text
+            .canva-container
+              canvas#ageChart
+
+  section.section--report--body 
+    .rank
+      .container--slim
+        .row
+          .rank-card.col-3
+            img(src="https://picsum.photos/60/60", alt="")
+            p 健康力
+            .form--rating
+              .rating--group
+                label
+                  each item, index in [0, 1, 2, 3, 4]
+                    input(type='radio', name=`rating${ i + 1 }`, value=`${ index + 1 }`, checked=(index === 3))
+                  .stars
+                    each item, index in [0, 1, 2, 3, 4]
+                      .icon
+                        i.bi.bi-star-fill
+
+      .fixed-bottom.d-flex.d-sm-none.juctify-content-center.p-4
+        .button--pill--full
+          .label 搶先報名
+  script(src='https://cdn.jsdelivr.net/npm/chart.js')
+  script.
+    document.addEventListener("DOMContentLoaded", function() {
+      var ctx = document.getElementById("ageChart").getContext("2d");
+      var data = {
+        labels: ["41-45歲", "46-50歲", "51-55歲", "56-60歲", "61-65歲", "65+"],
+        datasets: [{
+          data: [6, 15, 30, 30, 15, 4], // 對應百分比數據
+          backgroundColor: [
+            "#E57373", // 41-45歲
+            "#FFA726", // 46-50歲
+            "#BA68C8", // 51-55歲
+            "#4DB6AC", // 56-60歲
+            "#4FC3F7", // 61-65歲
+            "#A1887F", // 65+
+          ],
+          borderWidth: 2,
+        }],
+      };
+
+      var config = {
+        type: "pie",
+        data: data,
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              display: false, // 隱藏內部的圖例，因為我們自定義了外部標籤
+            },
+          },
+        },
+      };
+      new Chart(ctx, config);
+    });

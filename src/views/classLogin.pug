@@ -175,7 +175,7 @@ block main
                 each item, index in [1, 2, 3, 4, 5, 6]
                   li
                     != getLoremText()
-          .join-us.d-flex.justify-content-center
+          .join-us.d-flex
             .line-area.col-6.col-md-12 
               span.text 50+學院
               a.join-text(href="")
@@ -283,7 +283,7 @@ block main
 
     .container
       .row.justify-content-center.mb-5.mt-3
-        .col-10.col-lg-6.class--amount.d-none.d-lg-flex
+        .col-10.col-lg-6.class--amount.d-none.d-md-flex
           .d-flex.align-items-end
             .total-text 總金額
             .total-text.m-0 合計
@@ -347,10 +347,10 @@ block main
                   .buttons
                     .button--pill--xl
                       .label 我要報名
-    .fixed-checkout.d-flex.d-lg-none
-        .button--more.is-invert.mt-3.is--full--width
+    .fixed-checkout.d-flex.d-md-none
+        .button--pill--full
           .label.label--hide--border.black--font 馬上結帳
-        .mobile-share-bar.hide-border.d-flex.d-lg-none.bottom-0.mt-3
+        .mobile-share-bar.hide-border.d-flex.d-md-none.bottom-0.mt-3
           .item 
             a(href="#") f
           .item.line
