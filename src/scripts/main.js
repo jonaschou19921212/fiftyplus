@@ -171,9 +171,11 @@ window.togglePassword = function (iconClass, targetClass) {
 
 window.toggleFontSize = function () {
   const body = document.body;
+  const html = document.documentElement;
   const currentFontSize = parseFloat(getComputedStyle(body).fontSize);
-  let newSize = currentFontSize == 18 ? 20 : 18;
+  let newSize = currentFontSize === 18 ? 20 : 18;
   body.style.fontSize = newSize + "px";
+  html.style.fontSize = newSize + "px";
 };
 
 window.gotoSnippet = function (e) {

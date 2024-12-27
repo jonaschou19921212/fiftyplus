@@ -55,19 +55,6 @@ block main
         .item 課程資訊
       a.item--link(href="#notice")
         .item 注意事項
-    //- .mobile-share-bar.hide-border.d-flex.d-lg-none
-    //-   .item 
-    //-     a(href="#") f
-    //-   .item.line
-    //-     a(href="#") LINE
-    //-   .item.link 
-    //-     a(href="#")
-    //-       i.bi.bi-link-45deg
-
-    //-   .item.size(onclick='toggleFontSize()')
-    //-     <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    //-       <path d="M10 18.5C10 19.329 9.328 20 8.5 20C7.672 20 7 19.329 7 18.5C7 17.672 7.672 17 8.5 17C9.328 17 10 17.672 10 18.5ZM13.5 17C12.672 17 12 17.671 12 18.5C12 19.329 12.672 20 13.5 20C14.328 20 15 19.329 15 18.5C15 17.672 14.328 17 13.5 17ZM19.804 0L16.373 14H14.271L16.812 3H0L4.615 16H17.854L21.328 2H23.506L24 0H19.804Z" fill="#525252"/>
-    //-     </svg>
 
   section.section--class--body.pb-0
     .container
@@ -310,7 +297,7 @@ block main
                   a(href="./classDetail.html")
                     .button--pill--xl
                       .label 我要報名
-    .container--slim.d-block.d-lg-none
+    .fixed-parent.container--slim.d-block.d-lg-none.mb-5
       .swiper--banner
         swiper-container(
           navigation='true'
@@ -348,20 +335,10 @@ block main
                     .button--pill--xl
                       .label 我要報名
     .fixed-checkout.d-flex.d-md-none
-        .button--pill--full
+        .button--pill--full.mt-3
           .label.label--hide--border.black--font 馬上結帳
-        .mobile-share-bar.hide-border.d-flex.d-md-none.bottom-0.mt-3
-          .item 
-            a(href="#") f
-          .item.line
-            a(href="#") LINE
-          .item.link 
-            a(href="#")
-              i.bi.bi-link-45deg
-          .item.size(onclick='toggleFontSize()')
-            <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 18.5C10 19.329 9.328 20 8.5 20C7.672 20 7 19.329 7 18.5C7 17.672 7.672 17 8.5 17C9.328 17 10 17.672 10 18.5ZM13.5 17C12.672 17 12 17.671 12 18.5C12 19.329 12.672 20 13.5 20C14.328 20 15 19.329 15 18.5C15 17.672 14.328 17 13.5 17ZM19.804 0L16.373 14H14.271L16.812 3H0L4.615 16H17.854L21.328 2H23.506L24 0H19.804Z" fill="#525252"/>
-            </svg>
+        include components/mobileShareBar
+        
     script.
       var studentCount = 1;
       const quickBarItems = document.querySelectorAll('.quick-bar .item');
@@ -438,3 +415,4 @@ block main
 
         return result.replace(/零+/g, '零').replace(/零$/, ''); // 去除多餘的零
       }
+      

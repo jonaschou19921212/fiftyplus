@@ -27,11 +27,14 @@
       drawerNav.push(item)
     }
   })
+  
 
   //- buttons = [
   //-   { label: '會員登入', href: '', target: null },
   //-   { label: '贊助我們', href: '', target: null, style: 'is-invert' },
   //- ]
+
+
 
 header
   .button--go-top(
@@ -82,6 +85,9 @@ header
               href='./donate.html'
             )
               .label 贊助50+
+            .button--cart--round
+              .icon 
+                i.bi.bi-cart-fill
     nav.header--nav
       .container
         -
@@ -141,10 +147,13 @@ header
           href
         )
       .buttons
-        a.button--pill--xs(
+        a.button--pill--xs.up-down(
           href='./donate.html'
         )
           .label 贊助50+
+        .button--cart--round
+          .icon 
+            i.bi.bi-cart-fill
       .menu--toggle 
         .icon
           span
@@ -210,6 +219,19 @@ header
               a(
                 class=`button--${item}--dark`
               )
-        
+script.
+    document.addEventListener('DOMContentLoaded', () => {
+        const currentPath = location.pathname;
+        if(currentPath.includes('selection') || currentPath.includes('selectionDetail')) {
+          document.querySelectorAll('.button--cart--round').forEach(function(element) {
+            element.style.display = 'block';
+          });
+        }
+        else {
+           document.querySelectorAll('.button--cart--round').forEach(function(element) {
+            element.style.display = 'none';
+          });
+        }
+    });
 
   

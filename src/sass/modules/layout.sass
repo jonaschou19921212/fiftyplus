@@ -940,6 +940,8 @@ section
   article
     p
       color: #222222
+    @media (max-width: theme('breakpoints.lg'))
+      font-size: 20px !important
   .reverse
     flex-wrap: wrap-reverse
   .sticky-container
@@ -1337,17 +1339,7 @@ section
       gap: 20px
       @media (max-width: theme('breakpoints.sm'))
         flex-direction: column
-  .fixed-checkout
-    position: fixed
-    bottom: 0
-    left: 0
-    z-index: 3
-    background: #fff
-    width: 100%
-    display: flex
-    flex-direction: column
-    justify-content: flex-start
-    padding: 0px 20px 20px 20px
+  
   .hint
     color: var(--theme-color)
     font-family: "Noto Serif TC", serif
@@ -1496,3 +1488,18 @@ section
         margin-right: 10px
     .rank
       background: var(--theme-color)
+
+.fixed-parent
+    @media (max-width: theme('breakpoints.sm'))
+      padding-bottom: 150px
+.fixed-checkout
+  position: fixed
+  bottom: 0
+  left: 0
+  z-index: 3
+  background: #fff
+  width: 100%
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  padding: 0px 20px 20px 20px

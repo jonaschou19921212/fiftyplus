@@ -54,6 +54,9 @@
               </a><a class="button--pill--xs is-invert" href="./donate.html">
                 <div class="label">贊助50+</div>
               </a>
+              <div class="button--cart--round">
+                <div class="icon"> <i class="bi bi-cart-fill"></i></div>
+              </div>
             </div>
           </div>
         </section>
@@ -193,9 +196,13 @@
       <div class="header--mobile">
         <div class="container">
           <div class="logo--wrapper"><a class="logo--black" href="href"></a></div>
-          <div class="buttons"><a class="button--pill--xs" href="./donate.html">
+          <div class="buttons"><a class="button--pill--xs up-down" href="./donate.html">
               <div class="label">贊助50+</div>
-            </a></div>
+            </a>
+            <div class="button--cart--round">
+              <div class="icon"> <i class="bi bi-cart-fill"></i></div>
+            </div>
+          </div>
           <div class="menu--toggle">
             <div class="icon"><span></span><span></span><span></span></div>
           </div>
@@ -312,6 +319,21 @@
         </div>
       </div>
     </header>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const currentPath = location.pathname;
+        if (currentPath.includes('selection') || currentPath.includes('selectionDetail')) {
+          document.querySelectorAll('.button--cart--round').forEach(function(element) {
+            element.style.display = 'block';
+          });
+        } else {
+          document.querySelectorAll('.button--cart--round').forEach(function(element) {
+            element.style.display = 'none';
+          });
+        }
+      });
+
+    </script>
     <section class="section--breadcrumb">
       <div class="container">
         <div class="breadcrumb">
@@ -373,7 +395,7 @@
             </div>
             <article class="is-review">
               <p>閱讀黃金雙激萃的使用說明，上面說「於早上或晚上使用」。但我想，既然要試用，就早晚都用吧！於是晚上我用黃金雙激萃取代原來的晚霜，在化妝水後使用。這是我第一次晚上不用「乳霜」狀保養品，我一直倚賴乳霜來保濕。沒想到，黃金雙激萃的保濕潤澤度出奇的好！整個晚上都感覺皮膚非常水嫩！早上我則是洗完臉就直接使用它，用量稍減。它不會油膩，也很容易再上後續的隔離乳。因為好吸收的關係，立刻上隔離乳也不會有屑屑產生。 用完兩週，我覺得最明顯的改變是皮膚的緊緻度，而且幾乎一用就有感。皮膚的緊緻，感覺真的很明顯。同樣的保養程序，竟帶來這麼好的效果。也因為這樣，上彩粧也變得容易，不易掉粉。沒預料到的收穫是，出門前在化妝檯前的準備時間變短了，讓人開心。值得推薦！值得推薦！值得推薦！值得推薦！</p>
-              <h3>開箱影音</h3>
+              <h3 class="center">開箱影音</h3>
               <div class="video--wrapper"><iframe src="https://www.youtube.com/embed/1Q3wv4J6Z1A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></div>
             </article>
           </div>
@@ -382,7 +404,7 @@
         <div class="row">
           <div class="col-12">
             <article class="is-review-rules">
-              <h3>推薦閱讀</h3>
+              <h3 class="center">推薦閱讀</h3>
               <div class="pic"> <img src="https://picsum.photos/900/900" /></div>
               <p>推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀</p>
             </article>
@@ -397,8 +419,11 @@
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row mt-3">
           <div class="col-12">
+            <article class="is-review-rules">
+              <h3 class="center">年齡分佈</h3>
+            </article>
             <div class="chart-container">
               <div class="labels-container">
                 <div class="label"><span class="percent" style="background-color: #E57373">6%</span><span>41-45歲</span></div>
@@ -416,27 +441,410 @@
     </section>
     <section class="section--report--body">
       <div class="rank">
-        <div class="container--slim">
-          <div class="row">
-            <div class="rank-card col-3"><img src="https://picsum.photos/60/60" alt="" />
-              <p>健康力</p>
-              <div class="form--rating">
-                <div class="rating--group"><label><input type="radio" name="ratingNaN" value="1" /><input type="radio" name="ratingNaN" value="2" /><input type="radio" name="ratingNaN" value="3" /><input type="radio" name="ratingNaN" value="4" checked="checked" /><input type="radio" name="ratingNaN" value="5" />
-                    <div class="stars">
-                      <div class="icon"><i class="bi bi-star-fill"></i></div>
-                      <div class="icon"><i class="bi bi-star-fill"></i></div>
-                      <div class="icon"><i class="bi bi-star-fill"></i></div>
-                      <div class="icon"><i class="bi bi-star-fill"></i></div>
-                      <div class="icon"><i class="bi bi-star-fill"></i></div>
-                    </div>
-                  </label></div>
+        <div class="container--slim py-5">
+          <div class="row rank-container">
+            <div class="col-12 pb-3">
+              <article class="is-review-rules">
+                <h3 class="border-white">評鑑星等</h3>
+              </article>
+            </div>
+            <div class="col-12 rank-container">
+              <div class="rank-card col-12 col-md-3"><span class="score">4.2</span><img src="./assets/images/crown.png" alt="" />
+                <p class="title-label">健康力</p>
+                <div class="form--rating full-column">
+                  <div class="rating--group"><label><input type="radio" name="rating1" value="1" disabled="disabled" /><input type="radio" name="rating2" value="2" disabled="disabled" /><input type="radio" name="rating3" value="3" disabled="disabled" /><input type="radio" name="rating4" value="4" disabled="disabled" /><input type="radio" name="rating5" value="5" disabled="disabled" />
+                      <div class="stars">
+                        <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        <div class="icon"><i class="bi bi-star-fill"></i></div>
+                      </div>
+                    </label></div>
+                </div>
+              </div>
+              <div class="rank-card col-12 col-md-3"><span class="score">3.2</span><img src="./assets/images/crown.png" alt="" />
+                <p class="title-label">健康力</p>
+                <div class="form--rating full-column">
+                  <div class="rating--group"><label><input type="radio" name="rating1" value="1" checked="checked" disabled="disabled" /><input type="radio" name="rating2" value="2" disabled="disabled" /><input type="radio" name="rating3" value="3" disabled="disabled" /><input type="radio" name="rating4" value="4" disabled="disabled" /><input type="radio" name="rating5" value="5" disabled="disabled" />
+                      <div class="stars">
+                        <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        <div class="icon"><i class="bi bi-star-fill"></i></div>
+                      </div>
+                    </label></div>
+                </div>
+              </div>
+              <div class="rank-card col-12 col-md-3"><span class="score">4.3</span><img src="./assets/images/crown.png" alt="" />
+                <p class="title-label">健康力</p>
+                <div class="form--rating full-column">
+                  <div class="rating--group"><label><input type="radio" name="rating1" value="1" disabled="disabled" /><input type="radio" name="rating2" value="2" checked="checked" disabled="disabled" /><input type="radio" name="rating3" value="3" disabled="disabled" /><input type="radio" name="rating4" value="4" disabled="disabled" /><input type="radio" name="rating5" value="5" disabled="disabled" />
+                      <div class="stars">
+                        <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        <div class="icon"><i class="bi bi-star-fill"></i></div>
+                      </div>
+                    </label></div>
+                </div>
+              </div>
+              <div class="rank-card col-12 col-md-3"><span class="score">4.1</span><img src="./assets/images/crown.png" alt="" />
+                <p class="title-label">健康力</p>
+                <div class="form--rating full-column">
+                  <div class="rating--group"><label><input type="radio" name="rating1" value="1" disabled="disabled" /><input type="radio" name="rating2" value="2" disabled="disabled" /><input type="radio" name="rating3" value="3" checked="checked" disabled="disabled" /><input type="radio" name="rating4" value="4" disabled="disabled" /><input type="radio" name="rating5" value="5" disabled="disabled" />
+                      <div class="stars">
+                        <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        <div class="icon"><i class="bi bi-star-fill"></i></div>
+                      </div>
+                    </label></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="fixed-bottom d-flex d-sm-none juctify-content-center p-4">
-          <div class="button--pill--full">
-            <div class="label">搶先報名</div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12">
+          <article class="is-review-rules">
+            <h3 class="center">試用心得 </h3>
+          </article>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row card-row">
+          <div class="col-12 col-lg-5 card-container">
+            <div class="card-body"><!-- 用户信息部分-->
+              <div class="user-info"><img class="profile-img" src="https://picsum.photos/50" alt="Profile Image" />
+                <div class="card-title">
+                  <h5>小◯兵</h5><small>51—55歲</small>
+                </div>
+              </div><!-- 文字区域-->
+              <div class="description"> 未來該注意哪些病，基因告訴你！曾嶔元醫師：如何掌握健康弱點，精準預防？98歲仍在幫病人看病！金氏世界紀錄最高齡醫師塔克：6個健康到100歲的秘訣，每個人都做得到75歲終於踏出人生第一次自由行，像單身貴族好快樂！許美月：在家裡怕一輩子，永遠都走不出去<div class="rank-item d-flex justify-content-center">
+                  <p class="title-label">健康力: </p>
+                  <div class="form--rating full-column">
+                    <div class="rating--group"><label><input type="radio" name="rating-1-1" value="1" checked="checked" disabled="disabled" /><input type="radio" name="rating-1-2" value="2" disabled="disabled" /><input type="radio" name="rating-1-3" value="3" disabled="disabled" /><input type="radio" name="rating-1-4" value="4" disabled="disabled" /><input type="radio" name="rating-1-5" value="5" disabled="disabled" />
+                        <div class="stars">
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        </div>
+                      </label></div>
+                  </div>
+                </div>
+                <div class="rank-item d-flex justify-content-center">
+                  <p class="title-label">健康力: </p>
+                  <div class="form--rating full-column">
+                    <div class="rating--group"><label><input type="radio" name="rating-1-1" value="1" disabled="disabled" /><input type="radio" name="rating-1-2" value="2" checked="checked" disabled="disabled" /><input type="radio" name="rating-1-3" value="3" disabled="disabled" /><input type="radio" name="rating-1-4" value="4" disabled="disabled" /><input type="radio" name="rating-1-5" value="5" disabled="disabled" />
+                        <div class="stars">
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        </div>
+                      </label></div>
+                  </div>
+                </div>
+                <div class="rank-item d-flex justify-content-center">
+                  <p class="title-label">健康力: </p>
+                  <div class="form--rating full-column">
+                    <div class="rating--group"><label><input type="radio" name="rating-1-1" value="1" disabled="disabled" /><input type="radio" name="rating-1-2" value="2" disabled="disabled" /><input type="radio" name="rating-1-3" value="3" checked="checked" disabled="disabled" /><input type="radio" name="rating-1-4" value="4" disabled="disabled" /><input type="radio" name="rating-1-5" value="5" disabled="disabled" />
+                        <div class="stars">
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        </div>
+                      </label></div>
+                  </div>
+                </div>
+                <div class="rank-item d-flex justify-content-center">
+                  <p class="title-label">健康力: </p>
+                  <div class="form--rating full-column">
+                    <div class="rating--group"><label><input type="radio" name="rating-1-1" value="1" disabled="disabled" /><input type="radio" name="rating-1-2" value="2" disabled="disabled" /><input type="radio" name="rating-1-3" value="3" disabled="disabled" /><input type="radio" name="rating-1-4" value="4" checked="checked" disabled="disabled" /><input type="radio" name="rating-1-5" value="5" disabled="disabled" />
+                        <div class="stars">
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        </div>
+                      </label></div>
+                  </div>
+                </div>
+              </div><!-- 图片区域-->
+              <div class="gallery d-none d-sm-grid"><img src="https://picsum.photos/200" alt="Gallery Image" /><img src="https://picsum.photos/200" alt="Gallery Image" /><img src="https://picsum.photos/200" alt="Gallery Image" /><img src="https://picsum.photos/200" alt="Gallery Image" /></div>
+              <div class="container--slim d-block d-sm-none mt-3">
+                <div class="swiper--banner"><swiper-container navigation="true" inject-styles="[&quot;\n                    \n                      :host {\n                        --swiper-theme-color: #ede73c;\n                      }\n                      :host .swiper-button-prev,\n                      :host .swiper-button-next {\n                        background-color: #66666680;\n                        border-radius: 100%;\n                        width: 28px;\n                        height: 28px;\n                        padding: 10px;\n                        stroke: #ede73c;\n                        stroke-width: 1;\n                      }\n                      &quot;]"><swiper-slide class="bg-theme">
+                      <article>
+                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/42/4042/carousel/4042.png" /></div>
+                      </article>
+                    </swiper-slide><swiper-slide class="bg-theme">
+                      <article>
+                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/52/4252/carousel/4252.png" /></div>
+                      </article>
+                    </swiper-slide><swiper-slide class="bg-theme">
+                      <article>
+                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/35/4335/carousel/4335.png" /></div>
+                      </article>
+                    </swiper-slide></swiper-container></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-5 card-container">
+            <div class="card-body"><!-- 用户信息部分-->
+              <div class="user-info"><img class="profile-img" src="https://picsum.photos/50" alt="Profile Image" />
+                <div class="card-title">
+                  <h5>小◯兵</h5><small>51—55歲</small>
+                </div>
+              </div><!-- 文字区域-->
+              <div class="description"> 83歲一頭白髮，卻氣色絕佳！光田醫院總院長王乃弘的早餐菜單：50歲才開始健康生活，絕對來得及未來該注意哪些病，基因告訴你！曾嶔元醫師：如何掌握健康弱點，精準預防？83歲一頭白髮，卻氣色絕佳！光田醫院總院長王乃弘的早餐菜單：50歲才開始健康生活，絕對來得及<div class="rank-item d-flex justify-content-center">
+                  <p class="title-label">健康力: </p>
+                  <div class="form--rating full-column">
+                    <div class="rating--group"><label><input type="radio" name="rating-2-1" value="1" checked="checked" disabled="disabled" /><input type="radio" name="rating-2-2" value="2" disabled="disabled" /><input type="radio" name="rating-2-3" value="3" disabled="disabled" /><input type="radio" name="rating-2-4" value="4" disabled="disabled" /><input type="radio" name="rating-2-5" value="5" disabled="disabled" />
+                        <div class="stars">
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        </div>
+                      </label></div>
+                  </div>
+                </div>
+                <div class="rank-item d-flex justify-content-center">
+                  <p class="title-label">健康力: </p>
+                  <div class="form--rating full-column">
+                    <div class="rating--group"><label><input type="radio" name="rating-2-1" value="1" disabled="disabled" /><input type="radio" name="rating-2-2" value="2" checked="checked" disabled="disabled" /><input type="radio" name="rating-2-3" value="3" disabled="disabled" /><input type="radio" name="rating-2-4" value="4" disabled="disabled" /><input type="radio" name="rating-2-5" value="5" disabled="disabled" />
+                        <div class="stars">
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        </div>
+                      </label></div>
+                  </div>
+                </div>
+                <div class="rank-item d-flex justify-content-center">
+                  <p class="title-label">健康力: </p>
+                  <div class="form--rating full-column">
+                    <div class="rating--group"><label><input type="radio" name="rating-2-1" value="1" disabled="disabled" /><input type="radio" name="rating-2-2" value="2" disabled="disabled" /><input type="radio" name="rating-2-3" value="3" checked="checked" disabled="disabled" /><input type="radio" name="rating-2-4" value="4" disabled="disabled" /><input type="radio" name="rating-2-5" value="5" disabled="disabled" />
+                        <div class="stars">
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        </div>
+                      </label></div>
+                  </div>
+                </div>
+                <div class="rank-item d-flex justify-content-center">
+                  <p class="title-label">健康力: </p>
+                  <div class="form--rating full-column">
+                    <div class="rating--group"><label><input type="radio" name="rating-2-1" value="1" disabled="disabled" /><input type="radio" name="rating-2-2" value="2" disabled="disabled" /><input type="radio" name="rating-2-3" value="3" disabled="disabled" /><input type="radio" name="rating-2-4" value="4" checked="checked" disabled="disabled" /><input type="radio" name="rating-2-5" value="5" disabled="disabled" />
+                        <div class="stars">
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        </div>
+                      </label></div>
+                  </div>
+                </div>
+              </div><!-- 图片区域-->
+              <div class="gallery d-none d-sm-grid"><img src="https://picsum.photos/200" alt="Gallery Image" /><img src="https://picsum.photos/200" alt="Gallery Image" /><img src="https://picsum.photos/200" alt="Gallery Image" /><img src="https://picsum.photos/200" alt="Gallery Image" /></div>
+              <div class="container--slim d-block d-sm-none mt-3">
+                <div class="swiper--banner"><swiper-container navigation="true" inject-styles="[&quot;\n                    \n                      :host {\n                        --swiper-theme-color: #ede73c;\n                      }\n                      :host .swiper-button-prev,\n                      :host .swiper-button-next {\n                        background-color: #66666680;\n                        border-radius: 100%;\n                        width: 28px;\n                        height: 28px;\n                        padding: 10px;\n                        stroke: #ede73c;\n                        stroke-width: 1;\n                      }\n                      &quot;]"><swiper-slide class="bg-theme">
+                      <article>
+                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/33/3233/carousel/3233.png" /></div>
+                      </article>
+                    </swiper-slide><swiper-slide class="bg-theme">
+                      <article>
+                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4338/carousel/4338.png" /></div>
+                      </article>
+                    </swiper-slide><swiper-slide class="bg-theme">
+                      <article>
+                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png" /></div>
+                      </article>
+                    </swiper-slide></swiper-container></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-5 card-container">
+            <div class="card-body"><!-- 用户信息部分-->
+              <div class="user-info"><img class="profile-img" src="https://picsum.photos/50" alt="Profile Image" />
+                <div class="card-title">
+                  <h5>小◯兵</h5><small>51—55歲</small>
+                </div>
+              </div><!-- 文字区域-->
+              <div class="description"> 不爭，卻收穫最豐盛的人生！模仿天王郭子乾的「被動式積極」哲學83歲一頭白髮，卻氣色絕佳！光田醫院總院長王乃弘的早餐菜單：50歲才開始健康生活，絕對來得及60歲告別主播台，轉行當心理諮商師！靳秀麗：幸福不是退休養老，「生產老化」活出無憾人生<div class="rank-item d-flex justify-content-center">
+                  <p class="title-label">健康力: </p>
+                  <div class="form--rating full-column">
+                    <div class="rating--group"><label><input type="radio" name="rating-3-1" value="1" checked="checked" disabled="disabled" /><input type="radio" name="rating-3-2" value="2" disabled="disabled" /><input type="radio" name="rating-3-3" value="3" disabled="disabled" /><input type="radio" name="rating-3-4" value="4" disabled="disabled" /><input type="radio" name="rating-3-5" value="5" disabled="disabled" />
+                        <div class="stars">
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        </div>
+                      </label></div>
+                  </div>
+                </div>
+                <div class="rank-item d-flex justify-content-center">
+                  <p class="title-label">健康力: </p>
+                  <div class="form--rating full-column">
+                    <div class="rating--group"><label><input type="radio" name="rating-3-1" value="1" disabled="disabled" /><input type="radio" name="rating-3-2" value="2" checked="checked" disabled="disabled" /><input type="radio" name="rating-3-3" value="3" disabled="disabled" /><input type="radio" name="rating-3-4" value="4" disabled="disabled" /><input type="radio" name="rating-3-5" value="5" disabled="disabled" />
+                        <div class="stars">
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        </div>
+                      </label></div>
+                  </div>
+                </div>
+                <div class="rank-item d-flex justify-content-center">
+                  <p class="title-label">健康力: </p>
+                  <div class="form--rating full-column">
+                    <div class="rating--group"><label><input type="radio" name="rating-3-1" value="1" disabled="disabled" /><input type="radio" name="rating-3-2" value="2" disabled="disabled" /><input type="radio" name="rating-3-3" value="3" checked="checked" disabled="disabled" /><input type="radio" name="rating-3-4" value="4" disabled="disabled" /><input type="radio" name="rating-3-5" value="5" disabled="disabled" />
+                        <div class="stars">
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        </div>
+                      </label></div>
+                  </div>
+                </div>
+                <div class="rank-item d-flex justify-content-center">
+                  <p class="title-label">健康力: </p>
+                  <div class="form--rating full-column">
+                    <div class="rating--group"><label><input type="radio" name="rating-3-1" value="1" disabled="disabled" /><input type="radio" name="rating-3-2" value="2" disabled="disabled" /><input type="radio" name="rating-3-3" value="3" disabled="disabled" /><input type="radio" name="rating-3-4" value="4" checked="checked" disabled="disabled" /><input type="radio" name="rating-3-5" value="5" disabled="disabled" />
+                        <div class="stars">
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        </div>
+                      </label></div>
+                  </div>
+                </div>
+              </div><!-- 图片区域-->
+              <div class="gallery d-none d-sm-grid"><img src="https://picsum.photos/200" alt="Gallery Image" /><img src="https://picsum.photos/200" alt="Gallery Image" /><img src="https://picsum.photos/200" alt="Gallery Image" /><img src="https://picsum.photos/200" alt="Gallery Image" /></div>
+              <div class="container--slim d-block d-sm-none mt-3">
+                <div class="swiper--banner"><swiper-container navigation="true" inject-styles="[&quot;\n                    \n                      :host {\n                        --swiper-theme-color: #ede73c;\n                      }\n                      :host .swiper-button-prev,\n                      :host .swiper-button-next {\n                        background-color: #66666680;\n                        border-radius: 100%;\n                        width: 28px;\n                        height: 28px;\n                        padding: 10px;\n                        stroke: #ede73c;\n                        stroke-width: 1;\n                      }\n                      &quot;]"><swiper-slide class="bg-theme">
+                      <article>
+                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/36/4336/carousel/4336.png" /></div>
+                      </article>
+                    </swiper-slide><swiper-slide class="bg-theme">
+                      <article>
+                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/23/3923/carousel/3923.png" /></div>
+                      </article>
+                    </swiper-slide><swiper-slide class="bg-theme">
+                      <article>
+                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/42/4042/carousel/4042.png" /></div>
+                      </article>
+                    </swiper-slide></swiper-container></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-5 card-container">
+            <div class="card-body"><!-- 用户信息部分-->
+              <div class="user-info"><img class="profile-img" src="https://picsum.photos/50" alt="Profile Image" />
+                <div class="card-title">
+                  <h5>小◯兵</h5><small>51—55歲</small>
+                </div>
+              </div><!-- 文字区域-->
+              <div class="description"> 98歲仍在幫病人看病！金氏世界紀錄最高齡醫師塔克：6個健康到100歲的秘訣，每個人都做得到如何退休後過更好？心理諮商師靳秀麗：1個「生產老化」新觀念，啟動身體健康、內心的內無比...98歲仍在幫病人看病！金氏世界紀錄最高齡醫師塔克：6個健康到100歲的秘訣，每個人都做得到<div class="rank-item d-flex justify-content-center">
+                  <p class="title-label">健康力: </p>
+                  <div class="form--rating full-column">
+                    <div class="rating--group"><label><input type="radio" name="rating-4-1" value="1" checked="checked" disabled="disabled" /><input type="radio" name="rating-4-2" value="2" disabled="disabled" /><input type="radio" name="rating-4-3" value="3" disabled="disabled" /><input type="radio" name="rating-4-4" value="4" disabled="disabled" /><input type="radio" name="rating-4-5" value="5" disabled="disabled" />
+                        <div class="stars">
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        </div>
+                      </label></div>
+                  </div>
+                </div>
+                <div class="rank-item d-flex justify-content-center">
+                  <p class="title-label">健康力: </p>
+                  <div class="form--rating full-column">
+                    <div class="rating--group"><label><input type="radio" name="rating-4-1" value="1" disabled="disabled" /><input type="radio" name="rating-4-2" value="2" checked="checked" disabled="disabled" /><input type="radio" name="rating-4-3" value="3" disabled="disabled" /><input type="radio" name="rating-4-4" value="4" disabled="disabled" /><input type="radio" name="rating-4-5" value="5" disabled="disabled" />
+                        <div class="stars">
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        </div>
+                      </label></div>
+                  </div>
+                </div>
+                <div class="rank-item d-flex justify-content-center">
+                  <p class="title-label">健康力: </p>
+                  <div class="form--rating full-column">
+                    <div class="rating--group"><label><input type="radio" name="rating-4-1" value="1" disabled="disabled" /><input type="radio" name="rating-4-2" value="2" disabled="disabled" /><input type="radio" name="rating-4-3" value="3" checked="checked" disabled="disabled" /><input type="radio" name="rating-4-4" value="4" disabled="disabled" /><input type="radio" name="rating-4-5" value="5" disabled="disabled" />
+                        <div class="stars">
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        </div>
+                      </label></div>
+                  </div>
+                </div>
+                <div class="rank-item d-flex justify-content-center">
+                  <p class="title-label">健康力: </p>
+                  <div class="form--rating full-column">
+                    <div class="rating--group"><label><input type="radio" name="rating-4-1" value="1" disabled="disabled" /><input type="radio" name="rating-4-2" value="2" disabled="disabled" /><input type="radio" name="rating-4-3" value="3" disabled="disabled" /><input type="radio" name="rating-4-4" value="4" checked="checked" disabled="disabled" /><input type="radio" name="rating-4-5" value="5" disabled="disabled" />
+                        <div class="stars">
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                          <div class="icon"><i class="bi bi-star-fill"></i></div>
+                        </div>
+                      </label></div>
+                  </div>
+                </div>
+              </div><!-- 图片区域-->
+              <div class="gallery d-none d-sm-grid"><img src="https://picsum.photos/200" alt="Gallery Image" /><img src="https://picsum.photos/200" alt="Gallery Image" /><img src="https://picsum.photos/200" alt="Gallery Image" /><img src="https://picsum.photos/200" alt="Gallery Image" /></div>
+              <div class="container--slim d-block d-sm-none mt-3">
+                <div class="swiper--banner"><swiper-container navigation="true" inject-styles="[&quot;\n                    \n                      :host {\n                        --swiper-theme-color: #ede73c;\n                      }\n                      :host .swiper-button-prev,\n                      :host .swiper-button-next {\n                        background-color: #66666680;\n                        border-radius: 100%;\n                        width: 28px;\n                        height: 28px;\n                        padding: 10px;\n                        stroke: #ede73c;\n                        stroke-width: 1;\n                      }\n                      &quot;]"><swiper-slide class="bg-theme">
+                      <article>
+                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/52/4252/carousel/4252.png" /></div>
+                      </article>
+                    </swiper-slide><swiper-slide class="bg-theme">
+                      <article>
+                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/35/4335/carousel/4335.png" /></div>
+                      </article>
+                    </swiper-slide><swiper-slide class="bg-theme">
+                      <article>
+                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/33/3233/carousel/3233.png" /></div>
+                      </article>
+                    </swiper-slide></swiper-container></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -472,6 +880,15 @@
           },
         };
         new Chart(ctx, config);
+      });
+      document.addEventListener('DOMContentLoaded', () => {
+        const descriptions = document.querySelectorAll('.description');
+        descriptions.forEach(description => {
+          description.addEventListener('click', () => {
+            // 切換展開/收起狀態
+            description.classList.toggle('expanded');
+          });
+        });
       });
 
     </script>

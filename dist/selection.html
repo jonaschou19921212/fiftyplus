@@ -54,6 +54,9 @@
               </a><a class="button--pill--xs is-invert" href="./donate.html">
                 <div class="label">贊助50+</div>
               </a>
+              <div class="button--cart--round">
+                <div class="icon"> <i class="bi bi-cart-fill"></i></div>
+              </div>
             </div>
           </div>
         </section>
@@ -193,9 +196,13 @@
       <div class="header--mobile">
         <div class="container">
           <div class="logo--wrapper"><a class="logo--black" href="href"></a></div>
-          <div class="buttons"><a class="button--pill--xs" href="./donate.html">
+          <div class="buttons"><a class="button--pill--xs up-down" href="./donate.html">
               <div class="label">贊助50+</div>
-            </a></div>
+            </a>
+            <div class="button--cart--round">
+              <div class="icon"> <i class="bi bi-cart-fill"></i></div>
+            </div>
+          </div>
           <div class="menu--toggle">
             <div class="icon"><span></span><span></span><span></span></div>
           </div>
@@ -312,6 +319,21 @@
         </div>
       </div>
     </header>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const currentPath = location.pathname;
+        if (currentPath.includes('selection') || currentPath.includes('selectionDetail')) {
+          document.querySelectorAll('.button--cart--round').forEach(function(element) {
+            element.style.display = 'block';
+          });
+        } else {
+          document.querySelectorAll('.button--cart--round').forEach(function(element) {
+            element.style.display = 'none';
+          });
+        }
+      });
+
+    </script>
     <section class="section--breadcrumb" style="padding-bottom: 0">
       <div class="container">
         <div class="breadcrumb">
@@ -320,12 +342,6 @@
             <li><a href="">選品</a></li>
             <li><a href="">全站商品</a></li>
           </ul>
-        </div>
-        <div class="buttons">
-          <div class="button--cart">
-            <div class="icon"> <i class="bi bi-cart-fill"></i></div>
-            <div class="label">我的購物車</div>
-          </div>
         </div>
       </div>
     </section>

@@ -54,6 +54,9 @@
               </a><a class="button--pill--xs is-invert" href="./donate.html">
                 <div class="label">贊助50+</div>
               </a>
+              <div class="button--cart--round">
+                <div class="icon"> <i class="bi bi-cart-fill"></i></div>
+              </div>
             </div>
           </div>
         </section>
@@ -193,9 +196,13 @@
       <div class="header--mobile">
         <div class="container">
           <div class="logo--wrapper"><a class="logo--black" href="href"></a></div>
-          <div class="buttons"><a class="button--pill--xs" href="./donate.html">
+          <div class="buttons"><a class="button--pill--xs up-down" href="./donate.html">
               <div class="label">贊助50+</div>
-            </a></div>
+            </a>
+            <div class="button--cart--round">
+              <div class="icon"> <i class="bi bi-cart-fill"></i></div>
+            </div>
+          </div>
           <div class="menu--toggle">
             <div class="icon"><span></span><span></span><span></span></div>
           </div>
@@ -312,6 +319,21 @@
         </div>
       </div>
     </header>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const currentPath = location.pathname;
+        if (currentPath.includes('selection') || currentPath.includes('selectionDetail')) {
+          document.querySelectorAll('.button--cart--round').forEach(function(element) {
+            element.style.display = 'block';
+          });
+        } else {
+          document.querySelectorAll('.button--cart--round').forEach(function(element) {
+            element.style.display = 'none';
+          });
+        }
+      });
+
+    </script>
     <section class="section--breadcrumb">
       <div class="container">
         <div class="breadcrumb">
@@ -333,25 +355,25 @@
         <div class="grid--snippet selection-detail">
           <div class="col">
             <div class="card--snippet--preview full-height">
-              <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/93/4393/carousel/4393.png" /></div>
+              <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/90/4390/carousel/4390.png" /></div>
             </div>
           </div>
           <div class="col">
             <div class="swiper--snippet d-none d-lg-block"><swiper-container init="false" direction="vertical" slides-per-view="5" space-between="16" autoplay="{ &quot;delay&quot;: 5000, &quot;disableOnInteraction&quot;: false }" loop="true" inject-styles="[&quot;\n                :host .swiper {\n                  overflow: hidden;\n                }\n                :host {\n                  --swiper-theme-color: #ede73c;\n                  --swiper-navigation-size: 32px;\n                  height: 100%;\n                }\n                &quot;]"><swiper-slide>
                   <div class="card--snippet" data-index="0" onclick="gotoSnippet(this)">
-                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/90/4390/carousel/4390.png" /></div>
-                  </div>
-                </swiper-slide><swiper-slide>
-                  <div class="card--snippet" data-index="1" onclick="gotoSnippet(this)">
                     <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/92/4392/carousel/4392.png" /></div>
                   </div>
                 </swiper-slide><swiper-slide>
+                  <div class="card--snippet" data-index="1" onclick="gotoSnippet(this)">
+                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/35/4335/carousel/4335.png" /></div>
+                  </div>
+                </swiper-slide><swiper-slide>
                   <div class="card--snippet" data-index="2" onclick="gotoSnippet(this)">
-                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png" /></div>
+                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/41/4041/carousel/4041.png" /></div>
                   </div>
                 </swiper-slide><swiper-slide>
                   <div class="card--snippet" data-index="3" onclick="gotoSnippet(this)">
-                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/41/4041/carousel/4041.png" /></div>
+                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/93/4393/carousel/4393.png" /></div>
                   </div>
                 </swiper-slide><swiper-slide>
                   <div class="card--snippet" data-index="4" onclick="gotoSnippet(this)">
@@ -367,28 +389,28 @@
                   </div>
                 </swiper-slide><swiper-slide>
                   <div class="card--snippet" data-index="7" onclick="gotoSnippet(this)">
-                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/35/4335/carousel/4335.png" /></div>
+                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png" /></div>
                   </div>
                 </swiper-slide><swiper-slide>
                   <div class="card--snippet" data-index="8" onclick="gotoSnippet(this)">
-                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/93/4393/carousel/4393.png" /></div>
+                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/90/4390/carousel/4390.png" /></div>
                   </div>
                 </swiper-slide><swiper-slide>
                   <div class="card--snippet" data-index="9" onclick="gotoSnippet(this)">
-                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/90/4390/carousel/4390.png" /></div>
+                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/92/4392/carousel/4392.png" /></div>
                   </div>
                 </swiper-slide></swiper-container></div>
             <div class="swiper--snippet d-block d-lg-none"><swiper-container init="true" direction="horizontal" slides-per-view="5" space-between="16" autoplay="{ &quot;delay&quot;: 5000, &quot;disableOnInteraction&quot;: false }" loop="true" inject-styles="[&quot;\n                :host .swiper {\n                  overflow: hidden;\n                }\n                :host {\n                  --swiper-theme-color: #ede73c;\n                  --swiper-navigation-size: 32px;\n                  height: 100%;\n                }\n                &quot;]"><swiper-slide>
                   <div class="card--snippet" data-index="0" onclick="gotoSnippet(this)">
-                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/92/4392/carousel/4392.png" /></div>
+                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/35/4335/carousel/4335.png" /></div>
                   </div>
                 </swiper-slide><swiper-slide>
                   <div class="card--snippet" data-index="1" onclick="gotoSnippet(this)">
-                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png" /></div>
+                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/41/4041/carousel/4041.png" /></div>
                   </div>
                 </swiper-slide><swiper-slide>
                   <div class="card--snippet" data-index="2" onclick="gotoSnippet(this)">
-                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/41/4041/carousel/4041.png" /></div>
+                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/93/4393/carousel/4393.png" /></div>
                   </div>
                 </swiper-slide><swiper-slide>
                   <div class="card--snippet" data-index="3" onclick="gotoSnippet(this)">
@@ -404,19 +426,19 @@
                   </div>
                 </swiper-slide><swiper-slide>
                   <div class="card--snippet" data-index="6" onclick="gotoSnippet(this)">
-                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/35/4335/carousel/4335.png" /></div>
+                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png" /></div>
                   </div>
                 </swiper-slide><swiper-slide>
                   <div class="card--snippet" data-index="7" onclick="gotoSnippet(this)">
-                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/93/4393/carousel/4393.png" /></div>
-                  </div>
-                </swiper-slide><swiper-slide>
-                  <div class="card--snippet" data-index="8" onclick="gotoSnippet(this)">
                     <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/90/4390/carousel/4390.png" /></div>
                   </div>
                 </swiper-slide><swiper-slide>
-                  <div class="card--snippet" data-index="9" onclick="gotoSnippet(this)">
+                  <div class="card--snippet" data-index="8" onclick="gotoSnippet(this)">
                     <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/92/4392/carousel/4392.png" /></div>
+                  </div>
+                </swiper-slide><swiper-slide>
+                  <div class="card--snippet" data-index="9" onclick="gotoSnippet(this)">
+                    <div class="pic"><img src="https://imgs.cwgv.com.tw/slides/35/4335/carousel/4335.png" /></div>
                   </div>
                 </swiper-slide></swiper-container></div>
           </div>
@@ -425,18 +447,9 @@
               <div class="title d-none d-lg-block">50+帆布袋帆布袋帆布袋帆布袋帆布袋</div>
               <div class="price d-none d-lg-block">會員價<span>NT$49,900元</span><del class="origin-price">原價$50,000元</del></div>
               <div class="text">介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字</div>
-              <div class="price-mobile">會員價<span>NT$49,900元</span><del class="origin-price">原價$50,000元</del></div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="mobile-share-bar hide-border d-flex d-lg-none">
-        <div class="item"> <a href="#">f</a></div>
-        <div class="item line"><a href="#">LINE</a></div>
-        <div class="item link"> <a href="#"><i class="bi bi-link-45deg"></i></a></div>
-        <div class="item size" onclick="toggleFontSize()"><svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 18.5C10 19.329 9.328 20 8.5 20C7.672 20 7 19.329 7 18.5C7 17.672 7.672 17 8.5 17C9.328 17 10 17.672 10 18.5ZM13.5 17C12.672 17 12 17.671 12 18.5C12 19.329 12.672 20 13.5 20C14.328 20 15 19.329 15 18.5C15 17.672 14.328 17 13.5 17ZM19.804 0L16.373 14H14.271L16.812 3H0L4.615 16H17.854L21.328 2H23.506L24 0H19.804Z" fill="#525252" />
-          </svg></div>
       </div>
     </section>
     <section class="section--selectDetail--body">
@@ -488,6 +501,34 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="fixed-checkout d-flex d-md-none">
+        <div class="mobile-share-bar hide-border d-flex d-md-none bottom-0 mt-3">
+          <div class="item"> <a href="#">f</a></div>
+          <div class="item line"><a href="#">LINE</a></div>
+          <div class="item link"> <a href="#"><i class="bi bi-link-45deg"></i></a></div>
+          <div class="item size" onclick="toggleFontSize()"><svg class="aa" id="_圖層_1" data-name="圖層_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 50 50">
+              <path fill="#515151" stroke="#515151" d="M11.2,7.5h8.2l11.2,35h-7.3l-2.5-9h-11.3l-2.5,9H0L11.2,7.5ZM11,28.1h8.3l-1-3.8c-1.1-3.6-2-7.7-3-11.4h-.2c-.9,3.8-1.9,7.8-3,11.4l-1,3.8Z" />
+              <path fill="#515151" stroke="#515151" d="M36.8,12.8h6.3l6.8,22h-5.6l-1.3-5.1h-6.5l-1.3,5.1h-5.4l6.8-22ZM37.7,25.7h4.5l-.5-1.9c-.6-2.2-1.2-4.8-1.7-7.1h-.1c-.5,2.3-1.1,4.9-1.7,7.1l-.5,1.9Z" />
+            </svg></div>
+        </div>
+        <script>
+          window.addEventListener('scroll', function() {
+            const footer = document.querySelector('footer'); // 獲取 footer 元素
+            const fixedCheckout = document.querySelector('.fixed-checkout'); // 獲取固定的結帳區域
+            const footerRect = footer.getBoundingClientRect(); // 獲取 footer 的位置
+            if (footerRect.top < window.innerHeight) {
+              fixedCheckout.style.transition = 'bottom 0.3s ease'; // 添加過渡效果
+              fixedCheckout.style.position = 'absolute'; // 設置為絕對定位
+              fixedCheckout.style.bottom = `0px`; // 距離 footer 的高度
+            } else {
+              fixedCheckout.style.transition = 'bottom 0.3s ease'; // 添加過渡效果
+              fixedCheckout.style.position = 'fixed'; // 恢復為固定定位
+              fixedCheckout.style.bottom = '0'; // 固定在底部
+            }
+          });
+
+        </script>
       </div>
     </section>
     <footer>

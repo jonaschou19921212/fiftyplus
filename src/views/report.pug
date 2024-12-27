@@ -72,7 +72,7 @@ block main
                 .label 我要購買
           article.is-review
             p 閱讀黃金雙激萃的使用說明，上面說「於早上或晚上使用」。但我想，既然要試用，就早晚都用吧！於是晚上我用黃金雙激萃取代原來的晚霜，在化妝水後使用。這是我第一次晚上不用「乳霜」狀保養品，我一直倚賴乳霜來保濕。沒想到，黃金雙激萃的保濕潤澤度出奇的好！整個晚上都感覺皮膚非常水嫩！早上我則是洗完臉就直接使用它，用量稍減。它不會油膩，也很容易再上後續的隔離乳。因為好吸收的關係，立刻上隔離乳也不會有屑屑產生。 用完兩週，我覺得最明顯的改變是皮膚的緊緻度，而且幾乎一用就有感。皮膚的緊緻，感覺真的很明顯。同樣的保養程序，竟帶來這麼好的效果。也因為這樣，上彩粧也變得容易，不易掉粉。沒預料到的收穫是，出門前在化妝檯前的準備時間變短了，讓人開心。值得推薦！值得推薦！值得推薦！值得推薦！
-            h3 開箱影音
+            h3.center 開箱影音
 
             .video--wrapper
               iframe(
@@ -87,8 +87,7 @@ block main
       .row
         .col-12
           article.is-review-rules
-
-            h3 推薦閱讀
+            h3.center 推薦閱讀
             .pic 
               img(
                 src="https://picsum.photos/900/900"
@@ -99,8 +98,10 @@ block main
           .recomand
             .button--pill--lg.is-white
               .label 推薦閱讀
-      .row
+      .row.mt-3
         .col-12
+          article.is-review-rules
+            h3.center 年齡分佈
           .chart-container
             .labels-container
               each label, index in [{ text: "41-45歲", color: "#E57373", value: "6%" },{ text: "46-50歲", color: "#FFA726", value: "15%" },{ text: "51-55歲", color: "#BA68C8", value: "30%" },{ text: "56-60歲", color: "#4DB6AC", value: "30%" },{ text: "61-65歲", color: "#4FC3F7", value: "15%" },{ text: "65+", color: "#A1887F", value: "4%" }]
@@ -112,24 +113,97 @@ block main
 
   section.section--report--body 
     .rank
-      .container--slim
-        .row
-          .rank-card.col-3
-            img(src="https://picsum.photos/60/60", alt="")
-            p 健康力
-            .form--rating
-              .rating--group
-                label
-                  each item, index in [0, 1, 2, 3, 4]
-                    input(type='radio', name=`rating${ i + 1 }`, value=`${ index + 1 }`, checked=(index === 3))
-                  .stars
-                    each item, index in [0, 1, 2, 3, 4]
-                      .icon
-                        i.bi.bi-star-fill
+      .container--slim.py-5
+        .row.rank-container
+          .col-12.pb-3
+            article.is-review-rules
+              h3.border-white 評鑑星等
+          .col-12.rank-container
+            each item, i_dx in [4.2, 3.2, 4.3, 4.1]
+              .rank-card.col-12.col-md-3
+                span.score #{item}
+                img(src="./assets/sprite/crown.png", alt="")
+                p.title-label 健康力
+                .form--rating.full-column
+                  .rating--group
+                    label
+                      each item, index in [0, 1, 2, 3, 4]
+                        input(type='radio', name=`rating${ index + 1 }`, value=`${ index + 1 }`, checked=(index+1 === i_dx), disabled)
+                      .stars
+                        each item, index in [0, 1, 2, 3, 4]
+                          .icon
+                            i.bi.bi-star-fill
+    .row.mt-3
+        .col-12
+          article.is-review-rules
+            h3.center 試用心得 
+    
+    .container
+      .row.card-row
+        each card in [1, 2, 3, 4]
+          .col-12.col-lg-5.card-container
+            .card-body
+              // 用户信息部分
+              .user-info
+                img.profile-img(src="https://picsum.photos/50", alt="Profile Image")
+                .card-title
+                  h5 小◯兵
+                  small 51—55歲
 
-      .fixed-bottom.d-flex.d-sm-none.juctify-content-center.p-4
-        .button--pill--full
-          .label 搶先報名
+              // 文字区域
+              .description 
+                != getLoremText()
+                != getLoremText()
+                != getLoremText()
+                each rank in [1, 2, 3, 4]
+                  .rank-item.d-flex.justify-content-center
+                    p.title-label 健康力: 
+                    .form--rating.full-column
+                      .rating--group
+                        label
+                          each item, index in [0, 1, 2, 3, 4]
+                            input(type='radio', name=`rating-${card}-${ index + 1 }`, value=`${ index + 1 }`, checked=(index+1 === rank), disabled)
+                          .stars
+                            each item, index in [0, 1, 2, 3, 4]
+                              .icon
+                                i.bi.bi-star-fill
+              // 图片区域
+              .gallery.d-none.d-sm-grid
+                img(src="https://picsum.photos/200" alt="Gallery Image")
+                img(src="https://picsum.photos/200" alt="Gallery Image")
+                img(src="https://picsum.photos/200" alt="Gallery Image")
+                img(src="https://picsum.photos/200" alt="Gallery Image")
+              .container--slim.d-block.d-sm-none.mt-3
+                .swiper--banner
+                  swiper-container(
+                    navigation='true'
+                    inject-styles=[
+                      `
+                    
+                      :host {
+                        --swiper-theme-color: #ede73c;
+                      }
+                      :host .swiper-button-prev,
+                      :host .swiper-button-next {
+                        background-color: #66666680;
+                        border-radius: 100%;
+                        width: 28px;
+                        height: 28px;
+                        padding: 10px;
+                        stroke: #ede73c;
+                        stroke-width: 1;
+                      }
+                      `,
+                    ],
+                  )
+                    each item, index in [0, 1, 2]
+                      swiper-slide.bg-theme
+                        article
+                          .pic
+                            img(
+                              data-src=`${getLoremCourse()}`
+                            ).lazyload
+                         
   script(src='https://cdn.jsdelivr.net/npm/chart.js')
   script.
     document.addEventListener("DOMContentLoaded", function() {
@@ -149,6 +223,7 @@ block main
           borderWidth: 2,
         }],
       };
+    
 
       var config = {
         type: "pie",
@@ -163,4 +238,15 @@ block main
         },
       };
       new Chart(ctx, config);
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const descriptions = document.querySelectorAll('.description');
+
+      descriptions.forEach(description => {
+        description.addEventListener('click', () => {
+          // 切換展開/收起狀態
+          description.classList.toggle('expanded');
+        });
+      });
     });

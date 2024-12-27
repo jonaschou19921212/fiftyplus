@@ -1,0 +1,29 @@
+.mobile-share-bar.hide-border.d-flex.d-md-none.bottom-0.mt-3
+  .item 
+    a(href="#") f
+  .item.line
+    a(href="#") LINE
+  .item.link 
+    a(href="#")
+      i.bi.bi-link-45deg
+  .item.size(onclick='toggleFontSize()')
+    <svg class="aa" id="_圖層_1" data-name="圖層_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 50 50">
+      <path fill="#515151" stroke="#515151" d="M11.2,7.5h8.2l11.2,35h-7.3l-2.5-9h-11.3l-2.5,9H0L11.2,7.5ZM11,28.1h8.3l-1-3.8c-1.1-3.6-2-7.7-3-11.4h-.2c-.9,3.8-1.9,7.8-3,11.4l-1,3.8Z"/>
+      <path fill="#515151" stroke="#515151" d="M36.8,12.8h6.3l6.8,22h-5.6l-1.3-5.1h-6.5l-1.3,5.1h-5.4l6.8-22ZM37.7,25.7h4.5l-.5-1.9c-.6-2.2-1.2-4.8-1.7-7.1h-.1c-.5,2.3-1.1,4.9-1.7,7.1l-.5,1.9Z"/>
+    </svg>
+
+script.
+    window.addEventListener('scroll', function() {
+        const footer = document.querySelector('footer'); // 獲取 footer 元素
+        const fixedCheckout = document.querySelector('.fixed-checkout'); // 獲取固定的結帳區域
+        const footerRect = footer.getBoundingClientRect(); // 獲取 footer 的位置
+        if (footerRect.top < window.innerHeight) {
+          fixedCheckout.style.transition = 'bottom 0.3s ease'; // 添加過渡效果
+          fixedCheckout.style.position = 'absolute'; // 設置為絕對定位
+          fixedCheckout.style.bottom = `0px`; // 距離 footer 的高度
+        } else {
+          fixedCheckout.style.transition = 'bottom 0.3s ease'; // 添加過渡效果
+          fixedCheckout.style.position = 'fixed'; // 恢復為固定定位
+          fixedCheckout.style.bottom = '0'; // 固定在底部
+        }
+      });
