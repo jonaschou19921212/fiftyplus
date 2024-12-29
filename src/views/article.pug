@@ -58,7 +58,7 @@ block main
             i.bi.bi-eye.me-1
             | 888
 
-  section.section--article--body 
+  section.section--article--body.pb-0
     .container
       .row
         .col-12.col-md-9
@@ -133,28 +133,29 @@ block main
                   alt='廣告'
                 ).lazyload 
           .panel--latest.article-margin
-            .title 熱門文章
-            each item, index in [0, 1, 2, 3, 4]
-              .item--latest
-                .no
-                  = index + 1
-                .caption.font-light
-                  != getLoremText()
-          .join-us.row
-            .col-5.col-md-12
-              .fb-area.col-6.col-md-12
-                a.join-text(href="")
-                  | 加FB熱議討論 
-                  .dash &nbsp;
-                  i.bi.bi-play-fill
-            .col-5.col-md-12
-              .line-area.col-6.col-md-12
-                a.join-text(href="")
-                  | 加LINE或新知 
-                  .dash &nbsp;
-                  i.bi.bi-play-fill
-    .container.courser-recomand.d-none.d-sm-flex
-      .row.row--course
+            .inner
+              .title 熱門文章
+              each item, index in [0, 1, 2, 3, 4]
+                .item--latest
+                  .no
+                    = index + 1
+                  .caption.font-light
+                    != getLoremText()
+            .join-us.row
+              .col-12.col-sm-5.col-md-12
+                .fb-area.col-6.col-md-12
+                  a.join-text(href="")
+                    | 加FB熱議討論 
+                    .dash &nbsp;
+                    i.bi.bi-play-fill
+              .col-12.col-sm-5.col-md-12
+                .line-area.col-6.col-md-12
+                  a.join-text(href="")
+                    | 加LINE或新知 
+                    .dash &nbsp;
+                    i.bi.bi-play-fill
+    .container.courser-recomand.mb-0.d-none.d-sm-flex
+      .row
         each item, index in [0, 1, 2]
           .col-lg-4 
             .card--course

@@ -31,7 +31,6 @@ a.normal--link
     text-decoration: underline
     text-underline-offset: 4px
     cursor: pointer
-
 .buttons
   &
     display: flex
@@ -382,6 +381,8 @@ a.normal--link
       display: flex
       justify-content: center
       align-items: center
+      @media (max-width: theme('breakpoints.md'))
+        flex-wrap: wrap
     .title
       position: relative
       +fontSize(24px)
@@ -429,6 +430,17 @@ a.normal--link
         font-weight: 600
         color: #ff0000
         white-space: nowrap
+      @media (max-width: theme('breakpoints.md'))
+          &
+            width: 100%
+            margin: 0
+          span
+            position: static
+            text-align: center
+            display: block
+            transform: translateY(0)
+            
+        
   &.is-small
     .title
       text-align: center
@@ -845,6 +857,13 @@ article.content
           background:
             image: url(./assets/sprite/clock.svg)
             size: cover
+      @media (max-width: theme('breakpoints.md'))
+        width: 100%
+        flex-wrap: wrap
+        justify-content: center
+        .label
+          display: block
+            
 
 .card--video
   &
@@ -1269,7 +1288,7 @@ article
     font-weight: 400
     line-height: 1.6
     @media (max-width: theme('breakpoints.sm'))
-      font-size: 1.2rem
+      font-size: 20px
 
   p.color--second
     color: #222222
@@ -1289,7 +1308,7 @@ article
     grid-template-columns: auto 1fr
     column-gap: 20px
     @media (max-width: theme('breakpoints.sm'))
-      font-size: 1.2rem
+      font-size: 20px
   blockquote.quote
     &
       background: rgba(#b7b8b8, .1)
@@ -1299,7 +1318,7 @@ article
       +fontSize(22px)
       font-family: 'Noto Serif TC', serif
       @media (max-width: theme('breakpoints.sm'))
-        font-size: 1.2rem
+        font-size: 20px
   blockquote
     &
       margin-left: 40px

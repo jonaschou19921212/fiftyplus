@@ -108,7 +108,7 @@ block main
               span 課程資訊
           article.is-class
             .card-class-normal
-              .main-area
+              .main-area.p-0
                 p 
                   != getLoremText()
                   != getLoremText()
@@ -270,7 +270,7 @@ block main
 
     .container
       .row.justify-content-center.mb-5.mt-3
-        .col-10.col-lg-6.class--amount.d-none.d-md-flex
+        .col-10.col-lg-6.class--amount
           .d-flex.align-items-end
             .total-text 總金額
             .total-text.m-0 合計
@@ -280,8 +280,8 @@ block main
           .button--pill--2xl.mt-3
             .label.label--hide--border.black--font 馬上結帳
       
-    .container.courser-recomand.mt-0.d-none.d-sm-flex
-      .row.row--course
+    .container.courser-recomand.m-0.d-none.d-sm-flex
+      .row
         each item, index in [0, 1, 2]
           .col-lg-4 
             .card--course
@@ -297,8 +297,8 @@ block main
                   a(href="./classDetail.html")
                     .button--pill--xl
                       .label 我要報名
-    .fixed-parent.container--slim.d-block.d-lg-none.mb-5
-      .swiper--banner
+    .fixed-parent.container--slim.d-block.d-lg-none
+      .swiper--banner.mb-5
         swiper-container(
           navigation='true'
           inject-styles=[

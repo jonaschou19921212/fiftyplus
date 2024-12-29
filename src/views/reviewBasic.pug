@@ -29,12 +29,13 @@ block main
   section.section--review--body 
     .container
       .row
-        .col-3
-          .review-collect.d-block.d-sm-none 評鑒募集中
-      .row
         .col-12.col-md-9
-          .review--title
-            .title 亞培安素-香草減甜版
+          .row.align-items-center.mb-0.mb-lg-5.mt-lg-4
+            .col-lg-auto
+              .review-collect.mb-3.mb-lg-0 評鑒募集中
+            .col-lg
+              .review--title.mb-lg-0
+                .title 亞培安素-香草減甜版
 
           block list
 
@@ -93,7 +94,7 @@ block main
     .container
       .grid--steps.d-none.d-sm-grid
         .card--step(
-          class=(step == 1)? 'is-active' : ''
+          class=(step === 1)? 'is-active' : ''
         )
           .label Step.1
           .process
@@ -102,7 +103,7 @@ block main
             .text 申請評鑑囉！只需在網頁上填寫簡單的申請資訊報名。
           .date 11.06 — 11.11
         .card--step(
-          class=(step == 2)? 'is-active' : ''
+          class=(step === 2)? 'is-active' : ''
         )
           .label Step.2
           .process
@@ -111,7 +112,7 @@ block main
             .text 開始評鑑吧！公告入選名單及寄出產品至您提供的地址。
           .date 11.12 — 11.14
         .card--step(
-          class=(step == 3)? 'is-active' : ''
+          class=(step === 3)? 'is-active' : ''
         )
           .label Step.3
           .process
@@ -120,7 +121,7 @@ block main
             .text 回填心得喔！評鑑後別忘了拍攝照片並回填心得喔。
           .date 11.15 — 11.30
         .card--step(
-          class=(step == 4)? 'is-active' : ''
+          class=(step === 4)? 'is-active' : ''
         )
           .label Step.4
           .process
@@ -130,10 +131,10 @@ block main
           .date 12.01 — 12.11
       
       .timeline.d-flex.d-sm-none
-        each step, index in ["Step.1", "Step.2", "Step.3", "Step.4"]
-          .timeline-step(class=(index === 1 ? 'active' : ''))
+        each stepLabel, index in ["Step.1", "Step.2", "Step.3", "Step.4"]
+          .timeline-step(class=(index + 1 === step ? 'active' : ''))
             .timeline-marker 
-              span #{step}
+              span #{stepLabel}
             .timeline-content
               //- .step-title #{step}
               .status-box

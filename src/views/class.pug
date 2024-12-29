@@ -108,7 +108,7 @@ block main
               span 課程資訊
           article.is-class
             .card-class-normal
-              .main-area
+              .main-area.p-0
                 p 
                   != getLoremText()
                   != getLoremText()
@@ -285,8 +285,8 @@ block main
     //-       .button--pill--2xl.mt-3
     //-         .label.label--hide--border.black--font 馬上結帳
 
-    .container.courser-recomand.mt-0.d-none.d-sm-flex
-      .row.row--course
+    .container.courser-recomand.m-0.d-none.d-sm-flex
+      .row
         each item, index in [0, 1, 2]
           .col-lg-4 
             .card--course

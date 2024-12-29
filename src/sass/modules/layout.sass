@@ -18,8 +18,8 @@ body
     max-width: 1160px
   @media (min-width: theme('screens.1440px'))
     max-width: 1300px
-  @media (min-width: theme('screens.1600px'))
-    max-width: 88.75rem
+  // @media (min-width: theme('screens.1600px'))
+  //   max-width: 88.75rem
 
 .container--slim
   &
@@ -471,18 +471,12 @@ section
     @media (max-width: theme('breakpoints.md'))
       background: #eee9e4
 .border--bottom
-  width: 80%
+  width: 100%
   border-bottom: 1px solid #222
   padding-bottom: 20px
-  position: relative
-  left: 50%
-  transform: (translateX(-50%))
-  @media (max-width: theme('breakpoints.md'))
-    width: 90%
 
 
-.section--breadcrumb + .section--article,
-.section--breadcrumb + .section--weekly
+.section--breadcrumb + .section--article
   padding-top: 0
 
 .grid--cover
@@ -554,7 +548,7 @@ section
 .section--course,
 .section--campaign
   &.is-achieved
-    background: #ebe6e1
+    background: #ede8e3
   .row--campaign
     @media (max-width: theme('breakpoints.xl'))
       margin: 0
@@ -774,6 +768,7 @@ section
   
 .section--article--steps
   &
+    padding: 40px 0 80px
     background: #f8e800
   @media (max-width: 580px)
     background: #EEE9E5
@@ -1165,6 +1160,7 @@ section
       border-left: 1px solid #BABABA
       @media (max-width: theme('breakpoints.md'))
         border: none
+        padding-left: 0
       .title
         font-family: "Noto Sans TC", serif
         padding-left: 10px
@@ -1351,6 +1347,8 @@ section
       text-underline-offset: 4px
 .section--review--body
   padding: 10px 20px
+  @media (max-width: theme('breakpoints.md'))
+    padding: 40px 0
   .reverse
     flex-wrap: wrap-reverse
   .review-collect
@@ -1362,7 +1360,8 @@ section
     font-weight: 600
     +fontSize(18px)
     font-family: 'Noto Sans TC', sans-serif
-    margin-bottom: 20px
+    @media (max-width: theme('breakpoints.md'))
+      font-size: 16px
 
 
 .timeline
@@ -1373,6 +1372,8 @@ section
   padding: 0 20px
   max-width: 300px
   position: relative
+  @media (max-width: theme('breakpoints.md'))
+    margin: 0 0 0 auto
 
   // 垂直線條
   // &::before
