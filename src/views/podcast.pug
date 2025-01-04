@@ -21,9 +21,14 @@ block main
 
     .container--slim
       .row.row--podcast
-        each item, index in [1, 2, 3, 4, 5]
+        .col-12
+          +adBanner(true)
+        each item, index in [1, 2, 3, 4, 5, 6, 7, 8]
           .col-12
             iframe(height="175", width="100%", title="媒體播放器", src="https://embed.podcasts.apple.com/tw/podcast/s3-ep80-%E9%81%B8%E8%AE%80%E6%96%B0%E8%A6%96%E9%87%8E-%E7%99%BE%E6%AD%B2%E4%BA%BA%E7%91%9E%E6%97%A9%E9%A4%90%E7%A7%98%E5%AF%86-%E8%8B%B1%E5%9C%8B%E7%A0%94%E7%A9%B6-%E4%BB%96%E5%80%91%E9%9D%A03%E7%A8%AE%E9%95%B7%E5%A3%BD%E9%A3%B2%E9%A3%9F%E5%A4%9A10%E5%B9%B4%E5%A3%BD%E5%91%BD/id1589171941?i=1000681100949&amp;itscg=30200&amp;itsct=podcast_box_player&amp;ls=1&amp;mttnsubad=1000681100949&amp;theme=light", id="embedPlayer", sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation", allow="autoplay *; encrypted-media *; clipboard-write")
+          if (index + 1) % 4 === 0 && index !== 0
+            .col-12
+              +adBanner(true)
       .buttons
         .button--more 
           .label 查看更多

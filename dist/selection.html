@@ -38,6 +38,9 @@
   <main style="visibility: hidden;">
     <div id="App"><input id="isMenuActive" type="checkbox" /><input id="isMenuNow" type="text" /><input id="isScrollDown" type="checkbox" /></div>
     <header>
+      <div class="header-ad d-none d-lg-flex">
+        <div class="ad-fake" style="width: 970px; height:250px">廣告</div>
+      </div>
       <div class="button--go-top" onclick="window.scrollTo(0, 0)">
         <div class="icon"> <i class="bi bi-chevron-up"></i></div>
       </div>
@@ -100,7 +103,7 @@
             <li><a href="./events.html">
                 <div class="label">策展</div>
               </a></li>
-            <li><a href="">
+            <li><a href="/podcast.html">
                 <div class="label">Podcast</div>
               </a></li>
           </ul>
@@ -168,7 +171,7 @@
               <li><a href="./events.html">
                   <div class="label">策展</div>
                 </a></li>
-              <li><a href="">
+              <li><a href="/podcast.html">
                   <div class="label">Podcast</div>
                 </a></li>
               <li><a href="./audios.html">
@@ -192,6 +195,9 @@
             </ul>
           </nav>
         </div>
+      </div>
+      <div class="header-ad d-flex d-lg-none">
+        <div class="ad-fake" style="width: 970px; height:250px">廣告</div>
       </div>
       <div class="header--mobile">
         <div class="container">
@@ -332,6 +338,17 @@
           });
         }
       });
+      document.addEventListener('DOMContentLoaded', () => {
+        const headerMobile = document.querySelector('.header--mobile');
+        const stickyOffset = headerMobile.offsetTop; // 獲取 header--mobile 的初始位置
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset > stickyOffset) {
+            headerMobile.classList.add('is-fixed'); // 添加固定樣式
+          } else {
+            headerMobile.classList.remove('is-fixed'); // 移除固定樣式
+          }
+        });
+      });
 
     </script>
     <section class="section--breadcrumb" style="padding-bottom: 0">
@@ -347,7 +364,13 @@
     </section>
     <section class="section--article--body">
       <div class="container">
-        <div class="section__title is-mb-0">
+        <div class="banner d-none d-md-flex">
+          <div class="ad-fake" style="width: 970px; height: 250px">廣告</div>
+        </div>
+        <div class="banner d-flex d-md-none">
+          <div class="ad-fake" style="width: 300px; height: 250px">廣告</div>
+        </div>
+        <div class="section__title is-mb-0 mt-3">
           <div class="title">全站商品</div>
         </div>
       </div>
@@ -453,6 +476,14 @@
                 </div>
               </div>
             </a></div>
+          <div class="col-12">
+            <div class="banner d-none d-md-flex">
+              <div class="ad-fake" style="width: 970px; height: 250px">廣告</div>
+            </div>
+            <div class="banner d-flex d-md-none">
+              <div class="ad-fake" style="width: 300px; height: 250px">廣告</div>
+            </div>
+          </div>
           <div class="col-12 col-sm-6"><a href="./selectionDetail.html">
               <div class="card--selection">
                 <div class="pic"> <img src="https://picsum.photos/500/300?random=016" /></div>
@@ -553,6 +584,14 @@
                 </div>
               </div>
             </a></div>
+          <div class="col-12">
+            <div class="banner d-none d-md-flex">
+              <div class="ad-fake" style="width: 970px; height: 250px">廣告</div>
+            </div>
+            <div class="banner d-flex d-md-none">
+              <div class="ad-fake" style="width: 300px; height: 250px">廣告</div>
+            </div>
+          </div>
           <div class="col-12 col-sm-6"><a href="./selectionDetail.html">
               <div class="card--selection">
                 <div class="pic"> <img src="https://picsum.photos/500/300?random=012" /></div>

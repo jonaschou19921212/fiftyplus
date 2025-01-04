@@ -38,6 +38,9 @@
   <main style="visibility: hidden;">
     <div id="App"><input id="isMenuActive" type="checkbox" /><input id="isMenuNow" type="text" /><input id="isScrollDown" type="checkbox" /></div>
     <header>
+      <div class="header-ad d-none d-lg-flex">
+        <div class="ad-fake" style="width: 970px; height:250px">廣告</div>
+      </div>
       <div class="button--go-top" onclick="window.scrollTo(0, 0)">
         <div class="icon"> <i class="bi bi-chevron-up"></i></div>
       </div>
@@ -100,7 +103,7 @@
             <li><a href="./events.html">
                 <div class="label">策展</div>
               </a></li>
-            <li><a href="">
+            <li><a href="/podcast.html">
                 <div class="label">Podcast</div>
               </a></li>
           </ul>
@@ -168,7 +171,7 @@
               <li><a href="./events.html">
                   <div class="label">策展</div>
                 </a></li>
-              <li><a href="">
+              <li><a href="/podcast.html">
                   <div class="label">Podcast</div>
                 </a></li>
               <li><a href="./audios.html">
@@ -192,6 +195,9 @@
             </ul>
           </nav>
         </div>
+      </div>
+      <div class="header-ad d-flex d-lg-none">
+        <div class="ad-fake" style="width: 970px; height:250px">廣告</div>
       </div>
       <div class="header--mobile">
         <div class="container">
@@ -332,6 +338,17 @@
           });
         }
       });
+      document.addEventListener('DOMContentLoaded', () => {
+        const headerMobile = document.querySelector('.header--mobile');
+        const stickyOffset = headerMobile.offsetTop; // 獲取 header--mobile 的初始位置
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset > stickyOffset) {
+            headerMobile.classList.add('is-fixed'); // 添加固定樣式
+          } else {
+            headerMobile.classList.remove('is-fixed'); // 移除固定樣式
+          }
+        });
+      });
 
     </script>
     <section class="section--breadcrumb">
@@ -416,18 +433,28 @@
             </article>
           </div>
           <div class="col-12 col-md-3">
-            <div class="panel--review d-none d-md-block">
-              <div class="title">試用募集中</div>
-              <div class="caption">
-                <div class="review--text">體驗品 100 份</div>
-                <div class="review--countdown">
-                  <div class="label"><span>募集倒數</span><b>11</b><span>天</span></div>
-                  <div class="label"><b>12</b><span>時</span><b>30</b><span>分</span><b>30</b><span>秒</span></div>
+            <div class="sticky-container">
+              <div class="panel--review d-none d-md-block">
+                <div class="title">試用募集中</div>
+                <div class="caption">
+                  <div class="review--text">體驗品 100 份</div>
+                  <div class="review--countdown">
+                    <div class="label"><span>募集倒數</span><b>11</b><span>天</span></div>
+                    <div class="label"><b>12</b><span>時</span><b>30</b><span>分</span><b>30</b><span>秒</span></div>
+                  </div>
+                </div>
+                <div class="buttons"><a class="button--pill--lg" href="./reviewRegister.html">
+                    <div class="label">申請試用</div>
+                  </a></div>
+              </div>
+              <div class="mt-3">
+                <div class="banner d-none d-md-flex">
+                  <div class="ad-fake" style="width: 970px; height: 250px">廣告</div>
+                </div>
+                <div class="banner d-flex d-md-none">
+                  <div class="ad-fake" style="width: 300px; height: 250px">廣告</div>
                 </div>
               </div>
-              <div class="buttons"> <a class="button--pill--lg" href="./reviewRegister.html">
-                  <div class="label">申請試用</div>
-                </a></div>
             </div>
           </div>
         </div>

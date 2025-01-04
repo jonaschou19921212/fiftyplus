@@ -55,7 +55,9 @@ block main
               .caption
                 h3
                   != item
-      
+          if (index + 1) % 4 === 0 && index !== 0
+            .col-12
+              +adBanner(true)
       .buttons
         .button--more 
           .label 查看更多

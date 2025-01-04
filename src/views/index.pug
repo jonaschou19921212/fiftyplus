@@ -58,16 +58,7 @@ block main
 
   section.section--banner
     .container--slim
-      .banner.d-none.d-md-flex
-        img(
-          data-src='https://via.placeholder.com/970x250'
-          alt='廣告'
-        ).lazyload
-      .banner.d-flex.d-md-none
-        img(
-          data-src='https://via.placeholder.com/360x300'
-          alt='廣告'
-        ).lazyload
+      +adBanner(false)
 
   section.section--article
     .container
@@ -110,16 +101,7 @@ block main
 
   section.section--banner
     .container--slim
-      .banner.d-none.d-md-flex
-        img(
-          data-src='https://via.placeholder.com/970x250'
-          alt='廣告'
-        ).lazyload
-      .banner.d-flex.d-md-none
-        img(
-          data-src='https://via.placeholder.com/360x300'
-          alt='廣告'
-        ).lazyload
+      +adBanner(true)
 
   section.section--video
     .container
@@ -175,16 +157,7 @@ block main
 
   section.section--banner
     .container--slim
-      .banner.d-none.d-md-flex
-        img(
-          data-src='https://via.placeholder.com/970x250'
-          alt='廣告'
-        ).lazyload
-      .banner.d-flex.d-md-none
-        img(
-          data-src='https://via.placeholder.com/360x300'
-          alt='廣告'
-        ).lazyload
+      +adBanner(true)
 
   section.section--podcast
     .container
@@ -214,16 +187,7 @@ block main
 
   section.section--banner
     .container--slim
-      .banner.d-none.d-md-flex
-        img(
-          data-src='https://via.placeholder.com/970x250'
-          alt='廣告'
-        ).lazyload
-      .banner.d-flex.d-md-none
-        img(
-          data-src='https://via.placeholder.com/360x300'
-          alt='廣告'
-        ).lazyload
+      +adBanner(true)
 
   section.section--article--body
     .container
@@ -311,16 +275,7 @@ block main
 
   section.section--banner
     .container--slim
-      .banner.d-none.d-md-flex
-        img(
-          data-src='https://via.placeholder.com/970x250'
-          alt='廣告'
-        ).lazyload
-      .banner.d-flex.d-md-none
-        img(
-          data-src='https://via.placeholder.com/360x300'
-          alt='廣告'
-        ).lazyload
+      +adBanner(false)
 
   //- .container--slim.d-none.d-md-block
   //-   .banner--weekly
@@ -440,20 +395,6 @@ block main
           .icon 
             i.bi.bi-caret-down-fill
 
-  section.section--banner
-    .container--slim
-      .banner.d-none.d-md-flex
-        img(
-          data-src='https://via.placeholder.com/1500x450'
-          alt='廣告'
-        ).lazyload
-
-      .banner.d-flex.d-md-none
-        img(
-          data-src='https://via.placeholder.com/360x450'
-          alt='廣告'
-        ).lazyload
-
   section.section--snippet
     .container
       .section__title 
@@ -558,13 +499,4 @@ block main
 
   section.section--banner
     .container--slim
-      .banner.d-none.d-md-flex
-        img(
-          data-src='https://via.placeholder.com/970x250'
-          alt='廣告'
-        ).lazyload
-      .banner.d-flex.d-md-none
-        img(
-          data-src='https://via.placeholder.com/360x300'
-          alt='廣告'
-        ).lazyload
+      +adBanner(true)

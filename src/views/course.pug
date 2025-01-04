@@ -63,8 +63,11 @@ block main
           .label 線上學校
         .button--pill--xs
           .label 過往課程
+      .row
+        .col-12.mb-5
+          +adBanner(true)
       .row.row--course
-        each item, index in [0, 1, 2, 3, 4, 5]
+        each item, index in [0, 1, 2, 3, 4, 5, 6, 7]
           .col-lg-6 
             .card--course
               .pic
@@ -78,6 +81,9 @@ block main
                 .buttons
                   .button--pill--xl
                     .label 我要報名
+          if (index + 1) % 4 === 0 && index !== 0
+            .col-12
+              +adBanner(true)
 
   section.section--course.is-achieved
     .container--slim
@@ -98,6 +104,9 @@ block main
                 .buttons
                   .button--pill--xl.is-dark-gray
                     .label 我要報名
+          if (index + 1) % 4 === 0 && index !== 0
+            .col-12
+              +adBanner(true)
       .buttons
         .button--more 
           .label 查看更多

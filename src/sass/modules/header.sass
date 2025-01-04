@@ -73,6 +73,7 @@ header
     padding: 0
     transition: all 0.3s ease
     background: white
+    position: relative
   > section
     &
       padding: 0
@@ -97,6 +98,7 @@ header
     padding: 0
     width: 100%
     background: white
+    position: relative
   > .container
     display: grid
     grid-template-columns: 1fr 100px 1fr
@@ -153,7 +155,7 @@ header
 
 .header--mobile
   &
-    position: fixed
+    position: sticky
     top: 0
     left: 0
     z-index: 9
@@ -161,6 +163,8 @@ header
     transition: all 0.3s
     background: white
     border-bottom: 1px solid #ebe6e1
+  &.is-fixed
+    position: fixed
   &.is-active
     transform: translateX(0)
   > .container
@@ -494,3 +498,10 @@ header
   @media (max-width: theme('breakpoints.lg'))
     &
       display: none
+.header-ad
+  position: sticky
+  top: 0
+  display: flex
+  justify-content: center
+  align-content: center
+  background: #000

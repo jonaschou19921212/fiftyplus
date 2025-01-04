@@ -155,15 +155,8 @@ block main
                 .button--link--dark
               a(href="")
                 .cart
-            //- .banner.mt-4.mb-4
-            //-   img(
-            //-     data-src='https://picsum.photos/300/300'
-            //-     alt='廣告'
-            //-   ).lazyload
-            //- .banner.mb-4
-            //-   img(
-            //-     data-src='https://picsum.photos/300/300'
-            //-     alt='廣告'
-            //-   ).lazyload
+            .mt-3
+              +adBanner(true)
+            
     .fixed-checkout.d-flex.d-md-none
       include components/mobileShareBar

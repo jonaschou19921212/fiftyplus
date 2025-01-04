@@ -218,3 +218,21 @@ mixin formElements(data)
   let formatAmount = function(amount) {
     return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
+
+mixin adBanner(isWide)
+  if isWide
+    .banner.d-none.d-md-flex
+      .ad-fake(style="width: 970px; height: 250px") 廣告
+    .banner.d-flex.d-md-none
+      .ad-fake(style="width: 300px; height: 250px") 廣告
+  else
+    .banner.d-none.d-md-flex
+      .ad-fake(style="width: 970px; height: 90px") 廣告
+    .banner.d-flex.d-md-none
+      .ad-fake(style="width: 320px; height: 100px") 廣告
+
+mixin adSideBanner()
+  .banner.d-none.d-md-flex
+    .ad-fake(style="width: 300px; height: 250px") 廣告-s
+  .banner.d-flex.d-md-none
+    .ad-fake(style="width: 300px; height: 100px") 廣告-s

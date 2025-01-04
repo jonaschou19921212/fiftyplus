@@ -38,6 +38,9 @@
   <main style="visibility: hidden;">
     <div id="App"><input id="isMenuActive" type="checkbox" /><input id="isMenuNow" type="text" /><input id="isScrollDown" type="checkbox" /></div>
     <header>
+      <div class="header-ad d-none d-lg-flex">
+        <div class="ad-fake" style="width: 970px; height:250px">廣告</div>
+      </div>
       <div class="button--go-top" onclick="window.scrollTo(0, 0)">
         <div class="icon"> <i class="bi bi-chevron-up"></i></div>
       </div>
@@ -100,7 +103,7 @@
             <li><a href="./events.html">
                 <div class="label">策展</div>
               </a></li>
-            <li><a href="">
+            <li><a href="/podcast.html">
                 <div class="label">Podcast</div>
               </a></li>
           </ul>
@@ -168,7 +171,7 @@
               <li><a href="./events.html">
                   <div class="label">策展</div>
                 </a></li>
-              <li><a href="">
+              <li><a href="/podcast.html">
                   <div class="label">Podcast</div>
                 </a></li>
               <li><a href="./audios.html">
@@ -192,6 +195,9 @@
             </ul>
           </nav>
         </div>
+      </div>
+      <div class="header-ad d-flex d-lg-none">
+        <div class="ad-fake" style="width: 970px; height:250px">廣告</div>
       </div>
       <div class="header--mobile">
         <div class="container">
@@ -332,6 +338,17 @@
           });
         }
       });
+      document.addEventListener('DOMContentLoaded', () => {
+        const headerMobile = document.querySelector('.header--mobile');
+        const stickyOffset = headerMobile.offsetTop; // 獲取 header--mobile 的初始位置
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset > stickyOffset) {
+            headerMobile.classList.add('is-fixed'); // 添加固定樣式
+          } else {
+            headerMobile.classList.remove('is-fixed'); // 移除固定樣式
+          }
+        });
+      });
 
     </script>
     <section class="section--breadcrumb special--bg">
@@ -378,6 +395,22 @@
     </section>
     <section class="section--article--body pb-0">
       <div class="container">
+        <div class="row mb-3 d-none d-md-flex">
+          <div class="banner d-none d-md-flex">
+            <div class="ad-fake" style="width: 970px; height: 250px">廣告</div>
+          </div>
+          <div class="banner d-flex d-md-none">
+            <div class="ad-fake" style="width: 300px; height: 250px">廣告</div>
+          </div>
+        </div>
+        <div class="row mb-3 d-flex d-md-none">
+          <div class="banner d-none d-md-flex">
+            <div class="ad-fake" style="width: 970px; height: 90px">廣告</div>
+          </div>
+          <div class="banner d-flex d-md-none">
+            <div class="ad-fake" style="width: 320px; height: 100px">廣告</div>
+          </div>
+        </div>
         <div class="row">
           <div class="col-12 col-md-9">
             <div class="article--player">
@@ -390,9 +423,21 @@
               <blockquote class="quote left--cancel">
                 <p>編按：如何和年輕人共事？熟齡族群在職場待久了，不免感受到世代差異。和MZ世代一起工作，該怎麼給予指示，才能讓對方把事情做好？本文為韓國9位不同業界專家提出的建議，讓職場資深工作者們找到與MZ世代共事的舒服方式。</p>
               </blockquote>
+              <div class="banner d-none d-md-flex">
+                <div class="ad-fake" style="width: 970px; height: 90px">廣告</div>
+              </div>
+              <div class="banner d-flex d-md-none">
+                <div class="ad-fake" style="width: 320px; height: 100px">廣告</div>
+              </div>
               <p class="color--second">對張經理而言，年輕的MZ世代（50+註：由1981～1996年間出生的M世代（Millennials）和1997～2010年之間出生的「Z世代」合成的族群）似乎是一道高牆。因為以經理的立場來說，應該要鼓勵同事間相互合作，但他們就好像從外太空來的人種一樣非常難理解。就算支援部分業務或是部分授權，還是無法從他們那裡得到好的回饋。</p>
               <h3>以為ＭＺ世代都很主動 卻發現給彈性或規定太具體都引反感都引反感</h3>
               <p class="color--second">A公司今年已經邁入第37個年頭。在像現在這樣變化無常的時代中，他們擁有悠久的歷史，組織的規模大、部門多，員工人數也很多。不過，組織文化就像官僚體系一樣，某些部門文化甚至像軍隊一樣，必須絕對服從長官的命令。<a href="#">(閱讀相關文章：文章文章文章文章）</a></p>
+              <div class="banner d-none d-md-flex">
+                <div class="ad-fake" style="width: 970px; height: 90px">廣告</div>
+              </div>
+              <div class="banner d-flex d-md-none">
+                <div class="ad-fake" style="width: 320px; height: 100px">廣告</div>
+              </div>
               <p class="color--second">所以不久前甚至還花一大筆錢參加名為「激勵MZ世代的領導力」的演講，但反而發現更多難以理解的方面，無法抓到頭緒。教育內容核心提到：<span style="font-weight: 700"> MZ世代的員工會更投入在自己主動找來做的事情上，而不是被交代的事情。他們想被認同的欲望很強，想要得到充分的權力，立下大功。」</span></p>
               <blockquote class="text-content"> 對張經理而言，年輕的MZ世代因為以經理的立場來說，應該要鼓勵同事間相互合作，但他們就好像從外太空來的人種一樣非常難理解。就算支援部分業務或是部分授權，還是無法從他們那裡得到好的回饋。</blockquote>
             </article>
@@ -433,9 +478,12 @@
             </div>
           </div>
           <div class="col-12 col-md-3">
-            <div class="container d-none d-md-block">
-              <div class="banner--donate">
-                <div class="pic"><img class="lazyload" data-src="https://via.placeholder.com/300x180" alt="廣告" /></div>
+            <div class="d-none d-md-block mb-3">
+              <div class="banner d-none d-md-flex">
+                <div class="ad-fake" style="width: 300px; height: 250px">廣告-s</div>
+              </div>
+              <div class="banner d-flex d-md-none">
+                <div class="ad-fake" style="width: 300px; height: 100px">廣告-s</div>
               </div>
             </div>
             <div class="panel--latest article-margin">
@@ -443,23 +491,23 @@
                 <div class="title">熱門文章</div>
                 <div class="item--latest">
                   <div class="no">1</div>
-                  <div class="caption font-light">怎麼挑鍋子，才不會把毒素吃下肚？達人選鍋，5大材質優缺點一次聽懂</div>
+                  <div class="caption font-light">75歲終於踏出人生第一次自由行，像單身貴族好快樂！許美月：在家裡怕一輩子，永遠都走不出去</div>
                 </div>
                 <div class="item--latest">
                   <div class="no">2</div>
-                  <div class="caption font-light">生氣是慢性自殺！洛桑加參醫師：每天1個練習，從此心平氣和</div>
+                  <div class="caption font-light">不爭，卻收穫最豐盛的人生！模仿天王郭子乾的「被動式積極」哲學</div>
                 </div>
                 <div class="item--latest">
                   <div class="no">3</div>
-                  <div class="caption font-light">83歲一頭白髮，卻氣色絕佳！光田醫院總院長王乃弘的早餐菜單：50歲才開始健康生活，絕對來得及</div>
+                  <div class="caption font-light">60歲告別主播台，轉行當心理諮商師！靳秀麗：幸福不是退休養老，「生產老化」活出無憾人生</div>
                 </div>
                 <div class="item--latest">
                   <div class="no">4</div>
-                  <div class="caption font-light">未來該注意哪些病，基因告訴你！曾嶔元醫師：如何掌握健康弱點，精準預防？</div>
+                  <div class="caption font-light">如何退休後過更好？心理諮商師靳秀麗：1個「生產老化」新觀念，啟動身體健康、內心的內無比...</div>
                 </div>
                 <div class="item--latest">
                   <div class="no">5</div>
-                  <div class="caption font-light">83歲一頭白髮，卻氣色絕佳！光田醫院總院長王乃弘的早餐菜單：50歲才開始健康生活，絕對來得及</div>
+                  <div class="caption font-light">75歲終於踏出人生第一次自由行，像單身貴族好快樂！許美月：在家裡怕一輩子，永遠都走不出去</div>
                 </div>
               </div>
               <div class="join-us row">
@@ -474,11 +522,19 @@
           </div>
         </div>
       </div>
+      <div class="container--slim mt-5">
+        <div class="banner d-none d-md-flex">
+          <div class="ad-fake" style="width: 970px; height: 250px">廣告</div>
+        </div>
+        <div class="banner d-flex d-md-none">
+          <div class="ad-fake" style="width: 300px; height: 250px">廣告</div>
+        </div>
+      </div>
       <div class="container courser-recomand mb-0 d-none d-sm-flex">
         <div class="row">
           <div class="col-lg-4">
             <div class="card--course">
-              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png" /></div>
+              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4338/carousel/4338.png" /></div>
               <div class="caption">
                 <div class="info">
                   <div class="date">2024.11.06 — 2024.12.11</div>
@@ -494,7 +550,7 @@
           </div>
           <div class="col-lg-4">
             <div class="card--course">
-              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/33/3233/carousel/3233.png" /></div>
+              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/23/3923/carousel/3923.png" /></div>
               <div class="caption">
                 <div class="info">
                   <div class="date">2024.11.06 — 2024.12.11</div>
@@ -510,7 +566,7 @@
           </div>
           <div class="col-lg-4">
             <div class="card--course">
-              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/35/4335/carousel/4335.png" /></div>
+              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/42/4042/carousel/4042.png" /></div>
               <div class="caption">
                 <div class="info">
                   <div class="date">2024.11.06 — 2024.12.11</div>
@@ -544,7 +600,7 @@
               </div>
             </swiper-slide><swiper-slide class="bg-theme">
               <div class="card--course audio-type">
-                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/42/4042/carousel/4042.png" /></div>
+                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/35/4335/carousel/4335.png" /></div>
                 <div class="caption">
                   <div class="info">
                     <div class="date">2024.11.06 — 2024.12.11</div>
@@ -559,7 +615,7 @@
               </div>
             </swiper-slide><swiper-slide class="bg-theme">
               <div class="card--course audio-type">
-                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4338/carousel/4338.png" /></div>
+                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/33/3233/carousel/3233.png" /></div>
                 <div class="caption">
                   <div class="info">
                     <div class="date">2024.11.06 — 2024.12.11</div>

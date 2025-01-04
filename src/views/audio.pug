@@ -53,6 +53,10 @@ block main
      
   section.section--audio--body.pb-0
     .container
+      .row.mb-3.d-none.d-md-flex
+        +adBanner(true)
+      .row.mb-3.d-flex.d-md-none
+        +adBanner(false)
       .row
         .col-12.col-md-9
           article 
@@ -65,20 +69,10 @@ block main
             p.color--second
               | 所以不久前甚至還花一大筆錢參加名為「激勵MZ世代的領導力」的演講，但反而發現更多難以理解的方面，無法抓到頭緒。教育內容核心提到：
               span(style="font-weight: 700")  MZ世代的員工會更投入在自己主動找來做的事情上，而不是被交代的事情。他們想被認同的欲望很強，想要得到充分的權力，立下大功。」
-            .banner.mb-4
-              img(
-                data-src='https://via.placeholder.com/360x100'
-                alt='廣告'
-                style="width:100%"
-              ).lazyload
-            
+           
         .col-12.col-md-3
-          .banner.mb-4
-            img(
-              data-src='https://via.placeholder.com/360x300'
-              alt='廣告'
-            ).lazyload
-          
+          .d-none.d-md-block.mb-3
+            +adSideBanner
           .join-us.row
             .col-12.col-sm-5.col-md-12
               .fb-area.col-6.col-md-12
@@ -92,6 +86,8 @@ block main
                   | 加LINE或新知 
                   .dash &nbsp;
                   i.bi.bi-play-fill
+    .container--slim.mt-5
+      +adBanner(true)
     .container.courser-recomand.mb-0.d-none.d-sm-flex
       .row
         each item, index in [0, 1, 2]

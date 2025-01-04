@@ -20,13 +20,17 @@ block main
             a(
               href=""
             ) 運動
+  section.section--banner
+    .container--slim
+      +adBanner(true)
+
   section.section--article--body
     .container
       .section__title 
         .title 運動
     .container--slim
       .row.row--article
-        each item, index in ['人物', '健康', '心靈', '人物', '健康', '心靈', '人物', '健康', '心靈', '人物']
+        each item, index in [1,2,3,4,5,6,7,8]
           .col-md-6
             .card--article
               a.pic(
@@ -46,6 +50,9 @@ block main
               )
                 h3
                   != getLoremText()
+          if (index + 1) % 4 === 0 && index !== 0
+            .col-12
+              +adBanner(true)
       .buttons
         .button--more 
           .label 查看更多

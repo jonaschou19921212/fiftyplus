@@ -12,7 +12,7 @@
     { label: '生活', href: './articles.html', target: null },
     { label: '理財', href: './articles.html', target: null },
     { label: '策展', href: './events.html', target: null },
-    { label: 'Podcast', href: '', target: null, qlink: true },
+    { label: 'Podcast', href: '/podcast.html', target: null, qlink: true },
     { label: '影音', href: './audios.html', target: null, qlink: true },
     { label: '週刊', href: './weekly.html', target: null, qlink: true },
     { label: '評鑑', href: './reviews.html', target: null, qlink: true },
@@ -37,6 +37,8 @@
 
 
 header
+  .header-ad.d-none.d-lg-flex
+    .ad-fake(style="width: 970px; height:250px") 廣告
   .button--go-top(
     onclick='window.scrollTo(0, 0)'
   )
@@ -139,7 +141,8 @@ header
                       )
                         .label
                           = sub.label
-
+  .header-ad.d-flex.d-lg-none
+    .ad-fake(style="width: 970px; height:250px") 廣告
   .header--mobile
     .container
       .logo--wrapper
@@ -234,4 +237,15 @@ script.
         }
     });
 
-  
+  document.addEventListener('DOMContentLoaded', () => {
+      const headerMobile = document.querySelector('.header--mobile');
+      const stickyOffset = headerMobile.offsetTop; // 獲取 header--mobile 的初始位置
+
+      window.addEventListener('scroll', () => {
+          if (window.pageYOffset > stickyOffset) {
+              headerMobile.classList.add('is-fixed'); // 添加固定樣式
+          } else {
+              headerMobile.classList.remove('is-fixed'); // 移除固定樣式
+          }
+      });
+  });

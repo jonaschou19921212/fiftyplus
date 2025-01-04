@@ -30,7 +30,8 @@ block main
   
   section.section--article--body      
     .container
-      .section__title.is-mb-0
+      +adBanner(true)
+      .section__title.is-mb-0.mt-3
         .title 全站商品
     .container--slim
       .row.row--selection
@@ -56,7 +57,9 @@ block main
                       .button--cart--xs
                         .icon 
                           i.bi.bi-cart-fill
-
+          if (index + 1) % 4 === 0 && index !== 0
+            .col-12
+              +adBanner(true)
       .buttons
         .button--more 
           .label 查看更多

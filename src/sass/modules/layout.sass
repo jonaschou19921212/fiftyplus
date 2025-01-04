@@ -423,16 +423,16 @@ section
     &
       --bs-gutter-x: 20px
 
-.row--article
-  @media (min-width: theme('screens.lg'))
-    &
-      > *:nth-child(n+4)
-        display: none
+// .row--article
+//   @media (min-width: theme('screens.lg'))
+//     &
+//       > *:nth-child(n+9)
+//         display: none
 
 .row--weekly
   @media (max-width: theme('breakpoints.lg'))
-    > *:nth-child(n+3)
-      display: none
+    // > *:nth-child(n+3)
+    //   display: none
 
 .list--snippet--mobile 
   &
@@ -1362,7 +1362,12 @@ section
     font-family: 'Noto Sans TC', sans-serif
     @media (max-width: theme('breakpoints.md'))
       font-size: 16px
-
+  .sticky-container
+    position: sticky
+    top: 80px
+    @media (max-width: theme('breakpoints.lg'))
+      position: relative
+      top: 0
 
 .timeline
   display: flex

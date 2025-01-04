@@ -20,6 +20,9 @@ block main
             a(
               href=""
             ) 熱門
+  section.section--banner
+    .container--slim
+      +adBanner(true)
   section.section--audio--body
     .container
       .section__title 
@@ -63,7 +66,7 @@ block main
 
     .container--slim
       .row.row--video
-        each item, index in ['人物', '健康', '心靈', '火火']
+        each item, index in ['人物', '健康', '心靈', '火火', 1, 2, 3, 4]
           .col-md-6.mb-5.mb-lg-3
             .card--video
               a.pic(
@@ -75,6 +78,9 @@ block main
               a.caption(href="./audio.html")
                 h3
                   != getLoremText()
+          if (index + 1) % 4 === 0 && index !== 0
+            .col-12
+              +adBanner(true)
       .buttons
         .button--more 
           .label 查看更多

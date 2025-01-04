@@ -56,36 +56,42 @@ block main
     
   section.section--campaign.is-achieved
     .container--slim
-      .section__title.is-small
+      +adBanner(true)
+      .section__title.is-small.mt-3
         .title 活動報名中
-      .row.row--campaign
-        .card--campaign
-          .pic
-            img(
-              data-src=`${getLoremCourse()}`
-            ).lazyload
-          .caption
-            .title
-              = `${getLoremText()}`
-            dl.dl--campaign--detail
-              dt 
-                .icon
-                  | <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16"> <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5"/> </svg>
-              dd 2024.12.11（五）19:30
-              dt 
-                .icon
-                  | <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16"> <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/> </svg>
-              dd 享象表演藝術場館—台北市信義區信義路五段7號
-            .buttons 
-              a.button--pill--lg
-                .label 我要報名
+      each item, index in [0, 1, 2, 3, 4, 5, 6, 7]
+        .row.row--campaign
+          .card--campaign
+            .pic
+              img(
+                data-src=`${getLoremCourse()}`
+              ).lazyload
+            .caption
+              .title
+                = `${getLoremText()}`
+              dl.dl--campaign--detail
+                dt 
+                  .icon
+                    | <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16"> <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5"/> </svg>
+                dd 2024.12.11（五）19:30
+                dt 
+                  .icon
+                    | <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16"> <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/> </svg>
+                dd 享象表演藝術場館—台北市信義區信義路五段7號
+              .buttons 
+                a.button--pill--lg
+                  .label 我要報名
+        if (index + 1) % 2 === 0 && index !== 0
+          .row.mb-4
+            .col-12
+              +adBanner(true)
 
   section.section--campaign
     .container--slim
       .section__title.is-small
         .title 精彩活動回顧
       .row.row--campaign
-        each item, index in [0, 1]
+        each item, index in [0, 1, 2, 3, 4, 5, 6, 7]
           .card--campaign
             .pic
               img(
@@ -108,7 +114,9 @@ block main
                   .label 活動介紹
                 a.button--pill--lg
                   .label 精彩報導
-                
+          if (index + 1) % 2 === 0 && index !== 0
+            .col-12.mb-4
+              +adBanner(true)         
       .buttons
         .button--more 
           .label 查看更多

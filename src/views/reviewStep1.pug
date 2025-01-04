@@ -25,24 +25,27 @@ block pannel-mobile
       )
         .label 申請試用
 block sidebar
-  .panel--review.d-none.d-md-block
-    .title 試用募集中
-    .caption
-      .review--text 體驗品 100 份
-      .review--countdown 
-        .label
-          span 募集倒數
-          b 11
-          span 天
-        .label
-          b 12
-          span 時
-          b 30
-          span 分
-          b 30
-          span 秒
-    .buttons 
-      a.button--pill--lg(
-        href='./reviewRegister.html'
-      )
-        .label 申請試用
+  .sticky-container
+    .panel--review.d-none.d-md-block
+      .title 試用募集中
+      .caption
+        .review--text 體驗品 100 份
+        .review--countdown 
+          .label
+            span 募集倒數
+            b 11
+            span 天
+          .label
+            b 12
+            span 時
+            b 30
+            span 分
+            b 30
+            span 秒
+      .buttons
+        a.button--pill--lg(
+          href='./reviewRegister.html'
+        )
+          .label 申請試用
+    .mt-3
+      +adBanner(true)

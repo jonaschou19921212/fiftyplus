@@ -74,7 +74,8 @@ block main
   section.section--article
     each catalog in ['人物', '健康', '心靈']
       .container
-        .section__title 
+        +adBanner(true)
+        .section__title.mt-5
           .title
             != catalog
       .container--slim
