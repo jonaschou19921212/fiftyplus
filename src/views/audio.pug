@@ -71,8 +71,7 @@ block main
               span(style="font-weight: 700")  MZ世代的員工會更投入在自己主動找來做的事情上，而不是被交代的事情。他們想被認同的欲望很強，想要得到充分的權力，立下大功。」
            
         .col-12.col-md-3
-          .d-none.d-md-block.mb-3
-            +adSideBanner
+          
           .join-us.row
             .col-12.col-sm-5.col-md-12
               .fb-area.col-6.col-md-12
@@ -83,9 +82,11 @@ block main
             .col-12.col-sm-5.col-md-12
               .line-area.col-6.col-md-12
                 a.join-text(href="")
-                  | 加LINE或新知 
+                  | 加LINE獲新知 
                   .dash &nbsp;
                   i.bi.bi-play-fill
+            .d-none.d-md-block.mb-3
+              +adSideBanner
     .container--slim.mt-5
       +adBanner(true)
     .container.courser-recomand.mb-0.d-none.d-sm-flex

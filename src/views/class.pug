@@ -26,7 +26,7 @@ block main
       .class-header--cover
         .page--cover 
           img(
-            src="https://picsum.photos/800/600"
+            src="https://picsum.photos/960/720"
           )
         .description
           .title  亞培X50+保護力EP1-了解自己的身體狀態與基本知識
@@ -48,13 +48,25 @@ block main
             p 05/31
     .quick-bar 
       a.item--link(href="#intro")
-        .item.active 課程介紹
+        .item.active 
+          | 課程
+          br.d-static.d-sm-none
+          | 介紹
       a.item--link(href="#outline")
-        .item 課程大綱
+        .item 
+          | 課程
+          br.d-static.d-sm-none
+          | 大綱
       a.item--link(href="#information")
-        .item 課程資訊
+        .item 
+          | 課程
+          br.d-static.d-sm-none
+          | 資訊
       a.item--link(href="#notice")
-        .item 注意事項
+        .item 
+          | 注意
+          br.d-static.d-sm-none
+          | 事項
 
   section.section--class--body.pb-0
     .container
@@ -177,7 +189,7 @@ block main
               .caption
                 .review--countdown 
                   .label
-                    span 募集倒數
+                    span 課程倒數
                     b 11
                     span 天
                   .label
@@ -213,6 +225,12 @@ block main
           p 優惠方案優惠方案
           p 優惠方案優惠方案優惠方案優惠方案
       form.apply
+        .item.d-none.d-md-flex
+          .form--radio 
+          .content 
+            .subject 課程
+            .price 價格
+            .count--area 數量
         each item, index in [1, 2]
           .item
             .form--radio 
@@ -254,14 +272,19 @@ block main
                 != formatAmount(16000)
               .amount#totalAmount 合計＄
                 != formatAmount(16000)
-      .bottom-group
-        a.w-100(href="./login.html")
-          .button--pill--full
-            .label.label--hide--border 登入
-        a.w-100(href="./register.html")
-          .button--pill--full.is-white
-            .label.label--hide--border 註冊
-      .hint 此課程需會員登入才可報名，請登入或註冊後繼續報名，謝謝
+      //- .bottom-group
+      //-   a.w-100(href="./login.html")
+      //-     .button--pill--full
+      //-       .label.label--hide--border 登入
+      //-   a.w-100(href="./register.html")
+      //-     .button--pill--full.is-white
+      //-       .label.label--hide--border 註冊
+      .hint 
+        | 此課程需會員登入才可報名，請
+        a(href="./login.html") 登入
+        | 或
+        a(href="./register.html") 註冊
+        | 後繼續報名，謝謝
 
    
     //- .container

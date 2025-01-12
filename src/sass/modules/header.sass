@@ -1,6 +1,6 @@
 .drawer
   &
-    position: fixed
+    position: absolute
     top: 60px
     left: 0
     // display: none
@@ -12,8 +12,10 @@
     transform: translateX(100%)
     transition: all 0.3s ease
     padding-bottom: 120px
+    display: none
   &.is-active
     transform: translateX(0)
+    display: block
   .buttons
     padding: 24px 0
     margin-bottom: 0
@@ -60,14 +62,21 @@ header
   &
     display: flex
     justify-content: center
-    width: 100px
-    height: 100px
+    width: 120px
+    height: 120px
     background: var(--theme-color)
   > .logo--black
     max-width: 70px
-
+.header--desktop--container
+  & 
+    position: sticky
+    top: 0
+    width: 100%
+  &.is-fixed
+    position: fixed
 .header--desktop
   &
+    top: 0
     padding: 0
     width: 100%
     padding: 0
@@ -76,7 +85,7 @@ header
     position: relative
   > section
     &
-      padding: 0
+      padding: 0 0 10px 0
       border-bottom: 1px solid #515050
     > .container
       height: 70px
@@ -95,7 +104,7 @@ header
 
 .header--nav
   &
-    padding: 0
+    padding: 0 0 10px 0
     width: 100%
     background: white
     position: relative

@@ -60,7 +60,9 @@ block main
                     data-src=`${getLoremYoutube()}`
                   ).lazyload
                 a.caption(href="./audio.html")
-                  h2.mt-3
+                  h2.light.mt-3.d-none.d-sm-block
+                    != getLoremText()
+                  h3.light.mt-3.d-block.d-sm-none
                     != getLoremText()
 
 
@@ -78,7 +80,7 @@ block main
               a.caption(href="./audio.html")
                 h3
                   != getLoremText()
-          if (index + 1) % 4 === 0 && index !== 0
+          if (index === 1 || (index + 3) % 4 === 0 && index !== 0 )
             .col-12
               +adBanner(true)
       .buttons

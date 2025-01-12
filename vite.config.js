@@ -93,6 +93,8 @@ export default defineConfig({
         historyOrder: resolve(__dirname, "./src/historyOrder.html"),
         audio: resolve(__dirname, "./src/audio.html"),
         audios: resolve(__dirname, "./src/audios.html"),
+        privacy: resolve(__dirname, "./src/privacy.html"),
+        personalPrivacy: resolve(__dirname, "./src/personalPrivacy.html"),
         article: resolve(__dirname, "./src/article.html"),
         articles: resolve(__dirname, "./src/articles.html"),
         confirm: resolve(__dirname, "./src/confirm.html"),

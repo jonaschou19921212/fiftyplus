@@ -80,7 +80,7 @@ block main
                 dd 享象表演藝術場館—台北市信義區信義路五段7號
               .buttons 
                 a.button--pill--lg
-                  .label 我要報名
+                  .label 活動介紹
         if (index + 1) % 2 === 0 && index !== 0
           .row.mb-4
             .col-12
@@ -91,7 +91,7 @@ block main
       .section__title.is-small
         .title 精彩活動回顧
       .row.row--campaign
-        each item, index in [0, 1, 2, 3, 4, 5, 6, 7]
+        each item, index in [0, 1, 2, 3]
           .card--campaign
             .pic
               img(

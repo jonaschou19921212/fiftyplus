@@ -76,7 +76,7 @@ section
     margin-bottom: 40px
   @media (max-width: theme('breakpoints.md'))
     &
-      padding-top: 61px
+      // padding-top: 61px
       margin-bottom: 0
       background: transparent
     .swiper--banner
@@ -305,7 +305,7 @@ section
 
     .price
       position: relative
-      margin-bottom: 20px
+      margin-top: 40px
       display: flex
       justify-content: flex-end
       align-items: center
@@ -457,7 +457,7 @@ section
   &
     padding: 32px 0
     @media (max-width: theme('screens.lg'))
-      margin-top: 50px
+      // margin-top: 50px
       padding-bottom: 0
   &.is-sp
     background: #eee9e4
@@ -526,7 +526,7 @@ section
       background: linear-gradient(180deg, #FFFFFF 60%, #f5e500 60%)
   p
     font-family: 'Noto Sans TC', sans-serif
-    font-size: 21px
+    +fontSize(18px)
     margin-bottom: 20px
   .pic--wrapper
     &
@@ -534,9 +534,16 @@ section
       margin: 0 auto 32px
     .pic
       margin-bottom: 10px
+      .square
+        aspect-ratio: 1/1
     .caption
       font-size: 16px
       font-family: 'Noto Sans TC', sans-serif
+    .img-note
+      font-size: 16px
+      font-family: 'Noto Sans TC', sans-serif
+      color: #777777
+      letter-spacing: .25em
 
   .youtube--wrapper
     &
@@ -597,6 +604,7 @@ section
       width: 100%
       height: 100%
       object-fit: cover
+    
 
 .section--event--detail 
   &
@@ -618,6 +626,8 @@ section
 .section--donate
   .container--slim + .container--slim
     margin-top: 40px
+  .reverse
+    flex-wrap: wrap-reverse
 
 .section--donate--banner
   &
@@ -633,6 +643,8 @@ section
     margin: 0 auto 40px
     --bs-gutter-x: 40px
     --bs-gutter-y: 40px
+    @media (max-width: theme('breakpoints.sm'))
+      --bs-gutter-x: 10px
   .pic
     width: 100%
     height: 100%
@@ -779,8 +791,6 @@ section
   &
     background: #eee9e4
   .container
-    border-right: 2px solid #B1B0AC
-    border-left: 2px solid #B1B0AC
     &.border-l-none
       border-left: none
     @media (max-width: theme('breakpoints.lg'))
@@ -897,6 +907,7 @@ section
     font-weight: 500
   .item--link
     width: 100%
+    border-right: 1px solid black
   .item
     &
       flex: 1
@@ -1104,7 +1115,7 @@ section
       .title
         position: relative
         font-family: "Noto Serif TC", serif
-        +fontSize(22px)
+        +fontSize(18px)
         font-weight: 700
         color: #515151
         padding-left: 30px
@@ -1165,7 +1176,7 @@ section
         font-family: "Noto Sans TC", serif
         padding-left: 10px
         margin-bottom: 30px
-        +fontSize(24px)
+        +fontSize(18px)
         font-weight: 800
         @media (max-width: theme('breakpoints.md'))
           text-align: center
@@ -1291,7 +1302,7 @@ section
             flex: 2
             font-weight: 500
             span.money 
-              +fontSize(24px)
+              +fontSize(18px)
             span.unit 
               margin-left: 10px
           .amount--area
@@ -1307,7 +1318,7 @@ section
             .amount
               color: #222222
               white-space: nowrap
-              +fontSize(20px)
+              +fontSize(18px)
           .count--area
             flex: 1
             display: flex
@@ -1337,14 +1348,17 @@ section
         flex-direction: column
   
   .hint
-    color: var(--theme-color)
+    color: #222222
+    background: var(--theme-color)
     font-family: "Noto Serif TC", serif
     margin-top: 40px
+    padding: 10px 20px
+    border-radius: 50px
+    font-weight: 600
     @media (max-width: theme('breakpoints.md'))
       text-align: center
-    a
-      text-decoration: underline
-      text-underline-offset: 4px
+    a 
+      color: #FF0000
 .section--review--body
   padding: 10px 20px
   @media (max-width: theme('breakpoints.md'))
@@ -1362,6 +1376,10 @@ section
     font-family: 'Noto Sans TC', sans-serif
     @media (max-width: theme('breakpoints.md'))
       font-size: 16px
+      width: 120px
+      padding: 5px
+      border: 1px solid #222222
+      background: #fff
   .sticky-container
     position: sticky
     top: 80px
@@ -1372,29 +1390,19 @@ section
 .timeline
   display: flex
   flex-direction: column
-  align-items: flex-start
+  align-items: center
   margin: 50px auto
   padding: 0 20px
   max-width: 300px
   position: relative
   @media (max-width: theme('breakpoints.md'))
-    margin: 0 0 0 auto
-
-  // 垂直線條
-  // &::before
-  //   content: ''
-  //   position: absolute
-    
-  //   top: 0
-  //   bottom: 0
-  //   left: 26px
-  //   width: 2px
-  //   background-color: black
+    transform: translateX(45px)
+  
 
   .timeline-step
     display: flex
     align-items: flex-start
-    margin-bottom: 40px
+    margin-bottom: 60px
     position: relative
 
     &:last-child
@@ -1436,7 +1444,7 @@ section
       &::before
         content: ''
         position: absolute
-        height: calc(100% + 42px)
+        height: calc(100% + 62px)
         top: 50%
         left: -20px
         width: 2px
@@ -1498,14 +1506,33 @@ section
 .fixed-parent
     @media (max-width: theme('breakpoints.sm'))
       padding-bottom: 150px
-.fixed-checkout
+.fixed-checkout,
+.fixed-buy
   position: fixed
   bottom: 0
   left: 0
   z-index: 3
-  background: #fff
+  background: #EEE9E5
   width: 100%
   display: flex
   flex-direction: column
   justify-content: flex-start
-  padding: 0px 20px 20px 20px
+  padding: 20px 10px
+  .count--area
+    display: flex
+    justify-content: space-around
+    align-items: center
+    i.bi::before
+      font-weight: 1000 !important
+    .form--text 
+      input[type='text']
+        &
+          font-family: 'Noto Sans TC', sans-serif
+          width: 50px
+          height: 40px
+          border: 1px solid #000
+          background: #fff
+          text-align: center
+          margin: 0 10px
+        &:focus
+          outline: none

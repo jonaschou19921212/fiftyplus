@@ -21,9 +21,12 @@ script.
           fixedCheckout.style.transition = 'bottom 0.3s ease'; // 添加過渡效果
           fixedCheckout.style.position = 'absolute'; // 設置為絕對定位
           fixedCheckout.style.bottom = `0px`; // 距離 footer 的高度
+          fixedCheckout.style.display = 'none'; // 到底時改成隱藏
         } else {
           fixedCheckout.style.transition = 'bottom 0.3s ease'; // 添加過渡效果
           fixedCheckout.style.position = 'fixed'; // 恢復為固定定位
           fixedCheckout.style.bottom = '0'; // 固定在底部
+          fixedCheckout.style.display = 'block'; // 其他時候顯示
         }
+        
       });

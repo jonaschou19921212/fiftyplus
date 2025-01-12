@@ -170,7 +170,7 @@ block main
                 .dash &nbsp;
                 i.bi.bi-play-fill
 
-        .col-12.col-lg-3.pb-4
+        .col-12.col-lg-3.pb-4.d-none.d-sm-block
           .sticky-container
             .panel--review.static
               .title 即將開課
@@ -270,65 +270,10 @@ block main
               p $16,000元
           .button--pill--2xl.mt-3
             .label.label--hide--border.black--font 馬上結帳
-      
-    .container.courser-recomand.m-0.d-none.d-sm-flex
-      .row
-        each item, index in [0, 1, 2]
-          .col-lg-4 
-            .card--course
-              .pic
-                img(
-                  data-src=`${getLoremCourse()}`
-                ).lazyload
-              .caption
-                .info
-                  .date 2024.11.06 — 2024.12.11
-                h3 50+聲音表達工作坊進階班第5期
-                .buttons
-                  a(href="./classDetail.html")
-                    .button--pill--xl
-                      .label 我要報名
-    .fixed-parent.container--slim.d-block.d-lg-none
-      .swiper--banner.mb-5
-        swiper-container(
-          navigation='true'
-          inject-styles=[
-            `
-
-            :host {
-              --swiper-theme-color: #ede73c;
-            }
-            :host .swiper-button-prev,
-            :host .swiper-button-next {
-              background-color: #66666680;
-              border-radius: 100%;
-              width: 28px;
-              height: 28px;
-              padding: 10px;
-              stroke: #ede73c;
-              stroke-width: 1;
-            }
-            `,
-          ],
-        )
-          each item, index in [0, 1, 2]
-            swiper-slide.bg-theme
-              .card--course.audio-type
-                .pic
-                  img(
-                    data-src=`${getLoremCourse()}`
-                  ).lazyload
-                .caption
-                  .info
-                    .date 2024.11.06 — 2024.12.11
-                  h3 50+聲音表達工作坊進階班第5期
-                  .buttons
-                    .button--pill--xl
-                      .label 我要報名
-    .fixed-checkout.d-flex.d-md-none
+    
+    .fixed-checkout
         .button--pill--full.mt-3
-          .label.label--hide--border.black--font 馬上結帳
-        include components/mobileShareBar
+          .label.label--hide--border.black--font 按此結帳
         
     script.
       var studentCount = 1;

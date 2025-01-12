@@ -26,6 +26,7 @@ block main
       .col.d-block.d-lg-none
         .header-text-area
           .title 50+帆布袋帆布袋帆布袋帆布袋帆布袋
+          .text.mb-3 介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字
       .grid--snippet.selection-detail
         .col
           .card--snippet--preview.full-height
@@ -95,11 +96,10 @@ block main
         .col
           .header-text-area
             .title.d-none.d-lg-block 50+帆布袋帆布袋帆布袋帆布袋帆布袋
+            .text.d-none.d-lg-block 介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字
             .price.d-none.d-lg-block 會員價
               span NT$49,900元
               del.origin-price 原價$50,000元
-            .text 介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字
-           
 
   section.section--selectDetail--body 
     .container.position-relative
@@ -132,16 +132,16 @@ block main
                 
               .buttons
                 .count--area
-                  i.bi.bi-dash-lg(onclick=`changeCount(-1, ${index})`)
+                  i.bi.bi-dash-lg(onclick=`changeCount(-1, 1)`)
                   .form--text 
                     input(
                       type='text'
                       name='count'
-                      id=`countInput${index}`
+                      id=`countInput1`
                       value='0'
                       disabled
                     )
-                  i.bi.bi-plus-lg(onclick=`changeCount(1, ${index})`)
+                  i.bi.bi-plus-lg(onclick=`changeCount(1, 1)`)
                 a.button--pill--lg(
                   href='./classDetail.html'
                 )
@@ -158,5 +158,51 @@ block main
             .mt-3
               +adBanner(true)
             
-    .fixed-checkout.d-flex.d-md-none
-      include components/mobileShareBar
+    .fixed-buy.d-md-none
+      .buttons.mb-0
+        .count--area
+          i.bi.bi-dash-lg(onclick=`changeCount(-1, 2)`)
+          .form--text 
+            input(
+              type='text'
+              name='count'
+              id=`countInput2`
+              value='0'
+              disabled
+            )
+          i.bi.bi-plus-lg(onclick=`changeCount(1, 2)`)
+        a.button--pill--lg(
+          href='./classDetail.html'
+        )
+          .label 立即購買
+  script.
+    function changeCount(delta, index) {
+      const countInput = document.getElementById(`countInput${index}`);
+      let currentCount = parseInt(countInput.value) || 0;
+      currentCount += delta;
+
+      // 确保计数不小于0
+      if (currentCount < 0) {
+        currentCount = 0;
+      }
+
+      countInput.value = currentCount;
+    }
+
+    // 新增的滾動事件監聽器
+    window.addEventListener('scroll', function() {
+      const reviewPanel = document.querySelector('.panel--review');
+      const fixedBuy = document.querySelector('.fixed-buy');
+      
+      // 使用 getBoundingClientRect() 獲取 reviewPanel 的位置
+      const rect = reviewPanel.getBoundingClientRect();
+      
+      // 當 reviewPanel 完全消失在視口上方時顯示 fixedBuy
+      if (rect.bottom < 0) {
+        fixedBuy.style.display = 'block'; // 顯示固定購買按鈕
+      } else {
+        fixedBuy.style.display = 'none'; // 隱藏固定購買按鈕
+      }
+    });
+
+          

@@ -38,7 +38,7 @@ window.addEventListener("scroll", function () {
 });
 
 window.addEventListener("scroll", () => {
-  isHeaderScrolled();
+  // isHeaderScrolled();
   isButtonGoTopScrolled();
 });
 

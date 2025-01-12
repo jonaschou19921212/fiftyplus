@@ -12,11 +12,11 @@
     { label: '生活', href: './articles.html', target: null },
     { label: '理財', href: './articles.html', target: null },
     { label: '策展', href: './events.html', target: null },
-    { label: 'Podcast', href: '/podcast.html', target: null, qlink: true },
+    { label: 'Podcast', href: './podcast.html', target: null, qlink: true },
     { label: '影音', href: './audios.html', target: null, qlink: true },
     { label: '週刊', href: './weekly.html', target: null, qlink: true },
     { label: '評鑑', href: './reviews.html', target: null, qlink: true },
-    { label: '50+學院', href: './course.html', target: null, qlink: true },
+    { label: '學院', href: './course.html', target: null, qlink: true },
     { label: '活動', href: './campaign.html', target: null },
     { label: '選品', href: './selection.html', target: null },
   ]
@@ -37,7 +37,7 @@
 
 
 header
-  .header-ad.d-none.d-lg-flex
+  .header-ad.d-none.d-lg-flex.py-5
     .ad-fake(style="width: 970px; height:250px") 廣告
   .button--go-top(
     onclick='window.scrollTo(0, 0)'
@@ -53,69 +53,72 @@ header
         )
   
   - else
-    .header--desktop
-      section
+    .header--desktop--container
+      .header--desktop
+        section
+          .container
+            //- .buttons--action.is-flex-start
+            //-   a.button--pill--xs(
+            //-     href='./confirm.html'
+            //-   )
+            //-     .label 訂閱週刊
+            .banner.d-none.d-md-flex.justify-content-start.w-100.mb-4
+              .ad-fake(style="width: 90px; height: 45px") 廣告-s
+            .logo--wrapper
+              a.logo--black(
+                href='./index.html'
+              )
+            .buttons--action.is-flex-end
+              .panel--search
+                label
+                  a.icon(
+                    href='./search.html'
+                  )
+                    i.bi.bi-search
+                  input(
+                    type='checkbox'
+                  )
+                  input(
+                    type='text'
+                    placeholder='輸入搜尋文字'
+                  )
+              a.button--pill--xs(
+                href='./login.html'
+              )
+                .label 會員登入
+              a.button--pill--xs.is-invert(
+                href='./donate.html'
+              )
+                .label 贊助50+
+              .button--cart--round
+                .icon 
+                  i.bi.bi-cart-fill
+      nav.header--nav
         .container
-          .buttons--action.is-flex-start
-            a.button--pill--xs(
-              href='./confirm.html'
-            )
-              .label 訂閱週刊
-          .logo--wrapper
-            a.logo--black(
-              href='./index.html'
-            )
-          .buttons--action.is-flex-end
-            .panel--search
-              label
-                a.icon(
-                  href='./search.html'
-                )
-                  i.bi.bi-search
-                input(
-                  type='checkbox'
-                )
-                input(
-                  type='text'
-                  placeholder='輸入搜尋文字'
-                )
-            a.button--pill--xs(
-              href='./login.html'
-            )
-              .label 會員登入
-            a.button--pill--xs.is-invert(
-              href='./donate.html'
-            )
-              .label 贊助50+
-            .button--cart--round
-              .icon 
-                i.bi.bi-cart-fill
-    nav.header--nav
-      .container
-        -
-          let navs = []
-          navs[0] = nav.slice(0, 6)
-          navs[1] = []
-          navs[2] = nav.slice(6, 13)
-        each menu in navs
-          ul
-            each item in menu
-              li
-                a(
-                  href=item.href
-                  class=item.style
-                )
-                  .label
-                    = item.label
-                - if(item.menu)
-                  ul
-                    each sub in item.menu
-                      li 
-                        a(
-                          href=sub.href
-                        )
-                          .label
-                            = sub.label
+          -
+            let navs = []
+            navs[0] = nav.slice(0, 6)
+            navs[1] = []
+            navs[2] = nav.slice(6, 13)
+          each menu in navs
+            ul
+              each item in menu
+                li
+                  a(
+                    href=item.href
+                    class=item.style
+                  )
+                    .label
+                      = item.label
+                  - if(item.menu)
+                    ul
+                      each sub in item.menu
+                        li 
+                          a(
+                            href=sub.href
+                          )
+                            .label
+                              = sub.label
   .header--fixed 
     .container
       .logo--wrapper
@@ -141,13 +144,13 @@ header
                       )
                         .label
                           = sub.label
-  .header-ad.d-flex.d-lg-none
+  .header-ad.d-flex.d-lg-none.py-3
     .ad-fake(style="width: 970px; height:250px") 廣告
   .header--mobile
     .container
       .logo--wrapper
         a.logo--black(
-          href
+          href='./index.html'
         )
       .buttons
         a.button--pill--xs.up-down(
@@ -163,65 +166,65 @@ header
           span
           span
 
-  .drawer
-    .container
-      .panel--search--mobile 
-        label
-          input(
-            type='text'
-            placerholder='輸入搜尋文字'
-          )
-          a.icon(
-            href='./search.html'
-          )
-            .icon--search
-      .grid--qlinks
-        each item, index in qlink
-          .button--qlink 
-            .icon
-              div(
-                class=item.icon
-              )
-            .label
-              = item.name
-    .nav--drawer
-      ul
-        each item, index in drawerNav
-          li
-            a(
-              class=item.style
-              data-bs-toggle=(item.menu)?"collapse":null
-              href=(item.menu)?"#collapse--"+(index+1):item.href
+    .drawer
+      .container
+        .panel--search--mobile 
+          label
+            input(
+              type='text'
+              placerholder='輸入搜尋文字'
             )
+            a.icon(
+              href='./search.html'
+            )
+              .icon--search
+        .grid--qlinks
+          each item, index in qlink
+            .button--qlink 
+              .icon
+                div(
+                  class=item.icon
+                )
               .label
-                = item.label
-              - if(item.menu)
-                .icon 
-                  i.bi.bi-chevron-down
-            - if(item.menu)
-              ul.collapse(
-                id=`collapse--${index+1}`
-              )
-                each sub in item.menu
-                  li 
-                    a(
-                      href=sub.href
-                    )
-                      .label
-                        = sub.label
-    .container
-      .buttons 
-        .button--pill--xs.is-outline
-          .label 會員中心
-        .button--pill--xs.is-outline
-          .label 登出
-      nav.nav--sns
+                = item.name
+      .nav--drawer
         ul
-          each item, index in ["facebook", "line", "instagram", "youtube"]
+          each item, index in drawerNav
             li
               a(
-                class=`button--${item}--dark`
+                class=item.style
+                data-bs-toggle=(item.menu)?"collapse":null
+                href=(item.menu)?"#collapse--"+(index+1):item.href
               )
+                .label
+                  = item.label
+                - if(item.menu)
+                  .icon 
+                    i.bi.bi-chevron-down
+              - if(item.menu)
+                ul.collapse(
+                  id=`collapse--${index+1}`
+                )
+                  each sub in item.menu
+                    li 
+                      a(
+                        href=sub.href
+                      )
+                        .label
+                          = sub.label
+      .container
+        .buttons 
+          .button--pill--xs.is-outline
+            .label 會員中心
+          .button--pill--xs.is-outline
+            .label 登出
+        nav.nav--sns
+          ul
+            each item, index in ["facebook", "line", "instagram", "youtube"]
+              li
+                a(
+                  class=`button--${item}--dark`
+                )
 script.
     document.addEventListener('DOMContentLoaded', () => {
         const currentPath = location.pathname;
@@ -240,12 +243,20 @@ script.
   document.addEventListener('DOMContentLoaded', () => {
       const headerMobile = document.querySelector('.header--mobile');
       const stickyOffset = headerMobile.offsetTop; // 獲取 header--mobile 的初始位置
+      const headerDesk = document.querySelector('.header--desktop--container');
+      const stickyDeskOffset = headerDesk.offsetTop; // 獲取 header--mobile 的初始位置
 
       window.addEventListener('scroll', () => {
           if (window.pageYOffset > stickyOffset) {
               headerMobile.classList.add('is-fixed'); // 添加固定樣式
           } else {
               headerMobile.classList.remove('is-fixed'); // 移除固定樣式
+          }
+
+          if (window.pageYOffset > stickyDeskOffset) {
+              headerDesk.classList.add('is-fixed'); // 添加固定樣式
+          } else {
+              headerDesk.classList.remove('is-fixed'); // 移除固定樣式
           }
       });
   });

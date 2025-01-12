@@ -20,7 +20,8 @@ block main
     .container--slim.mt-3.mt-md-0.mb-4
       .swiper--banner
         swiper-container(
-          navigation='true'
+          navigation='true',
+          autoplay='{ "delay": 3000, "disableOnInteraction": false }',
           inject-styles=[
             `
             :host {
@@ -46,51 +47,106 @@ block main
                   img(
                     data-src=`${getLoremCourse()}`
                   ).lazyload
-        
     
-    .container--slim
-      .tab--course.d-none.d-sm-flex
-        .button--pill--lg
-          .label 實體課程
-        .button--pill--lg
-          .label 線上學校
-        .button--pill--lg
-          .label 過往課程
-      .tab--course.d-flex.d-sm-none
-        .button--pill--xs
-          .label 實體課程
-        .button--pill--xs
-          .label 線上學校
-        .button--pill--xs
-          .label 過往課程
-      .row
-        .col-12.mb-5
-          +adBanner(true)
-      .row.row--course
-        each item, index in [0, 1, 2, 3, 4, 5, 6, 7]
-          .col-lg-6 
-            .card--course
-              .pic
-                img(
-                  data-src=`${getLoremCourse()}`
-                ).lazyload
-              .caption
-                .info
-                  .date 2024.11.06 — 2024.12.11
-                h3 50+聲音表達工作坊進階班第5期
-                .buttons
-                  .button--pill--xl
-                    .label 我要報名
-          if (index + 1) % 4 === 0 && index !== 0
-            .col-12
-              +adBanner(true)
+      .tab--course
+        .nav.d-none.d-sm-flex
+          .button--pill--lg.active
+            .label.active(
+              data-bs-toggle="tab"
+              data-bs-target="#physic"
+              onClick="document.querySelector('.section--course.is-achieved').style.display='block';"
+            ) 實體課程
+          .button--pill--lg
+            .label(
+              data-bs-toggle="tab"
+              data-bs-target="#online"
+              onClick="document.querySelector('.section--course.is-achieved').style.display='none';"
+            ) 線上學校
+          .button--pill--lg
+            .label(
+              data-bs-toggle="tab"
+              data-bs-target="#physic"
+              onClick="document.querySelector('.section--course.is-achieved').style.display='block';"
+            ) 過往課程
+        .nav.d-flex.d-sm-none
+          .button--pill--xs.active(
+              data-bs-toggle="tab"
+              data-bs-target="#physic"
+              onClick="document.querySelector('.section--course.is-achieved').style.display='block';"
+            )
+            .label.active(
+              data-bs-toggle="tab"
+              data-bs-target="#physic"
+              onClick="document.querySelector('.section--course.is-achieved').style.display='block';"
+            ) 實體課程
+          .button--pill--xs(
+              data-bs-toggle="tab"
+              data-bs-target="#online"
+              onClick="document.querySelector('.section--course.is-achieved').style.display='none';"
+            )
+            .label(
+              data-bs-toggle="tab"
+              data-bs-target="#online"
+              onClick="document.querySelector('.section--course.is-achieved').style.display='none';"
+            ) 線上學校
+          .button--pill--xs(
+              data-bs-toggle="tab"
+              data-bs-target="#physic"
+              onClick="document.querySelector('.section--course.is-achieved').style.display='block';"
+            )
+            .label(
+              data-bs-toggle="tab"
+              data-bs-target="#physic"
+              onClick="document.querySelector('.section--course.is-achieved').style.display='block';"
+            ) 過往課程
+      .tab-content
+        .tab-pane.show.active(
+          id="physic"
+        )
+          .row.row--course.mt-0
+            each item, index in [0, 1, 2, 3, 4, 5, 6, 7]
+              .col-lg-6.mt-0.mb-5
+                .card--course
+                  .pic
+                    img(
+                      data-src=`${getLoremCourse()}`
+                    ).lazyload
+                  .caption
+                    .info
+                      .date 2024.11.06 — 2024.12.11
+                    h3 50+聲音表達工作坊進階班第5期
+                    .buttons
+                      .button--pill--xl
+                        .label 我要報名
+              if (index + 1) % 4 === 0 && index !== 0
+                .col-12.mt-0.mb-5
+                  +adBanner(true)
+        .tab-pane(
+          id="online"
+        )
+          .row.row--course.mt-0
+            each item, index in [0, 1, 2, 3, 4, 5, 6, 7]
+              .col-lg-6.mt-0.mb-5
+                .card--course
+                  .pic
+                    img(
+                      data-src=`${getLoremCourse()}`
+                    ).lazyload
+                  .caption
+                    h3 50+聲音表達工作坊進階班第5期
+                    .buttons
+                      .button--pill--xl
+                        .label 我要報名
+              if (index + 1) % 4 === 0 && index !== 0
+                .col-12.mt-0.mb-5
+                  +adBanner(true)
 
   section.section--course.is-achieved
     .container--slim
       .section__title.is-small
         .title 以下課程已報名截止
       .row.row--course
-        each item, index in [0, 1, 2, 3, 4, 5]
+        each item, index in [0, 1,]
           .col-lg-6 
             .card--course
               .pic
@@ -103,12 +159,12 @@ block main
                 h3 50+聲音表達工作坊進階班第5期
                 .buttons
                   .button--pill--xl.is-dark-gray
-                    .label 我要報名
-          if (index + 1) % 4 === 0 && index !== 0
-            .col-12
-              +adBanner(true)
+                    .label 我要購買
+       
       .buttons
         .button--more 
           .label 查看更多
           .icon 
             i.bi.bi-caret-down-fill
+  script.
+    

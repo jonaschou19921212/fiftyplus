@@ -17,7 +17,7 @@ block main
               href=""
             ) 評鑑
   
-  section.section--review--body
+  section.section--review--body.mb-5
     .container--slim
       .tab--review
         ul.nav
@@ -64,3 +64,32 @@ block main
         .tab-pane(
           id="review"
         )
+          each item, index in [0, 1, 2, 3, 4]
+            .card--review 
+              .pic 
+                img(
+                  src=`https://picsum.photos/900/600/?random=${item}`
+                )
+              .caption 
+                .catalog 美妝保養
+                .title 亞培安素-香草減甜版
+                .date.pe-5.me-3 申請試用時間： 2024.11.06 — 2024.12.11
+                .info 40歲後肌肉流失每十年可能高達8%！蛋白質可幫助增加肌肉，但同時要護肌才能從問題根本著手，如果流失速度大於補...
+                img.award(src="./assets/sprite/award.png")
+              
+              .countdown
+                .count-people
+                  .item
+                    p 申請人數
+                    p 
+                      span.blue 50
+                      | 人
+                  .item
+                    p 關注人數
+                    p 
+                      span.blue 9230
+                      | 人
+                a.button--pill--lg(
+                  href="./reviewStep1.html"
+                )
+                  .label 申請試用

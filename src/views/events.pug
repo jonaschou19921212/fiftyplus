@@ -17,7 +17,7 @@ block main
               href=""
             ) 數位策展
     
-  section.section--black
+  section.section--black.mt-3
     .container--slim
       .row.row--event
         each item, index in ["健康大未來！預約不生病的老後"]
@@ -30,7 +30,9 @@ block main
                   data-src=`./assets/images/column--${index%4+1}.jpg`
                 ).lazyload
               .caption
-                h3
+                p.my-3.d-block.d-lg-none
+                  != item
+                p.d-none.d-lg-block
                   != item
                 p 精準醫療、AI、智慧醫療……日新月異的科技，如何改變超高齡社會的樣貌？隨著醫療與科技進展，過往的「常識」很可能被推翻，老年不一定伴隨著疾病，健康到100歲真的有可能！本文介紹5大最新健康趨勢，活到老、健康到老。
   section.section--article--body
@@ -47,14 +49,20 @@ block main
               -if( index == 5 || index == 6)
                 .status 
                   .button--pill--xs
-                    .label 品牌合作
+                    .label.small-font 品牌合作
               .pic
                 img(
                   data-src=`./assets/images/column--${index%4+1}.jpg`
                 ).lazyload
-              .caption
-                h3
+              .caption.pb-0
+                h3.mb-0
                   != item
+              .info 
+                .date 2024.09.01
+                .view
+                  .icon
+                    i.bi.bi-eye
+                  .label 1000
           if (index + 1) % 4 === 0 && index !== 0
             .col-12
               +adBanner(true)
