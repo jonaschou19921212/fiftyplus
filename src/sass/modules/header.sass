@@ -161,6 +161,11 @@ header
         transform: translate(-50%, -50%) rotate(-45deg)
       > span:nth-child(3)
         opacity: 0
+.header--blank
+  &
+    display: none
+    height: 60px
+
 
 .header--mobile
   &
@@ -174,6 +179,7 @@ header
     border-bottom: 1px solid #ebe6e1
   &.is-fixed
     position: fixed
+    
   &.is-active
     transform: translateX(0)
   > .container

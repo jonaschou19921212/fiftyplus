@@ -1660,6 +1660,7 @@ blockqoute
       margin-left: 2px 
 
   .controler-container
+    width: 100%
     display: flex
     justify-content: center
     align-items: center
@@ -1676,14 +1677,17 @@ blockqoute
 
   .audio-progress-bar
     -webkit-appearance: none
-    width: 100px
+    width: 100%
+    margin: 0 10px
     height: 3px
     background: #B8B8B8
     border-radius: 5px
     outline: none
     cursor: pointer
     overflow-y: visible
-
+    @media (min-width: theme('breakpoints.sm'))
+      width: 100px
+      margin: auto
     &::-webkit-slider-thumb
       -webkit-appearance: none
       width: 10px
@@ -1965,6 +1969,9 @@ blockqoute
 .ad-fake
   background: #a9a7a7
   text-align: center
+  display: flex
+  align-items: center
+  justify-content: center
 .fixed-checkout 
   display: flex
   @media (max-width: theme('breakpoints.md'))
