@@ -182,7 +182,7 @@ block main
                 .dash &nbsp;
                 i.bi.bi-play-fill
 
-        .col-12.col-lg-3.pb-4
+        .col-12.col-lg-3.pb-4.d-none.d-sm-block
           .sticky-container
             .panel--review.static
               .title 即將開課
@@ -272,13 +272,6 @@ block main
                 != formatAmount(16000)
               .amount#totalAmount 合計＄
                 != formatAmount(16000)
-      //- .bottom-group
-      //-   a.w-100(href="./login.html")
-      //-     .button--pill--full
-      //-       .label.label--hide--border 登入
-      //-   a.w-100(href="./register.html")
-      //-     .button--pill--full.is-white
-      //-       .label.label--hide--border 註冊
       .hint 
         | 此課程需會員登入才可報名，請
         a(href="./login.html") 登入
@@ -286,73 +279,36 @@ block main
         a(href="./register.html") 註冊
         | 後繼續報名，謝謝
 
-   
-    //- .container
-    //-   .row.justify-content-center.mb-5.mt-3
-    //-     .col-10.col-lg-6.class--amount.d-none.d-lg-flex
-    //-       .d-flex.align-items-end
-    //-         .total-text 總金額
-    //-         .total-text.m-0 合計
-    //-         .total-price 
-    //-           del 原價16,800
-    //-           p $16,000元
-    //-       .button--pill--2xl.mt-3
-    //-         .label.label--hide--border.black--font 馬上結帳
-
-    .container.courser-recomand.m-0.d-none.d-sm-flex
-      .row
-        each item, index in [0, 1, 2]
-          .col-lg-4 
-            .card--course
-              .pic
+    .container.mt-5
+      .section__title 
+        .title 猜你喜歡
+    .container--slim
+      .row.row--article
+        each item, index in ['人物', '健康', '心靈']
+          .col-md-6.col-lg-4
+            .card--article
+              a.pic(
+                href="./article.html"
+              )
                 img(
-                  data-src=`${getLoremCourse()}`
+                  data-src=`${getLoremPic()}`
                 ).lazyload
-              .caption
-                .info
-                  .date 2024.11.06 — 2024.12.11
-                h3 50+聲音表達工作坊進階班第5期
-                .buttons
-                  a(href="./classDetail.html")
-                    .button--pill--xl
-                      .label 我要報名
-    .container--slim.d-block.d-lg-none
-      .swiper--banner
-        swiper-container(
-          navigation='true'
-          inject-styles=[
-            `
-
-            :host {
-              --swiper-theme-color: #ede73c;
-            }
-            :host .swiper-button-prev,
-            :host .swiper-button-next {
-              background-color: #66666680;
-              border-radius: 100%;
-              width: 28px;
-              height: 28px;
-              padding: 10px;
-              stroke: #ede73c;
-              stroke-width: 1;
-            }
-            `,
-          ],
-        )
-          each item, index in [0, 1, 2]
-            swiper-slide.bg-theme
-              .card--course.audio-type
-                .pic
-                  img(
-                    data-src=`${getLoremCourse()}`
-                  ).lazyload
-                .caption
-                  .info
-                    .date 2024.11.06 — 2024.12.11
-                  h3 50+聲音表達工作坊進階班第5期
-                  .buttons
-                    .button--pill--xl
-                      .label 我要報名
+              a.caption(
+                href="./article.html"
+              )
+                //- .catalog
+                //-   != item
+                h3
+                  != getLoremText()
+              .info 
+                .date 2024.09.01
+                .view
+                  .icon
+                    i.bi.bi-eye
+                  .label 1000
+    .fixed-checkout.d-sm-none
+        .button--pill--full
+          .label.label--hide--border.black--font 按此結帳
     script.
       var studentCount = 1;
       const quickBarItems = document.querySelectorAll('.quick-bar .item');
