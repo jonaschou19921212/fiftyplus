@@ -38,98 +38,100 @@
   <main style="visibility: hidden;">
     <div id="App"><input id="isMenuActive" type="checkbox" /><input id="isMenuNow" type="text" /><input id="isScrollDown" type="checkbox" /></div>
     <header>
-      <div class="header-ad d-none d-lg-flex">
+      <div class="header-ad d-none d-lg-flex py-4">
         <div class="ad-fake" style="width: 970px; height:250px">廣告</div>
       </div>
       <div class="button--go-top" onclick="window.scrollTo(0, 0)">
         <div class="icon"> <i class="bi bi-chevron-up"></i></div>
       </div>
-      <div class="header--desktop">
-        <section>
-          <div class="container">
-            <div class="buttons--action is-flex-start"><a class="button--pill--xs" href="./confirm.html">
-                <div class="label">訂閱週刊</div>
-              </a></div>
-            <div class="logo--wrapper"><a class="logo--black" href="./index.html"></a></div>
-            <div class="buttons--action is-flex-end">
-              <div class="panel--search"><label><a class="icon" href="./search.html"><i class="bi bi-search"></i></a><input type="checkbox" /><input type="text" placeholder="輸入搜尋文字" /></label></div><a class="button--pill--xs" href="./login.html">
-                <div class="label">會員登入</div>
-              </a><a class="button--pill--xs is-invert" href="./donate.html">
-                <div class="label">贊助50+</div>
-              </a>
-              <div class="button--cart--round">
-                <div class="icon"> <i class="bi bi-cart-fill"></i></div>
+      <div class="header--desktop--container">
+        <div class="header--desktop">
+          <section>
+            <div class="container">
+              <div class="banner d-none d-md-flex justify-content-start w-100 mb-4">
+                <div class="ad-fake" style="width: 90px; height: 45px">廣告-s</div>
+              </div>
+              <div class="logo--wrapper"><a class="logo--black" href="./index.html"></a></div>
+              <div class="buttons--action is-flex-end">
+                <div class="panel--search"><label><a class="icon" href="./search.html"><i class="bi bi-search"></i></a><input type="checkbox" /><input type="text" placeholder="輸入搜尋文字" /></label></div><a class="button--pill--xs" href="./login.html">
+                  <div class="label">會員登入</div>
+                </a><a class="button--pill--xs is-invert" href="./donate.html">
+                  <div class="label">贊助50+</div>
+                </a>
+                <div class="button--cart--round">
+                  <div class="icon"> <i class="bi bi-cart-fill"></i></div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-      </div>
-      <nav class="header--nav">
-        <div class="container">
-          <ul>
-            <li><a href="./articles.html">
-                <div class="label">人物</div>
-              </a></li>
-            <li><a href="./articles.html">
-                <div class="label">健康</div>
-              </a>
-              <ul>
-                <li> <a href="./articles.html">
-                    <div class="label">醫療保健</div>
-                  </a></li>
-                <li> <a href="./articles.html">
-                    <div class="label">性愛</div>
-                  </a></li>
-                <li> <a href="./articles.html">
-                    <div class="label">更年期</div>
-                  </a></li>
-                <li> <a href="./articles.html">
-                    <div class="label">失智</div>
-                  </a></li>
-                <li> <a href="./articles.html">
-                    <div class="label">運動</div>
-                  </a></li>
-                <li> <a href="./articles.html">
-                    <div class="label">飲食</div>
-                  </a></li>
-              </ul>
-            </li>
-            <li><a href="./articles.html">
-                <div class="label">生活</div>
-              </a></li>
-            <li><a href="./articles.html">
-                <div class="label">理財</div>
-              </a></li>
-            <li><a href="./events.html">
-                <div class="label">策展</div>
-              </a></li>
-            <li><a href="./podcast.html">
-                <div class="label">Podcast</div>
-              </a></li>
-          </ul>
-          <ul></ul>
-          <ul>
-            <li><a href="./audios.html">
-                <div class="label">影音</div>
-              </a></li>
-            <li><a href="./weekly.html">
-                <div class="label">週刊</div>
-              </a></li>
-            <li><a href="./reviews.html">
-                <div class="label">評鑑</div>
-              </a></li>
-            <li><a href="./course.html">
-                <div class="label">50+學院</div>
-              </a></li>
-            <li><a href="./campaign.html">
-                <div class="label">活動</div>
-              </a></li>
-            <li><a href="./selection.html">
-                <div class="label">選品</div>
-              </a></li>
-          </ul>
+          </section>
         </div>
-      </nav>
+        <nav class="header--nav">
+          <div class="container">
+            <ul>
+              <li><a href="./articles.html">
+                  <div class="label">人物</div>
+                </a></li>
+              <li><a href="./articles.html">
+                  <div class="label">健康</div>
+                </a>
+                <ul>
+                  <li> <a href="./articles.html">
+                      <div class="label">醫療保健</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">性愛</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">更年期</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">失智</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">運動</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">飲食</div>
+                    </a></li>
+                </ul>
+              </li>
+              <li><a href="./articles.html">
+                  <div class="label">生活</div>
+                </a></li>
+              <li><a href="./articles.html">
+                  <div class="label">理財</div>
+                </a></li>
+              <li><a href="./events.html">
+                  <div class="label">策展</div>
+                </a></li>
+              <li><a href="./podcast.html">
+                  <div class="label">Podcast</div>
+                </a></li>
+            </ul>
+            <ul></ul>
+            <ul>
+              <li><a href="./audios.html">
+                  <div class="label">影音</div>
+                </a></li>
+              <li><a href="./weekly.html">
+                  <div class="label">週刊</div>
+                </a></li>
+              <li><a href="./reviews.html">
+                  <div class="label">評鑑</div>
+                </a></li>
+              <li><a href="./course.html">
+                  <div class="label">學院</div>
+                </a></li>
+              <li><a href="./campaign.html">
+                  <div class="label">活動</div>
+                </a></li>
+              <li><a href="./selection.html">
+                  <div class="label">選品</div>
+                </a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
       <div class="header--fixed">
         <div class="container">
           <div class="logo--wrapper"><a class="logo--black" href="./index.html"></a></div>
@@ -184,7 +186,7 @@
                   <div class="label">評鑑</div>
                 </a></li>
               <li><a href="./course.html">
-                  <div class="label">50+學院</div>
+                  <div class="label">學院</div>
                 </a></li>
               <li><a href="./campaign.html">
                   <div class="label">活動</div>
@@ -196,12 +198,12 @@
           </nav>
         </div>
       </div>
-      <div class="header-ad d-flex d-lg-none">
+      <div class="header-ad d-flex d-lg-none py-3">
         <div class="ad-fake" style="width: 970px; height:250px">廣告</div>
       </div>
       <div class="header--mobile">
         <div class="container">
-          <div class="logo--wrapper"><a class="logo--black" href="href"></a></div>
+          <div class="logo--wrapper"><a class="logo--black" href="./index.html"></a></div>
           <div class="buttons"><a class="button--pill--xs up-down" href="./donate.html">
               <div class="label">贊助50+</div>
             </a>
@@ -213,117 +215,118 @@
             <div class="icon"><span></span><span></span><span></span></div>
           </div>
         </div>
-      </div>
-      <div class="drawer">
-        <div class="container">
-          <div class="panel--search--mobile"> <label><input type="text" placerholder="輸入搜尋文字" /><a class="icon" href="./search.html">
-                <div class="icon--search"></div>
-              </a></label></div>
-          <div class="grid--qlinks">
-            <div class="button--qlink">
-              <div class="icon">
-                <div class="icon--academy"></div>
+        <div class="drawer">
+          <div class="container">
+            <div class="panel--search--mobile"> <label><input type="text" placerholder="輸入搜尋文字" /><a class="icon" href="./search.html">
+                  <div class="icon--search"></div>
+                </a></label></div>
+            <div class="grid--qlinks">
+              <div class="button--qlink">
+                <div class="icon">
+                  <div class="icon--academy"></div>
+                </div>
+                <div class="label">學院</div>
               </div>
-              <div class="label">學院</div>
-            </div>
-            <div class="button--qlink">
-              <div class="icon">
-                <div class="icon--weekly"></div>
+              <div class="button--qlink">
+                <div class="icon">
+                  <div class="icon--weekly"></div>
+                </div>
+                <div class="label">週刊</div>
               </div>
-              <div class="label">週刊</div>
-            </div>
-            <div class="button--qlink">
-              <div class="icon">
-                <div class="icon--review"></div>
+              <div class="button--qlink">
+                <div class="icon">
+                  <div class="icon--review"></div>
+                </div>
+                <div class="label">評鑑</div>
               </div>
-              <div class="label">評鑑</div>
-            </div>
-            <div class="button--qlink">
-              <div class="icon">
-                <div class="icon--event"></div>
-              </div>
-              <div class="label">活動</div>
-            </div>
-            <div class="button--qlink">
-              <div class="icon">
-                <div class="icon--video"></div>
-              </div>
-              <div class="label">影音</div>
-            </div>
-            <div class="button--qlink">
-              <div class="icon">
-                <div class="icon--podcast"></div>
-              </div>
-              <div class="label">Podcast</div>
-            </div>
-          </div>
-        </div>
-        <div class="nav--drawer">
-          <ul>
-            <li><a href="./articles.html">
-                <div class="label">人物</div>
-              </a></li>
-            <li><a data-bs-toggle="collapse" href="#collapse--2">
-                <div class="label">健康</div>
-                <div class="icon"> <i class="bi bi-chevron-down"></i></div>
-              </a>
-              <ul class="collapse" id="collapse--2">
-                <li> <a href="./articles.html">
-                    <div class="label">醫療保健</div>
-                  </a></li>
-                <li> <a href="./articles.html">
-                    <div class="label">性愛</div>
-                  </a></li>
-                <li> <a href="./articles.html">
-                    <div class="label">更年期</div>
-                  </a></li>
-                <li> <a href="./articles.html">
-                    <div class="label">失智</div>
-                  </a></li>
-                <li> <a href="./articles.html">
-                    <div class="label">運動</div>
-                  </a></li>
-                <li> <a href="./articles.html">
-                    <div class="label">飲食</div>
-                  </a></li>
-              </ul>
-            </li>
-            <li><a href="./articles.html">
-                <div class="label">生活</div>
-              </a></li>
-            <li><a href="./articles.html">
-                <div class="label">理財</div>
-              </a></li>
-            <li><a href="./events.html">
-                <div class="label">策展</div>
-              </a></li>
-            <li><a href="./campaign.html">
+              <div class="button--qlink">
+                <div class="icon">
+                  <div class="icon--event"></div>
+                </div>
                 <div class="label">活動</div>
-              </a></li>
-            <li><a href="./selection.html">
-                <div class="label">選品</div>
-              </a></li>
-          </ul>
-        </div>
-        <div class="container">
-          <div class="buttons">
-            <div class="button--pill--xs is-outline">
-              <div class="label">會員中心</div>
-            </div>
-            <div class="button--pill--xs is-outline">
-              <div class="label">登出</div>
+              </div>
+              <div class="button--qlink">
+                <div class="icon">
+                  <div class="icon--video"></div>
+                </div>
+                <div class="label">影音</div>
+              </div>
+              <div class="button--qlink">
+                <div class="icon">
+                  <div class="icon--podcast"></div>
+                </div>
+                <div class="label">Podcast</div>
+              </div>
             </div>
           </div>
-          <nav class="nav--sns">
+          <div class="nav--drawer">
             <ul>
-              <li><a class="button--facebook--dark"></a></li>
-              <li><a class="button--line--dark"></a></li>
-              <li><a class="button--instagram--dark"></a></li>
-              <li><a class="button--youtube--dark"></a></li>
+              <li><a href="./articles.html">
+                  <div class="label">人物</div>
+                </a></li>
+              <li><a data-bs-toggle="collapse" href="#collapse--2">
+                  <div class="label">健康</div>
+                  <div class="icon"> <i class="bi bi-chevron-down"></i></div>
+                </a>
+                <ul class="collapse" id="collapse--2">
+                  <li> <a href="./articles.html">
+                      <div class="label">醫療保健</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">性愛</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">更年期</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">失智</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">運動</div>
+                    </a></li>
+                  <li> <a href="./articles.html">
+                      <div class="label">飲食</div>
+                    </a></li>
+                </ul>
+              </li>
+              <li><a href="./articles.html">
+                  <div class="label">生活</div>
+                </a></li>
+              <li><a href="./articles.html">
+                  <div class="label">理財</div>
+                </a></li>
+              <li><a href="./events.html">
+                  <div class="label">策展</div>
+                </a></li>
+              <li><a href="./campaign.html">
+                  <div class="label">活動</div>
+                </a></li>
+              <li><a href="./selection.html">
+                  <div class="label">選品</div>
+                </a></li>
             </ul>
-          </nav>
+          </div>
+          <div class="container">
+            <div class="buttons">
+              <div class="button--pill--xs is-outline">
+                <div class="label">會員中心</div>
+              </div>
+              <div class="button--pill--xs is-outline">
+                <div class="label">登出</div>
+              </div>
+            </div>
+            <nav class="nav--sns">
+              <ul>
+                <li><a class="button--facebook--dark"></a></li>
+                <li><a class="button--line--dark"></a></li>
+                <li><a class="button--instagram--dark"></a></li>
+                <li><a class="button--youtube--dark"></a></li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
+      <div class="header--blank d-lg-none"></div>
     </header>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
@@ -340,12 +343,23 @@
       });
       document.addEventListener('DOMContentLoaded', () => {
         const headerMobile = document.querySelector('.header--mobile');
+        const headerBlank = document.querySelector('.header--blank');
         const stickyOffset = headerMobile.offsetTop; // 獲取 header--mobile 的初始位置
+        const headerDesk = document.querySelector('.header--desktop--container');
+        const header = document.querySelector('header');
+        const stickyDeskOffset = headerDesk.offsetTop; // 獲取 header--mobile 的初始位置
         window.addEventListener('scroll', () => {
           if (window.pageYOffset > stickyOffset) {
             headerMobile.classList.add('is-fixed'); // 添加固定樣式
+            headerBlank.classList.add('d-block');
           } else {
             headerMobile.classList.remove('is-fixed'); // 移除固定樣式
+            headerBlank.classList.remove('d-block');
+          }
+          if (window.pageYOffset > stickyDeskOffset) {
+            header.classList.add('is-active'); // 添加固定樣式
+          } else {
+            header.classList.remove('is-active'); // 移除固定樣式
           }
         });
       });
@@ -369,7 +383,7 @@
           <div class="col-12 col-md-9">
             <div class="row align-items-center mb-0 mb-lg-5 mt-lg-4">
               <div class="col-lg-auto">
-                <div class="review-collect mb-3 mb-lg-0">評鑒募集中</div>
+                <div class="review-collect mb-3 mb-lg-0">評鑑募集中</div>
               </div>
               <div class="col-lg">
                 <div class="review--title mb-lg-0">
@@ -406,7 +420,7 @@
               </div>
               <div class="caption">
                 <article class="is-review-spec">
-                  <h3>產品規格</h3>
+                  <h3 class="small">產品規格</h3>
                   <dl>
                     <dt>品牌：</dt>
                     <dd>亞培安素</dd>
@@ -428,13 +442,13 @@
             </div>
             <article class="is-review">
               <p>閱讀黃金雙激萃的使用說明，上面說「於早上或晚上使用」。但我想，既然要試用，就早晚都用吧！於是晚上我用黃金雙激萃取代原來的晚霜，在化妝水後使用。這是我第一次晚上不用「乳霜」狀保養品，我一直倚賴乳霜來保濕。沒想到，黃金雙激萃的保濕潤澤度出奇的好！整個晚上都感覺皮膚非常水嫩！早上我則是洗完臉就直接使用它，用量稍減。它不會油膩，也很容易再上後續的隔離乳。因為好吸收的關係，立刻上隔離乳也不會有屑屑產生。 用完兩週，我覺得最明顯的改變是皮膚的緊緻度，而且幾乎一用就有感。皮膚的緊緻，感覺真的很明顯。同樣的保養程序，竟帶來這麼好的效果。也因為這樣，上彩粧也變得容易，不易掉粉。沒預料到的收穫是，出門前在化妝檯前的準備時間變短了，讓人開心。值得推薦！值得推薦！值得推薦！值得推薦！</p>
-              <h3>開箱影音</h3>
+              <h3 class="small">開箱影音</h3>
               <div class="video--wrapper"><iframe src="https://www.youtube.com/embed/1Q3wv4J6Z1A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></div>
             </article>
           </div>
           <div class="col-12 col-md-3">
             <div class="sticky-container">
-              <div class="panel--review d-none d-md-block">
+              <div class="panel--review static d-none d-md-block">
                 <div class="title">試用募集中</div>
                 <div class="caption">
                   <div class="review--text">體驗品 100 份</div>
@@ -444,7 +458,7 @@
                   </div>
                 </div>
                 <div class="buttons"><a class="button--pill--lg" href="./reviewRegister.html">
-                    <div class="label">申請試用</div>
+                    <div class="label">搶先報名</div>
                   </a></div>
               </div>
               <div class="mt-3">
