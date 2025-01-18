@@ -346,7 +346,7 @@ blockqoute
     white-space: nowrap
     // transform: translateY(-2px)
     &.small-font
-      +fontSize(12px)
+      +fontSize(10px)
   &.is-outline
     &
       background: white
@@ -456,12 +456,14 @@ blockqoute
       +fontSize(28px)
   > .normal--text
     &
-      padding: 16px 20px 20px
+      padding: 16px 0
       h3
         font-family: "Noto Serif TC", serif
         font-weight: 600
         +fontSize(28px)
-
+        @media (max-width: theme('breakpoints.md'))
+          padding: 16px 20px 20px
+          +fontSize(26px)
   @media (max-width: theme('breakpoints.md'))
     > .caption
       &
@@ -478,6 +480,9 @@ blockqoute
   &
     +card--set--basic
     position: relative
+    &.bt-black
+      border-top: 1px solid #515050
+      padding-top: 20px
   > .pic
     margin-bottom: 10px
   @media (max-width: theme('breakpoints.lg'))
@@ -534,18 +539,23 @@ blockqoute
       flex-direction: column
       justify-content: space-between
       padding-bottom: 16px
+    .event-head
+      +fontSize(28px)
     h4
       &
         min-height: 3.7em
         padding-bottom: 8px
     .info
       color: white
-    
+    p.normal-size
+      +fontSize(18px)
   @media (max-width: theme('breakpoints.md'))
     &:first-child
       .caption p
         font-size: 24px
         line-height: 1.4
+      p.normal-size
+        +fontSize(18px)
       .info
         font-size: 18px
 
@@ -1392,7 +1402,13 @@ blockqoute
         grid-column: span 2
     img
       transform: translate(-20px, -20px)
+      height: 100%
+      width: 100%
+      object-fit: cover
       @media (max-width: theme('breakpoints.md'))
+        height: 100%
+        width: auto
+        margin: auto
         transform: none
   .panel--review
     display: none
@@ -1973,6 +1989,8 @@ blockqoute
   display: flex
   align-items: center
   justify-content: center
+  &.relative
+    position: relative
 .fixed-checkout 
   display: flex
   @media (max-width: theme('breakpoints.md'))

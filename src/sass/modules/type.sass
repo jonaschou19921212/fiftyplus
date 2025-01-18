@@ -879,7 +879,7 @@ article.content
           height: 22px
           aspect-ratio: 1/1
           background:
-            image: url(./assets/sprite/clock.svg)
+            image: url(/assets/sprite/clock.svg)
             size: cover
       @media (max-width: theme('breakpoints.md'))
         width: 100%
@@ -893,6 +893,9 @@ article.content
   &
     position: relative
     +card--set--basic
+    .caption
+      .bigger
+        +fontSize(28px)
   // &.swiper-min-height
   //   &
   //     min-height: 500px
@@ -909,13 +912,17 @@ article.content
     background:
       image: url(./assets/images/button--play.svg)
       size: cover
+  
   @media (max-width: theme('breakpoints.lg'))
     .pic
       margin-bottom: 0
     .caption
-      position: absolute
+      position: relative
       height: 80px
       padding: 8px 0 0
+      .bigger
+        +fontSize(18px)
+      
       
 
 .card--snippet
@@ -986,6 +993,10 @@ article.content
       padding: 16px
       background: rgba(white, .5)
       color: 121212
+    &.relative
+      position: relative
+      background: transparent
+      color: #fff
     h3
       font-family: 'Noto Sans TC', sans-serif
       -webkit-line-clamp: unset
@@ -1171,16 +1182,21 @@ article.content
   //     li
   //       font-family: 'Noto Sans TC', sans-serif
   //       line-height: 1.8
-
+.caption--event--cover--mobile
+  background: #000
+  padding: 20px
+  color: #fff
 .caption--event--cover
   &
+    background: rgba(#000, .7)
     position: relative
+    margin-block: 40px
     z-index: 2
     max-width: 800px
+    color: #fff
   .text
     &
       padding: 20px
-      background: rgba(white, .7)
     h1
       font-family: 'Noto Sans TC', sans-serif
       text-align: center
@@ -1191,7 +1207,7 @@ article.content
     p
       font-family: 'Noto Sans TC', sans-serif
       font-size: 18px
-
+  
 .card--selection
   .title
     +fontSize(19px)
@@ -1545,7 +1561,7 @@ article
     &:last-child
       border-bottom: none
   .no
-    font-size: 40px
+    font-size: 36px
     line-height: 1
     font-family: 'Noto Serif TC', serif
     color: var(--theme-color)
@@ -1566,10 +1582,10 @@ article
     font-weight: 400
     padding: 10px 0
     color: #515050
-  .image-note
-    font-size: 14px
-    color: #505050
-    padding: 10px 0
+.image-note
+  font-size: 14px
+  color: #505050
+  padding: 10px 0
 
 .page--caption
   .information
@@ -1582,7 +1598,7 @@ article
   .author
     text-align: right
     font-family: "Noto Sans TC", serif
-    font-weight: 700
+    font-weight: 400
   .buttons
     > *
       width: 40px
@@ -1647,8 +1663,8 @@ article.is-review
     display: inline-flex
     line-height: 1.2
     padding: 0 20px
-    border-left: 16px solid var(--theme-color)
-    border-right: 16px solid var(--theme-color)
+    border-left: 8px solid var(--theme-color)
+    border-right: 8px solid var(--theme-color)
     letter-spacing: .5rem
     padding-left: calc(20px + .5rem)
     &.small
@@ -2057,3 +2073,7 @@ table.table
         letter-spacing: 1.2px
         @media (max-width: theme('breakpoints.sm'))
           font-size: 1.2rem
+article.is-review-rules
+  &
+    > * 
+      +fontSizeImportant(18px)

@@ -1,0 +1,277 @@
+extends _layout.pug
+
+block vars
+  - $id = 'article_video'
+
+block main
+  section.section--breadcrumb.z-3
+    .container
+      .breadcrumb 
+        ul 
+          li
+            a(
+              href='/'
+            ) 首頁
+          li
+            a(
+              href=""
+            ) 健康
+          li
+            a(
+              href=""
+            ) 運動
+  
+  section.section--article--video--header 
+    .container
+      .video-player
+        video(autoplay='', loop='', muted)
+          source(src="/assets/sprite/article_video.mp4" type="video/mp4")
+      .articles--container
+        .title-container
+          | 職場上和年輕人價值觀差異太大？如何和八、九年級生溝通，自己不心累？
+        .author-container
+          .d-flex.justify-content-between.align-items-center
+            .text
+              .date 2024.05.01
+              .view
+                i.bi.bi-eye.me-1
+                | 888
+            .author
+              p 作者｜陳偉
+              p 責任編輯｜陳偉
+            
+          .buttons.d-none.d-md-flex.justify-content-end.mt-3.mb-0
+            a(href="")
+              .button--facebook(style="width: 40px;")
+            a(href="")
+              .button--line(style="width: 40px;")
+            a(href="")
+              .button--link(style="width: 40px;")   
+            a
+              .button--textsize(onclick='toggleFontSize()', style="width: 40px;")
+      
+
+  section.section--article--body.video--top.pb-0
+    .container
+      .row.mb-3.d-none.d-md-flex
+        +adBanner(true)
+      .row.mb-3.d-flex.d-md-none
+        +adBanner(false)
+      .row
+        .col-12.col-md-9
+          .article--player 
+            .label 文章用聽的
+            .audio-player
+              button.play-btn
+                i.icon-play.bi.bi-play-fill.play-center
+              .controler-container
+                span.current-time 00:00
+                input(type="range" class="audio-progress-bar" min="0" max="100" value="0")
+                span.total-time 00:00
+                button.volume-btn
+                  i.bi.bi-volume-off-fill
+                input(type="range" class="volume-bar" min="0" max="1" step="0.01" value="0.5")
+                span.speed-btn 
+                  i.bi.bi-x
+                  span 1
+
+          article 
+            blockquote.quote.left--cancel
+              p 編按：如何和年輕人共事？熟齡族群在職場待久了，不免感受到世代差異。和MZ世代一起工作，該怎麼給予指示，才能讓對方把事情做好？本文為韓國9位不同業界專家提出的建議，讓職場資深工作者們找到與MZ世代共事的舒服方式。
+            +adBanner(false)
+            p.color--second.mt-3 對張經理而言，年輕的MZ世代（50+註：由1981～1996年間出生的M世代（Millennials）和1997～2010年之間出生的「Z世代」合成的族群）似乎是一道高牆。因為以經理的立場來說，應該要鼓勵同事間相互合作，但他們就好像從外太空來的人種一樣非常難理解。就算支援部分業務或是部分授權，還是無法從他們那裡得到好的回饋。
+            h3 以為ＭＺ世代都很主動 卻發現給彈性或規定太具體都引反感都引反感
+            p.color--second A公司今年已經邁入第37個年頭。在像現在這樣變化無常的時代中，他們擁有悠久的歷史，組織的規模大、部門多，員工人數也很多。不過，組織文化就像官僚體系一樣，某些部門文化甚至像軍隊一樣，必須絕對服從長官的命令。
+              a(href="#") (閱讀相關文章：文章文章文章文章）
+            +adBanner(false)
+            p.color--second.mt-3
+              | 所以不久前甚至還花一大筆錢參加名為「激勵MZ世代的領導力」的演講，但反而發現更多難以理解的方面，無法抓到頭緒。教育內容核心提到：
+              span(style="font-weight: 700")  MZ世代的員工會更投入在自己主動找來做的事情上，而不是被交代的事情。他們想被認同的欲望很強，想要得到充分的權力，立下大功。」
+            blockquote 對張經理而言，年輕的MZ世代因為以經理的立場來說，應該要鼓勵同事間相互合作，但他們就好像從外太空來的人種一樣非常難理解。就算支援部分業務或是部分授權，還是無法從他們那裡得到好的回饋。
+          .panel--subscription.is-center
+            .subscription--title
+              .title 此為會員限定文章
+            .caption
+              p 免費加入50+，用新的方法創造你的理想老後！
+              ul 
+                li
+                  span
+                    i.bi.bi-check
+                  | 閱讀會員限定文章
+                li
+                  span
+                    i.bi.bi-check
+                  | 參加會員限定活動
+                li
+                  span
+                    i.bi.bi-check
+                  | 熟齡生活全方位知識庫
+              p 《50+生活百科》免費看
+            .buttons 
+              .button--more--sm.is-invert
+                .label 會員登入
+              .button--more--sm.is-invert
+                .label 加入會員
+
+          .panel--subscription(
+            style="margin-bottom: 0;"
+          )
+            .subscription--title
+              .title 用行動支持50+
+            .caption
+              p 媒體是推動社會朝向更好改變的關鍵。《50+》目前皆為免費閱讀，然而網站運作需要不同專業人員的投入。如您喜歡這篇文章，誠摯邀請您小額贊助，支持內容製作。希望我們在您的支持下，能持續對台灣熟齡生活有正向啟發、給予人盼望！
+            .buttons 
+              .button--more--sm.is-invert
+                .label 贊助50+
+        .col-12.col-md-3
+          
+          .panel--latest.article-margin.d-none.d-sm-block
+            .inner
+              .title 熱門文章
+              each item, index in [0, 1, 2, 3, 4]
+                .item--latest
+                  .no
+                    = index + 1
+                  .caption.font-light
+                    != getLoremText()
+            .join-us.row
+              .col-12.col-sm-5.col-md-12
+                .fb-area.col-6.col-md-12.mb-0
+                  a.join-text(href="")
+                    | 加FB熱議討論 
+                    .dash &nbsp;
+                    i.bi.bi-play-fill
+              .col-12.col-sm-5.col-md-12
+                .line-area.col-6.col-md-12
+                  a.join-text(href="")
+                    | 加LINE獲新知 
+                    .dash &nbsp;
+                    i.bi.bi-play-fill
+            .d-none.d-md-block.mb-3
+              +adSideBanner
+    .container--slim.mt-5
+      +adBanner(true)
+    .container.courser-recomand.mb-0.d-none.d-sm-flex
+      .row
+        each item, index in [0, 1, 2]
+          .col-lg-4 
+            .card--course
+              .pic
+                img(
+                  data-src=`${getLoremCourse()}`
+                ).lazyload
+              .caption
+                .info
+                  .date 2024.11.06 — 2024.12.11
+                h3 50+聲音表達工作坊進階班第5期
+                .buttons
+                  .button--pill--xl
+                    .label 我要報名
+    .container--slim.d-block.d-sm-none.pb-5
+      .swiper--banner
+        swiper-container(
+          navigation='true'
+          inject-styles=[
+            `
+           
+            :host {
+              --swiper-theme-color: #ede73c;
+            }
+            :host .swiper-button-prev,
+            :host .swiper-button-next {
+              background-color: #66666680;
+              border-radius: 100%;
+              width: 28px;
+              height: 28px;
+              padding: 10px;
+              stroke: #ede73c;
+              stroke-width: 1;
+            }
+            `,
+          ],
+        )
+          each item, index in [0, 1, 2]
+            swiper-slide.bg-theme
+              .card--course.audio-type
+                .pic
+                  img(
+                    data-src=`${getLoremCourse()}`
+                  ).lazyload
+                .caption
+                  .info
+                    .date 2024.11.06 — 2024.12.11
+                  h3 50+聲音表達工作坊進階班第5期
+                  .buttons
+                    .button--pill--xl
+                      .label 我要報名
+    .fixed-checkout
+      include components/mobileShareBar
+  script.
+      const audio = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+      const playBtn = document.querySelector('.play-btn');
+      const progressBar = document.querySelector('.audio-progress-bar');
+      const currentTimeElem = document.querySelector('.current-time');
+      const totalTimeElem = document.querySelector('.total-time');
+      const volumeBar = document.querySelector('.volume-bar');
+      const speedBtn = document.querySelector('.speed-btn');
+
+      let isPlaying = false;
+
+      // 格式化时间
+      function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+      }
+      playBtn.addEventListener('click', () => {
+        if (isPlaying) {
+          audio.pause();
+          playBtn.querySelector('.icon-play').classList.remove('bi-pause-fill');
+          playBtn.querySelector('.icon-play').classList.add('play-center');
+          playBtn.querySelector('.icon-play').classList.add('bi-play-fill');
+        } else {
+          audio.play();
+          playBtn.querySelector('.icon-play').classList.remove('bi-play-fill');
+          playBtn.querySelector('.icon-play').classList.remove('play-center');
+          playBtn.querySelector('.icon-play').classList.add('bi-pause-fill');
+          
+        }
+        isPlaying = !isPlaying;
+      });
+
+      // 更新进度条
+      audio.addEventListener('timeupdate', () => {
+        progressBar.value = (audio.currentTime / audio.duration) * 100;
+        currentTimeElem.textContent = formatTime(audio.currentTime);
+      });
+
+      // 拖动进度条
+      progressBar.addEventListener('input', (e) => {
+        audio.currentTime = (e.target.value / 100) * audio.duration;
+      });
+
+      // 音量控制
+      volumeBar.addEventListener('input', (e) => {
+        audio.volume = e.target.value;
+      });
+
+      // 播放速度
+      speedBtn.addEventListener('click', () => {
+        const speeds = [1, 1.5, 2];
+        let currentSpeed = speeds.indexOf(audio.playbackRate);
+        audio.playbackRate = speeds[(currentSpeed + 1) % speeds.length];
+        speedBtn.querySelector('span').textContent = `${audio.playbackRate}`;
+      });
+
+      // 加载音频元数据
+      audio.addEventListener('loadedmetadata', () => {
+        totalTimeElem.textContent = formatTime(audio.duration);
+      });
+
+      // 播放结束时
+      audio.addEventListener('ended', () => {
+        playBtn.querySelector('.icon-play').classList.remove('bi-pause-fill');
+        
+        playBtn.querySelector('.icon-play').classList.add('bi-play-fill');
+        isPlaying = false;
+      });

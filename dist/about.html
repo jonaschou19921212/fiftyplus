@@ -35,7 +35,7 @@
 
 <body>
   <div id="top"></div>
-  <main style="visibility: hidden;">
+  <main style="visibility: hidden; position: relative;">
     <div id="App"><input id="isMenuActive" type="checkbox" /><input id="isMenuNow" type="text" /><input id="isScrollDown" type="checkbox" /></div>
     <header>
       <div class="header-ad d-none d-lg-flex py-4">
@@ -114,7 +114,7 @@
                   <div class="label">影音</div>
                 </a></li>
               <li><a href="./weekly.html">
-                  <div class="label">週刊</div>
+                  <div class="label">百科</div>
                 </a></li>
               <li><a href="./reviews.html">
                   <div class="label">評鑑</div>
@@ -180,7 +180,7 @@
                   <div class="label">影音</div>
                 </a></li>
               <li><a href="./weekly.html">
-                  <div class="label">週刊</div>
+                  <div class="label">百科</div>
                 </a></li>
               <li><a href="./reviews.html">
                   <div class="label">評鑑</div>
@@ -204,6 +204,9 @@
       <div class="header--mobile">
         <div class="container">
           <div class="logo--wrapper"><a class="logo--black" href="./index.html"></a></div>
+          <div class="p-2">
+            <div class="ad-fake" style="width: 90px; height: 40px">廣告-s</div>
+          </div>
           <div class="buttons"><a class="button--pill--xs up-down" href="./donate.html">
               <div class="label">贊助50+</div>
             </a>
@@ -365,7 +368,7 @@
       });
 
     </script>
-    <section class="section--breadcrumb is-sp">
+    <section class="section--breadcrumb is-sp pb-3">
       <div class="container">
         <div class="breadcrumb">
           <ul>
@@ -374,7 +377,7 @@
           </ul>
         </div>
       </div>
-      <div class="container d-none d-md-block">
+      <div class="container">
         <div class="banner--donate">
           <div class="pic"><img class="lazyload" data-src="./assets/images/banner--about.jpg" alt="廣告" /></div>
         </div>

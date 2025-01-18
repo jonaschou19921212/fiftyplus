@@ -116,8 +116,12 @@ block main
                       .date 2024.11.06 — 2024.12.11
                     h3 50+聲音表達工作坊進階班第5期
                     .buttons
-                      .button--pill--xl
-                        .label 我要報名
+                      if index <4
+                        .button--pill--xl
+                          .label 我要報名
+                      else
+                        .button--pill--xl.is-dark-gray
+                          .label 報名額滿
               if (index + 1) % 4 === 0 && index !== 0
                 .col-12.mt-0.mb-5
                   +adBanner(true)
@@ -159,7 +163,7 @@ block main
                 h3 50+聲音表達工作坊進階班第5期
                 .buttons
                   .button--pill--xl.is-dark-gray
-                    .label 我要報名
+                    .label 報名截止
        
       .buttons
         .button--more 

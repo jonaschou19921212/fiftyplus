@@ -14,7 +14,7 @@
     { label: '策展', href: './events.html', target: null },
     { label: 'Podcast', href: './podcast.html', target: null, qlink: true },
     { label: '影音', href: './audios.html', target: null, qlink: true },
-    { label: '週刊', href: './weekly.html', target: null, qlink: true },
+    { label: '百科', href: './weekly.html', target: null, qlink: true },
     { label: '評鑑', href: './reviews.html', target: null, qlink: true },
     { label: '學院', href: './course.html', target: null, qlink: true },
     { label: '活動', href: './campaign.html', target: null },
@@ -37,8 +37,12 @@
 
 
 header
-  .header-ad.d-none.d-lg-flex.py-4
-    .ad-fake(style="width: 970px; height:250px") 廣告
+  - if($id === 'article_video')
+    .header-ad.static.d-none.d-lg-flex.py-4
+      .ad-fake(style="width: 970px; height:250px") 廣告
+  - else
+    .header-ad.d-none.d-lg-flex.py-4
+      .ad-fake(style="width: 970px; height:250px") 廣告
   .button--go-top(
     onclick='window.scrollTo(0, 0)'
   )
@@ -51,17 +55,73 @@ header
         a.logo--black(
           href='./index.html'
         )
-  
+  - else if($id === 'article_video')
+    .header--desktop--container
+      .header--desktop.bg-none
+        section
+          .container
+            .banner.d-none.d-md-flex.justify-content-start.w-100.mb-4
+              .ad-fake(style="width: 90px; height: 45px") 廣告-s
+            .logo--wrapper
+              a.logo--black(
+                href='./index.html'
+              )
+            .buttons--action.is-flex-end
+              .panel--search
+                label
+                  a.icon(
+                    href='./search.html'
+                  )
+                    i.bi.bi-search
+                  input(
+                    type='checkbox'
+                  )
+                  input(
+                    type='text'
+                    placeholder='輸入搜尋文字'
+                  )
+              a.button--pill--xs(
+                href='./login.html'
+              )
+                .label 會員登入
+              a.button--pill--xs.is-invert(
+                href='./donate.html'
+              )
+                .label 贊助50+
+              .button--cart--round
+                .icon 
+                  i.bi.bi-cart-fill
+      nav.header--nav.bg-none
+        .container
+          -
+            let navs = []
+            navs[0] = nav.slice(0, 6)
+            navs[1] = []
+            navs[2] = nav.slice(6, 13)
+          each menu in navs
+            ul
+              each item in menu
+                li
+                  a(
+                    href=item.href
+                    class=item.style
+                  )
+                    .label
+                      = item.label
+                  - if(item.menu)
+                    ul
+                      each sub in item.menu
+                        li 
+                          a(
+                            href=sub.href
+                          )
+                            .label
+                              = sub.label
   - else
     .header--desktop--container
       .header--desktop
         section
           .container
-            //- .buttons--action.is-flex-start
-            //-   a.button--pill--xs(
-            //-     href='./confirm.html'
-            //-   )
-            //-     .label 訂閱週刊
             .banner.d-none.d-md-flex.justify-content-start.w-100.mb-4
               .ad-fake(style="width: 90px; height: 45px") 廣告-s
             .logo--wrapper
@@ -152,6 +212,8 @@ header
         a.logo--black(
           href='./index.html'
         )
+      .p-2
+        .ad-fake(style="width: 90px; height: 40px") 廣告-s
       .buttons
         a.button--pill--xs.up-down(
           href='./donate.html'

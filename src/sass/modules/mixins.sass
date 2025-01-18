@@ -11,6 +11,10 @@
   font-size: $size
   font-size: percentage(math.div($size, $base))
 
+@mixin fontSizeImportant($size, $base:18px)
+  font-size: $size !important
+  font-size: percentage(math.div($size, $base))  !important
+
 @mixin max-line-height($n)
   display: -webkit-box
   -webkit-line-clamp: $n

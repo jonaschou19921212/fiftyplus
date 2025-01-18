@@ -4,28 +4,18 @@ block vars
   - $id = 'eventDetail'
 
 block main
-  section.section--event--cover.d-none.d-sm-flex
+  section.section--event--cover
     .bg
       img(
         data-src=`${getLoremSlide()}`
       ).lazyload
       
-    .caption--event--cover 
+    .caption--event--cover.d-none.d-sm-flex
       .text 
-        h1 健康大未來！預約不生病的老後
+        //- h1 健康大未來！預約不生病的老後
         p 如果活到100歲，還可以不病、不痛、不失能，盡情做自己喜歡的事，那會是什麼樣的世界？隨著醫療科技的進步，這不是天方夜譚，而是我們即將迎接的未來。如何在病兆發生之前，就揪出疾病對症下藥？出不了門的長者，怎麼更便利的看病？各種智慧裝置，如何幫助我們即時掌握健康數據、優化生活型態？未來的醫療保險，怎麼助我們更積極管理健康？跟著《50+》一起探索未來的趨勢！
-  .section--event--detail.d-block.d-sm-none
-    .container 
-      article.article--slim 
-        .pic--wrapper
-          .pic 
-            img.square(
-              data-src=`${getLoremPic()}`
-            ).lazyload
-          .caption--event--cover 
-            .text 
-              h1 健康大未來！預約不生病的老後
-              p 如果活到100歲，還可以不病、不痛、不失能，盡情做自己喜歡的事，那會是什麼樣的世界？隨著醫療科技的進步，這不是天方夜譚，而是我們即將迎接的未來。如何在病兆發生之前，就揪出疾病對症下藥？出不了門的長者，怎麼更便利的看病？各種智慧裝置，如何幫助我們即時掌握健康數據、優化生活型態？未來的醫療保險，怎麼助我們更積極管理健康？跟著《50+》一起探索未來的趨勢！
+  .caption--event--cover--mobile.d-block.d-sm-none
+    p 如果活到100歲，還可以不病、不痛、不失能，盡情做自己喜歡的事，那會是什麼樣的世界？隨著醫療科技的進步，這不是天方夜譚，而是我們即將迎接的未來。如何在病兆發生之前，就揪出疾病對症下藥？出不了門的長者，怎麼更便利的看病？各種智慧裝置，如何幫助我們即時掌握健康數據、優化生活型態？未來的醫療保險，怎麼助我們更積極管理健康？跟著《50+》一起探索未來的趨勢！
 
   .section--event--detail 
     .container 
@@ -60,7 +50,7 @@ block main
           .card--snippet--preview
             .pic
               img
-            .caption
+            .caption.relative
               h3
         .col 
           .swiper--snippet
@@ -85,6 +75,8 @@ block main
                     .caption
                       h3
                         != getLoremText()
+                    
+                    
                    
 
   section.section--article

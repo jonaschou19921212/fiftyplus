@@ -48,16 +48,28 @@ block main
                       != getLoremText()
           //- .swiper-pagination
         each item, index in [0, 1, 2]
-          a.card--cover(
-            href='./article.html'
-          )
-            .pic
-              img(
-                data-src=`${getLoremSlide()}`
-              ).lazyload
-            .caption
-              h3.three-line
-                != getLoremText()
+          if index == 0
+            a.card--cover.bt-black(
+              href='./article.html'
+            )
+              .pic
+                img(
+                  data-src=`${getLoremSlide()}`
+                ).lazyload
+              .caption
+                h3.three-line
+                  != getLoremText()
+          else
+            a.card--cover(
+              href='./article.html'
+            )
+              .pic
+                img(
+                  data-src=`${getLoremSlide()}`
+                ).lazyload
+              .caption
+                h3.three-line
+                  != getLoremText()
 
   section.section--banner
     .container--slim
@@ -146,7 +158,7 @@ block main
                     data-src=`${getLoremYoutube()}`
                   ).lazyload
                 .caption
-                  h3
+                  h3.bigger
                     != getLoremText()
 
     .container--slim.d-none.d-lg-block
@@ -158,7 +170,7 @@ block main
                 data-src=`${getLoremYoutube()}`
               ).lazyload
             .caption
-              h3
+              h3.bigger
                 != getLoremText()
 
     .container--slim.d-block.d-md-none
@@ -205,7 +217,7 @@ block main
   section.section--article
     .container
       .section__title 
-        .title 週刊
+        .title 生活百科
         a.button--pill--xs.is-outline(
           href='./weekly.html'
         )
@@ -376,9 +388,10 @@ block main
                 != item
               - if (index === 0)
                 p 如果活到100歲，還可以不病、不痛、不失能，盡情做自己喜歡的事那會是什麼樣的世界？隨著醫療科技的發...
-
-      .buttons.d-md-none
-        .button--more 
+    
+    .container--slim.d-block.mt-5
+      .buttons.mb-0
+        .button--more
           .label 查看更多
           .icon 
             i.bi.bi-caret-down-fill
@@ -393,7 +406,7 @@ block main
           .label more
     .container--slim
       .row.row--course
-        each item, index in [0, 1, 2]
+        each item, index in [0, 1, 2, 3]
           .col-lg-6 
             .card--course
               .pic

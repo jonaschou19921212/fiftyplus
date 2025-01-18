@@ -35,7 +35,7 @@
 
 <body>
   <div id="top"></div>
-  <main style="visibility: hidden;">
+  <main style="visibility: hidden; position: relative;">
     <div id="App"><input id="isMenuActive" type="checkbox" /><input id="isMenuNow" type="text" /><input id="isScrollDown" type="checkbox" /></div>
     <header>
       <div class="header-ad d-none d-lg-flex py-4">
@@ -114,7 +114,7 @@
                   <div class="label">影音</div>
                 </a></li>
               <li><a href="./weekly.html">
-                  <div class="label">週刊</div>
+                  <div class="label">百科</div>
                 </a></li>
               <li><a href="./reviews.html">
                   <div class="label">評鑑</div>
@@ -180,7 +180,7 @@
                   <div class="label">影音</div>
                 </a></li>
               <li><a href="./weekly.html">
-                  <div class="label">週刊</div>
+                  <div class="label">百科</div>
                 </a></li>
               <li><a href="./reviews.html">
                   <div class="label">評鑑</div>
@@ -204,6 +204,9 @@
       <div class="header--mobile">
         <div class="container">
           <div class="logo--wrapper"><a class="logo--black" href="./index.html"></a></div>
+          <div class="p-2">
+            <div class="ad-fake" style="width: 90px; height: 40px">廣告-s</div>
+          </div>
           <div class="buttons"><a class="button--pill--xs up-down" href="./donate.html">
               <div class="label">贊助50+</div>
             </a>
@@ -380,31 +383,46 @@
         <div class="section__title">
           <div class="title">合作洽談</div>
         </div>
-        <article class="content">
+        <article>
           <p>請填寫以下表單，我們將盡快與您聯繫！<br />如有任何問題，請聯絡我們的客服專線：<a href="tel:0800-000-000">0800-000-000</a></p>
         </article>
       </div>
-      <div class="container">
-        <form class="form--cooperate">
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <div class="form--input is-required"><label for="name">姓名</label><input class="form--input" id="name" type="text" /></div>
+      <div class="container mt-5" id="form-container">
+        <div class="section__title is-form">
+          <form class="form--review">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="form--input"><label for="name">姓名<span class="label--hint">(請務必填寫真實姓名，以利刷卡資料核對。)</span></label><input class="form--input" id="name" type="text" placeholder="請輸入姓名" /></div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="form--input is-required"><label>手機</label><input /></div>
+              </div>
+              <div class="col-12">
+                <div class="form--input is-required"><label>Email</label><input /></div>
+              </div>
+              <div class="col-12">
+                <div class="form--address">
+                  <div class="label">地址</div>
+                  <div class="address--code full">
+                    <div class="select"><select>
+                        <option>104</option>
+                      </select></div>
+                    <div class="select"><select>
+                        <option>台北市</option>
+                      </select></div>
+                    <div class="select"><select>
+                        <option>大安區</option>
+                      </select></div>
+                  </div>
+                  <div class="address--text"><input /></div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form--textarea"><label>留言</label><textarea class="form--input" type="text"></textarea></div>
+              </div>
             </div>
-            <div class="col-12 col-md-6"></div>
-            <div class="col-12 col-md-6">
-              <div class="form--input is-required"><label for="name">Email</label><input class="form--input" id="name" type="text" /></div>
-            </div>
-            <div class="col-12 col-md-6">
-              <div class="form--input is-required"><label for="name">手機</label><input class="form--input" id="name" type="text" /></div>
-            </div>
-            <div class="col-12">
-              <div class="form--input"><label for="name">公司名稱</label><input class="form--input" id="name" type="text" /></div>
-            </div>
-            <div class="col-12">
-              <div class="form--textarea is-required"><label>留言</label><textarea class="form--input" type="text" placeholder="欲合作事項及內容，請於此處說明，謝謝！"></textarea></div>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
         <div class="buttons">
           <div class="button--pill--xl">
             <div class="label">送出表單</div>

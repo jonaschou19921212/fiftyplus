@@ -96,6 +96,7 @@ export default defineConfig({
         privacy: resolve(__dirname, "./src/privacy.html"),
         personalPrivacy: resolve(__dirname, "./src/personalPrivacy.html"),
         article: resolve(__dirname, "./src/article.html"),
+        article_video: resolve(__dirname, "./src/article_video.html"),
         articles: resolve(__dirname, "./src/articles.html"),
         confirm: resolve(__dirname, "./src/confirm.html"),
         course: resolve(__dirname, "./src/course.html"),
