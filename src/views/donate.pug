@@ -70,8 +70,8 @@ block main
                         | 信箱：vickywang@cwgv.com.tw
                         br
                         | 電話：（02）2517-3688#819
-        .col-12.col-md-3 
-          .panel--donate.hide-border
+        .col-12.col-md-3(id='panel--donate')
+          .panel--donate
             .title 贊助50+
             .form--radio--switch 
               label(
@@ -126,7 +126,7 @@ block main
                   name='donate--cost'
                   id='donate--500'
                 )
-                .label 500
+                .label 500元
               label(
                 for='donate--3000'
               )
@@ -135,17 +135,42 @@ block main
                   name='donate--cost'
                   id='donate--3000'
                 )
-                .label 3000
+                .label 3000元
             .form--totally 
               .label
                 span 我要每月贊助
                 span 888
                 span 元
+    .donate-bottom.fixed-bottom.d-md-none.juctify-content-center.p-4
+        .button--pill--full(onclick="document.getElementById('panel--donate').scrollIntoView();")
+            .label 我要贊助
+  script.
+    // 新增的滾動事件監聽器
+    window.addEventListener('scroll', function() {
+      const donatePanel = document.querySelector('.panel--donate');
+      const fixedBuy = document.querySelector('.fixed-bottom');
+      const footer = document.querySelector('footer'); // 獲取 footer 元素
+      const footerRect = footer.getBoundingClientRect(); // 獲取 footer 的位置
+      
+      // 使用 getBoundingClientRect() 獲取 donatePanel 的位置
+      const rect = donatePanel.getBoundingClientRect();
+      
+      // 當 donatePanel 完全消失在視口上方時顯示 fixedBuy
+      if (rect.bottom < 0) {
+        fixedBuy.style.display = 'block'; // 顯示固定購買按鈕
+      } else {
+        fixedBuy.style.display = 'none'; // 隱藏固定購買按鈕
+      }
 
+      if (footerRect.top < window.innerHeight) {
+        fixedBuy.style.transition = 'bottom 0.3s ease'; // 添加過渡效果
+        fixedBuy.style.position = 'absolute'; // 設置為絕對定位
+        fixedBuy.style.bottom = `0px`; // 距離 footer 的高度
+      } else {
+        fixedBuy.style.transition = 'bottom 0.3s ease'; // 添加過渡效果
+        fixedBuy.style.position = 'fixed'; // 恢復為固定定位
+        fixedBuy.style.bottom = '0'; // 固定在底部
+      }
+    });
 
-    .container--slim
-      .buttons
-        .button--more 
-          .label 查看更多
-          .icon 
-            i.bi.bi-caret-down-fill
+          

@@ -1258,7 +1258,8 @@ article.content
       line-height: 40px
       font-family: 'Noto Sans TC', sans-serif
       margin-bottom: 40px
-
+      @media (min-width: theme('breakpoints.md'))
+        font-size: 20px
 article
   // > *:last-child
   //   margin-bottom: 0 !important
@@ -1328,7 +1329,7 @@ article
     font-style: normal
     font-weight: 400
     line-height: 1.6
-    @media (max-width: theme('breakpoints.sm'))
+    @media (min-width: theme('breakpoints.md'))
       font-size: 20px
 
   p.color--second
@@ -1395,7 +1396,7 @@ article
         pointer-events: none // 防止遮罩干擾操作
   i
     font-style: normal
-    color: #ff0500
+    color: #222
     
 
 .card--faq

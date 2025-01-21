@@ -628,11 +628,15 @@ section
   padding-top: 0
 
 .section--donate
+  @media (max-width: theme('breakpoints.md'))
+    .container--slim
+      margin-bottom: 30px
   .container--slim + .container--slim
     margin-top: 40px
   .reverse
     flex-wrap: wrap-reverse
-
+  .donate-bottom
+    display: none
 .section--donate--banner
   &
     background: #eee9e4

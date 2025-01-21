@@ -425,8 +425,8 @@
               </div>
             </article>
           </div>
-          <div class="col-12 col-md-3">
-            <div class="panel--donate hide-border">
+          <div class="col-12 col-md-3" id="panel--donate">
+            <div class="panel--donate">
               <div class="title">贊助50+</div>
               <div class="form--radio--switch"> <label for="donate--personal"><input type="radio" name="donate" id="donate--personal" />
                   <div class="label">個人贊助</div>
@@ -441,9 +441,9 @@
               <div class="form--donate"><input type="text" placeholder="請輸入您想要贊助的金額" /></div>
               <div class="form--spacer">或</div>
               <div class="form--radio--switch"> <label for="donate--500"><input type="radio" name="donate--cost" id="donate--500" />
-                  <div class="label">500</div>
+                  <div class="label">500元</div>
                 </label><label for="donate--3000"><input type="radio" name="donate--cost" id="donate--3000" />
-                  <div class="label">3000</div>
+                  <div class="label">3000元</div>
                 </label></div>
               <div class="form--totally">
                 <div class="label"><span>我要每月贊助</span><span>888</span><span>元</span></div>
@@ -452,15 +452,39 @@
           </div>
         </div>
       </div>
-      <div class="container--slim">
-        <div class="buttons">
-          <div class="button--more">
-            <div class="label">查看更多</div>
-            <div class="icon"> <i class="bi bi-caret-down-fill"></i></div>
-          </div>
+      <div class="donate-bottom fixed-bottom d-md-none juctify-content-center p-4">
+        <div class="button--pill--full" onclick="document.getElementById('panel--donate').scrollIntoView();">
+          <div class="label">我要贊助</div>
         </div>
       </div>
     </section>
+    <script>
+      // 新增的滾動事件監聽器
+      window.addEventListener('scroll', function() {
+        const donatePanel = document.querySelector('.panel--donate');
+        const fixedBuy = document.querySelector('.fixed-bottom');
+        const footer = document.querySelector('footer'); // 獲取 footer 元素
+        const footerRect = footer.getBoundingClientRect(); // 獲取 footer 的位置
+        // 使用 getBoundingClientRect() 獲取 donatePanel 的位置
+        const rect = donatePanel.getBoundingClientRect();
+        // 當 donatePanel 完全消失在視口上方時顯示 fixedBuy
+        if (rect.bottom < 0) {
+          fixedBuy.style.display = 'block'; // 顯示固定購買按鈕
+        } else {
+          fixedBuy.style.display = 'none'; // 隱藏固定購買按鈕
+        }
+        if (footerRect.top < window.innerHeight) {
+          fixedBuy.style.transition = 'bottom 0.3s ease'; // 添加過渡效果
+          fixedBuy.style.position = 'absolute'; // 設置為絕對定位
+          fixedBuy.style.bottom = `0px`; // 距離 footer 的高度
+        } else {
+          fixedBuy.style.transition = 'bottom 0.3s ease'; // 添加過渡效果
+          fixedBuy.style.position = 'fixed'; // 恢復為固定定位
+          fixedBuy.style.bottom = '0'; // 固定在底部
+        }
+      });
+
+    </script>
     <footer>
       <div class="container">
         <div class="grid--footer">
