@@ -276,8 +276,7 @@ section
       display: block
     > *:nth-child(3)
       &
-        grid-column: span 10
-        grid-row: span 4
+        display: none
     > *:nth-child(2)
       &
         grid-column: span 10
@@ -287,9 +286,16 @@ section
         grid-column: span 10
         grid-row: span 5
 .section--selectionDetail--header
+  &
+    @media (max-width: theme('breakpoints.xl'))
+      margin-top: 20px
   .header-text-area
     text-align: right
     padding-left: 20px
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
     @media (max-width: theme('breakpoints.lg'))
       padding-left: 0px
 
@@ -511,6 +517,18 @@ section
     &
       display: flex
       flex-direction: column
+    .swiper--banner
+      position: relative
+      &:after
+        content: ""
+        display: block
+        position: absolute
+        left: 50%
+        bottom: 0
+        transform: translateX(-50%)
+        width: calc(100% - 40px)
+        height: 1px
+        background-color:  #515050
 
 
 .caption--confirm
@@ -685,11 +703,15 @@ section
       grid-row: span 1
       font-weight: 600
       color: #515050
-      .normal-font
+      @media (max-width: theme('breakpoints.md'))
+        font-weight: 400
+      &.normal-font
         font-family: "Noto Sans TC", serif
         font-weight: 400
         .bi-eye
           font-size: 22px
+        @media (max-width: theme('breakpoints.md'))
+          font-size: 14px
     .iframe-container
       grid-column: span 2
       grid-row: span 1
@@ -749,11 +771,9 @@ section
         font-weight: 800 !important
 .section--article--video--header
   &
-    padding: 0
-    top: -230px
     position: relative
     @media (max-width: theme('breakpoints.md'))
-      top: -55px
+      padding: 0
     
     .container
       position: relative
@@ -762,15 +782,23 @@ section
       height: 100%
       max-width: 100%
       .video-player
-        min-height: 900px
-        height: 100%
+        position: relative
         width: 100%
+        overflow: hidden
+        &:before
+          content: ""
+          padding-top: 56.25%
+          display: block
+          @media (max-width: theme('breakpoints.md'))
+            padding-top: 177.7777777%
         video
-          height: 100vh
+          position: absolute
+          left: 50%
+          top: 50%
+          transform: translate(-50%,-50%)
+          height: 100%
           width: 100%
           object-fit: cover
-          @media (max-width: theme('breakpoints.sm'))
-            min-height: 900px
       .articles--container
         display: flex
         justify-content: center
@@ -778,7 +806,7 @@ section
         position: absolute
         width: 100%
         height: auto
-        bottom: 80px
+        bottom: 40px
         padding: 0 40px
         @media (max-width: theme('breakpoints.sm'))
           flex-direction: column
@@ -802,7 +830,6 @@ section
             width: 100%
             margin: 0
         .author-container
-          min-width: 310px
           display: flex
           flex-direction: column
           justify-content: center
@@ -816,9 +843,12 @@ section
             min-width: unset
           .text
             text-align: right
+            white-space: nowrap
             padding-right: 5px
           .author
             text-align: right
+            white-space: nowrap
+            font-family: "Noto Serif TC", serif
 .page--cover
   @media (max-width: theme('breakpoints.md'))
     grid-column: span 2
@@ -1014,10 +1044,6 @@ section
       flex-direction: column
 .section--audio--body,
 .section--article--body
-  &.video--top
-    margin-top: -230px
-    @media (max-width: theme('breakpoints.md'))
-      margin-top: -65px
   @media (max-width: theme('breakpoints.sm'))
     padding-left: 18px
     padding-right: 18px

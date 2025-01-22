@@ -828,6 +828,10 @@ article.content
       min-height: unset
 
 .card--review
+  .date
+    font-family: 'Noto Sans TC', sans-serif
+  .catalog
+    font-size: 16px
   .caption
     .info
       +fontSize(16px)
@@ -887,7 +891,9 @@ article.content
         justify-content: center
         .label
           display: block
-            
+  @media (max-width: theme('breakpoints.md'))
+    .title
+      font-size: 26px
 
 .card--video
   &
@@ -1362,7 +1368,7 @@ article
       +fontSize(18px)
       font-family: 'Noto Serif TC', serif
       @media (max-width: theme('breakpoints.sm'))
-        font-size: 20px
+        font-size: 18px
   blockquote
     &
       margin-bottom: 20px
@@ -1480,7 +1486,8 @@ article
     line-height: 1
     font-weight: 700
     border-radius: 20px
-    letter-spacing: .2rem
+    // letter-spacing: .2rem
+    letter-spacing: 0
 
 .panel--donate,
 .panel--latest,
@@ -1677,10 +1684,10 @@ article.is-review
     &.border-white
       border-left: 16px solid #fff
       border-right: 16px solid #fff
-    @media (max-width: theme('breakpoints.md'))
-      position: relative
-      left: 50%
-      transform: translateX(-50%)
+    // @media (max-width: theme('breakpoints.md'))
+    //   position: relative
+    //   left: 50%
+    //   transform: translateX(-50%)
     &.border-right-none
       border-right: none
   .pic

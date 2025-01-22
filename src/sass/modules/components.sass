@@ -461,8 +461,10 @@ blockqoute
         font-family: "Noto Serif TC", serif
         font-weight: 600
         +fontSize(28px)
-        @media (max-width: theme('breakpoints.md'))
-          padding: 16px 20px 20px
+      @media (max-width: theme('breakpoints.md'))
+        padding: 20px 0
+        h3
+          padding:0 20px
           +fontSize(26px)
   @media (max-width: theme('breakpoints.md'))
     > .caption
@@ -480,9 +482,6 @@ blockqoute
   &
     +card--set--basic
     position: relative
-    &.bt-black
-      border-top: 1px solid #515050
-      padding-top: 20px
   > .pic
     margin-bottom: 10px
   @media (max-width: theme('breakpoints.lg'))
@@ -995,7 +994,7 @@ blockqoute
     +fontSize(18px)
     color: #515050
     width:80%
-    letter-spacing: .2rem
+    // letter-spacing: .2rem
     padding-left: .5rem
 
 .banner--weekly,
@@ -1398,6 +1397,8 @@ blockqoute
     row-gap: 20px
     background: rgba(#b7b8b8, .1)
     margin-bottom: 40px
+    @media (max-width: theme('breakpoints.md'))
+      background: transparent
   .pic
     &
       aspect-ratio: 1/1
@@ -1405,7 +1406,9 @@ blockqoute
       grid-row: span 1
       margin-bottom: 0
       @media (max-width: theme('breakpoints.md'))
+        aspect-ratio: 3 / 2
         grid-column: span 2
+        border: 1px solid #222222
     img
       transform: translate(-20px, -20px)
       height: 100%
@@ -1422,6 +1425,7 @@ blockqoute
       display: block
       grid-column: span 2
       position: static
+      background: rgba(#b7b8b8, .1)
   .status
     &
       grid-column: span 1
@@ -1429,9 +1433,9 @@ blockqoute
       margin-bottom: 20px
       @media (max-width: theme('breakpoints.md'))
         grid-column: span 2
-        background: #fff
         padding-bottom: 20px
         padding-top: 20px
+        margin-bottom: 0
     .card--review--status
       transform: translate(-20px, -20px)
       @media (max-width: theme('breakpoints.md'))
@@ -1445,6 +1449,9 @@ blockqoute
         grid-row: 4 / span 1 
     > article
       padding: 40px 30px 40px 20px
+      @media (max-width: theme('breakpoints.md'))
+        padding: 20px
+        background: rgba(#b7b8b8, .1)
   .report-buy
     &
       grid-column: 2 / span 1

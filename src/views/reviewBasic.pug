@@ -32,7 +32,8 @@ block main
         .col-12.col-md-9
           .row.align-items-center.mb-0.mb-lg-5.mt-lg-4
             .col-lg-auto
-              .review-collect.mb-3.mb-lg-0 評鑑募集中
+              - const stepTitles = ['評鑑募集中', '評鑑名單公告', '心得回填', '查看評鑑報告']
+              .review-collect.mb-3.mb-lg-0 #{stepTitles[step - 1]}
             .col-lg
               .review--title.mb-lg-0
                 .title 亞培安素-香草減甜版
@@ -108,7 +109,7 @@ block main
           .process
           .caption
             .title 評鑑名單公告
-            .text 開始評鑑吧！公告入選名單及寄出產品至您提供的地址。
+            .text 公告入選名單！我們會寄出產品至您提供的地址。
           .date 11.12 — 11.14
         .card--step(
           class=(step === 3)? 'is-active' : ''
@@ -117,7 +118,7 @@ block main
           .process
           .caption
             .title 心得回填
-            .text 回填心得喔！評鑑後別忘了拍攝照片並回填心得喔。
+            .text 回填心得囉！寫下心得評分並拍照回傳，發表評鑑意見。
           .date 11.15 — 11.30
         .card--step(
           class=(step === 4)? 'is-active' : ''
@@ -126,55 +127,147 @@ block main
           .process
           .caption
             .title 查看評鑑報告
-            .text 看評鑑報告！看看心得報告，說不定有意想不到的收穫呢。
+            .text 查看評鑑報告！歡迎多看他人的分享，會得意想不到的靈感與收穫喔。
           .date 12.01 — 12.11
       
       .timeline.d-flex.d-sm-none
-        each stepLabel, index in ["Step.1", "Step.2", "Step.3", "Step.4"]
-          .timeline-step(class=(index + 1 === step ? 'active' : ''))
-            .timeline-marker 
-              span #{stepLabel}
-            .timeline-content
-              //- .step-title #{step}
-              .status-box
-                h3 評鑑募集中
-                p 申請評鑑囉！只需在網頁上填寫簡單的申請資訊報名。
-                span.date 11.06 — 11.11
+        .timeline-step(class=`${step === 1 ? 'active' : ''}`)
+          .timeline-marker 
+            span Step.1
+          .timeline-content
+            .status-box
+              h3 評鑑募集中
+              p 申請評鑑囉！只需在網頁上填寫簡單的申請資訊報名。
+              span.date 11.06 — 11.11
+        
+        .timeline-step(class=`${step === 2 ? 'active' : ''}`)
+          .timeline-marker 
+            span Step.2
+          .timeline-content
+            .status-box
+              h3 評鑑名單公告
+              p 公告入選名單！我們會寄出產品至您提供的地址。
+              span.date 11.12 — 11.14
+
+        .timeline-step(class=`${step === 3 ? 'active' : ''}`)
+          .timeline-marker 
+            span Step.3
+          .timeline-content
+            .status-box
+              h3 心得回填
+              p 回填心得囉！寫下心得評分並拍照回傳，發表評鑑意見。
+              span.date 11.15 — 11.30
+
+        .timeline-step(class=`${step === 4 ? 'active' : ''}`)
+          .timeline-marker 
+            span Step.4
+          .timeline-content
+            .status-box
+              h3 查看評鑑報告
+              p 查看評鑑報告！歡迎多看他人的分享，會得意想不到的靈感與收穫喔。
+              span.date 12.01 — 12.11
+
+  
   section.section--article--body 
-    .container.position-relative
-      .row
-        .col-12.col-md-9
-          article.is-review-rules
-            h3 活動期間
-            h5 2024/11/06 — 11/11
-            h3 評鑑辦法
-            h6 本次評鑑建議有使用蛋白類營養品習慣的族群參加，體驗品共50份，因體驗數量有限，若報名人數超過50人，我們將從中選出50位評鑑員並寄發試用品，若最後您未中選，將不會收到試用品，請您見諒。維護評鑑品質，每位申請者享有單次申請機會，若重複報名將自動視為無效。
-            h6 Step 1：申請評鑑 
-            ol 
-              li 請登入會員，填寫個人基本資料
-              li 簡述150字想體驗產品的原因
-              li 等候入選通知
-            h6 Step 2：心得回填/好禮加碼贈
-            ol 
-              li 收到體驗品並開始試用
-              li 上傳使用產品後300字以上感想，依照自身試用經驗書寫心得
-              li 請上傳至少3張圖片，至多可上傳4張圖片，歡迎與產品合照，展現活力充沛的自己
-              li 好禮加碼贈：若您將心得文同時PO在您個人臉書上，並截圖您的FB PO文，與心得圖片一起上傳，待評鑑報告出爐後，將依此為依據，額外再贈送3罐亞培安素給評鑑員做為鼓勵！
-              li 4項評鑑雷達圖評分
-            h3 評鑑條件
-            ol 
-              li 有使用蛋白類營養品習慣者
-              li 想在日常生活中增強體力者
-            h3 注意事項
-            ol 
-              li 收到體驗品後，請至少使用7天，請體驗7天後回填評鑑心得，
-                i 請確認願意分享使用意見後再報名參加。
-              li 體驗品於評鑑名單公告5個工作天內送到，若未收到任何通知，請與客服聯繫，聯繫客服信箱：50plus@cwgv.com.tw ; 電話 02-2517-3688 轉 467 陳小姐，週一～週五09:30~12:30 ; 13:30~18:30
-              li 參加本次試用活動，50+將蒐集您的個人資訊 (姓名、電話、地址)，僅做為本次活動聯繫及體驗品寄送使用，不會移作他用，請協助提供正確資訊。
-              li 50+與體驗品提供之廠商保留變更活動及各項回饋獎項、兌換標準之權利，如評鑑活動因不可抗力因素無法執行，50+有暫停或終止本活動之權利。​
-              li 本體驗希望找到真心想了解並對產品有興趣者，若申請評鑑並開始試用後，最終未回覆心得者，往後將喪失參與體驗之資格。
-              li 若您入選為評鑑員，50+將有專人與您電話聯繫，請入選者留意手機來電。
-              li 如申請本次體驗，即表示同意50+網站及體驗品提供之廠商就您所提供的圖文心得有以任何方式使用之權利，並得以在不影響原意下修改文字及保有活動細節調整之權利。
-      .fixed-bottom.d-flex.d-sm-none.juctify-content-center.p-4
-          .button--pill--full
-            .label 搶先報名
+    if step !== 3
+      .container.position-relative
+        .row
+          .col-12.col-md-9
+            article.is-review-rules
+              h3 活動期間
+              h5 2024/11/06 — 11/11
+              h3 評鑑辦法
+              h6 本次評鑑建議有使用蛋白類營養品習慣的族群參加，體驗品共50份，因體驗數量有限，若報名人數超過50人，我們將從中選出50位評鑑員並寄發試用品，若最後您未中選，將不會收到試用品，請您見諒。維護評鑑品質，每位申請者享有單次申請機會，若重複報名將自動視為無效。
+              h6 Step 1：申請評鑑 
+              ol 
+                li 請登入會員，填寫個人基本資料
+                li 簡述150字想體驗產品的原因
+                li 等候入選通知
+              h6 Step 2：心得回填/好禮加碼贈
+              ol 
+                li 收到體驗品並開始試用
+                li 上傳使用產品後300字以上感想，依照自身試用經驗書寫心得
+                li 請上傳至少3張圖片，至多可上傳4張圖片，歡迎與產品合照，展現活力充沛的自己
+                li 好禮加碼贈：若您將心得文同時PO在您個人臉書上，並截圖您的FB PO文，與心得圖片一起上傳，待評鑑報告出爐後，將依此為依據，額外再贈送3罐亞培安素給評鑑員做為鼓勵！
+                li 4項評鑑雷達圖評分
+              h3 評鑑條件
+              ol 
+                li 有使用蛋白類營養品習慣者
+                li 想在日常生活中增強體力者
+              h3 注意事項
+              ol 
+                li 收到體驗品後，請至少使用7天，請體驗7天後回填評鑑心得，
+                  i 請確認願意分享使用意見後再報名參加。
+                li 體驗品於評鑑名單公告5個工作天內送到，若未收到任何通知，請與客服聯繫，聯繫客服信箱：50plus@cwgv.com.tw ; 電話 02-2517-3688 轉 467 陳小姐，週一～週五09:30~12:30 ; 13:30~18:30
+                li 參加本次試用活動，50+將蒐集您的個人資訊 (姓名、電話、地址)，僅做為本次活動聯繫及體驗品寄送使用，不會移作他用，請協助提供正確資訊。
+                li 50+與體驗品提供之廠商保留變更活動及各項回饋獎項、兌換標準之權利，如評鑑活動因不可抗力因素無法執行，50+有暫停或終止本活動之權利。​
+                li 本體驗希望找到真心想了解並對產品有興趣者，若申請評鑑並開始試用後，最終未回覆心得者，往後將喪失參與體驗之資格。
+                li 若您入選為評鑑員，50+將有專人與您電話聯繫，請入選者留意手機來電。
+                li 如申請本次體驗，即表示同意50+網站及體驗品提供之廠商就您所提供的圖文心得有以任何方式使用之權利，並得以在不影響原意下修改文字及保有活動細節調整之權利。
+        .fixed-bottom.d-flex.d-sm-none.juctify-content-center.p-4
+            .button--pill--full
+              .label 搶先報名
+              
+    if step === 3
+      .container(id="reviewForm")
+        .review--title
+          .title 亞培安素-香草減甜版
+        .section__title.is-form
+          .title 心得回填
+          .required--text
+            span ＊全區皆為必填欄位
+        form.form--review
+          .form--caption
+            span 個人資料
+            small （資料僅供本次產品評鑑聯繫與寄送，不會外流做其他用途，敬請放心填寫。）
+          .row
+            .col-12.col-md-6
+              .form--input.is-required
+                label(for='name') 姓名
+                input#name.form--input(type='text', placeholder='請輸入姓名')
+            .col-12.col-md-6
+              .form--input.is-required
+                label 手機
+                  small （請留下手機，方便入選後與您聯繫）
+                input
+            .col-12
+              .form--textarea.is-required
+                label 回填心得
+                  small （請簡述您試用後的心得，字數需至少300字）
+                textarea
+            .col-12
+              .form--upload 
+                label 上傳照片
+                ul 
+                  li 請上傳至少3張、至多4張圖片。
+                  li 請盡量在光線明亮處，拍攝清楚的產品照。
+                  li 請發揮創意，拍攝您與產品美麗的照片吧！
+                .grid--upload--preview
+                  each item, index in [0, 1, 2, 3]
+                    .card--upload--preview
+                      i.bi.bi-image
+            .col-12
+              .form--input
+                label 評分
+                  small （5顆星為高分，1顆星為低分，請依使用感受選填評分）
+
+            .col-12
+              each rating, i in [0, 1, 2, 3, 4]
+                .form--rating
+                  .no 
+                    =`${ i + 1 }.`
+                  .q 
+                    != getLoremText()
+                  .rating--group
+                    label
+                      each item, index in [0, 1, 2, 3, 4]
+                        input(type='radio', name=`rating${ i + 1 }`, value=`${ index + 1 }`)
+                      .stars
+                        each item, index in [0, 1, 2, 3, 4]
+                          .icon
+                            i.bi.bi-star-fill
+        .buttons
+          a.button--pill--xl(
+            href="./reviewStep4.html"
+          )
+            .label 送出申請

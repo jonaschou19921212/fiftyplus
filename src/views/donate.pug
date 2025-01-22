@@ -20,10 +20,19 @@ block main
     .container--slim
       .banner--donate
         .pic
-          img(
+          picture
+            source(
+            media='(min-width: 768px)'
+            data-srcset='./assets/images/banner--donate.jpg'
+            )
+            source(
+            media='(max-width: 767px)'
+            data-srcset='./assets/images/banner--donate-m.jpg'
+            )
+            img(
             data-src='./assets/images/banner--donate.jpg'
             alt='廣告'
-          ).lazyload 
+            ).lazyload
   section.section--donate
     .container--slim
       .row.reverse

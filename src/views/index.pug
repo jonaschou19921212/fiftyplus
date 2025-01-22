@@ -49,7 +49,7 @@ block main
           //- .swiper-pagination
         each item, index in [0, 1, 2]
           if index == 0
-            a.card--cover.bt-black(
+            a.card--cover(
               href='./article.html'
             )
               .pic
@@ -71,7 +71,7 @@ block main
                 h3.three-line
                   != getLoremText()
 
-  section.section--banner
+  section.section--banner.pb-0
     .container--slim
       +adBanner(false)
 
@@ -170,7 +170,7 @@ block main
                 data-src=`${getLoremYoutube()}`
               ).lazyload
             .caption
-              h3.bigger
+              h3(class=`${item === '人物' ? 'bigger' : ''}`)
                 != getLoremText()
 
     .container--slim.d-block.d-md-none

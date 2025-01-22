@@ -4,54 +4,36 @@ block vars
   - $id = 'article_video'
 
 block main
-  section.section--breadcrumb.z-3
-    .container
-      .breadcrumb 
-        ul 
-          li
-            a(
-              href='/'
-            ) 首頁
-          li
-            a(
-              href=""
-            ) 健康
-          li
-            a(
-              href=""
-            ) 運動
-  
   section.section--article--video--header 
     .container
       .video-player
         video(autoplay='', loop='', muted)
           source(src="/assets/sprite/article_video.mp4" type="video/mp4")
-      .articles--container
-        .title-container
-          | 職場上和年輕人價值觀差異太大？如何和八、九年級生溝通，自己不心累？
-        .author-container
-          .d-flex.justify-content-between.align-items-center
-            .text
-              .date 2024.05.01
-              .view
-                i.bi.bi-eye.me-1
-                | 888
-            .author
-              p 作者｜陳偉
-              p 責任編輯｜陳偉
-            
-          .buttons.d-none.d-md-flex.justify-content-end.mt-3.mb-0
-            a(href="")
-              .button--facebook(style="width: 40px;")
-            a(href="")
-              .button--line(style="width: 40px;")
-            a(href="")
-              .button--link(style="width: 40px;")   
-            a
-              .button--textsize(onclick='toggleFontSize()', style="width: 40px;")
+        .articles--container
+          h2.title-container.mb-0
+            | 職場上和年輕人價值觀差異太大？如何和八、九年級生溝通，自己不心累？
+          .author-container
+            .d-flex.justify-content-lg-between.align-items-center
+              .text
+                .view
+                  i.bi.bi-eye.me-1
+                  | 888
+              .author.d-flex
+                p.ms-2.ms-lg-3 作者｜陳偉
+                p.ms-2.ms-lg-3 責任編輯｜陳偉
+              
+            .buttons.d-none.d-md-flex.justify-content-end.mt-3.mb-0
+              a(href="")
+                .button--facebook(style="width: 40px;")
+              a(href="")
+                .button--line(style="width: 40px;")
+              a(href="")
+                .button--link(style="width: 40px;")   
+              a
+                .button--textsize(onclick='toggleFontSize()', style="width: 40px;")
       
 
-  section.section--article--body.video--top.pb-0
+  section.section--article--body.pb-0
     .container
       .row.mb-3.d-none.d-md-flex
         +adBanner(true)
