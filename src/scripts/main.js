@@ -52,7 +52,6 @@ if (document.querySelector(".swiper--banner swiper-container")) {
       `,
     ],
   };
-
   // Object.assign(swiperBannerEl, params)
   // swiperBannerEl.initialize();
 }
