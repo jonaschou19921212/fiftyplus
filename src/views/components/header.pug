@@ -152,7 +152,7 @@ header
                 .label 贊助50+
               .button--cart--round
                 .icon 
-                  i.bi.bi-cart-fill
+                  i.icon-cart
       nav.header--nav
         .container
           -
@@ -242,7 +242,7 @@ header
               .icon--search
         .grid--qlinks
           each item, index in qlink
-            .button--qlink 
+            a.button--qlink(href=(item.href))
               .icon
                 div(
                   class=item.icon

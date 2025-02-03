@@ -1216,7 +1216,9 @@ article.content
       margin-bottom: 20px
     p
       font-family: 'Noto Sans TC', sans-serif
-      font-size: 18px
+      +fontSize(18px)
+      @media (max-width: theme('breakpoints.lg'))
+        +fontSize(20px)
   
 .card--selection
   .title
