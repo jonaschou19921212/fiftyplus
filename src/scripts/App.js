@@ -10,10 +10,50 @@ for (const child of App.children) {
   });
 }
 
-document.querySelector(".menu--toggle").addEventListener("click", () => {
-  document.getElementById("isMenuActive").checked =
-    !document.getElementById("isMenuActive").checked;
-  document.getElementById("isMenuActive").dispatchEvent(new Event("change"));
+document.addEventListener('DOMContentLoaded', () => {
+  const headerMobile = document.querySelector('.header--mobile');
+  const headerBlank = document.querySelector('.header--blank');
+  const stickyOffset = headerMobile.offsetTop;
+  const headerDesk = document.querySelector('.header--desktop--container');
+  const header = document.querySelector('header');
+  const stickyDeskOffset = headerDesk.offsetTop;
+
+  // 監聽滾動事件
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > stickyOffset) {
+      headerMobile.classList.add('is-fixed');
+      headerBlank.classList.add('d-block');
+    } else {
+      headerMobile.classList.remove('is-fixed');
+      headerBlank.classList.remove('d-block');
+    }
+
+    if (window.pageYOffset > stickyDeskOffset) {
+      header.classList.add('is-active');
+    } else {
+      header.classList.remove('is-active');
+    }
+  });
+
+  // menu toggle 點擊事件
+  document.querySelector(".menu--toggle").addEventListener("click", () => {
+    const isMenuActive = document.getElementById("isMenuActive");
+    // 先取得當前狀態
+    const willBeActive = !isMenuActive.checked;
+
+    // 切換狀態
+    isMenuActive.checked = willBeActive;
+    isMenuActive.dispatchEvent(new Event("change"));
+
+    // 根據切換後的狀態決定是否添加或移除 class
+    if (willBeActive) {
+      headerMobile.classList.add('is-fixed');
+      headerBlank.classList.add('d-block');
+    } else {
+      headerMobile.classList.remove('is-fixed');
+      headerBlank.classList.remove('d-block');
+    }
+  });
 });
 
 const isMenuActive = function (menu) {

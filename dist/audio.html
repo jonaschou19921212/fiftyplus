@@ -41,9 +41,6 @@
       <div class="header-ad d-none d-lg-flex">
         <div class="ad-fake" style="width: 970px; height:250px">廣告</div>
       </div>
-      <div class="button--go-top" onclick="window.scrollTo(0, 0)">
-        <div class="icon"> <i class="bi bi-chevron-up"></i></div>
-      </div>
       <div class="header--desktop--container">
         <div class="header--desktop">
           <section>
@@ -220,9 +217,7 @@
         </div>
         <div class="drawer">
           <div class="container">
-            <div class="panel--search--mobile"> <label><input type="text" placerholder="輸入搜尋文字" /><a class="icon" href="./search.html">
-                  <div class="icon--search"></div>
-                </a></label></div>
+            <div class="panel--search--mobile"> <label><input type="text" placerholder="輸入搜尋文字" /><a class="icon" href="./search.html"><i class="bi bi-search"></i></a></label></div>
             <div class="grid--qlinks"><a class="button--qlink" href="./course.html">
                 <div class="icon">
                   <div class="icon--academy"></div>
@@ -232,7 +227,7 @@
                 <div class="icon">
                   <div class="icon--weekly"></div>
                 </div>
-                <div class="label">週刊</div>
+                <div class="label">百科</div>
               </a><a class="button--qlink" href="./reviews.html">
                 <div class="icon">
                   <div class="icon--review"></div>
@@ -336,28 +331,6 @@
             element.style.display = 'none';
           });
         }
-      });
-      document.addEventListener('DOMContentLoaded', () => {
-        const headerMobile = document.querySelector('.header--mobile');
-        const headerBlank = document.querySelector('.header--blank');
-        const stickyOffset = headerMobile.offsetTop; // 獲取 header--mobile 的初始位置
-        const headerDesk = document.querySelector('.header--desktop--container');
-        const header = document.querySelector('header');
-        const stickyDeskOffset = headerDesk.offsetTop; // 獲取 header--mobile 的初始位置
-        window.addEventListener('scroll', () => {
-          if (window.pageYOffset > stickyOffset) {
-            headerMobile.classList.add('is-fixed'); // 添加固定樣式
-            headerBlank.classList.add('d-block');
-          } else {
-            headerMobile.classList.remove('is-fixed'); // 移除固定樣式
-            headerBlank.classList.remove('d-block');
-          }
-          if (window.pageYOffset > stickyDeskOffset) {
-            header.classList.add('is-active'); // 添加固定樣式
-          } else {
-            header.classList.remove('is-active'); // 移除固定樣式
-          }
-        });
       });
 
     </script>
@@ -467,23 +440,7 @@
         <div class="row">
           <div class="col-lg-4">
             <div class="card--course">
-              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png" /></div>
-              <div class="caption">
-                <div class="info">
-                  <div class="date">2024.11.06 — 2024.12.11</div>
-                </div>
-                <h3>50+聲音表達工作坊進階班第5期</h3>
-                <div class="buttons">
-                  <div class="button--pill--xl">
-                    <div class="label">我要報名</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card--course">
-              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4338/carousel/4338.png" /></div>
+              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/52/4252/carousel/4252.png" /></div>
               <div class="caption">
                 <div class="info">
                   <div class="date">2024.11.06 — 2024.12.11</div>
@@ -500,6 +457,22 @@
           <div class="col-lg-4">
             <div class="card--course">
               <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/23/3923/carousel/3923.png" /></div>
+              <div class="caption">
+                <div class="info">
+                  <div class="date">2024.11.06 — 2024.12.11</div>
+                </div>
+                <h3>50+聲音表達工作坊進階班第5期</h3>
+                <div class="buttons">
+                  <div class="button--pill--xl">
+                    <div class="label">我要報名</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card--course">
+              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4338/carousel/4338.png" /></div>
               <div class="caption">
                 <div class="info">
                   <div class="date">2024.11.06 — 2024.12.11</div>
@@ -533,7 +506,7 @@
               </div>
             </swiper-slide><swiper-slide class="bg-theme">
               <div class="card--course audio-type">
-                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/36/4336/carousel/4336.png" /></div>
+                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png" /></div>
                 <div class="caption">
                   <div class="info">
                     <div class="date">2024.11.06 — 2024.12.11</div>
@@ -548,7 +521,7 @@
               </div>
             </swiper-slide><swiper-slide class="bg-theme">
               <div class="card--course audio-type">
-                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/52/4252/carousel/4252.png" /></div>
+                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/36/4336/carousel/4336.png" /></div>
                 <div class="caption">
                   <div class="info">
                     <div class="date">2024.11.06 — 2024.12.11</div>
@@ -563,7 +536,7 @@
               </div>
             </swiper-slide></swiper-container></div>
       </div>
-      <div class="fixed-checkout">
+      <div class="fixed-checkout d-sm-none">
         <div class="mobile-share-bar hide-border d-flex d-md-none bottom-0 mt-3">
           <div class="item"> <a href="#">f</a></div>
           <div class="item line"><a href="#">LINE</a></div>
@@ -576,7 +549,7 @@
         <script>
           window.addEventListener('scroll', function() {
             const footer = document.querySelector('footer'); // 獲取 footer 元素
-            const fixedCheckout = document.querySelector('.fixed-checkout'); // 獲取固定的結帳區域
+            const fixedCheckout = document.querySelector('.fixed-checkout.d-sm-none'); // 獲取固定的結帳區域
             const footerRect = footer.getBoundingClientRect(); // 獲取 footer 的位置
             if (footerRect.top < window.innerHeight) {
               fixedCheckout.style.transition = 'bottom 0.3s ease'; // 添加過渡效果

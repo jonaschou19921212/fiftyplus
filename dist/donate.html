@@ -41,9 +41,6 @@
       <div class="header-ad d-none d-lg-flex">
         <div class="ad-fake" style="width: 970px; height:250px">廣告</div>
       </div>
-      <div class="button--go-top" onclick="window.scrollTo(0, 0)">
-        <div class="icon"> <i class="bi bi-chevron-up"></i></div>
-      </div>
       <div class="header--desktop--container">
         <div class="header--desktop">
           <section>
@@ -220,9 +217,7 @@
         </div>
         <div class="drawer">
           <div class="container">
-            <div class="panel--search--mobile"> <label><input type="text" placerholder="輸入搜尋文字" /><a class="icon" href="./search.html">
-                  <div class="icon--search"></div>
-                </a></label></div>
+            <div class="panel--search--mobile"> <label><input type="text" placerholder="輸入搜尋文字" /><a class="icon" href="./search.html"><i class="bi bi-search"></i></a></label></div>
             <div class="grid--qlinks"><a class="button--qlink" href="./course.html">
                 <div class="icon">
                   <div class="icon--academy"></div>
@@ -232,7 +227,7 @@
                 <div class="icon">
                   <div class="icon--weekly"></div>
                 </div>
-                <div class="label">週刊</div>
+                <div class="label">百科</div>
               </a><a class="button--qlink" href="./reviews.html">
                 <div class="icon">
                   <div class="icon--review"></div>
@@ -337,28 +332,6 @@
           });
         }
       });
-      document.addEventListener('DOMContentLoaded', () => {
-        const headerMobile = document.querySelector('.header--mobile');
-        const headerBlank = document.querySelector('.header--blank');
-        const stickyOffset = headerMobile.offsetTop; // 獲取 header--mobile 的初始位置
-        const headerDesk = document.querySelector('.header--desktop--container');
-        const header = document.querySelector('header');
-        const stickyDeskOffset = headerDesk.offsetTop; // 獲取 header--mobile 的初始位置
-        window.addEventListener('scroll', () => {
-          if (window.pageYOffset > stickyOffset) {
-            headerMobile.classList.add('is-fixed'); // 添加固定樣式
-            headerBlank.classList.add('d-block');
-          } else {
-            headerMobile.classList.remove('is-fixed'); // 移除固定樣式
-            headerBlank.classList.remove('d-block');
-          }
-          if (window.pageYOffset > stickyDeskOffset) {
-            header.classList.add('is-active'); // 添加固定樣式
-          } else {
-            header.classList.remove('is-active'); // 移除固定樣式
-          }
-        });
-      });
 
     </script>
     <section class="section--breadcrumb is-sp pb-3">
@@ -425,7 +398,7 @@
           </div>
           <div class="col-12 col-md-3" id="panel--donate">
             <div class="panel--donate">
-              <div class="title">贊助50+</div>
+              <div class="title mb-3">贊助50+</div>
               <div class="form--radio--switch"> <label for="donate--personal"><input type="radio" name="donate" id="donate--personal" />
                   <div class="label">個人贊助</div>
                 </label><label for="donate--crop"><input type="radio" name="donate" id="donate--crop" />
@@ -444,7 +417,7 @@
                   <div class="label">3000元</div>
                 </label></div>
               <div class="form--totally">
-                <div class="label"><span>我要每月贊助</span><span>888</span><span>元</span></div>
+                <div class="label"><span>我要每月贊助</span><span>0</span><span>元</span></div>
               </div>
             </div>
           </div>
@@ -481,6 +454,46 @@
           fixedBuy.style.bottom = '0'; // 固定在底部
         }
       });
+      // 監聽金額相關的 inputs
+      document.querySelectorAll('input[name="donate--cost"], input[type="text"]').forEach(input => {
+        input.addEventListener('change', updateTotalText);
+      });
+
+      function updateTotalText() {
+        // 取得金額
+        const customAmount = document.querySelector('.form--donate input[type="text"]').value;
+        const selectedAmount = document.querySelector('input[name="donate--cost"]:checked')?.id === 'donate--500' ? '500' : '3000';
+        // 決定要顯示的金額
+        const amount = customAmount || selectedAmount || '0'; // 預設為 0
+        // 更新金額
+        const amountElement = document.querySelector('.form--totally .label span:nth-child(2)');
+        if (amountElement) {
+          amountElement.textContent = amount;
+        }
+      }
+      // 監聽文字輸入，當輸入自訂金額時，取消選擇預設金額
+      document.querySelector('.form--donate input[type="text"]').addEventListener('input', function() {
+        if (this.value) {
+          const checkedCost = document.querySelector('input[name="donate--cost"]:checked');
+          if (checkedCost) {
+            checkedCost.checked = false;
+          }
+        }
+        updateTotalText();
+      });
+      // 監聽預設金額選擇，當選擇預設金額時，清空自訂金額
+      document.querySelectorAll('input[name="donate--cost"]').forEach(input => {
+        input.addEventListener('change', function() {
+          if (this.checked) {
+            document.querySelector('.form--donate input[type="text"]').value = '';
+          }
+        });
+      });
+      // 初始化顯示
+      const amountElement = document.querySelector('.form--totally .label span:nth-child(2)');
+      if (amountElement) {
+        amountElement.textContent = '0'; // 確保初始值為 0
+      }
 
     </script>
     <footer>

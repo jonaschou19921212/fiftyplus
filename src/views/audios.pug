@@ -27,60 +27,60 @@ block main
     .container
       .section__title 
         .title 熱門
-    .container--slim.mb-5.mb-sm-0.px-2.px-sm-5
-      .swiper--banner
-        swiper-container(
-          navigation='true'
-          inject-styles=[
-            `
+    //- .container--slim.mb-5.mb-sm-0.px-2.px-sm-5
+    //-   .swiper--banner
+    //-     swiper-container(
+    //-       navigation='true'
+    //-       inject-styles=[
+    //-         `
            
-            :host {
-              --swiper-theme-color: #ede73c;
-            }
-            :host .swiper-button-prev,
-            :host .swiper-button-next {
-              background-color: #66666680;
-              border-radius: 100%;
-              width: 28px;
-              height: 28px;
-              padding: 10px;
-              stroke: #ede73c;
-              stroke-width: 1;
-            }
-            `,
-          ],
-        )
-          each item, index in [0, 1, 2]
-            swiper-slide.audios
-              .card--video.swiper-min-height
-                a.pic(
-                  href="./audio.html"
-                )
-                  img(
-                    data-src=`${getLoremYoutube()}`
-                  ).lazyload
-                a.caption(href="./audio.html")
-                  h2.light.mt-3.d-none.d-sm-block
-                    != getLoremText()
-                  h3.light.mt-3.d-block.d-sm-none
-                    != getLoremText()
+    //-         :host {
+    //-           --swiper-theme-color: #ede73c;
+    //-         }
+    //-         :host .swiper-button-prev,
+    //-         :host .swiper-button-next {
+    //-           background-color: #66666680;
+    //-           border-radius: 100%;
+    //-           width: 28px;
+    //-           height: 28px;
+    //-           padding: 10px;
+    //-           stroke: #ede73c;
+    //-           stroke-width: 1;
+    //-         }
+    //-         `,
+    //-       ],
+    //-     )
+    //-       each item, index in [0, 1, 2]
+    //-         swiper-slide.audios
+    //-           .card--video.swiper-min-height
+    //-             a.pic(
+    //-               href="./audio.html"
+    //-             )
+    //-               img(
+    //-                 data-src=`${getLoremYoutube()}`
+    //-               ).lazyload
+    //-             a.caption(href="./audio.html")
+    //-               h2.light.mt-3.d-none.d-sm-block
+    //-                 != getLoremText()
+    //-               h3.light.mt-3.d-block.d-sm-none
+    //-                 != getLoremText()
 
 
     .container--slim
       .row.row--video
-        each item, index in ['人物', '健康', '心靈', '火火', 1, 2, 3, 4]
+        - const items = ['人物', '健康', '心靈', '火火', 1, 2, 3, 4, 5, 6]
+        each item, index in items
+          //- Regular item card
           .col-md-6.mb-5.mb-lg-3
             .card--video
-              a.pic(
-                href="./audio.html"
-              )
-                img(
-                  data-src=`${getLoremYoutube()}`
-                ).lazyload
+              a.pic(href="./audio.html")
+                img(data-src=`${getLoremYoutube()}`).lazyload
               a.caption(href="./audio.html")
                 h3
                   != getLoremText()
-          if (index === 1 || (index + 3) % 4 === 0 && index !== 0 )
+          
+          //- Insert ad after 4th item and 8th item
+          if index === 3 || index === 7
             .col-12
               +adBanner(true)
       .buttons
@@ -88,3 +88,5 @@ block main
           .label 查看更多
           .icon 
             i.bi.bi-caret-down-fill
+  .fixed-checkout.d-sm-none
+      include components/mobileShareBar

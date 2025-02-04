@@ -41,9 +41,6 @@
       <div class="header-ad d-none d-lg-flex">
         <div class="ad-fake" style="width: 970px; height:250px">廣告</div>
       </div>
-      <div class="button--go-top" onclick="window.scrollTo(0, 0)">
-        <div class="icon"> <i class="bi bi-chevron-up"></i></div>
-      </div>
       <div class="header--desktop--container">
         <div class="header--desktop">
           <section>
@@ -220,9 +217,7 @@
         </div>
         <div class="drawer">
           <div class="container">
-            <div class="panel--search--mobile"> <label><input type="text" placerholder="輸入搜尋文字" /><a class="icon" href="./search.html">
-                  <div class="icon--search"></div>
-                </a></label></div>
+            <div class="panel--search--mobile"> <label><input type="text" placerholder="輸入搜尋文字" /><a class="icon" href="./search.html"><i class="bi bi-search"></i></a></label></div>
             <div class="grid--qlinks"><a class="button--qlink" href="./course.html">
                 <div class="icon">
                   <div class="icon--academy"></div>
@@ -232,7 +227,7 @@
                 <div class="icon">
                   <div class="icon--weekly"></div>
                 </div>
-                <div class="label">週刊</div>
+                <div class="label">百科</div>
               </a><a class="button--qlink" href="./reviews.html">
                 <div class="icon">
                   <div class="icon--review"></div>
@@ -337,28 +332,6 @@
           });
         }
       });
-      document.addEventListener('DOMContentLoaded', () => {
-        const headerMobile = document.querySelector('.header--mobile');
-        const headerBlank = document.querySelector('.header--blank');
-        const stickyOffset = headerMobile.offsetTop; // 獲取 header--mobile 的初始位置
-        const headerDesk = document.querySelector('.header--desktop--container');
-        const header = document.querySelector('header');
-        const stickyDeskOffset = headerDesk.offsetTop; // 獲取 header--mobile 的初始位置
-        window.addEventListener('scroll', () => {
-          if (window.pageYOffset > stickyOffset) {
-            headerMobile.classList.add('is-fixed'); // 添加固定樣式
-            headerBlank.classList.add('d-block');
-          } else {
-            headerMobile.classList.remove('is-fixed'); // 移除固定樣式
-            headerBlank.classList.remove('d-block');
-          }
-          if (window.pageYOffset > stickyDeskOffset) {
-            header.classList.add('is-active'); // 添加固定樣式
-          } else {
-            header.classList.remove('is-active'); // 移除固定樣式
-          }
-        });
-      });
 
     </script>
     <section class="section--breadcrumb">
@@ -377,8 +350,15 @@
       <div class="container--slim">
         <div class="row">
           <div class="col-12">
-            <div class="review--title">
-              <div class="title">亞培安素-香草減甜版</div>
+            <div class="row align-items-center mb-0 mb-lg-5 mt-lg-4">
+              <div class="col-lg-auto">
+                <div class="review-collect mb-3 mb-lg-0">評鑑報告</div>
+              </div>
+              <div class="col-lg">
+                <div class="review--title mb-lg-0">
+                  <div class="title">亞培安素-香草減甜版</div>
+                </div>
+              </div>
             </div>
             <div class="card--review--spec">
               <div class="pic"> <img src="https://picsum.photos/900/900" /></div>
@@ -413,17 +393,23 @@
                   </ul>
                   <p>* 安素均衡營養升級配方提供3重優蛋白(乳清蛋白，酪蛋白，大豆蛋白)守護肌肉(護肌)、幫助肌肉生長(增肌)、有助組織修復，提供HMB(白胺酸代謝物補充營養，雙效營養支持好體力。</p>
                 </article>
-              </div>
-              <div class="report-buy">
-                <div class="button--pill--lg">
-                  <div class="label">我要購買</div>
+                <div class="report-buy">
+                  <div class="button--pill--lg">
+                    <div class="label">我要購買</div>
+                  </div>
                 </div>
               </div>
             </div>
-            <article class="is-review">
+            <article class="is-review mb-5">
               <p>閱讀黃金雙激萃的使用說明，上面說「於早上或晚上使用」。但我想，既然要試用，就早晚都用吧！於是晚上我用黃金雙激萃取代原來的晚霜，在化妝水後使用。這是我第一次晚上不用「乳霜」狀保養品，我一直倚賴乳霜來保濕。沒想到，黃金雙激萃的保濕潤澤度出奇的好！整個晚上都感覺皮膚非常水嫩！早上我則是洗完臉就直接使用它，用量稍減。它不會油膩，也很容易再上後續的隔離乳。因為好吸收的關係，立刻上隔離乳也不會有屑屑產生。 用完兩週，我覺得最明顯的改變是皮膚的緊緻度，而且幾乎一用就有感。皮膚的緊緻，感覺真的很明顯。同樣的保養程序，竟帶來這麼好的效果。也因為這樣，上彩粧也變得容易，不易掉粉。沒預料到的收穫是，出門前在化妝檯前的準備時間變短了，讓人開心。值得推薦！值得推薦！值得推薦！值得推薦！</p>
+            </article>
+            <article class="is-review">
               <h3 class="center">開箱影音</h3>
-              <div class="video--wrapper"><iframe src="https://www.youtube.com/embed/1Q3wv4J6Z1A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></div>
+              <div class="row">
+                <div class="col-lg-6 mx-auto">
+                  <div class="video--wrapper"><iframe src="https://www.youtube.com/embed/1Q3wv4J6Z1A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></div>
+                </div>
+              </div>
             </article>
           </div>
           <div class="col-12 col-md-3"></div>
@@ -448,7 +434,7 @@
         </div>
         <div class="row mt-3">
           <div class="col-12">
-            <article class="is-review-rules">
+            <article class="is-review">
               <h3 class="center">年齡分佈</h3>
             </article>
             <div class="chart-container">
@@ -468,11 +454,11 @@
     </section>
     <section class="section--report--body">
       <div class="rank">
-        <div class="container--slim py-5">
+        <div class="container--slim py-3 py-lg-5">
           <div class="row rank-container">
-            <div class="col-12 pb-3">
-              <article class="is-review-rules">
-                <h3 class="border-white">評鑑星等</h3>
+            <div class="col-12 pb-lg-3">
+              <article class="is-review">
+                <h3 class="center border-white">評鑑星等</h3>
               </article>
             </div>
             <div class="col-12 rank-container">
@@ -536,14 +522,14 @@
           </div>
         </div>
       </div>
-      <div class="row mt-3">
-        <div class="col-12">
-          <article class="is-review-rules">
-            <h3 class="center">試用心得 </h3>
-          </article>
-        </div>
-      </div>
       <div class="container">
+        <div class="row mt-3">
+          <div class="col-12">
+            <article class="is-review">
+              <h3 class="center">評鑑心得 </h3>
+            </article>
+          </div>
+        </div>
         <div class="row card-row">
           <div class="col-12 col-lg-5 card-container">
             <div class="card-body"><!-- 用户信息部分-->
@@ -552,7 +538,7 @@
                   <h5>小◯兵</h5><small>51—55歲</small>
                 </div>
               </div><!-- 文字区域-->
-              <div class="description"> 如何退休後過更好？心理諮商師靳秀麗：1個「生產老化」新觀念，啟動身體健康、內心的內無比...75歲終於踏出人生第一次自由行，像單身貴族好快樂！許美月：在家裡怕一輩子，永遠都走不出去雙腳穴道最多，動動腳可放鬆、晚上好睡！10個活絡腿部動作，每天挑一個來練<div class="rank-item d-flex justify-content-center">
+              <div class="description"> 60歲告別主播台，轉行當心理諮商師！靳秀麗：幸福不是退休養老，「生產老化」活出無憾人生不爭，卻收穫最豐盛的人生！模仿天王郭子乾的「被動式積極」哲學如何退休後過更好？心理諮商師靳秀麗：1個「生產老化」新觀念，啟動身體健康<div class="rank-item d-flex justify-content-center">
                   <p class="title-label">健康力: </p>
                   <div class="form--rating full-column">
                     <div class="rating--group"><label><input type="radio" name="rating-1-1" value="1" checked="checked" disabled="disabled" /><input type="radio" name="rating-1-2" value="2" disabled="disabled" /><input type="radio" name="rating-1-3" value="3" disabled="disabled" /><input type="radio" name="rating-1-4" value="4" disabled="disabled" /><input type="radio" name="rating-1-5" value="5" disabled="disabled" />
@@ -617,11 +603,11 @@
                       </article>
                     </swiper-slide><swiper-slide class="bg-theme">
                       <article>
-                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/42/4042/carousel/4042.png" /></div>
+                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png" /></div>
                       </article>
                     </swiper-slide><swiper-slide class="bg-theme">
                       <article>
-                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4338/carousel/4338.png" /></div>
+                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/23/3923/carousel/3923.png" /></div>
                       </article>
                     </swiper-slide></swiper-container></div>
               </div>
@@ -634,7 +620,7 @@
                   <h5>小◯兵</h5><small>51—55歲</small>
                 </div>
               </div><!-- 文字区域-->
-              <div class="description"> 雙腳穴道最多，動動腳可放鬆、晚上好睡！10個活絡腿部動作，每天挑一個來練83歲一頭白髮，卻氣色絕佳！光田醫院總院長王乃弘的早餐菜單：50歲才開始健康生活，絕對來得及眼睛常過勞乾澀？眼科醫師徐浩恩：避免3件事，降低老後白內障風險<div class="rank-item d-flex justify-content-center">
+              <div class="description"> 生氣是慢性自殺！洛桑加參醫師：每天1個練習，從此心平氣和如何退休後過更好？心理諮商師靳秀麗：1個「生產老化」新觀念，啟動身體健康生氣是慢性自殺！洛桑加參醫師：每天1個練習，從此心平氣和<div class="rank-item d-flex justify-content-center">
                   <p class="title-label">健康力: </p>
                   <div class="form--rating full-column">
                     <div class="rating--group"><label><input type="radio" name="rating-2-1" value="1" checked="checked" disabled="disabled" /><input type="radio" name="rating-2-2" value="2" disabled="disabled" /><input type="radio" name="rating-2-3" value="3" disabled="disabled" /><input type="radio" name="rating-2-4" value="4" disabled="disabled" /><input type="radio" name="rating-2-5" value="5" disabled="disabled" />
@@ -695,11 +681,11 @@
               <div class="container--slim d-block d-sm-none mt-3">
                 <div class="swiper--banner"><swiper-container navigation="true" inject-styles="[&quot;\n                    \n                      :host {\n                        --swiper-theme-color: #ede73c;\n                      }\n                      :host .swiper-button-prev,\n                      :host .swiper-button-next {\n                        background-color: #66666680;\n                        border-radius: 100%;\n                        width: 28px;\n                        height: 28px;\n                        padding: 10px;\n                        stroke: #ede73c;\n                        stroke-width: 1;\n                      }\n                      &quot;]"><swiper-slide class="bg-theme">
                       <article>
-                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png" /></div>
+                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/36/4336/carousel/4336.png" /></div>
                       </article>
                     </swiper-slide><swiper-slide class="bg-theme">
                       <article>
-                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/23/3923/carousel/3923.png" /></div>
+                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4338/carousel/4338.png" /></div>
                       </article>
                     </swiper-slide><swiper-slide class="bg-theme">
                       <article>
@@ -716,7 +702,7 @@
                   <h5>小◯兵</h5><small>51—55歲</small>
                 </div>
               </div><!-- 文字区域-->
-              <div class="description"> 生氣是慢性自殺！洛桑加參醫師：每天1個練習，從此心平氣和雙腳穴道最多，動動腳可放鬆、晚上好睡！10個活絡腿部動作，每天挑一個來練60歲告別主播台，轉行當心理諮商師！靳秀麗：幸福不是退休養老，「生產老化」活出無憾人生<div class="rank-item d-flex justify-content-center">
+              <div class="description"> 雙腳穴道最多，動動腳可放鬆、晚上好睡！10個活絡腿部動作，每天挑一個來練未來該注意哪些病，基因告訴你！曾嶔元醫師：如何掌握健康弱點，精準預防？生氣是慢性自殺！洛桑加參醫師：每天1個練習，從此心平氣和<div class="rank-item d-flex justify-content-center">
                   <p class="title-label">健康力: </p>
                   <div class="form--rating full-column">
                     <div class="rating--group"><label><input type="radio" name="rating-3-1" value="1" checked="checked" disabled="disabled" /><input type="radio" name="rating-3-2" value="2" disabled="disabled" /><input type="radio" name="rating-3-3" value="3" disabled="disabled" /><input type="radio" name="rating-3-4" value="4" disabled="disabled" /><input type="radio" name="rating-3-5" value="5" disabled="disabled" />
@@ -777,7 +763,7 @@
               <div class="container--slim d-block d-sm-none mt-3">
                 <div class="swiper--banner"><swiper-container navigation="true" inject-styles="[&quot;\n                    \n                      :host {\n                        --swiper-theme-color: #ede73c;\n                      }\n                      :host .swiper-button-prev,\n                      :host .swiper-button-next {\n                        background-color: #66666680;\n                        border-radius: 100%;\n                        width: 28px;\n                        height: 28px;\n                        padding: 10px;\n                        stroke: #ede73c;\n                        stroke-width: 1;\n                      }\n                      &quot;]"><swiper-slide class="bg-theme">
                       <article>
-                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/36/4336/carousel/4336.png" /></div>
+                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/42/4042/carousel/4042.png" /></div>
                       </article>
                     </swiper-slide><swiper-slide class="bg-theme">
                       <article>
@@ -785,7 +771,7 @@
                       </article>
                     </swiper-slide><swiper-slide class="bg-theme">
                       <article>
-                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/42/4042/carousel/4042.png" /></div>
+                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png" /></div>
                       </article>
                     </swiper-slide></swiper-container></div>
               </div>
@@ -798,7 +784,7 @@
                   <h5>小◯兵</h5><small>51—55歲</small>
                 </div>
               </div><!-- 文字区域-->
-              <div class="description"> 雙腳穴道最多，動動腳可放鬆、晚上好睡！10個活絡腿部動作，每天挑一個來練60歲告別主播台，轉行當心理諮商師！靳秀麗：幸福不是退休養老，「生產老化」活出無憾人生雙腳穴道最多，動動腳可放鬆、晚上好睡！10個活絡腿部動作，每天挑一個來練<div class="rank-item d-flex justify-content-center">
+              <div class="description"> 未來該注意哪些病，基因告訴你！曾嶔元醫師：如何掌握健康弱點，精準預防？不爭，卻收穫最豐盛的人生！模仿天王郭子乾的「被動式積極」哲學75歲終於踏出人生第一次自由行，像單身貴族好快樂！許美月：在家裡怕一輩子，永遠都走不出去<div class="rank-item d-flex justify-content-center">
                   <p class="title-label">健康力: </p>
                   <div class="form--rating full-column">
                     <div class="rating--group"><label><input type="radio" name="rating-4-1" value="1" checked="checked" disabled="disabled" /><input type="radio" name="rating-4-2" value="2" disabled="disabled" /><input type="radio" name="rating-4-3" value="3" disabled="disabled" /><input type="radio" name="rating-4-4" value="4" disabled="disabled" /><input type="radio" name="rating-4-5" value="5" disabled="disabled" />
@@ -859,15 +845,15 @@
               <div class="container--slim d-block d-sm-none mt-3">
                 <div class="swiper--banner"><swiper-container navigation="true" inject-styles="[&quot;\n                    \n                      :host {\n                        --swiper-theme-color: #ede73c;\n                      }\n                      :host .swiper-button-prev,\n                      :host .swiper-button-next {\n                        background-color: #66666680;\n                        border-radius: 100%;\n                        width: 28px;\n                        height: 28px;\n                        padding: 10px;\n                        stroke: #ede73c;\n                        stroke-width: 1;\n                      }\n                      &quot;]"><swiper-slide class="bg-theme">
                       <article>
-                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4338/carousel/4338.png" /></div>
-                      </article>
-                    </swiper-slide><swiper-slide class="bg-theme">
-                      <article>
-                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png" /></div>
-                      </article>
-                    </swiper-slide><swiper-slide class="bg-theme">
-                      <article>
                         <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/23/3923/carousel/3923.png" /></div>
+                      </article>
+                    </swiper-slide><swiper-slide class="bg-theme">
+                      <article>
+                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/36/4336/carousel/4336.png" /></div>
+                      </article>
+                    </swiper-slide><swiper-slide class="bg-theme">
+                      <article>
+                        <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4338/carousel/4338.png" /></div>
                       </article>
                     </swiper-slide></swiper-container></div>
               </div>
@@ -876,6 +862,9 @@
         </div>
       </div>
     </section>
+    <div class="fixed-checkout d-sm-none"><a class="button--pill--full" role="button" href="javascript:;">
+        <div class="label label--hide--border black--font">我要購買 </div>
+      </a></div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function() {

@@ -41,9 +41,6 @@
       <div class="header-ad d-none d-lg-flex">
         <div class="ad-fake" style="width: 970px; height:250px">廣告</div>
       </div>
-      <div class="button--go-top" onclick="window.scrollTo(0, 0)">
-        <div class="icon"> <i class="bi bi-chevron-up"></i></div>
-      </div>
       <div class="header--desktop--container">
         <div class="header--desktop">
           <section>
@@ -220,9 +217,7 @@
         </div>
         <div class="drawer">
           <div class="container">
-            <div class="panel--search--mobile"> <label><input type="text" placerholder="輸入搜尋文字" /><a class="icon" href="./search.html">
-                  <div class="icon--search"></div>
-                </a></label></div>
+            <div class="panel--search--mobile"> <label><input type="text" placerholder="輸入搜尋文字" /><a class="icon" href="./search.html"><i class="bi bi-search"></i></a></label></div>
             <div class="grid--qlinks"><a class="button--qlink" href="./course.html">
                 <div class="icon">
                   <div class="icon--academy"></div>
@@ -232,7 +227,7 @@
                 <div class="icon">
                   <div class="icon--weekly"></div>
                 </div>
-                <div class="label">週刊</div>
+                <div class="label">百科</div>
               </a><a class="button--qlink" href="./reviews.html">
                 <div class="icon">
                   <div class="icon--review"></div>
@@ -337,28 +332,6 @@
           });
         }
       });
-      document.addEventListener('DOMContentLoaded', () => {
-        const headerMobile = document.querySelector('.header--mobile');
-        const headerBlank = document.querySelector('.header--blank');
-        const stickyOffset = headerMobile.offsetTop; // 獲取 header--mobile 的初始位置
-        const headerDesk = document.querySelector('.header--desktop--container');
-        const header = document.querySelector('header');
-        const stickyDeskOffset = headerDesk.offsetTop; // 獲取 header--mobile 的初始位置
-        window.addEventListener('scroll', () => {
-          if (window.pageYOffset > stickyOffset) {
-            headerMobile.classList.add('is-fixed'); // 添加固定樣式
-            headerBlank.classList.add('d-block');
-          } else {
-            headerMobile.classList.remove('is-fixed'); // 移除固定樣式
-            headerBlank.classList.remove('d-block');
-          }
-          if (window.pageYOffset > stickyDeskOffset) {
-            header.classList.add('is-active'); // 添加固定樣式
-          } else {
-            header.classList.remove('is-active'); // 移除固定樣式
-          }
-        });
-      });
 
     </script>
     <section class="section--campaign--cover">
@@ -375,15 +348,15 @@
       <div class="container--slim mt-3 mt-md-0 mb-4">
         <div class="swiper--banner"><swiper-container navigation="true" slides-per-view="1" space-between="20" autoplay-delay="3000" inject-styles="[&quot;\n            :host .swiper {\n              overflow: hidden;\n            }\n            :host {\n              --swiper-theme-color: #ede73c;\n              --swiper-navigation-size: 32px;\n            }\n            :host .swiper-button-prev,\n              :host .swiper-button-next {\n                background-color: #66666680;\n                border-radius: 100%;\n                width: 28px;\n                height: 28px;\n                padding: 10px;\n                stroke: #ede73c;\n                stroke-width: 1;\n              }\n            &quot;]"><swiper-slide>
               <div class="card--course--xl">
-                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/36/4336/carousel/4336.png" /></div>
-              </div>
-            </swiper-slide><swiper-slide>
-              <div class="card--course--xl">
-                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/42/4042/carousel/4042.png" /></div>
-              </div>
-            </swiper-slide><swiper-slide>
-              <div class="card--course--xl">
                 <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/23/3923/carousel/3923.png" /></div>
+              </div>
+            </swiper-slide><swiper-slide>
+              <div class="card--course--xl">
+                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4338/carousel/4338.png" /></div>
+              </div>
+            </swiper-slide><swiper-slide>
+              <div class="card--course--xl">
+                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png" /></div>
               </div>
             </swiper-slide></swiper-container></div>
       </div>
@@ -403,7 +376,127 @@
           <div class="card--campaign">
             <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/33/3233/carousel/3233.png" /></div>
             <div class="caption">
-              <div class="title">雙腳穴道最多，動動腳可放鬆、晚上好睡！10個活絡腿部動作，每天挑一個來練</div>
+              <div class="title">如何退休後過更好？心理諮商師靳秀麗：1個「生產老化」新觀念，啟動身體健康</div>
+              <dl class="dl--campaign--detail">
+                <dt>
+                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
+                      <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5" />
+                    </svg></div>
+                </dt>
+                <dd>2024.12.11（五）19:30</dd>
+                <dt>
+                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                      <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                    </svg></div>
+                </dt>
+                <dd>享象表演藝術場館—台北市信義區信義路五段7號</dd>
+              </dl>
+              <div class="buttons"> <a class="button--pill--lg">
+                  <div class="label">活動介紹</div>
+                </a></div>
+            </div>
+          </div>
+        </div>
+        <div class="row row--campaign">
+          <div class="card--campaign">
+            <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/42/4042/carousel/4042.png" /></div>
+            <div class="caption">
+              <div class="title">75歲終於踏出人生第一次自由行，像單身貴族好快樂！許美月：在家裡怕一輩子，永遠都走不出去</div>
+              <dl class="dl--campaign--detail">
+                <dt>
+                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
+                      <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5" />
+                    </svg></div>
+                </dt>
+                <dd>2024.12.11（五）19:30</dd>
+                <dt>
+                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                      <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                    </svg></div>
+                </dt>
+                <dd>享象表演藝術場館—台北市信義區信義路五段7號</dd>
+              </dl>
+              <div class="buttons"> <a class="button--pill--lg">
+                  <div class="label">活動介紹</div>
+                </a></div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-12">
+            <div class="banner d-none d-md-flex">
+              <div class="ad-fake" style="width: 970px; height: 250px">廣告</div>
+            </div>
+            <div class="banner d-flex d-md-none">
+              <div class="ad-fake" style="width: 300px; height: 250px">廣告</div>
+            </div>
+          </div>
+        </div>
+        <div class="row row--campaign">
+          <div class="card--campaign">
+            <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/52/4252/carousel/4252.png" /></div>
+            <div class="caption">
+              <div class="title">如何退休後過更好？心理諮商師靳秀麗：1個「生產老化」新觀念，啟動身體健康</div>
+              <dl class="dl--campaign--detail">
+                <dt>
+                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
+                      <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5" />
+                    </svg></div>
+                </dt>
+                <dd>2024.12.11（五）19:30</dd>
+                <dt>
+                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                      <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                    </svg></div>
+                </dt>
+                <dd>享象表演藝術場館—台北市信義區信義路五段7號</dd>
+              </dl>
+              <div class="buttons"> <a class="button--pill--lg">
+                  <div class="label">活動介紹</div>
+                </a></div>
+            </div>
+          </div>
+        </div>
+        <div class="row row--campaign">
+          <div class="card--campaign">
+            <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/36/4336/carousel/4336.png" /></div>
+            <div class="caption">
+              <div class="title">75歲終於踏出人生第一次自由行，像單身貴族好快樂！許美月：在家裡怕一輩子，永遠都走不出去</div>
+              <dl class="dl--campaign--detail">
+                <dt>
+                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
+                      <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5" />
+                    </svg></div>
+                </dt>
+                <dd>2024.12.11（五）19:30</dd>
+                <dt>
+                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                      <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                    </svg></div>
+                </dt>
+                <dd>享象表演藝術場館—台北市信義區信義路五段7號</dd>
+              </dl>
+              <div class="buttons"> <a class="button--pill--lg">
+                  <div class="label">活動介紹</div>
+                </a></div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-12">
+            <div class="banner d-none d-md-flex">
+              <div class="ad-fake" style="width: 970px; height: 250px">廣告</div>
+            </div>
+            <div class="banner d-flex d-md-none">
+              <div class="ad-fake" style="width: 300px; height: 250px">廣告</div>
+            </div>
+          </div>
+        </div>
+        <div class="row row--campaign">
+          <div class="card--campaign">
+            <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/23/3923/carousel/3923.png" /></div>
+            <div class="caption">
+              <div class="title">生氣是慢性自殺！洛桑加參醫師：每天1個練習，從此心平氣和</div>
               <dl class="dl--campaign--detail">
                 <dt>
                   <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
@@ -428,7 +521,7 @@
           <div class="card--campaign">
             <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4338/carousel/4338.png" /></div>
             <div class="caption">
-              <div class="title">83歲一頭白髮，卻氣色絕佳！光田醫院總院長王乃弘的早餐菜單：50歲才開始健康生活，絕對來得及</div>
+              <div class="title">未來該注意哪些病，基因告訴你！曾嶔元醫師：如何掌握健康弱點，精準預防？</div>
               <dl class="dl--campaign--detail">
                 <dt>
                   <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
@@ -486,129 +579,9 @@
         </div>
         <div class="row row--campaign">
           <div class="card--campaign">
-            <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/52/4252/carousel/4252.png" /></div>
-            <div class="caption">
-              <div class="title">不爭，卻收穫最豐盛的人生！模仿天王郭子乾的「被動式積極」哲學</div>
-              <dl class="dl--campaign--detail">
-                <dt>
-                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
-                      <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5" />
-                    </svg></div>
-                </dt>
-                <dd>2024.12.11（五）19:30</dd>
-                <dt>
-                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                      <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
-                    </svg></div>
-                </dt>
-                <dd>享象表演藝術場館—台北市信義區信義路五段7號</dd>
-              </dl>
-              <div class="buttons"> <a class="button--pill--lg">
-                  <div class="label">活動介紹</div>
-                </a></div>
-            </div>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col-12">
-            <div class="banner d-none d-md-flex">
-              <div class="ad-fake" style="width: 970px; height: 250px">廣告</div>
-            </div>
-            <div class="banner d-flex d-md-none">
-              <div class="ad-fake" style="width: 300px; height: 250px">廣告</div>
-            </div>
-          </div>
-        </div>
-        <div class="row row--campaign">
-          <div class="card--campaign">
-            <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/36/4336/carousel/4336.png" /></div>
-            <div class="caption">
-              <div class="title">未來該注意哪些病，基因告訴你！曾嶔元醫師：如何掌握健康弱點，精準預防？</div>
-              <dl class="dl--campaign--detail">
-                <dt>
-                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
-                      <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5" />
-                    </svg></div>
-                </dt>
-                <dd>2024.12.11（五）19:30</dd>
-                <dt>
-                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                      <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
-                    </svg></div>
-                </dt>
-                <dd>享象表演藝術場館—台北市信義區信義路五段7號</dd>
-              </dl>
-              <div class="buttons"> <a class="button--pill--lg">
-                  <div class="label">活動介紹</div>
-                </a></div>
-            </div>
-          </div>
-        </div>
-        <div class="row row--campaign">
-          <div class="card--campaign">
-            <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/42/4042/carousel/4042.png" /></div>
-            <div class="caption">
-              <div class="title">眼睛常過勞乾澀？眼科醫師徐浩恩：避免3件事，降低老後白內障風險</div>
-              <dl class="dl--campaign--detail">
-                <dt>
-                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
-                      <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5" />
-                    </svg></div>
-                </dt>
-                <dd>2024.12.11（五）19:30</dd>
-                <dt>
-                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                      <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
-                    </svg></div>
-                </dt>
-                <dd>享象表演藝術場館—台北市信義區信義路五段7號</dd>
-              </dl>
-              <div class="buttons"> <a class="button--pill--lg">
-                  <div class="label">活動介紹</div>
-                </a></div>
-            </div>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col-12">
-            <div class="banner d-none d-md-flex">
-              <div class="ad-fake" style="width: 970px; height: 250px">廣告</div>
-            </div>
-            <div class="banner d-flex d-md-none">
-              <div class="ad-fake" style="width: 300px; height: 250px">廣告</div>
-            </div>
-          </div>
-        </div>
-        <div class="row row--campaign">
-          <div class="card--campaign">
-            <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/23/3923/carousel/3923.png" /></div>
-            <div class="caption">
-              <div class="title">雙腳穴道最多，動動腳可放鬆、晚上好睡！10個活絡腿部動作，每天挑一個來練</div>
-              <dl class="dl--campaign--detail">
-                <dt>
-                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
-                      <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5" />
-                    </svg></div>
-                </dt>
-                <dd>2024.12.11（五）19:30</dd>
-                <dt>
-                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                      <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
-                    </svg></div>
-                </dt>
-                <dd>享象表演藝術場館—台北市信義區信義路五段7號</dd>
-              </dl>
-              <div class="buttons"> <a class="button--pill--lg">
-                  <div class="label">活動介紹</div>
-                </a></div>
-            </div>
-          </div>
-        </div>
-        <div class="row row--campaign">
-          <div class="card--campaign">
             <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/33/3233/carousel/3233.png" /></div>
             <div class="caption">
-              <div class="title">未來該注意哪些病，基因告訴你！曾嶔元醫師：如何掌握健康弱點，精準預防？</div>
+              <div class="title">如何退休後過更好？心理諮商師靳秀麗：1個「生產老化」新觀念，啟動身體健康</div>
               <dl class="dl--campaign--detail">
                 <dt>
                   <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
@@ -648,9 +621,9 @@
         </div>
         <div class="row row--campaign">
           <div class="card--campaign">
-            <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4338/carousel/4338.png" /></div>
+            <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/42/4042/carousel/4042.png" /></div>
             <div class="caption">
-              <div class="title">60歲告別主播台，轉行當心理諮商師！靳秀麗：幸福不是退休養老，「生產老化」活出無憾人生</div>
+              <div class="title">不爭，卻收穫最豐盛的人生！模仿天王郭子乾的「被動式積極」哲學</div>
               <dl class="dl--campaign--detail">
                 <dt>
                   <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
@@ -673,9 +646,9 @@
             </div>
           </div>
           <div class="card--campaign">
-            <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png" /></div>
+            <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/52/4252/carousel/4252.png" /></div>
             <div class="caption">
-              <div class="title">60歲告別主播台，轉行當心理諮商師！靳秀麗：幸福不是退休養老，「生產老化」活出無憾人生</div>
+              <div class="title">如何退休後過更好？心理諮商師靳秀麗：1個「生產老化」新觀念，啟動身體健康</div>
               <dl class="dl--campaign--detail">
                 <dt>
                   <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
@@ -706,9 +679,9 @@
             </div>
           </div>
           <div class="card--campaign">
-            <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/52/4252/carousel/4252.png" /></div>
+            <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/36/4336/carousel/4336.png" /></div>
             <div class="caption">
-              <div class="title">未來該注意哪些病，基因告訴你！曾嶔元醫師：如何掌握健康弱點，精準預防？</div>
+              <div class="title">98歲仍在幫病人看病！金氏世界紀錄最高齡醫師塔克：6個健康到100歲的秘訣，每個人都做得到</div>
               <dl class="dl--campaign--detail">
                 <dt>
                   <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
@@ -731,9 +704,9 @@
             </div>
           </div>
           <div class="card--campaign">
-            <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/36/4336/carousel/4336.png" /></div>
+            <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/23/3923/carousel/3923.png" /></div>
             <div class="caption">
-              <div class="title">83歲一頭白髮，卻氣色絕佳！光田醫院總院長王乃弘的早餐菜單：50歲才開始健康生活，絕對來得及</div>
+              <div class="title">60歲告別主播台，轉行當心理諮商師！靳秀麗：幸福不是退休養老，「生產老化」活出無憾人生</div>
               <dl class="dl--campaign--detail">
                 <dt>
                   <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
@@ -772,6 +745,36 @@
         </div>
       </div>
     </section>
+    <div class="fixed-checkout d-sm-none">
+      <div class="mobile-share-bar hide-border d-flex d-md-none bottom-0 mt-3">
+        <div class="item"> <a href="#">f</a></div>
+        <div class="item line"><a href="#">LINE</a></div>
+        <div class="item link"> <a href="#"><i class="bi bi-link-45deg"></i></a></div>
+        <div class="item size" onclick="toggleFontSize()"><svg class="aa" id="_圖層_1" data-name="圖層_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 50 50">
+            <path fill="#515151" stroke="#515151" d="M11.2,7.5h8.2l11.2,35h-7.3l-2.5-9h-11.3l-2.5,9H0L11.2,7.5ZM11,28.1h8.3l-1-3.8c-1.1-3.6-2-7.7-3-11.4h-.2c-.9,3.8-1.9,7.8-3,11.4l-1,3.8Z" />
+            <path fill="#515151" stroke="#515151" d="M36.8,12.8h6.3l6.8,22h-5.6l-1.3-5.1h-6.5l-1.3,5.1h-5.4l6.8-22ZM37.7,25.7h4.5l-.5-1.9c-.6-2.2-1.2-4.8-1.7-7.1h-.1c-.5,2.3-1.1,4.9-1.7,7.1l-.5,1.9Z" />
+          </svg></div>
+      </div>
+      <script>
+        window.addEventListener('scroll', function() {
+          const footer = document.querySelector('footer'); // 獲取 footer 元素
+          const fixedCheckout = document.querySelector('.fixed-checkout.d-sm-none'); // 獲取固定的結帳區域
+          const footerRect = footer.getBoundingClientRect(); // 獲取 footer 的位置
+          if (footerRect.top < window.innerHeight) {
+            fixedCheckout.style.transition = 'bottom 0.3s ease'; // 添加過渡效果
+            fixedCheckout.style.position = 'absolute'; // 設置為絕對定位
+            fixedCheckout.style.bottom = `0px`; // 距離 footer 的高度
+            fixedCheckout.style.display = 'none'; // 到底時改成隱藏
+          } else {
+            fixedCheckout.style.transition = 'bottom 0.3s ease'; // 添加過渡效果
+            fixedCheckout.style.position = 'fixed'; // 恢復為固定定位
+            fixedCheckout.style.bottom = '0'; // 固定在底部
+            fixedCheckout.style.display = 'block'; // 其他時候顯示
+          }
+        });
+
+      </script>
+    </div>
     <footer>
       <div class="container">
         <div class="grid--footer">

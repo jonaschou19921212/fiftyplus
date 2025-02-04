@@ -176,7 +176,7 @@ block main
                     != getLoremText()
           .join-us.d-flex
             .line-area.col-6.col-md-12 
-              span.text 50+學院
+              span.text 加50+學院好友
               a.join-text(href="")
                 | 線上專人諮詢 
                 .dash &nbsp;
@@ -282,33 +282,54 @@ block main
     .container.mt-5
       .section__title 
         .title 猜你喜歡
-    .container--slim
-      .row.row--article
-        each item, index in ['人物', '健康', '心靈']
-          .col-md-6.col-lg-4
-            .card--article
-              a.pic(
-                href="./article.html"
-              )
-                img(
-                  data-src=`${getLoremPic()}`
-                ).lazyload
-              a.caption(
-                href="./article.html"
-              )
-                //- .catalog
-                //-   != item
-                h3
-                  != getLoremText()
-              .info 
-                .date 2024.09.01
-                .view
-                  .icon
-                    i.bi.bi-eye
-                  .label 1000
+      .position-relative.row--article
+        swiper-container(
+          navigation='true'
+          slides-per-view='3'
+          space-between='20'
+          breakpoints='{"320":{"slidesPerView":1,"spaceBetween":20},"768":{"slidesPerView":2,"spaceBetween":20},"992":{"slidesPerView":3,"spaceBetween":20}}'
+          inject-styles=[
+            `
+              :host .swiper {
+                overflow: hidden;
+              }
+              :host {
+                --swiper-theme-color: #ede73c;
+              }
+              :host .swiper-button-prev,
+              :host .swiper-button-next {
+                background-color: #66666680;
+                border-radius: 100%;
+                width: 28px;
+                height: 28px;
+                padding: 10px;
+                stroke: #ede73c;
+                stroke-width: 1;
+                top: 32%;
+              }
+              `,
+          ]
+        )
+          each item, index in ['人物', '健康', '心靈','人物', '健康', '心靈']
+            swiper-slide
+              .card--article
+                a.pic(href="./article.html")
+                  img(
+                    data-src=`${getLoremPic()}`
+                    alt=`Article ${index + 1}`
+                  ).lazyload
+                a.caption(href="./article.html")
+                  h3
+                    != getLoremText()
+                .info 
+                  .date 2024.09.01
+                  .view
+                    .icon
+                      i.bi.bi-eye
+                    .label 1000
     .fixed-checkout.d-sm-none
-        .button--pill--full
-          .label.label--hide--border.black--font 按此結帳
+        a.button--pill--full(role="button" href="javascript:;")
+          .label.label--hide--border.black--font 立即報名
     script.
       var studentCount = 1;
       const quickBarItems = document.querySelectorAll('.quick-bar .item');

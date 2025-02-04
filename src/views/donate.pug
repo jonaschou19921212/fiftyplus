@@ -81,7 +81,7 @@ block main
                         | 電話：（02）2517-3688#819
         .col-12.col-md-3(id='panel--donate')
           .panel--donate
-            .title 贊助50+
+            .title.mb-3 贊助50+
             .form--radio--switch 
               label(
                 for='donate--personal'
@@ -148,11 +148,12 @@ block main
             .form--totally 
               .label
                 span 我要每月贊助
-                span 888
+                span 0
                 span 元
     .donate-bottom.fixed-bottom.d-md-none.juctify-content-center.p-4
         .button--pill--full(onclick="document.getElementById('panel--donate').scrollIntoView();")
             .label 我要贊助
+            
   script.
     // 新增的滾動事件監聽器
     window.addEventListener('scroll', function() {
@@ -181,5 +182,52 @@ block main
         fixedBuy.style.bottom = '0'; // 固定在底部
       }
     });
+
+
+    // 監聽金額相關的 inputs
+    document.querySelectorAll('input[name="donate--cost"], input[type="text"]').forEach(input => {
+      input.addEventListener('change', updateTotalText);
+    });
+
+    function updateTotalText() {
+      // 取得金額
+      const customAmount = document.querySelector('.form--donate input[type="text"]').value;
+      const selectedAmount = document.querySelector('input[name="donate--cost"]:checked')?.id === 'donate--500' ? '500' : '3000';
+      
+      // 決定要顯示的金額
+      const amount = customAmount || selectedAmount || '0';  // 預設為 0
+      
+      // 更新金額
+      const amountElement = document.querySelector('.form--totally .label span:nth-child(2)');
+      if (amountElement) {
+        amountElement.textContent = amount;
+      }
+    }
+
+    // 監聽文字輸入，當輸入自訂金額時，取消選擇預設金額
+    document.querySelector('.form--donate input[type="text"]').addEventListener('input', function() {
+      if (this.value) {
+        const checkedCost = document.querySelector('input[name="donate--cost"]:checked');
+        if (checkedCost) {
+          checkedCost.checked = false;
+        }
+      }
+      updateTotalText();
+    });
+
+    // 監聽預設金額選擇，當選擇預設金額時，清空自訂金額
+    document.querySelectorAll('input[name="donate--cost"]').forEach(input => {
+      input.addEventListener('change', function() {
+        if (this.checked) {
+          document.querySelector('.form--donate input[type="text"]').value = '';
+        }
+      });
+    });
+
+    // 初始化顯示
+    const amountElement = document.querySelector('.form--totally .label span:nth-child(2)');
+    if (amountElement) {
+      amountElement.textContent = '0';  // 確保初始值為 0
+    }
 
           

@@ -2,7 +2,9 @@ body
   margin: 0
   padding: 0
   background: white
-
+main
+  @media (max-width: theme('breakpoints.md'))
+    overflow: hidden
 .container
   &
     position: relative
@@ -845,6 +847,12 @@ section
           padding: 20px
           line-height: 1.5
           font-size: 20px
+          .button--facebook,
+          .button--line,
+          .button--link,
+          .button--textsize
+            width: 30px
+            aspect-ratio: 1 / 1
           @media (max-width: theme('breakpoints.sm'))
             width: 100%
             min-width: unset
@@ -860,6 +868,8 @@ section
             font-family: "Noto Serif TC", serif
             @media (max-width: theme('breakpoints.md'))
               text-align: left
+              p
+                font-size: 14px
 .page--cover
   @media (max-width: theme('breakpoints.md'))
     grid-column: span 2
@@ -1486,11 +1496,18 @@ section
     padding: 40px 0
   .reverse
     flex-wrap: wrap-reverse
-  .review-collect
+  
+  .sticky-container
+    position: sticky
+    top: 80px
+    @media (max-width: theme('breakpoints.lg'))
+      position: relative
+      top: 0
+.review-collect
+    display: inline-block
     border: 1px solid #222222
     background: #fff
-    width: 160px
-    padding: 15px
+    padding: 15px 30px
     border-radius: 50px
     text-align: center
     font-weight: 600
@@ -1498,17 +1515,9 @@ section
     font-family: 'Noto Sans TC', sans-serif
     @media (max-width: theme('breakpoints.md'))
       font-size: 16px
-      width: 120px
-      padding: 5px
+      padding: 5px 20px
       border: 1px solid #222222
       background: #fff
-  .sticky-container
-    position: sticky
-    top: 80px
-    @media (max-width: theme('breakpoints.lg'))
-      position: relative
-      top: 0
-
 .timeline
   display: flex
   flex-direction: column

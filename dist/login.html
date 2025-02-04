@@ -41,9 +41,6 @@
       <div class="header-ad d-none d-lg-flex">
         <div class="ad-fake" style="width: 970px; height:250px">廣告</div>
       </div>
-      <div class="button--go-top" onclick="window.scrollTo(0, 0)">
-        <div class="icon"> <i class="bi bi-chevron-up"></i></div>
-      </div>
       <div class="header--desktop--container">
         <div class="header--desktop">
           <section>
@@ -220,9 +217,7 @@
         </div>
         <div class="drawer">
           <div class="container">
-            <div class="panel--search--mobile"> <label><input type="text" placerholder="輸入搜尋文字" /><a class="icon" href="./search.html">
-                  <div class="icon--search"></div>
-                </a></label></div>
+            <div class="panel--search--mobile"> <label><input type="text" placerholder="輸入搜尋文字" /><a class="icon" href="./search.html"><i class="bi bi-search"></i></a></label></div>
             <div class="grid--qlinks"><a class="button--qlink" href="./course.html">
                 <div class="icon">
                   <div class="icon--academy"></div>
@@ -232,7 +227,7 @@
                 <div class="icon">
                   <div class="icon--weekly"></div>
                 </div>
-                <div class="label">週刊</div>
+                <div class="label">百科</div>
               </a><a class="button--qlink" href="./reviews.html">
                 <div class="icon">
                   <div class="icon--review"></div>
@@ -336,28 +331,6 @@
             element.style.display = 'none';
           });
         }
-      });
-      document.addEventListener('DOMContentLoaded', () => {
-        const headerMobile = document.querySelector('.header--mobile');
-        const headerBlank = document.querySelector('.header--blank');
-        const stickyOffset = headerMobile.offsetTop; // 獲取 header--mobile 的初始位置
-        const headerDesk = document.querySelector('.header--desktop--container');
-        const header = document.querySelector('header');
-        const stickyDeskOffset = headerDesk.offsetTop; // 獲取 header--mobile 的初始位置
-        window.addEventListener('scroll', () => {
-          if (window.pageYOffset > stickyOffset) {
-            headerMobile.classList.add('is-fixed'); // 添加固定樣式
-            headerBlank.classList.add('d-block');
-          } else {
-            headerMobile.classList.remove('is-fixed'); // 移除固定樣式
-            headerBlank.classList.remove('d-block');
-          }
-          if (window.pageYOffset > stickyDeskOffset) {
-            header.classList.add('is-active'); // 添加固定樣式
-          } else {
-            header.classList.remove('is-active'); // 移除固定樣式
-          }
-        });
       });
 
     </script>

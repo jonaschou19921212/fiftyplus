@@ -167,7 +167,6 @@ block main
               p 查看評鑑報告！歡迎多看他人的分享，會得意想不到的靈感與收穫喔。
               span.date 12.01 — 12.11
 
-  
   section.section--article--body 
     if step !== 3
       .container.position-relative
@@ -175,15 +174,15 @@ block main
           .col-12.col-md-9
             article.is-review-rules
               h3 活動期間
-              h5 2024/11/06 — 11/11
+              p 2024/11/06 — 11/11
               h3 評鑑辦法
-              h6 本次評鑑建議有使用蛋白類營養品習慣的族群參加，體驗品共50份，因體驗數量有限，若報名人數超過50人，我們將從中選出50位評鑑員並寄發試用品，若最後您未中選，將不會收到試用品，請您見諒。維護評鑑品質，每位申請者享有單次申請機會，若重複報名將自動視為無效。
-              h6 Step 1：申請評鑑 
+              p 本次評鑑建議有使用蛋白類營養品習慣的族群參加，體驗品共50份，因體驗數量有限，若報名人數超過50人，我們將從中選出50位評鑑員並寄發試用品，若最後您未中選，將不會收到試用品，請您見諒。維護評鑑品質，每位申請者享有單次申請機會，若重複報名將自動視為無效。
+              p Step 1：申請評鑑 
               ol 
                 li 請登入會員，填寫個人基本資料
                 li 簡述150字想體驗產品的原因
                 li 等候入選通知
-              h6 Step 2：心得回填/好禮加碼贈
+              p Step 2：心得回填/好禮加碼贈
               ol 
                 li 收到體驗品並開始試用
                 li 上傳使用產品後300字以上感想，依照自身試用經驗書寫心得
@@ -204,10 +203,9 @@ block main
                 li 本體驗希望找到真心想了解並對產品有興趣者，若申請評鑑並開始試用後，最終未回覆心得者，往後將喪失參與體驗之資格。
                 li 若您入選為評鑑員，50+將有專人與您電話聯繫，請入選者留意手機來電。
                 li 如申請本次體驗，即表示同意50+網站及體驗品提供之廠商就您所提供的圖文心得有以任何方式使用之權利，並得以在不影響原意下修改文字及保有活動細節調整之權利。
-        .fixed-bottom.d-flex.d-sm-none.juctify-content-center.p-4
-            .button--pill--full
-              .label 搶先報名
-              
+        .fixed-checkout.d-sm-none
+          include components/mobileShareBar
+            
     if step === 3
       .container(id="reviewForm")
         .review--title
@@ -270,4 +268,6 @@ block main
           a.button--pill--xl(
             href="./reviewStep4.html"
           )
-            .label 送出申請
+            .label 送出資料
+  .fixed-checkout.d-sm-none
+    include components/mobileShareBar

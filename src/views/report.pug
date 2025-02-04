@@ -30,8 +30,13 @@ block main
     .container--slim
       .row
         .col-12
-          .review--title
-            .title 亞培安素-香草減甜版
+          .row.align-items-center.mb-0.mb-lg-5.mt-lg-4
+            .col-lg-auto
+              .review-collect.mb-3.mb-lg-0 評鑑報告
+            .col-lg
+              .review--title.mb-lg-0
+                .title 亞培安素-香草減甜版
+            
 
           .card--review--spec
             .pic 
@@ -67,20 +72,24 @@ block main
                   li Omega 3不飽和脂肪，幫助調節生理機能
                   li 隨身曲線瓶，上班/運動/出遊，隨時補充體力
                 p * 安素均衡營養升級配方提供3重優蛋白(乳清蛋白，酪蛋白，大豆蛋白)守護肌肉(護肌)、幫助肌肉生長(增肌)、有助組織修復，提供HMB(白胺酸代謝物補充營養，雙效營養支持好體力。
-            .report-buy
-              .button--pill--lg
-                .label 我要購買
-          article.is-review
+              .report-buy
+                .button--pill--lg
+                  .label 我要購買
+          
+          article.is-review.mb-5
             p 閱讀黃金雙激萃的使用說明，上面說「於早上或晚上使用」。但我想，既然要試用，就早晚都用吧！於是晚上我用黃金雙激萃取代原來的晚霜，在化妝水後使用。這是我第一次晚上不用「乳霜」狀保養品，我一直倚賴乳霜來保濕。沒想到，黃金雙激萃的保濕潤澤度出奇的好！整個晚上都感覺皮膚非常水嫩！早上我則是洗完臉就直接使用它，用量稍減。它不會油膩，也很容易再上後續的隔離乳。因為好吸收的關係，立刻上隔離乳也不會有屑屑產生。 用完兩週，我覺得最明顯的改變是皮膚的緊緻度，而且幾乎一用就有感。皮膚的緊緻，感覺真的很明顯。同樣的保養程序，竟帶來這麼好的效果。也因為這樣，上彩粧也變得容易，不易掉粉。沒預料到的收穫是，出門前在化妝檯前的準備時間變短了，讓人開心。值得推薦！值得推薦！值得推薦！值得推薦！
-            h3.center 開箱影音
 
-            .video--wrapper
-              iframe(
-                src="https://www.youtube.com/embed/1Q3wv4J6Z1A"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              )
+          article.is-review
+            h3.center 開箱影音
+            .row
+              .col-lg-6.mx-auto
+                .video--wrapper
+                  iframe(
+                    src="https://www.youtube.com/embed/1Q3wv4J6Z1A"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  )
         .col-12.col-md-3
           block sidebar
 
@@ -100,7 +109,7 @@ block main
               .label 推薦閱讀
       .row.mt-3
         .col-12
-          article.is-review-rules
+          article.is-review
             h3.center 年齡分佈
           .chart-container
             .labels-container
@@ -113,11 +122,11 @@ block main
 
   section.section--report--body 
     .rank
-      .container--slim.py-5
+      .container--slim.py-3.py-lg-5
         .row.rank-container
-          .col-12.pb-3
-            article.is-review-rules
-              h3.border-white 評鑑星等
+          .col-12.pb-lg-3
+            article.is-review
+              h3.center.border-white 評鑑星等
           .col-12.rank-container
             each item, i_dx in [4.2, 3.2, 4.3, 4.1]
               .rank-card.col-12.col-md-3
@@ -133,12 +142,13 @@ block main
                         each item, index in [0, 1, 2, 3, 4]
                           .icon
                             i.bi.bi-star-fill
-    .row.mt-3
-        .col-12
-          article.is-review-rules
-            h3.center 試用心得 
+    
     
     .container
+      .row.mt-3
+        .col-12
+          article.is-review
+            h3.center 評鑑心得 
       .row.card-row
         each card in [1, 2, 3, 4]
           .col-12.col-lg-5.card-container
@@ -203,7 +213,9 @@ block main
                             img(
                               data-src=`${getLoremCourse()}`
                             ).lazyload
-                         
+  .fixed-checkout.d-sm-none
+    a.button--pill--full(role="button" href="javascript:;")
+      .label.label--hide--border.black--font 我要購買                        
   script(src='https://cdn.jsdelivr.net/npm/chart.js')
   script.
     document.addEventListener("DOMContentLoaded", function() {

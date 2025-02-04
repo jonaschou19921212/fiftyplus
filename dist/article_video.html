@@ -41,9 +41,6 @@
       <div class="header-ad static d-none d-lg-flex">
         <div class="ad-fake" style="width: 970px; height:250px">廣告</div>
       </div>
-      <div class="button--go-top" onclick="window.scrollTo(0, 0)">
-        <div class="icon"> <i class="bi bi-chevron-up"></i></div>
-      </div>
       <div class="header--desktop--container">
         <div class="header--desktop bg-none">
           <section>
@@ -220,9 +217,7 @@
         </div>
         <div class="drawer">
           <div class="container">
-            <div class="panel--search--mobile"> <label><input type="text" placerholder="輸入搜尋文字" /><a class="icon" href="./search.html">
-                  <div class="icon--search"></div>
-                </a></label></div>
+            <div class="panel--search--mobile"> <label><input type="text" placerholder="輸入搜尋文字" /><a class="icon" href="./search.html"><i class="bi bi-search"></i></a></label></div>
             <div class="grid--qlinks"><a class="button--qlink" href="./course.html">
                 <div class="icon">
                   <div class="icon--academy"></div>
@@ -232,7 +227,7 @@
                 <div class="icon">
                   <div class="icon--weekly"></div>
                 </div>
-                <div class="label">週刊</div>
+                <div class="label">百科</div>
               </a><a class="button--qlink" href="./reviews.html">
                 <div class="icon">
                   <div class="icon--review"></div>
@@ -337,28 +332,6 @@
           });
         }
       });
-      document.addEventListener('DOMContentLoaded', () => {
-        const headerMobile = document.querySelector('.header--mobile');
-        const headerBlank = document.querySelector('.header--blank');
-        const stickyOffset = headerMobile.offsetTop; // 獲取 header--mobile 的初始位置
-        const headerDesk = document.querySelector('.header--desktop--container');
-        const header = document.querySelector('header');
-        const stickyDeskOffset = headerDesk.offsetTop; // 獲取 header--mobile 的初始位置
-        window.addEventListener('scroll', () => {
-          if (window.pageYOffset > stickyOffset) {
-            headerMobile.classList.add('is-fixed'); // 添加固定樣式
-            headerBlank.classList.add('d-block');
-          } else {
-            headerMobile.classList.remove('is-fixed'); // 移除固定樣式
-            headerBlank.classList.remove('d-block');
-          }
-          if (window.pageYOffset > stickyDeskOffset) {
-            header.classList.add('is-active'); // 添加固定樣式
-          } else {
-            header.classList.remove('is-active'); // 移除固定樣式
-          }
-        });
-      });
 
     </script>
     <section class="section--article--video--header">
@@ -379,13 +352,13 @@
                 </div>
               </div>
               <div class="buttons d-none d-md-flex justify-content-end mt-3 mb-0"><a href="">
-                  <div class="button--facebook" style="width: 40px;"></div>
+                  <div class="button--facebook"></div>
                 </a><a href="">
-                  <div class="button--line" style="width: 40px;"></div>
+                  <div class="button--line"></div>
                 </a><a href="">
-                  <div class="button--link" style="width: 40px;"> </div>
+                  <div class="button--link"> </div>
                 </a><a>
-                  <div class="button--textsize" onclick="toggleFontSize()" style="width: 40px;"></div>
+                  <div class="button--textsize" onclick="toggleFontSize()"></div>
                 </a></div>
             </div>
           </div>
@@ -419,7 +392,7 @@
               </div>
             </div>
             <article>
-              <blockquote class="quote left--cancel">
+              <blockquote class="quote left--padding-cancel">
                 <p>編按：如何和年輕人共事？熟齡族群在職場待久了，不免感受到世代差異。和MZ世代一起工作，該怎麼給予指示，才能讓對方把事情做好？本文為韓國9位不同業界專家提出的建議，讓職場資深工作者們找到與MZ世代共事的舒服方式。</p>
               </blockquote>
               <div class="banner d-none d-md-flex">
@@ -445,7 +418,7 @@
                 <div class="title">此為會員限定文章</div>
               </div>
               <div class="caption">
-                <p>免費加入50+，用新的方法創造你的理想老後！</p>
+                <p>免費加入《50+》會員，用新的方法創造你的理想老後！</p>
                 <ul>
                   <li><span><i class="bi bi-check"></i></span>閱讀會員限定文章</li>
                   <li><span><i class="bi bi-check"></i></span>參加會員限定活動</li>
@@ -482,23 +455,23 @@
                 <div class="title">熱門文章</div>
                 <div class="item--latest">
                   <div class="no">1</div>
-                  <div class="caption font-light">60歲告別主播台，轉行當心理諮商師！靳秀麗：幸福不是退休養老，「生產老化」活出無憾人生</div>
+                  <div class="caption font-light">雙腳穴道最多，動動腳可放鬆、晚上好睡！10個活絡腿部動作，每天挑一個來練</div>
                 </div>
                 <div class="item--latest">
                   <div class="no">2</div>
-                  <div class="caption font-light">98歲仍在幫病人看病！金氏世界紀錄最高齡醫師塔克：6個健康到100歲的秘訣，每個人都做得到</div>
+                  <div class="caption font-light">生氣是慢性自殺！洛桑加參醫師：每天1個練習，從此心平氣和</div>
                 </div>
                 <div class="item--latest">
                   <div class="no">3</div>
-                  <div class="caption font-light">60歲告別主播台，轉行當心理諮商師！靳秀麗：幸福不是退休養老，「生產老化」活出無憾人生</div>
-                </div>
-                <div class="item--latest">
-                  <div class="no">4</div>
                   <div class="caption font-light">不爭，卻收穫最豐盛的人生！模仿天王郭子乾的「被動式積極」哲學</div>
                 </div>
                 <div class="item--latest">
+                  <div class="no">4</div>
+                  <div class="caption font-light">98歲仍在幫病人看病！金氏世界紀錄最高齡醫師塔克：6個健康到100歲的秘訣，每個人都做得到</div>
+                </div>
+                <div class="item--latest">
                   <div class="no">5</div>
-                  <div class="caption font-light">生氣是慢性自殺！洛桑加參醫師：每天1個練習，從此心平氣和</div>
+                  <div class="caption font-light">98歲仍在幫病人看病！金氏世界紀錄最高齡醫師塔克：6個健康到100歲的秘訣，每個人都做得到</div>
                 </div>
               </div>
               <div class="join-us row">
@@ -565,7 +538,7 @@
           </div>
           <div class="col-lg-4">
             <div class="card--course">
-              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4338/carousel/4338.png" /></div>
+              <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png" /></div>
               <div class="caption">
                 <div class="info">
                   <div class="date">2024.11.06 — 2024.12.11</div>
@@ -599,7 +572,7 @@
               </div>
             </swiper-slide><swiper-slide class="bg-theme">
               <div class="card--course audio-type">
-                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4038/carousel/4038.png" /></div>
+                <div class="pic"><img class="lazyload" data-src="https://imgs.cwgv.com.tw/slides/38/4338/carousel/4338.png" /></div>
                 <div class="caption">
                   <div class="info">
                     <div class="date">2024.11.06 — 2024.12.11</div>
@@ -629,7 +602,7 @@
               </div>
             </swiper-slide></swiper-container></div>
       </div>
-      <div class="fixed-checkout">
+      <div class="fixed-checkout d-sm-none">
         <div class="mobile-share-bar hide-border d-flex d-md-none bottom-0 mt-3">
           <div class="item"> <a href="#">f</a></div>
           <div class="item line"><a href="#">LINE</a></div>
@@ -642,7 +615,7 @@
         <script>
           window.addEventListener('scroll', function() {
             const footer = document.querySelector('footer'); // 獲取 footer 元素
-            const fixedCheckout = document.querySelector('.fixed-checkout'); // 獲取固定的結帳區域
+            const fixedCheckout = document.querySelector('.fixed-checkout.d-sm-none'); // 獲取固定的結帳區域
             const footerRect = footer.getBoundingClientRect(); // 獲取 footer 的位置
             if (footerRect.top < window.innerHeight) {
               fixedCheckout.style.transition = 'bottom 0.3s ease'; // 添加過渡效果

@@ -15,7 +15,7 @@
 script.
     window.addEventListener('scroll', function() {
         const footer = document.querySelector('footer'); // 獲取 footer 元素
-        const fixedCheckout = document.querySelector('.fixed-checkout'); // 獲取固定的結帳區域
+        const fixedCheckout = document.querySelector('.fixed-checkout.d-sm-none'); // 獲取固定的結帳區域
         const footerRect = footer.getBoundingClientRect(); // 獲取 footer 的位置
         if (footerRect.top < window.innerHeight) {
           fixedCheckout.style.transition = 'bottom 0.3s ease'; // 添加過渡效果
