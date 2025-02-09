@@ -10,7 +10,7 @@ block list
 
 block sidebar
   .sticky-container
-    .panel--review.d-none.d-md-block
+    .panel--review.static.d-none.d-md-block
       .title 評鑑名單公告
       .caption
         .status--review 
@@ -26,3 +26,7 @@ block sidebar
             span 人
     .mt-3
       +adBanner(true)
+
+block fixed-bottom
+  .fixed-checkout.d-sm-none
+    include components/mobileShareBar

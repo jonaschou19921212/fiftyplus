@@ -12,6 +12,7 @@ for (const child of App.children) {
 
 document.addEventListener('DOMContentLoaded', () => {
   const headerMobile = document.querySelector('.header--mobile');
+  const headerEvent = document.querySelector('.header--event');
   const headerBlank = document.querySelector('.header--blank');
   const stickyOffset = headerMobile.offsetTop;
   const headerDesk = document.querySelector('.header--desktop--container');
@@ -22,9 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     if (window.pageYOffset > stickyOffset) {
       headerMobile.classList.add('is-fixed');
+      headerEvent.classList.add('is-fixed');
       headerBlank.classList.add('d-block');
     } else {
       headerMobile.classList.remove('is-fixed');
+      headerEvent.classList.remove('is-fixed');
       headerBlank.classList.remove('d-block');
     }
 
@@ -48,9 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // 根據切換後的狀態決定是否添加或移除 class
     if (willBeActive) {
       headerMobile.classList.add('is-fixed');
+      headerEvent.classList.add('is-fixed');
       headerBlank.classList.add('d-block');
     } else {
       headerMobile.classList.remove('is-fixed');
+      headerEvent.classList.remove('is-fixed');
       headerBlank.classList.remove('d-block');
     }
   });

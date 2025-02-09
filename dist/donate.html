@@ -455,20 +455,34 @@
         }
       });
       // 監聽金額相關的 inputs
-      document.querySelectorAll('input[name="donate--cost"], input[type="text"]').forEach(input => {
+      document.querySelectorAll('input[name="donate--cost"], input[type="text"], input[name="donate--frequency"]').forEach(input => {
         input.addEventListener('change', updateTotalText);
       });
 
       function updateTotalText() {
         // 取得金額
         const customAmount = document.querySelector('.form--donate input[type="text"]').value;
-        const selectedAmount = document.querySelector('input[name="donate--cost"]:checked')?.id === 'donate--500' ? '500' : '3000';
-        // 決定要顯示的金額
-        const amount = customAmount || selectedAmount || '0'; // 預設為 0
-        // 更新金額
-        const amountElement = document.querySelector('.form--totally .label span:nth-child(2)');
-        if (amountElement) {
-          amountElement.textContent = amount;
+        const selectedRadio = document.querySelector('input[name="donate--cost"]:checked');
+        let amount = '0'; // 預設值為 '0'
+        // 如果有自訂金額，使用自訂金額
+        if (customAmount) {
+          amount = customAmount;
+        }
+        // 否則如果有選擇預設金額，使用預設金額
+        else if (selectedRadio) {
+          amount = selectedRadio.id === 'donate--500' ? '500' : '3000';
+        }
+        // 取得頻率
+        const frequency = document.querySelector('input[name="donate--frequency"]:checked')?.id;
+        const frequencyText = frequency === 'donate--monthly' ? '每月定額' : '單筆贊助';
+        // 更新文字
+        const labelElement = document.querySelector('.form--totally .label');
+        if (labelElement) {
+          labelElement.innerHTML = `
+      <span>我要${frequencyText}</span>
+      <span>${amount}</span>
+      <span>元</span>
+    `;
         }
       }
       // 監聽文字輸入，當輸入自訂金額時，取消選擇預設金額
@@ -487,12 +501,17 @@
           if (this.checked) {
             document.querySelector('.form--donate input[type="text"]').value = '';
           }
+          updateTotalText();
         });
       });
       // 初始化顯示
-      const amountElement = document.querySelector('.form--totally .label span:nth-child(2)');
-      if (amountElement) {
-        amountElement.textContent = '0'; // 確保初始值為 0
+      const labelElement = document.querySelector('.form--totally .label');
+      if (labelElement) {
+        labelElement.innerHTML = `
+    <span>我要贊助</span>
+    <span>0</span>
+    <span>元</span>
+  `;
       }
 
     </script>
