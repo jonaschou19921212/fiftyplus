@@ -67,7 +67,12 @@ block main
               .grid--upload--preview
                 each item, index in [0, 1, 2, 3]
                   .card--upload--preview
-                    i.bi.bi-image
+                    label(for=`upload-input-${index}`)
+                      input.upload-input(id=`upload-input-${index}` type='file' style='display: none;' onchange=`handleFileUpload(this, ${index})`)
+                      img.upload-preview(id=`upload-preview-${index}` src='' style='display: none; width: 100%; height: 100%; object-fit: cover;')
+                      i.bi.bi-image.upload-icon(style='display: block;')
+                      p 新增 圖片 #{index}
+                      p 限定 JPEG & PNG 格式
           .col-12
             .form--input
               label 評分

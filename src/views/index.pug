@@ -106,8 +106,8 @@ block main
                     i.bi.bi-eye
                   .label 1000
 
-      .buttons.d-md-none
-        .button--more 
+      .buttons
+        a.button--more(href="./articles.html")
           .label 查看更多
           .icon 
             i.bi.bi-caret-down-fill
@@ -120,8 +120,8 @@ block main
     .container
       .section__title 
         .title 最新影音
-        a.button--pill--xs.is-outline
-          .label more
+        //- a.button--pill--xs.is-outline
+        //-   .label more
 
     .container--slim.d-block.d-lg-none
       .swiper--mobile
@@ -172,8 +172,8 @@ block main
                 != getLoremText()
 
     .container--slim.d-block.d-md-none
-      .buttons.d-md-none
-        .button--more 
+      .buttons
+        a.button--more(href="./audios.html")
           .label 查看更多
           .icon 
             i.bi.bi-caret-down-fill
@@ -186,8 +186,8 @@ block main
     .container
       .section__title.is-en 
         .title Podcast
-        a.button--pill--xs.is-outline
-          .label more
+        //- a.button--pill--xs.is-outline
+        //-   .label more
     .container--slim
       .grid--podcast
         .embed--podcast
@@ -202,8 +202,8 @@ block main
                   != getLoremText()
               .date 2024.09.01
 
-      .buttons.d-md-none
-        .button--more 
+      .buttons
+        a.button--more(href="./podcast.html")
           .label 查看更多
           .icon 
             i.bi.bi-caret-down-fill
@@ -216,10 +216,10 @@ block main
     .container
       .section__title 
         .title 生活百科
-        a.button--pill--xs.is-outline(
-          href='./weekly.html'
-        )
-          .label more
+        //- a.button--pill--xs.is-outline(
+        //-   href='./weekly.html'
+        //- )
+        //-   .label more
     .container--slim
       .swiper--weekly
         swiper-container(
@@ -290,8 +290,8 @@ block main
       //-             != getLoremText()
 
 
-      .buttons.d-md-none
-        .button--more 
+      .buttons.mt-5
+        a.button--more(href="./weekly.html")
           .label 查看更多
           .icon 
             i.bi.bi-caret-down-fill
@@ -322,10 +322,10 @@ block main
     .container
       .section__title 
         .title 數位策展
-        a.button--pill--xs.is-outline(
-          href='./events.html'
-        )
-          .label more
+        //- a.button--pill--xs.is-outline(
+        //-   href='./events.html'
+        //- )
+        //-   .label more
 
     .container--slim.d-block.d-md-none 
       .swiper--mobile
@@ -389,7 +389,7 @@ block main
     
     .container--slim.d-block.mt-5
       .buttons.mb-0
-        .button--more
+        a.button--more(href="./events.html")
           .label 查看更多
           .icon 
             i.bi.bi-caret-down-fill
@@ -398,10 +398,10 @@ block main
     .container
       .section__title 
         .title 50+學院
-        a.button--pill--xs.is-outline(
-          href='./course.html'
-        )
-          .label more
+        //- a.button--pill--xs.is-outline(
+        //-   href='./course.html'
+        //- )
+        //-   .label more
     .container--slim
       .row.row--course
         each item, index in [0, 1, 2, 3]
@@ -419,8 +419,8 @@ block main
                   .button--pill--xl
                     .label 我要報名
 
-      .buttons.d-md-none
-        .button--more 
+      .buttons
+        a.button--more(href="./course.html")
           .label 查看更多
           .icon 
             i.bi.bi-caret-down-fill
@@ -428,10 +428,10 @@ block main
     .container
       .section__title 
         .title 50+活動
-        a.button--pill--xs.is-outline(
-          href='./course.html'
-        )
-          .label more
+        //- a.button--pill--xs.is-outline(
+        //-   href='./course.html'
+        //- )
+        //-   .label more
     .container--slim
       .row.row--course
         each item, index in [0, 1]
@@ -449,8 +449,8 @@ block main
                   .button--pill--xl
                     .label 我要報名
 
-      .buttons.d-md-none
-        .button--more 
+      .buttons
+        a.button--more(href="#")
           .label 查看更多
           .icon 
             i.bi.bi-caret-down-fill
@@ -459,8 +459,8 @@ block main
     .container
       .section__title 
         .title 活動花絮
-        a.button--pill--xs.is-outline
-          .label more
+        //- a.button--pill--xs.is-outline
+        //-   .label more
 
     .container--slim.d-block.d-lg-none
       .card--snippet--preview
@@ -508,11 +508,6 @@ block main
                     != getLoremText()
                 //- .icon 
                 //-   i.bi.bi-plus
-      .buttons.d-md-none.mt-5
-        .button--more 
-          .label 查看更多
-          .icon 
-            i.bi.bi-caret-down-fill
     .container--slim.d-none.d-lg-block
       .grid--snippet
         .col
@@ -556,11 +551,6 @@ block main
                       h3
                         != getLoremText()
 
-      .buttons.d-md-none
-        .button--more 
-          .label 查看更多
-          .icon 
-            i.bi.bi-caret-down-fill
 
   section.section--banner
     .container--slim

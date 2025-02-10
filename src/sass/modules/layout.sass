@@ -1080,8 +1080,8 @@ section
   article
     p
       color: #222222
-    @media (max-width: theme('breakpoints.lg'))
-      font-size: 20px !important
+    // @media (max-width: theme('breakpoints.lg'))
+    //   font-size: 20px !important
   .reverse
     flex-wrap: wrap-reverse
   .sticky-container
@@ -1175,8 +1175,8 @@ section
         width: 100%
         background: #fff
       .pic
-        width: 150px
-        height: 150px
+        width: 200px
+        height: 200px
         display: flex
         justify-content: center
         align-items: center
@@ -1195,15 +1195,15 @@ section
           z-index: 2
       .circle-bg
         position: absolute
-        width: 150px
-        height: 150px
+        width: 200px
+        height: 200px
         border: 1px solid var(--theme-color)
         border-radius: 50%
         bottom: 5px
         z-index: 1
         @media (max-width: theme('breakpoints.md'))
-          width: 150px
-          height: 150px
+          width: 200px
+          height: 200px
           left: 50%
           top: 50%
           margin-top: 16px
@@ -1319,6 +1319,8 @@ section
         padding: 15px
         line-height: 1.8
         letter-spacing: 2px
+        @media (max-width: theme('breakpoints.sm'))
+          +fontSize(20px)
   .choose--class
     display: flex
     flex-direction: column

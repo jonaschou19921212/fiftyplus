@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const headerEvent = document.querySelector('.header--event');
   const headerBlank = document.querySelector('.header--blank');
   const stickyOffset = headerMobile.offsetTop;
-  const headerDesk = document.querySelector('.header--desktop--container');
+  // const headerDesk = document.querySelector('.header--desktop--container');
   const header = document.querySelector('header');
-  const stickyDeskOffset = headerDesk.offsetTop;
+  // const stickyDeskOffset = headerDesk.offsetTop;
 
   // 監聽滾動事件
   window.addEventListener('scroll', () => {
@@ -31,11 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
       headerBlank.classList.remove('d-block');
     }
 
-    if (window.pageYOffset > stickyDeskOffset) {
-      header.classList.add('is-active');
-    } else {
-      header.classList.remove('is-active');
-    }
+    // if (window.pageYOffset > stickyDeskOffset) {
+    //   header.classList.add('is-active');
+    // } else {
+    //   header.classList.remove('is-active');
+    // }
   });
 
   // menu toggle 點擊事件
@@ -84,7 +84,7 @@ window.addEventListener("scroll", function () {
 
 window.addEventListener("scroll", () => {
   // isHeaderScrolled();
-  isButtonGoTopScrolled();
+  // isButtonGoTopScrolled();
 });
 
 const isHeaderScrolled = function () {
@@ -99,11 +99,11 @@ const isHeaderScrolled = function () {
   }
 };
 
-const isButtonGoTopScrolled = function () {
-  const el = document.querySelector(".button--go-top");
-  if (window.scrollY > 180) {
-    el.classList.add("is-active");
-  } else {
-    el.classList.remove("is-active");
-  }
-};
+// const isButtonGoTopScrolled = function () {
+//   const el = document.querySelector(".button--go-top");
+//   if (window.scrollY > 180) {
+//     el.classList.add("is-active");
+//   } else {
+//     el.classList.remove("is-active");
+//   }
+// };

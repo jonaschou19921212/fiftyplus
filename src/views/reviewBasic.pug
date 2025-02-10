@@ -240,10 +240,18 @@ block main
                   li 請上傳至少3張、至多4張圖片。
                   li 請盡量在光線明亮處，拍攝清楚的產品照。
                   li 請發揮創意，拍攝您與產品美麗的照片吧！
+                
                 .grid--upload--preview
                   each item, index in [0, 1, 2, 3]
                     .card--upload--preview
-                      i.bi.bi-image
+                      label(for=`upload-input-${index}`)
+                        input.upload-input(id=`upload-input-${index}` type='file' style='display: none;' onchange=`handleFileUpload(this, ${index})`)
+                        img.upload-preview(id=`upload-preview-${index}` src='' style='display: none; width: auto; height: 100%; object-fit: contain;')
+                        i.bi.bi-image.upload-icon(style='display: block;')
+                        a.img-delete(role="button" href="javascript:;")
+                          i.bi.bi-trash
+                        p(style="color:#5691D5") 新增 圖片 #{index}
+                        p 限定 JPEG & PNG 格式
             .col-12
               .form--input
                 label 評分
@@ -271,3 +279,4 @@ block main
             .label 送出資料
   
   block fixed-bottom
+  block script

@@ -1334,6 +1334,8 @@ article
     font-weight: 600
     line-height: 1.6
     letter-spacing: 0.5px
+    @media (max-width: theme('breakpoints.sm'))
+      +fontSize(20px)
   p,
   ol li
     +fontSize(18px)
@@ -1341,8 +1343,8 @@ article
     font-style: normal
     font-weight: 400
     line-height: 1.6
-    @media (min-width: theme('breakpoints.md'))
-      font-size: 20px
+    @media (max-width: theme('breakpoints.sm'))
+      +fontSize(20px)
 
   p.color--second
     color: #222222
@@ -1362,25 +1364,25 @@ article
     grid-template-columns: auto 1fr
     column-gap: 20px
     @media (max-width: theme('breakpoints.sm'))
-      font-size: 20px
-  blockquote.quote
-    &
+      +fontSize(20px)
+        
+  blockquote
+    &.quote
       background: rgba(#b7b8b8, .1)
       padding: 40px
       margin-bottom: 40px
       @media (max-width: theme('breakpoints.sm'))
         padding: 20px
-    p
-      +fontSize(18px)
-      font-family: 'Noto Serif TC', serif
-      @media (max-width: theme('breakpoints.sm'))
-        font-size: 18px
-  blockquote
+      p
+        font-family: 'Noto Serif TC', serif
     &
       margin-bottom: 20px
       padding: 20px
       border-left: 7px solid var(--theme-color)
       line-height: 1.8
+      // +fontSize(18px)
+      // @media (max-width: theme('breakpoints.sm'))
+      //   +fontSize(20px)
     &.left--cancel
       &
         margin-left: 0px
@@ -2035,7 +2037,7 @@ table.table
 .section--class--body  
   article
     h3
-      +fontSize(18px)
+      // +fontSize(18px)
       font-family: 'Noto Sans TC', serif
       font-weight: 700
       display: inline-flex
@@ -2088,8 +2090,8 @@ table.table
         font-family: 'Noto Sans TC', serif
         color: #222222
         letter-spacing: 1.2px
-        @media (max-width: theme('breakpoints.sm'))
-          font-size: 1.2rem
+        // @media (max-width: theme('breakpoints.sm'))
+        //   font-size: 1.2rem
 article.is-review-rules
   &
     > * 

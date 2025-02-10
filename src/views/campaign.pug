@@ -67,8 +67,7 @@ block main
                 data-src=`${getLoremCourse()}`
               ).lazyload
             .caption
-              .title
-                = `${getLoremText()}`
+              .title 熟齡正位瑜伽
               dl.dl--campaign--detail
                 dt 
                   .icon
@@ -98,8 +97,7 @@ block main
                 data-src=`${getLoremCourse()}`
               ).lazyload
             .caption
-              .title
-                = `${getLoremText()}`
+              .title 熟齡正位瑜伽
               dl.dl--campaign--detail
                 dt 
                   .icon
@@ -118,7 +116,7 @@ block main
             .col-12.mb-4
               +adBanner(true)         
       .buttons
-        .button--more 
+        a.button--more(href="#") 
           .label 查看更多
           .icon 
             i.bi.bi-caret-down-fill

@@ -20,7 +20,7 @@ block main
             a(
               href=""
             ) 熱門
-  section.section--banner
+  section.section--banner.pt-4.pb-0.py-lg-0
     .container--slim
       +adBanner(true)
   section.section--audio--body
@@ -71,7 +71,7 @@ block main
         - const items = ['人物', '健康', '心靈', '火火', 1, 2, 3, 4, 5, 6]
         each item, index in items
           //- Regular item card
-          .col-md-6.mb-5.mb-lg-3
+          .col-md-6
             .card--video
               a.pic(href="./audio.html")
                 img(data-src=`${getLoremYoutube()}`).lazyload
@@ -84,7 +84,7 @@ block main
             .col-12
               +adBanner(true)
       .buttons
-        .button--more 
+        a.button--more(href="#") 
           .label 查看更多
           .icon 
             i.bi.bi-caret-down-fill

@@ -8,7 +8,7 @@ block pannel-mobile
     .caption
       .review--countdown 
         .label
-          span 心得倒數
+          span 回填倒數
           b 11
           span 天
         .label
@@ -30,7 +30,7 @@ block sidebar
     .caption
       .review--countdown 
         .label
-          span 心得倒數
+          span 回填倒數
           b 11
           span 天
         .label
@@ -50,3 +50,104 @@ block sidebar
 block fixed-bottom
   .fixed-checkout.d-sm-none
     include components/mobileShareBar
+block script
+  script.
+    const ALLOWED_TYPES = ['image/jpeg', 'image/png'];
+    const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+
+    function handleFileUpload(input, index) {
+      const preview = document.getElementById(`upload-preview-${index}`);
+      const icon = preview.nextElementSibling;
+      const deleteBtn = icon.nextElementSibling;
+      const previewTexts = [
+        deleteBtn.nextElementSibling,  // "新增圖片" 的 p
+        deleteBtn.nextElementSibling.nextElementSibling  // "限定格式" 的 p
+      ];
+
+      // 檢查是否有選擇檔案
+      if (!input.files || !input.files[0]) {
+        resetPreview(preview, icon, previewTexts);
+        return;
+      }
+
+      const file = input.files[0];
+
+      // 驗證檔案
+      if (!validateFile(file)) {
+        // 隱藏原本的說明文字
+        previewTexts.forEach(text => {
+          text.style.display = 'none';
+        });
+        
+        // 顯示錯誤訊息
+        previewTexts[0].style.display = 'block';
+        previewTexts[0].textContent = '請上傳 JPEG 或 PNG 格式的圖片';
+        previewTexts[0].style.color = '#dc3545';
+        
+        resetPreview(preview, icon, null); // 不重設文字
+        return;
+      }
+
+      // 顯示預覽圖
+      displayPreview(file, preview, icon, previewTexts);
+
+      // 設置刪除按鈕事件
+      if (deleteBtn) {
+        deleteBtn.onclick = () => {
+          input.value = ''; // 清除檔案選擇
+          resetPreviewWithOriginalText(preview, icon, previewTexts, index);
+        };
+      }
+    }
+
+    function validateFile(file) {
+      return ALLOWED_TYPES.includes(file.type) && file.size <= MAX_FILE_SIZE;
+    }
+
+    function resetPreview(preview, icon, previewTexts) {
+      preview.src = '';
+      preview.style.display = 'none';
+      icon.style.display = 'block';
+      
+      // 如果有傳入 previewTexts，才重設文字顯示
+      if (previewTexts) {
+        previewTexts.forEach(text => {
+          text.style.display = 'block';
+        });
+      }
+    }
+
+    function resetPreviewWithOriginalText(preview, icon, previewTexts, index) {
+      preview.src = '';
+      preview.style.display = 'none';
+      icon.style.display = 'block';
+      
+      // 恢復原始文字
+      previewTexts[0].style.display = 'block';
+      previewTexts[0].textContent = `新增 圖片 ${index}`;
+      previewTexts[0].style.color = ''; // 重設顏色
+      
+      previewTexts[1].style.display = 'block';
+      previewTexts[1].textContent = '限定 JPEG & PNG 格式';
+    }
+
+    function displayPreview(file, preview, icon, previewTexts) {
+      const reader = new FileReader();
+      
+      reader.onload = (e) => {
+        preview.src = e.target.result;
+        preview.style.display = 'block';
+        icon.style.display = 'none';
+        // 隱藏所有說明文字
+        previewTexts.forEach(text => {
+          text.style.display = 'none';
+        });
+      };
+
+      reader.onerror = () => {
+        console.error('預覽圖片時發生錯誤');
+        resetPreview(preview, icon, previewTexts);
+      };
+
+      reader.readAsDataURL(file);
+    }

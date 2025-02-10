@@ -48,81 +48,117 @@ block main
     .container
       .section__title.is-sp
         .title 圖片故事
-      .grid--snippet
-        .col
-          .card--snippet--preview
-            .pic
-              img
-            .caption.relative
-              h3
-          .card--snippet--preview.d-lg-none
-            .pic
-              img
-            .caption.relative
-              h3
-          .card--snippet--preview.d-lg-none
-            .pic
-              img
-            .caption.relative
-              h3
-        .col 
-          .swiper--snippet.swiper--snippet--vertical
-            .swiper-navigation 
-              
-            swiper-container(
-              init='false'
-              space-between='10'
-              navigation='true'
-              loop='true'
-              inject-styles=[
-                `
-                :host .swiper {
-                  overflow: hidden;
-                }
-                :host .swiper-button-prev {
-                  top: 20px;
-                  left: 50%;
-                  transform: translateX(-50%) rotate(90deg);
-                  background-color: #66666680;
-                  border-radius: 100%;
-                  width: 28px;
-                  height: 28px;
-                  padding: 10px;
-                  stroke: #ede73c;
-                }
-                :host .swiper-button-next {
-                  bottom: 20px;
-                  top: unset;
-                  left: 50%;
-                  transform: translateX(-50%) rotate(90deg);
-                  background-color: #66666680;
-                  border-radius: 100%;
-                  width: 28px;
-                  height: 28px;
-                  padding: 10px;
-                  stroke: #ede73c;
-                }
-                :host {
-                  --swiper-theme-color: #ede73c;
-                  --swiper-navigation-size: 32px;
-                  height: 100%;
-                }
-                `,
-              ],
+      .d-none.d-lg-block
+        .grid--snippet
+          .col
+            .card--snippet--preview
+              .pic
+                img
+              .caption.relative
+                h3
+          .col 
+            .swiper--snippet.swiper--snippet--vertical
+              .swiper-navigation 
+                
+              swiper-container(
+                init='false'
+                space-between='10'
+                navigation='true'
+                loop='true'
+                inject-styles=[
+                  `
+                  :host .swiper {
+                    overflow: hidden;
+                  }
+                  :host .swiper-button-prev {
+                    top: 20px;
+                    left: 50%;
+                    transform: translateX(-50%) rotate(90deg);
+                    background-color: #66666680;
+                    border-radius: 100%;
+                    width: 28px;
+                    height: 28px;
+                    padding: 10px;
+                    stroke: #ede73c;
+                  }
+                  :host .swiper-button-next {
+                    bottom: 20px;
+                    top: unset;
+                    left: 50%;
+                    transform: translateX(-50%) rotate(90deg);
+                    background-color: #66666680;
+                    border-radius: 100%;
+                    width: 28px;
+                    height: 28px;
+                    padding: 10px;
+                    stroke: #ede73c;
+                  }
+                  :host {
+                    --swiper-theme-color: #ede73c;
+                    --swiper-navigation-size: 32px;
+                    height: 100%;
+                  }
+                  `,
+                ],
+              )
+                each item, index in [0, 1, 2, 3, 4, 5, 6, 7]
+                  swiper-slide
+                    .card--snippet(
+                      onclick='gotoSnippet(this)'
+                    )
+                      .pic
+                        img(
+                          src=`${getLoremSlide()}`
+                        ).lazyload
+                      .caption
+                        h3
+                          != getLoremText()
+      .d-block.d-lg-none
+        .card--snippet--preview
+          .pic
+            img(
+              src=`${getLoremSlide()}`
             )
-              each item, index in [0, 1, 2, 3, 4, 5, 6, 7]
-                swiper-slide
-                  .card--snippet(
-                    onclick='gotoSnippet(this)'
-                  )
-                    .pic
-                      img(
-                        src=`${getLoremSlide()}`
-                      ).lazyload
-                    .caption
-                      h3
-                        != getLoremText()
-                    
+          .caption
+            h3
+        .swiper--snippet--mobile
+          //- .swiper-navigation 
+          //-   .swiper-button-prev
+          //-     .chevron--left
+          //-   .swiper-button-next
+          //-     .chevron--right
+          swiper-container(
+            init='false'
+            slides-per-view='3'
+            autoplay={ delay: 5000, disableOnInteraction: false, stopOnLastSlide: false }
+            space-between='10'
+            inject-styles=[
+              `
+              :host .swiper {
+                overflow: hidden;
+              }
+              :host {
+                --swiper-theme-color: #ede73c;
+                --swiper-navigation-size: 32px;
+              }
+
+              `,
+            ],
+          )
+            each item, index in [0, 1, 2, 3, 4, 5, 6]
+              swiper-slide
+                .card--snippet--mobile(
+                  onclick='gotoSnippet(this)'
+                )
+                  .pic
+                    img(
+                      src=`${getLoremSlide()}`
+                    ).lazyload
+                  .caption
+                    h3
+                      != getLoremText()
+                  //- .icon 
+                  //-   i.bi.bi-plus      
                     
                    
 
