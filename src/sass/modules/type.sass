@@ -1683,6 +1683,8 @@ article.is-review
     border-right: 8px solid var(--theme-color)
     letter-spacing: .5rem
     padding-left: calc(20px + .5rem)
+    @media (max-width: theme('breakpoints.sm'))
+      +fontSize(20px)
     &.small
       +fontSize(18px)
     &.center
@@ -2095,4 +2097,6 @@ table.table
 article.is-review-rules
   &
     > * 
-      +fontSizeImportant(18px)
+      +fontSize(18px)
+      @media (max-width: theme('breakpoints.sm'))
+        +fontSize(20px)

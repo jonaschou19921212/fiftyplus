@@ -48,13 +48,25 @@ block main
             p 05/31
     .quick-bar 
       a.item--link(href="#intro")
-        .item.active 活動介紹
+        .item.active 
+          |活動
+          br.d-lg-none
+          |介紹
       a.item--link(href="#outline")
-        .item 活動資訊
+        .item 
+          |活動
+          br.d-lg-none
+          |資訊
       a.item--link(href="#teacher")
-        .item 講師介紹
+        .item 
+          |講師
+          br.d-lg-none
+          |介紹
       a.item--link(href="#notice")
-        .item 注意事項
+        .item 
+          |注意
+          br.d-lg-none
+          |事項
    
 
   section.section--campaign--body.pb-0
@@ -171,7 +183,7 @@ block main
                     span 秒
               .buttons.flex-column
                 a.button--pill--lg(
-                  href='./classDetail.html'
+                  href='#choose'
                 )
                   .label 立即報名
                 span.discount--hint 2人同行另享折扣!

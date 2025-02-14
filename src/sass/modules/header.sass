@@ -458,6 +458,8 @@ header
         width: 100%
         list-style: none
         margin-bottom: 1px
+      &+li > a 
+        border-top: 1px solid #e5e7eb
       a
         display: block
         width: 100%
@@ -489,7 +491,7 @@ header
       align-items: center
       width: 30px
       height: 30px
-      color: #fff
+      color: var(--theme-color)
     &:not(.collapsed)
       .icon
         transform: translateY(-50%) rotate(180deg)

@@ -93,21 +93,50 @@ block main
         .col-12.col-md-3
           block sidebar
     section.bg-grey
+      //- .container--slim
+      //-   .row
+      //-     .col-12
+      //-       article.is-review-rules
+      //-         h3.center 推薦閱讀
+      //-         .pic 
+      //-           img(
+      //-             src="https://picsum.photos/900/900"
+      //-           )
+      //-         p 推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀
+      //-   .row.d-sm-flex.d-none
+      //-     .col-12
+      //-       .recomand
+      //-         .button--pill--lg.is-white
+      //-           .label 推薦閱讀
+      .container
+        .section__title 
+          .title 推薦閱讀
       .container--slim
-        .row
-          .col-12
-            article.is-review-rules
-              h3.center 推薦閱讀
-              .pic 
-                img(
-                  src="https://picsum.photos/900/900"
+        .row.row--article
+          each item, index in ['人物']
+            .col-md-6.col-lg-4.mx-auto
+              .card--article
+                a.pic(
+                  href="#"
                 )
-              p 推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀推薦閱讀
-        .row.d-sm-flex.d-none
-          .col-12
-            .recomand
-              .button--pill--lg.is-white
-                .label 推薦閱讀
+                  img(
+                    data-src=`${getLoremPic()}`
+                  ).lazyload
+                a.caption(
+                  href="#"
+                )
+                  //- .catalog
+                  //-   != item
+                  h3
+                    != getLoremText()
+                .info 
+                  .date 2024.09.01
+                  .view
+                    .icon
+                      i.bi.bi-eye
+                    .label 1000
+
+        
   section.section--report--body 
     .container--slim
       .row.mt-3
