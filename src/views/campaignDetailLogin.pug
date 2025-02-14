@@ -256,12 +256,21 @@ block main
               .amount#totalAmount 合計＄
                 != formatAmount(16000)
 
-      .hint 此課程需會員登入才可報名，請
-        a(href="./login.html") 登入
-        | 或
-        a(href="./register.html") 註冊
-        | 後繼續報名，謝謝
+      
 
+    include components/form
+
+    .container
+      .row.justify-content-center.mb-5.mt-3
+        .col-10.col-lg-6.class--amount.d-none.d-sm-flex
+          .d-flex.align-items-end
+            .total-text 總金額
+            .total-text.m-0 合計
+            .total-price 
+              del 原價16,800
+              p $16,000元
+          .button--pill--2xl.mt-3
+            .label.label--hide--border.black--font 馬上結帳
     .container.courser-recomand.m-0.d-none.d-lg-flex
       .row
         each item, index in [0, 1, 2]
