@@ -92,6 +92,7 @@ block main
                   )
         .col-12.col-md-3
           block sidebar
+  section.section--report--body 
     section.bg-grey
       //- .container--slim
       //-   .row
@@ -108,11 +109,13 @@ block main
       //-       .recomand
       //-         .button--pill--lg.is-white
       //-           .label 推薦閱讀
-      .container
-        .section__title 
-          .title 推薦閱讀
+        
       .container--slim
-        .row.row--article
+        .row 
+          .col-md-6.col-lg-4.mx-auto
+            .section__title 
+              .title 推薦閱讀
+        .row.row--article.mb-0
           each item, index in ['人物']
             .col-md-6.col-lg-4.mx-auto
               .card--article
@@ -129,12 +132,6 @@ block main
                   //-   != item
                   h3
                     != getLoremText()
-                .info 
-                  .date 2024.09.01
-                  .view
-                    .icon
-                      i.bi.bi-eye
-                    .label 1000
 
         
   section.section--report--body 
