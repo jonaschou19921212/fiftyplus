@@ -141,7 +141,41 @@ block main
               .label 按鈕標題
             a.button--more.is-invert(role="button" href="javascript:;")
               .label 按鈕標題
-      
+  section 
+    .container
+      .section__title
+        .title 分頁樣式
+      .card--style 
+        nav.pagination-row(aria-label="Page navigation")
+          ul
+            //- Previous button
+            li.page-item
+              a.page-link(href="#" aria-label="Previous")
+                span(aria-hidden="true") ⟨
+            
+            //- Page 1 (active)
+            li.page-item
+              a.page-link.active(href="#" aria-current="page") 
+                span 1
+            
+            //- Pages 2-5
+            li.page-item
+              a.page-link(href="#") 
+                span 2
+            li.page-item
+              a.page-link(href="#") 
+                span 3
+            li.page-item
+              a.page-link(href="#") 
+                span 4
+            li.page-item
+              a.page-link(href="#") 
+                span 5
+            
+            //- Next button
+            li.page-item
+              a.page-link(href="#" aria-label="Next")
+                span(aria-hidden="true") ⟩
   section
     .container
       .section__title
