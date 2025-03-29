@@ -337,26 +337,32 @@
     <section class="section--article--body">
       <div class="container--slim card--login">
         <div class="section__title w-100 is-form">
-          <div class="login--title">重設密碼</div>
+          <div class="login--title">輸入驗證碼</div>
         </div>
-        <div class="row row--login justify-content-center align-item-start">
-          <div class="content">
-            <p class="normal -p">請重新設定您的會員密碼，並以更新後的密碼登入。</p>
+        <div class="row row--login justify-content-center align-item-start w-100">
+          <div class="col-12 content">
+            <p class="normal-p text-center">請輸入您手機或email收到的驗證碼共四碼<br />（剩餘時間59”）</p>
           </div>
-          <div class="col-12 d-flex justify-content-center">
-            <div class="form--input"><input class="form--input disabled" id="name" type="text" value="0912345678" /></div>
-          </div>
-          <div class="col-12 d-flex justify-content-center">
-            <div class="form--input form--password"><input class="form--input" id="password" type="password" placeholder="新密碼(6碼以上含英文數字混合)" /><i class="bi bi-eye" id="togglePassword" onclick="togglePassword(&quot;togglePassword&quot;, &quot;password&quot;)"></i>
-              <p class="error-msg hidden" id="passwordError">密碼必須至少 6 個字符，並包含字母和數字。</p>
+          <div class="col-lg-8 mx-auto mb-3 d-flex justify-content-center">
+            <div class="row g-2 justify-content-center">
+              <div class="col-2">
+                <div class="form--input"><input class="p-0 text-center form--input" id="verifyCode1" type="text" placeholder="" /></div>
+              </div>
+              <div class="col-2">
+                <div class="form--input"><input class="p-0 text-center form--input" id="verifyCode2" type="text" placeholder="" /></div>
+              </div>
+              <div class="col-2">
+                <div class="form--input"><input class="p-0 text-center form--input" id="verifyCode3" type="text" placeholder="" /></div>
+              </div>
+              <div class="col-2">
+                <div class="form--input"><input class="p-0 text-center form--input" id="verifyCode4" type="text" placeholder="" /></div>
+              </div>
+              <div class="col-12">
+                <p class="invalid-feedback text-center d-block">輸入錯誤，請再輸入一次</p>
+              </div>
             </div>
           </div>
-          <div class="col-12 d-flex justify-content-center">
-            <div class="form--input form--password"><input class="form--input" id="password2" type="password" placeholder="再次確認新密碼" /><i class="bi bi-eye" id="togglePassword2" onclick="togglePassword(&quot;togglePassword2&quot;, &quot;password2&quot;)"></i>
-              <p class="error-msg hidden" id="password2Error">兩次密碼不相同。</p>
-            </div>
-          </div>
-          <div class="col-12 justify-content-center d-flex mt-3">
+          <div class="col-12 justify-content-center d-flex">
             <div class="button--pill--full">
               <div class="label label--hide--border">送出</div>
             </div>
@@ -364,6 +370,91 @@
         </div>
       </div>
     </section>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const verifyInputs = [
+          document.getElementById('verifyCode1'),
+          document.getElementById('verifyCode2'),
+          document.getElementById('verifyCode3'),
+          document.getElementById('verifyCode4')
+        ];
+        const errorMsg = document.querySelector('.error-msg');
+        verifyInputs.forEach((input, index) => {
+          // 限制只能輸入數字
+          input.setAttribute('maxlength', '1');
+          input.setAttribute('inputmode', 'numeric');
+          input.setAttribute('pattern', '[0-9]');
+          // 處理輸入事件
+          input.addEventListener('input', (e) => {
+            // 移除非數字字符
+            e.target.value = e.target.value.replace(/[^0-9]/g, '');
+            // 如果有輸入數字且不是最後一個input，自動跳到下一個
+            if (e.target.value && index < verifyInputs.length - 1) {
+              verifyInputs[index + 1].focus();
+            }
+          });
+          // 處理貼上事件
+          input.addEventListener('paste', (e) => {
+            e.preventDefault();
+            const pastedData = e.clipboardData.getData('text').replace(/[^0-9]/g, '').split('');
+            // 分配貼上的數字到各個輸入框
+            verifyInputs.forEach((input, i) => {
+              if (pastedData[i]) {
+                input.value = pastedData[i];
+                // 如果還有下一個輸入框，自動聚焦
+                if (i < verifyInputs.length - 1 && pastedData[i + 1]) {
+                  verifyInputs[i + 1].focus();
+                }
+              }
+            });
+          });
+          // 處理按鍵事件
+          input.addEventListener('keydown', (e) => {
+            // 如果按下退格鍵且當前輸入框為空，跳回上一個輸入框
+            if (e.key === 'Backspace' && !e.target.value && index > 0) {
+              e.preventDefault();
+              verifyInputs[index - 1].focus();
+              verifyInputs[index - 1].value = '';
+            }
+            // 限制只能輸入數字、退格、方向鍵和 Tab 鍵
+            if (!/^[0-9]$/.test(e.key) && e.key !== 'Backspace' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight' && e.key !== 'Tab') {
+              e.preventDefault();
+            }
+          });
+          // 處理左右方向鍵
+          input.addEventListener('keyup', (e) => {
+            if (e.key === 'ArrowLeft' && index > 0) {
+              verifyInputs[index - 1].focus();
+            }
+            if (e.key === 'ArrowRight' && index < verifyInputs.length - 1) {
+              verifyInputs[index + 1].focus();
+            }
+          });
+        });
+        // 提供取得驗證碼的方法
+        const getVerificationCode = () => {
+          return verifyInputs.map(input => input.value).join('');
+        };
+        // 提供重置驗證碼的方法
+        const resetVerificationCode = () => {
+          verifyInputs.forEach(input => {
+            input.value = '';
+          });
+          verifyInputs[0].focus();
+        };
+        // 提供驗證是否填寫完整的方法
+        const isVerificationCodeComplete = () => {
+          return verifyInputs.every(input => input.value.length === 1);
+        };
+        // 如果需要，可以將這些方法暴露到全局
+        window.verificationCode = {
+          get: getVerificationCode,
+          reset: resetVerificationCode,
+          isComplete: isVerificationCodeComplete
+        };
+      });
+
+    </script>
     <footer>
       <div class="container">
         <div class="grid--footer">

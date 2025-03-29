@@ -85,6 +85,7 @@ export default defineConfig({
         index: resolve(__dirname, "./src/index.html"),
         login: resolve(__dirname, "./src/login.html"),
         register: resolve(__dirname, "./src/register.html"),
+        register_code: resolve(__dirname, "./src/register_code.html"),
         resetPassword: resolve(__dirname, "./src/resetPassword.html"),
         forgetPassword: resolve(__dirname, "./src/forgetPassword.html"),
         forgetPassword_code: resolve(__dirname, "./src/forgetPassword_code.html"),
